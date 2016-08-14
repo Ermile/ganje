@@ -17,5 +17,4 @@ if(!defined('db_user'))
 if(!defined('db_pass'))
  define("db_pass", '_pass_');
 
-
 ?>
