@@ -1,0 +1,8 @@
+*.DS_Store
+*sitemap.xml
+*Thumbs.db
+/public_html/files
+/public_html/sitemap
+/public_html/sitemap.xml
+/config.me.php
+/includes/cls/database/backup
