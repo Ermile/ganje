@@ -11,7 +11,7 @@ class view extends \mvc\view
 		{
 			$this->data->bodyclass  = 'unselectable';
 			$this->include->js_main      = false;
-			$this->include->css          = true;
+			$this->include->css          = false;
 		}
 	}
 
