@@ -1,26 +1,23 @@
 <?php
 namespace content\home;
-
+use \lib\utility;
 class model extends \mvc\model
 {
-	public function get_test($object)
+
+	public $user_id;
+
+	public function post_hours($object)
 	{
-		return 1;
+		
+		$this->user_id = utility::post('userId');
+		var_dump($this->user_id);
+		$this->chekc_time();
+		exit(11);
 	}
 
-	public function post_test($object)
-	{
-		return 2;
-	}
-
-	public function put_test($object)
-	{
-		return 3;
-	}
-
-	public function delete_test($object)
-	{
-		return 4;
+	public function chekc_time (){
+		$check = $this->sql()->tableHours()->whereUser_id($this->user_id)->select();
+		var_dump($check->string());
 	}
 
 }
