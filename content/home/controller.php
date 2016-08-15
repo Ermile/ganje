@@ -11,10 +11,15 @@ class controller extends \mvc\controller
 	// for routing check
 	function _route()
 	{
-		if($this->login()){
-			$this->get(false,"list")->ALL("list");
-		}
+
+		if(!$this->login()){
+			$redirector = new \lib\redirector();
+			$redirector->set_domain()->set_url('login')->redirect();
+		}else{
 			$this->post("hours")->ALL();
+			
+			// $this->get(false, "list")->ALL();
+		}
 
 	}
 }

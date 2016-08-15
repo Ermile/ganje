@@ -13,6 +13,8 @@ class view extends \mvc\view
 			// $this->include->js_main      = false;
 			$this->include->css          = true;
 		}
+		//----- list of users
+		$this->data->list = $this->model()->post_list();
 	}
 
 

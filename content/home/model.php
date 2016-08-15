@@ -13,19 +13,17 @@ class model extends \mvc\model
 
 	public function post_hours(){
 
-		// $this->post_list();
 
 		//----------- get value
-		$this->user_id = utility::post('userId');
-		$this->plus = (utility::post('plus') == null) ? 0 : utility::post('plus');
-		$this->minus = (utility::post('minus') == null) ? 0 : utility::post('minus');
+		$this->user_id = intval(utility::post('userId'));
+		$this->plus = (utility::post('plus') == null) ? 0 : intval(utility::post('plus'));
+		$this->minus = (utility::post('minus') == null) ? 0 : intval(utility::post('minus'));
 
 		//----------- check users status
 		if($this->check_user()){
 			//------- set time 
 			$this->set_time();
 		}
-
 	}
 
 	/*
@@ -56,7 +54,7 @@ class model extends \mvc\model
 					LIMIT 1";
 
 		$check_date = db::get($query, null, true);
-		// var_dump($check_date);
+		
 		if($check_date == null) {
 
 			//----- add firs time in day
@@ -91,6 +89,10 @@ class model extends \mvc\model
 		
 	}
 
+
+	/*
+	* get list of users to show
+	*/
 	public function post_list(){
 		$date = date("Y-m-d");
 		db::query("set sql_mode = '' ", false);
@@ -100,12 +102,12 @@ class model extends \mvc\model
 					u.id,u.user_displayname, h.hour_end 
 				FROM users u 
 				LEFT JOIN hours h on u.id = h.user_id AND h.hour_date = '$date' 
-				WHERE u.user_status = 'active'   
-				Group by u.id
-				ORDER By h.hour_end DESC
-				 ";
+				WHERE u.user_status = 'active'  ";
 
-		$list = db::get($query);
+				// Group by u.id
+				// ORDER By h.hour_end DESC ";
+
+		return db::get($query);
 
 		
 	}
