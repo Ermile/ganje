@@ -33,7 +33,7 @@ CREATE TABLE `hours` (
   `hour_start` time NOT NULL,
   `hour_end` time NULL,
   `hour_diff` SMALLINT UNSIGNED  NULL,
-  `hour_mines` SMALLINT UNSIGNED   NULL,
+  `hour_minus` SMALLINT UNSIGNED   NULL,
   `hour_plus` SMALLINT UNSIGNED  NULL,
   `hour_total` SMALLINT UNSIGNED  NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -9,15 +9,16 @@ class model extends \mvc\model
 
 	public $user_id;
 	public $plus;
-	public $mines;
+	public $minus;
 
 	public function post_hours(){
-		$this->post_list();
+
+		// $this->post_list();
 
 		//----------- get value
 		$this->user_id = utility::post('userId');
 		$this->plus = (utility::post('plus') == null) ? 0 : utility::post('plus');
-		$this->mines = (utility::post('mines') == null) ? 0 : utility::post('mines');
+		$this->minus = (utility::post('minus') == null) ? 0 : utility::post('minus');
 
 		//----------- check users status
 		if($this->check_user()){
@@ -55,7 +56,7 @@ class model extends \mvc\model
 					LIMIT 1";
 
 		$check_date = db::get($query, null, true);
-		var_dump($check_date);
+		// var_dump($check_date);
 		if($check_date == null) {
 
 			//----- add firs time in day
@@ -76,8 +77,8 @@ class model extends \mvc\model
 						SET hour_end = '$time',
 							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
 							hour_plus = {$this->plus},
-							hour_mines = {$this->mines},
-							hour_total = (hour_diff + hour_plus - hour_mines)  
+							hour_minus = {$this->minus},
+							hour_total = (hour_diff + hour_plus - hour_minus)  
 
 						WHERE 
 							id = {$check_date['id']} ";
