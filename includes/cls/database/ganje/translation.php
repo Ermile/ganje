@@ -28,8 +28,10 @@ private function transtext()
 	echo T_("date");                // hour_date
 	echo T_("start");               // hour_start
 	echo T_("end");                 // hour_end
-	echo T_("hour le");             // hour_idle
-	echo T_("sum");                 // hour_sum
+	echo T_("diff");                // hour_diff
+	echo T_("minus");               // hour_minus
+	echo T_("plus");                // hour_plus
+	echo T_("total");               // hour_total
 
 	// ------------------------------------------------------------ Table logitems
 	echo T_("logitems");            // Table logitems
