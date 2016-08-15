@@ -2,8 +2,7 @@ var PageTransitions = (function() {
 
 	var $main = $( '#pt-main' ),
 		$pages = $main.children( 'div.pt-page' ),
-		$iterate = $( '#iterateEffects' ),
-		animcursor = 1,
+		animcursor = 21,
 		pagesCount = $pages.length,
 		current = 0,
 		isAnimating = false,
@@ -37,17 +36,26 @@ var PageTransitions = (function() {
 			}
 		} );
 
-		$iterate.on( 'click', function() {
-			if( isAnimating ) {
-				return false;
-			}
-			if( animcursor > 67 ) {
-				animcursor = 1;
-			}
-			nextPage( animcursor );
-			++animcursor;
-		} );
 
+		$('body').on( 'keyup', function(e)
+		{
+			switch(e.keyCode)
+			{
+				case 13:
+					nextPage( animcursor );
+					break;
+
+				case 107:
+					break;
+
+				case 109:
+					break;
+
+				default:
+					break;
+			}
+			console.log(e.keyCode);
+		});
 	}
 
 	function nextPage(options ) {
