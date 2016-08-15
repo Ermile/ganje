@@ -31,9 +31,11 @@ CREATE TABLE `hours` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `hour_date` date NOT NULL,
   `hour_start` time NOT NULL,
-  `hour_end` time NOT NULL,
-  `hour_idle` int(3) NOT NULL,
-  `hour_sum` time NOT NULL
+  `hour_end` time NULL,
+  `hour_diff` SMALLINT UNSIGNED  NULL,
+  `hour_mines` SMALLINT UNSIGNED   NULL,
+  `hour_plus` SMALLINT UNSIGNED  NULL,
+  `hour_total` SMALLINT UNSIGNED  NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -58,3 +60,7 @@ ALTER TABLE `hours`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+

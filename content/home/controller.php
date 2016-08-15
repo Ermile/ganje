@@ -11,7 +11,11 @@ class controller extends \mvc\controller
 	// for routing check
 	function _route()
 	{
-		$this->post("hours")->ALL();
+		if($this->login()){
+			$this->get(false,"list")->ALL("list");
+		}
+			$this->post("hours")->ALL();
+
 	}
 }
 ?>
