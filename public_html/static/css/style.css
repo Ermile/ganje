@@ -1,7 +1,7 @@
 body {
 	background: url(../images/pattern/shattered_@2X.png);
 }
-.side-col {
+.sidebar {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -12,4 +12,10 @@ body {
 	max-width: 500px;
 	margin: 0;
 	background-color: rgba(255,255,255,0.2);
+}
+
+.sidebar > .besmellah {
+	font-weight: 700;
+    text-align: center;
+    margin-top: 2em;
 }
