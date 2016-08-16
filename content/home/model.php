@@ -99,15 +99,13 @@ class model extends \mvc\model
 
 		$query = " 
 				SELECT 
-					u.id,u.user_displayname, h.hour_end 
+					u.id,u.user_displayname
 				FROM users u 
-				LEFT JOIN hours h on u.id = h.user_id AND h.hour_date = '$date' 
 				WHERE u.user_status = 'active'  ";
 
-				// Group by u.id
-				// ORDER By h.hour_end DESC ";
-
-		return db::get($query);
+		$users = db::get($query);
+		return $users;
+		// var_dump($users);
 
 		
 	}

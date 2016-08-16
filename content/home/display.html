@@ -37,75 +37,18 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="person">
-							<div class="avatar">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
+					{% for i, user in list %}
 
 						<div class="person">
 							<div class="avatar">
+
 								<img src="/static/images/avatar/{{random(14)}}.png">
 							</div>
+							{{user.id}}:{{user.user_displayname}}
 							<div class="info"></div>
 						</div>
 
-						<div class="person">
-							<div class="avatar active">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
-
-						<div class="person">
-							<div class="avatar">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
-
-						<div class="person">
-							<div class="avatar active">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
-
-						<div class="person">
-							<div class="avatar">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
-
-						<div class="person">
-							<div class="avatar">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
-
-						<div class="person">
-							<div class="avatar">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
-
-						<div class="person">
-							<div class="avatar">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
-
-						<div class="person">
-							<div class="avatar">
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
-							<div class="info"></div>
-						</div>
+					{%endfor%}
 
 						<div class="clear:both"></div>
 					</div>
