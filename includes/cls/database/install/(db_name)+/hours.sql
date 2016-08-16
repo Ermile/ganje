@@ -31,13 +31,13 @@ CREATE TABLE `hours` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `hour_date` date NOT NULL,
   `hour_start` time NOT NULL,
-  `hour_end` time NULL,
-  `hour_diff` SMALLINT UNSIGNED  NULL,
-  `hour_minus` SMALLINT UNSIGNED   NULL,
-  `hour_plus` SMALLINT UNSIGNED  NULL,
-  `hour_total` SMALLINT UNSIGNED  NULL
+  `hour_end` time DEFAULT NULL,
+  `hour_diff` smallint(5) UNSIGNED DEFAULT NULL,
+  `hour_minus` smallint(5) UNSIGNED DEFAULT NULL,
+  `hour_plus` smallint(5) UNSIGNED DEFAULT NULL,
+  `hour_total` smallint(5) UNSIGNED DEFAULT NULL,
+  `date_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Indexes for dumped tables
 --
