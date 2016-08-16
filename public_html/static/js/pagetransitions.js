@@ -43,6 +43,7 @@ var PageTransitions = (function() {
 			{
 				case 13:
 					nextPage( animcursor );
+					summary();
 					break;
 
 				case 107:
@@ -56,6 +57,17 @@ var PageTransitions = (function() {
 			}
 			console.log(e.keyCode);
 		});
+	}
+
+	function summary(){
+		$.ajax({
+			type: "POST",
+			url : "/",
+			data : {'type' : "summary", 'id' : 1},
+			success : function(data){		
+				console.log(data);
+			}
+		});	
 	}
 
 	function nextPage(options ) {

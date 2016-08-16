@@ -13,7 +13,18 @@ class model extends \mvc\model
 
 	public function post_hours(){
 
+		$type = utility::post("type");
 
+		switch ($type) {
+			case 'summary':
+				$this->summary(utility::post("id"));
+				return ;
+				break;
+			
+			default:
+				# code...
+				break;
+		}
 		//----------- get value
 		$this->user_id = intval(utility::post('userId'));
 		$this->plus = (utility::post('plus') == null) ? 0 : intval(utility::post('plus'));
@@ -105,9 +116,32 @@ class model extends \mvc\model
 
 		$users = db::get($query);
 		return $users;
-		// var_dump($users);
+	}
 
+	public function summary($user_id = false) {
+		$date = date("Y-m-d");
+
+		//-------- sql_mode = "" !!!!!!
+		// WEEK(hours.hour_date), MONTH(hours.hour_date)
 		
+		$daily = "SELECT 
+					hours.user_id,
+					users.user_displayname,
+					hours.hour_date, 
+					sum(hours.hour_total) as total ,
+					sum(hours.hour_diff) as diff,
+					sum(hours.hour_plus) as plus,
+					sum(hours.hour_minus) as minus
+					FROM hours 
+					INNER JOIN users on hours.user_id = users.id
+					WHERE hours.user_id = $user_id and hours.hour_date = '$date'
+					GROUP BY 
+						hours.user_id,
+						hours.hour_date
+					";
+		$report[] = db::get($daily);
+		
+		return $report;
 	}
 
 }
