@@ -36,39 +36,9 @@ body {
 	z-index: 999;
 }
 
-/* Text Styles, Colors, Backgrounds */
-
-.pt-page h1 {
-	position: absolute;
-	font-weight: 300;
-	font-size: 4.4em;
-	line-height: 1;
-	letter-spacing: 6px;
-	margin: 0;
-	top: 12%;
-	width: 100%;
-	text-align: center;
-	text-transform: uppercase;
-	word-spacing: -0.3em;
-}
-
-.pt-page h1 span {
-	font-family: 'Satisfy', serif;
-	font-weight: 400;
-	font-size: 40%;
-	text-transform: none;
-	word-spacing: 0;
-	letter-spacing: 0;
-	display: block;
-	opacity: 0.4;
-}
-
-.pt-page h1 strong {
-	color: rgba(0,0,0,0.1);
-}
-
 .pt-page-1 {
-	background: #0ac2d2;
+	background: url(../images/pattern/shattered_@2X.png);
+	/*background: #0ac2d2;*/
 }
 
 .pt-page-2 {
@@ -91,58 +61,145 @@ body {
 	background: #f68dbb;
 }
 
+.pt-page-1 .span2 {
+}
 
-/*.sidebar {
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	min-height: 350px;
-	width: 30%;
-	min-width: 280px;
-	max-width: 500px;
-	margin: 0;
+.pt-page-1 .span10 {
+}
+
+.sidebar {
+	height: 100vh;
+	padding-top: 2em;
 	background-color: rgba(255,255,255,0.2);
+	position: relative;
 }
 
-.sidebar > .besmellah {
-	font-weight: 700;
-	font-size: 1.618em;
+.sidebar > #besmellah {
+	font-size: 0.8em;
+	font-weight: 500;
     text-align: center;
+    margin-bottom: 3em;
 }
 
-#clock {
+.sidebar > #time {
 	text-align: center;
-	font-size: 5em;
+	font-size: 3em;
 	text-shadow: 0 0 1px #000;
 }
 
-#clock > .hour {
+.sidebar > #date {
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 50%;
+	margin-top: -10px;
+}
+
+.sidebar > #time > .hour {
 	font-weight: 500;
 }
 
-#clock > .minute, #clock > .second {
+.sidebar > #time > .minute, .sidebar > #time > .second {
 	font-weight: 200;
 }
 
-#logo {
+.sidebar > #logo {
 	background-image: url(../images/logo.png);
 	background-repeat: no-repeat;
+	background-position: center center;
 	background-size: contain;
-	background-position: center;
-	height: 300px;
+	height: 200px;
 }
 
 .sidebar > h1 {
 	text-align: center;
 	font-weight: 700;
+	text-shadow: 0 0 1px #000;
 }
 
-.sidebar form {
-	display: none;
+.sidebar > #poem {
+	position: absolute;
+	bottom: 1em;
+	width: 100%;
+	font-size: 0.8em;
+	font-weight: 500;
+	text-align: center;
 }
 
-.poem {
-	position: fixed;
-	bottom: 0;
-}*/
+.content {
+	padding-top: 10%;
+}
+
+.content .row {
+	text-align: center;
+}
+
+.person {
+	display: inline-block;
+	margin: 1.5em 2em;
+}
+
+.person > .avatar {
+	width: 200px;
+	height: 200px;
+	background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+	border-radius: 50%;
+	margin: 0 auto 18px;
+	position: relative;
+	opacity: 0.3;
+	overflow: hidden;
+}
+
+.person > .avatar.active {
+	opacity: 1;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.person > .avatar img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin-top: 20px;
+	-webkit-transition: border .1s;
+			transition: border .1s;
+}
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.active {
+  animation-name: bounceIn;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}

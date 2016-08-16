@@ -21,11 +21,6 @@ function checkTime(i) {
   return i;
 }
 
-// $(document).ready(function() {
-//   startTime();
-
-//   $('button').click(function() {
-//     $('.pt-page-1').addClass('pt-page-scaleDown');
-//     $('.pt-page-2').addClass('pt-page-scaleUpDown pt-page-delay300');
-//   });
-// });
+$(document).ready(function() {
+  startTime();
+});

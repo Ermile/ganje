@@ -9,44 +9,120 @@
 
 
 {%block body%}
+<div id="pt-main" class="pt-perspective">
+	<div class="pt-page pt-page-1 pt-page-current">
+		<div class="row">
+			<div class="span2">
+				<div class="sidebar">
+					<div id="besmellah">بسم الله الرحمن الرحیم</div>
 
- <div id="pt-main" class="pt-perspective">
-  <div class="pt-page pt-page-1 pt-page-current">
-	<h1><span>A collection of</span><strong>Page</strong> Transitions1</h1>
-	<div class="span4">
+					<div id="time">
+						<span class="hour"></span>:<span class="minute"></span>:<span class="second"></span>
+					</div>
 
-	<div class="besmellah">بسم الله الرحمن الرحیم</div>
+					<div id="date">{{"now"|jdate("l j F Y")}}</div>
 
-	<div id="clock">
-	<span class="hour"></span>:<span class="minute"></span>:<span class="second"></span>
-	</div>
+					<div id="logo"></div>
 
-	<div id="logo"></div>
+					<h1>ارمایل</h1>
 
-	<h1>ارمایل</h1>
+					<div id="poem">
+						<div>از دست غیبت تو شکایت نمی‌کنم</div>
+						<div>تا نیست غیبتی نبود لذت حضور</div>
+					</div>
+				</div>
+			</div>
 
-	<div class="poem">
-	<span class="float-right">از دست غیبت تو شکایت نمی‌کنم</span>
-	<span class="float-left">تا نیست غیبتی نبود لذت حضور</span>
-	</div>
+			<div class="span10 content">
 
-	<form method="post">
-	<input type="text" name="userId">
-	<input type="text" name="minus">
-	<input type="text" name="plus">
-	<input type="submit" name="submit">
-	</form>
+				<div class="container">
+					<div class="row">
+						<div class="person">
+							<div class="avatar">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
 
-	</div>
+						<div class="person">
+							<div class="avatar">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
 
-  </div>
+						<div class="person">
+							<div class="avatar active">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
 
-  <div class="pt-page pt-page-2"><h1><span>A collection of</span><strong>Page</strong> Transitions2</h1></div>
- </div>
+						<div class="person">
+							<div class="avatar">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
 
+						<div class="person">
+							<div class="avatar active">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
 
+						<div class="person">
+							<div class="avatar">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
 
+						<div class="person">
+							<div class="avatar">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
 
+						<div class="person">
+							<div class="avatar">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
+
+						<div class="person">
+							<div class="avatar">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
+
+						<div class="person">
+							<div class="avatar">
+								<img src="/static/images/avatar/{{random(14)}}.png">
+							</div>
+							<div class="info"></div>
+						</div>
+
+						<div class="clear:both"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- <form method="post">
+		<input type="text" name="userId">
+		<input type="text" name="minus">
+		<input type="text" name="plus">
+		<input type="submit" name="submit">
+		</form> -->
+  	</div>
+	<div class="pt-page pt-page-2"></div>
+</div>
 {%endblock%}
 
 
