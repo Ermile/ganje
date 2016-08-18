@@ -49,36 +49,32 @@ private function transtext()
 
 	//-----------------------------------saloos-addons\content_cp\home\layout-xhr.html
 	echo T_("Add New Record");                                                        // Line 84 Seperate
-	echo T_("View your current location and navigate to parent of it");               // Line 86
+	echo T_("View your current location and navigate to parent of it");               // Line 51
 
 	//---------------------------------------saloos-addons\content_cp\home\layout.html
 	echo T_("Use this menu for navigating to all part of control panel");             // Line 8
 	echo T_("Dashboard");                                                             // Line 90 Seperate
-	echo T_("Polls");                                                                 // Line 17
-	echo T_("Books");                                                                 // Line 23
-	echo T_("Visitors");                                                              // Line 30
-	echo T_("Social networks");                                                       // Line 33
-	echo T_("Permissions");                                                           // Line 36
-	echo T_("Options");                                                               // Line 81 Seperate
-	echo T_("Tools");                                                                 // Line 157 Seperate
 	echo T_("Homepage");                                                              // Line 73 Seperate
-	echo T_("Next →");                                                              // Line 56
-	echo T_("← Back");                                                              // Line 56
-	echo T_("Skip");                                                                  // Line 56
-	echo T_("Done");                                                                  // Line 56
-	echo T_("Help");                                                                  // Line 58
-	echo T_("You can work with control panel in your language");                      // Line 60
-	echo T_("Go to your profile, change password or logout from conrtol panel");      // Line 72
+	echo T_("Next →");                                                              // Line 21
+	echo T_("← Back");                                                              // Line 21
+	echo T_("Skip");                                                                  // Line 21
+	echo T_("Done");                                                                  // Line 21
+	echo T_("Help");                                                                  // Line 23
+	echo T_("You can work with control panel in your language");                      // Line 25
+	echo T_("Go to your profile, change password or logout from conrtol panel");      // Line 37
 	echo T_("My Profile");                                                            // Line 97 Seperate
 	echo T_("Change Password");                                                       // Line 330 Seperate
 	echo T_("Lock Screen");                                                           // Line 99 Seperate
 	echo T_("Logout");                                                                // Line 100 Seperate
-	echo T_("We glad to working for you and hope you enjoy using our system");        // Line 102
-	echo T_("Some right reserved");                                                   // Line 104
-	echo T_("Powered by");                                                            // Line 104
+	echo T_("We glad to working for you and hope you enjoy using our system");        // Line 67
+	echo T_("Some right reserved");                                                   // Line 69
+	echo T_("Powered by");                                                            // Line 69
 	echo T_("Saloos");                                                                // Line 7 Seperate
-	echo T_("Last update on");                                                        // Line 106
+	echo T_("Last update on");                                                        // Line 71
+	echo T_("wait for next version!");                                                // Line 71
 	echo T_("Version");                                                               // Line 103 Seperate
+
+	//-------------------------------------saloos-addons\content_cp\home\sidemenu.html
 
 	//-----------------------------------saloos-addons\content_cp\options\display.html
 	echo T_("General");                                                               // Line 69
@@ -126,8 +122,8 @@ private function transtext()
 	echo T_("Allow or disallow user to delete in all part of service");               // Line 48
 	echo T_("Allow or disallow user to access another user data");                    // Line 50
 	echo T_("Admin");                                                                 // Line 151 Seperate
-	echo T_("Empty");                                                                 // Line 104
-	echo T_("In this section you can edit permission of");                            // Line 108
+	echo T_("Empty");                                                                 // Line 99
+	echo T_("In this section you can edit permission of");                            // Line 103
 
 	//--------------------------------------saloos-addons\content_cp\posts\layout.html
 	echo T_("Enter title here");                                                      // Line 19
@@ -180,6 +176,7 @@ private function transtext()
 	echo T_("Define poll conditions");                                                // Line 224
 
 	//---------------------------saloos-addons\content_cp\templates\child_display.html
+	echo T_("Options");                                                               // Line 81 Seperate
 
 	//-----------------------------saloos-addons\content_cp\templates\child_posts.html
 
@@ -307,7 +304,7 @@ private function transtext()
 	echo T_("SiteContent");                                                           // Line 80 Seperate
 	echo T_("Terms");                                                                 // Line 93 Seperate
 	echo T_("Comments");                                                              // Line 95 Seperate
-	echo T_("Profile");                                                               // Line 98 Seperate
+	echo T_("Profile");                                                               // Line 370 Seperate
 	echo T_("Powered by Saloos.");                                                    // Line 101 Seperate
 	echo T_("All right reserved.");                                                   // Line 102 Seperate
 	echo T_("Comming Soon");                                                          // Line 104 Seperate
@@ -351,6 +348,7 @@ private function transtext()
 	echo T_("Writer");                                                                // Line 154 Seperate
 	echo T_("utility");                                                               // Line 155 Seperate
 	echo T_("Utility");                                                               // Line 156 Seperate
+	echo T_("Tools");                                                                 // Line 157 Seperate
 	echo T_("tools");                                                                 // Line 158 Seperate
 	echo T_("tool");                                                                  // Line 159 Seperate
 	echo T_("Chart must be contain at least 2 column!");                              // Line 160 Seperate
@@ -502,7 +500,28 @@ private function transtext()
 	echo T_("Your password is changed successfully");                                 // Line 351 Seperate
 	echo T_("Now we only support IRAN!");                                             // Line 352 Seperate
 	echo T_("Thanks for using our service");                                          // Line 354 Seperate
-	echo T_(" ");                                                                     // Line 357 Seperate
+	echo T_("Dear user");                                                             // Line 359 Seperate
+	echo T_("For using this service we need to register your phone number.");         // Line 360 Seperate
+	echo T_("Please send your number with below keyboard to complete registeration.");// Line 361 Seperate
+	echo T_("Dear friend");                                                           // Line 362 Seperate
+	echo T_("We need your phone number to verifying your account.");                  // Line 363 Seperate
+	echo T_("If you dont want share your number, we cant presenting our services to you!");// Line 364 Seperate
+	echo T_("Registering user is successful.");                                       // Line 365 Seperate
+	echo T_("Cancel registration and return to main menu");                           // Line 366 Seperate
+	echo T_("Please only use below keyboard");                                        // Line 367 Seperate
+	echo T_("We need your contact!");                                                 // Line 368 Seperate
+	echo T_("Register User 📱");                                                    // Line 371 Seperate
+	echo T_("Register User");                                                         // Line 372 Seperate
+	echo T_("Return");                                                                // Line 373 Seperate
+	echo T_("Register Mobile Number 📱");                                           // Line 374 Seperate
+	echo T_("Register Mobile Number");                                                // Line 375 Seperate
+	echo T_("Register Address");                                                      // Line 376 Seperate
+	echo T_("By completing your profile, help us to present better service.");        // Line 377 Seperate
+	echo T_("We will thank you for this.");                                           // Line 378 Seperate
+	echo T_("Your phone number registered successfully;)");                           // Line 380 Seperate
+	echo T_("We dont need another users contact:?)");                                 // Line 381 Seperate
+	echo T_("We need mobile number!");                                                // Line 382 Seperate
+	echo T_(" ");                                                                     // Line 386 Seperate
 
 	//-----------------------------------------saloos-addons\includes\macro\forms.html
 	echo T_("Select");                                                                // Line 80
