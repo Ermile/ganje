@@ -11,41 +11,54 @@
 {%block body%}
 <div id="pt-main" class="pt-perspective">
 	<div class="pt-page pt-page-1 pt-page-current">
-		<div class="row">
-			<div class="span2">
+		<div class="row auto">
+			<div class="span3">
 				<div class="sidebar">
-					<div id="besmellah">بسم الله الرحمن الرحیم</div>
+					<div id="besmellah">{% trans "In the Name of God" %}</div>
 
 					<div id="time">
 						<span class="hour"></span>:<span class="minute"></span>:<span class="second"></span>
 					</div>
 
+				{% if site.currentlang == "fa" %}
 					<div id="date">{{"now"|jdate("l j F Y")}}</div>
+				{% else %}
+					<div id="date">{{"now"|date("l j F Y")}}</div>
+				{% endif %}
+
 
 					<div id="logo"></div>
 
-					<h1>ارمایل</h1>
+					<h1>{% trans "Ermile" %}</h1>
 
+				{% if site.currentlang == "fa" %}
 					<div id="poem">
 						<div>از دست غیبت تو شکایت نمی‌کنم</div>
 						<div>تا نیست غیبتی نبود لذت حضور</div>
 					</div>
+				{% endif %}
 				</div>
 			</div>
 
-			<div class="span10 content">
+			<div class="span9 content">
 
 				<div class="container">
 					<div class="row">
 					{% for i, user in list %}
 
-						<div class="person">
+						<div class="person card active">
 							<div class="avatar">
 
 								<img src="/static/images/avatar/{{random(14)}}.png">
 							</div>
-							{{user.id}}:{{user.user_displayname}}
-							<div class="info"></div>
+
+							<div class="info">
+								{% set name = user.user_displayname %}
+
+								<div class="header">{% trans name %}</div>
+								<div class="description">Some description</div>
+								<div class="meta">{{user.id}}</div>
+							</div>
 						</div>
 
 					{%endfor%}

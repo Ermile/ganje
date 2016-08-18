@@ -127,19 +127,16 @@ body {
 }
 
 .content {
-	padding-top: 10%;
-}
-
-.content .row {
+	padding-top: 10vh;
 	text-align: center;
 }
 
-.person {
+.person.circle {
 	display: inline-block;
 	margin: 1.5em 2em;
 }
 
-.person > .avatar{
+.person.circle > .avatar{
 	width: 200px;
 	height: 200px;
 	background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
@@ -150,7 +147,7 @@ body {
 	overflow: hidden;
 }
 
-.person > .avatar.active {
+.person.circle > .avatar.active {
 	opacity: 1;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	animation-name: bounceIn;
@@ -159,7 +156,7 @@ body {
 	animation-iteration-count: infinite;
 }
 
-.person > .avatar img {
+.person.circle > .avatar img {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
@@ -192,6 +189,79 @@ body {
 		opacity: 1;
 		transform: scale3d(1, 1, 1);
 	}
+}
+
+/* card ui */
+.person.card {
+	display: inline-block;
+	margin: 1em 0.5em;
+	width: 200px;
+	min-height: 0;
+	background-color: #fff;
+	padding: 0;
+	border: none;
+	border-radius: .28571429rem;
+	box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
+	opacity: 0.3;
+}
+
+.person.card:last-child {
+	margin-bottom: 0;
+}
+
+.person.card.active {
+	opacity: 1;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.person.card > .avatar {
+	overflow: hidden;
+	background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+
+.person.card > .avatar > img {
+	position: relative;
+	top: 25px;
+}
+
+.person.card > .info {
+	border: none;
+	border-top: 1px solid rgba(34,36,38,.1);
+	margin: 0;
+	padding: 1em;
+	box-shadow: none;
+	font-size: 1em;
+	text-align: left;
+	position: relative;
+}
+
+.rtl .person.card > .info {
+	text-align: right;
+}
+
+.person.card > .info > .header {
+	font-weight: 700;
+	font-size: 1em;
+	margin-top: 0;
+	line-height: 1.2857em;
+	color: rgba(0,0,0,.85);
+}
+
+.person.card > .info > .meta {
+	font-size: 0.8em;
+	color: rgba(0,0,0,.4);
+	position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.rtl .person.card > .info > .meta {
+	right: unset;
+	left: 10px;
+}
+
+.person.card > .info > .description {
+	font-size: 0.8em;
 }
 
 .user-avatar {
@@ -246,4 +316,10 @@ body {
 	font-size: 3em;
 	font-weight: 700;
 	color: red;
+}
+
+@media screen and (max-height: 700px) {
+	.sidebar > #poem {
+		display: none;
+	}
 }
