@@ -107,14 +107,24 @@ class model extends \mvc\model
 	public function post_list(){
 		$date = date("Y-m-d");
 
-		$query = "
-				SELECT
-				u.id,u.user_displayname,options.option_value, hours.hour_start
+		$query =
+				"SELECT
+					u.id,
+					u.user_displayname,
+					options.option_value as position ,
+					hours.hour_start
 				FROM users u
-				LEFT JOIN hours on hours.user_id = u.id and hours.hour_date = DATE(NOW())  AND hours.hour_end is null
+				LEFT JOIN hours
+					ON hours.user_id = u.id
+					AND hours.hour_date = DATE(NOW())
+					AND hours.hour_end is null
 				LEFT JOIN options ON
-				options.user_id = u.id AND options.option_cat = 'user_meta' AND options.option_key = 'position'
-				WHERE u.user_status = 'active'  ";
+					options.user_id = u.id
+					AND options.option_cat = 'user_meta'
+					AND options.option_key = 'position'
+				WHERE u.user_status = 'active'
+				ORDER BY u.id
+				";
 
 		$users = db::get($query);
 		return array('list' => $users, 'summary' => $this->summary());
