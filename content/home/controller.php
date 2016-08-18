@@ -17,8 +17,6 @@ class controller extends \mvc\controller
 			$redirector->set_domain()->set_url('login')->redirect();
 		}else{
 			$this->post("hours")->ALL();
-			
-			// $this->get(false, "list")->ALL();
 		}
 
 	}

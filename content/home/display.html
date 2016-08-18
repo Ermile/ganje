@@ -44,7 +44,8 @@
 
 				<div class="container">
 					<div class="row">
-					{% for i, user in list %}
+
+					{% for i, user in list.list %}
 
 						<div class="person card active">
 							<div class="avatar">
@@ -77,6 +78,42 @@
 		<input type="submit" name="submit">
 		</form> -->
   	</div>
+
+  	<!--  next page  -->
+  	{%for key, value in list.summary %}
+
+
+
+		<div class="pt-page pt-page-{{key}}">
+			<div class="container">
+				<div class="row">
+					<div class="span5 user-avatar">
+						<div class="avatar">
+							<img src="/static/images/avatar/{{random(14)}}.png">
+						</div>
+
+						<div class="name">{{value.name}}</div>
+					</div>
+					<div class="span7 user-info">
+						<ul>
+							<li class="today">{{value.week.total}}</li>
+							<li class="today">{{value.month.total}}</li>
+							<li class="today">{{value.week.plus}}</li>
+							<li class="today">{{value.week.diff}}</li>
+							<li class="today">{{value.week.minus}}</li>
+
+							<li class="remote">100</li>
+							<li class="idle">20</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	{%endfor%}
+
+
 	<div class="pt-page pt-page-2">
 		<div class="container">
 			<div class="row">

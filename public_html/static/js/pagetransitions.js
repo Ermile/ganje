@@ -60,12 +60,14 @@ var PageTransitions = (function() {
 	}
 
 	function summary(){
+		$(".avatar img").attr("src");
+		
 		$.ajax({
 			type: "POST",
 			url : "/",
-			data : {'type' : "summary", 'id' : 1},
+			data : {'type' : "summary"},
 			success : function(data){		
-				console.log(data);
+				console.log(data.msg.data);
 			}
 		});	
 	}

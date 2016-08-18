@@ -17,10 +17,10 @@ class model extends \mvc\model
 
 		switch ($type) {
 			case 'summary':
-				$this->summary(utility::post("id"));
+				$this->summary();
 				return ;
 				break;
-			
+
 			default:
 				# code...
 				break;
@@ -32,7 +32,7 @@ class model extends \mvc\model
 
 		//----------- check users status
 		if($this->check_user()){
-			//------- set time 
+			//------- set time
 			$this->set_time();
 		}
 	}
@@ -53,28 +53,28 @@ class model extends \mvc\model
 	}
 
 	public function set_time(){
-		
+
 		$date = date("Y-m-d");
 		$time = date("H:i:s");
 
-		$query = "SELECT * FROM hours 
-					WHERE 
+		$query = "SELECT * FROM hours
+					WHERE
 						user_id   = {$this->user_id} AND
 						hour_date = '$date' AND
 						hour_end is null
 					LIMIT 1";
 
 		$check_date = db::get($query, null, true);
-		
+
 		if($check_date == null) {
 
 			//----- add firs time in day
 			$insert = "INSERT INTO hours
 						SET user_id = {$this->user_id},
 							hour_date = '$date',
-							hour_start = '$time' 
+							hour_start = '$time'
 							";
-		
+
 			db::query($insert);
 
 			debug::true(T_("Your are Entered"));
@@ -82,22 +82,22 @@ class model extends \mvc\model
 		}elseif($check_date['hour_end'] == null){
 
 			//------- add end time
-			$update = "UPDATE hours			
+			$update = "UPDATE hours
 						SET hour_end = '$time',
 							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
 							hour_plus = {$this->plus},
 							hour_minus = {$this->minus},
-							hour_total = (hour_diff + hour_plus - hour_minus)  
+							hour_total = (hour_diff + hour_plus - hour_minus)
 
-						WHERE 
+						WHERE
 							id = {$check_date['id']} ";
-					
+
 			db::query($update);
 
-			debug::true(T_("Your are Exited"));			
+			debug::true(T_("Your are Exited"));
 
 		}
-		
+
 	}
 
 
@@ -106,42 +106,86 @@ class model extends \mvc\model
 	*/
 	public function post_list(){
 		$date = date("Y-m-d");
-		db::query("set sql_mode = '' ", false);
 
-		$query = " 
-				SELECT 
-					u.id,u.user_displayname
-				FROM users u 
+		$query = "
+				SELECT
+					u.id,u.user_displayname,options.option_value
+				FROM users u
+				LEFT JOIN options ON
+				options.user_id = u.id AND options.option_cat = 'user_meta' AND options.option_key = 'position'
 				WHERE u.user_status = 'active'  ";
 
 		$users = db::get($query);
-		return $users;
+		return array('list' => $users, 'summary' => $this->summary());
 	}
 
-	public function summary($user_id = false) {
+	public function summary() {
 		$date = date("Y-m-d");
 
-		//-------- sql_mode = "" !!!!!!
-		// WEEK(hours.hour_date), MONTH(hours.hour_date)
-		
-		$daily = "SELECT 
-					hours.user_id,
-					users.user_displayname,
-					hours.hour_date, 
-					sum(hours.hour_total) as total ,
-					sum(hours.hour_diff) as diff,
-					sum(hours.hour_plus) as plus,
-					sum(hours.hour_minus) as minus
-					FROM hours 
-					INNER JOIN users on hours.user_id = users.id
-					WHERE hours.user_id = $user_id and hours.hour_date = '$date'
-					GROUP BY 
-						hours.user_id,
-						hours.hour_date
-					";
-		$report[] = db::get($daily);
-		
-		return $report;
+		//-------- sql_mode = "" => SET GLOBAL sql_mode = '';
+
+		$report = array();
+
+		//--------- repeat to every query
+		$field = "users.id,users.user_displayname,
+				  sum(hours.hour_total) as total,
+				  sum(hours.hour_diff) as diff,
+				  sum(hours.hour_plus) as plus,
+				  sum(hours.hour_minus) as minus
+				";
+		$join =	"FROM hours
+				  INNER JOIN users on hours.user_id = users.id
+				  WHERE 1 ";
+
+
+		$qry =
+		"SELECT $field,
+			'daily' as type
+			$join
+			AND hours.hour_date = '$date'
+			GROUP BY
+				hours.user_id,
+				hours.hour_date
+
+		UNION
+			SELECT $field,
+			'week' as type
+			$join
+			AND WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR(NOW())
+			GROUP BY hours.user_id
+
+		UNION
+		SELECT $field,
+			'month' as type
+			$join
+			AND YEAR(hours.hour_date) = YEAR(NOW()) AND MONTH(hours.hour_date)=MONTH(NOW())
+			GROUP BY hours.user_id
+
+		";
+		$report = db::get($qry);
+
+
+		// var_dump($report);exit();
+		$return  = array();
+		foreach ($report as $key => $value) {
+			$id = $value['id'];
+			if(!isset($return[$id])) {
+
+				$return[$id] = [];
+				$return[$id]['id'] = $id;
+				$return[$id]['name'] = $value['user_displayname'];
+			}
+
+			$return[$id][$value['type']]['diff'] = $value['diff'];
+			$return[$id][$value['type']]['plus'] = $value['plus'];
+			$return[$id][$value['type']]['minus'] = $value['minus'];
+			$return[$id][$value['type']]['total'] = $value['total'];
+
+		}
+		return $return;
+		//-------- return json
+		// debug::msg("data", $report);
+		// $this->_processor(['force_json'=>true, 'not_redirect'=>true]);
 	}
 
 }
