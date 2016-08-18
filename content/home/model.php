@@ -106,12 +106,12 @@ class model extends \mvc\model
 	*/
 	public function post_list(){
 		$date = date("Y-m-d");
-
+		$no_position = T_("Undefined");
 		$query =
 				"SELECT
 					u.id,
 					u.user_displayname,
-					options.option_value as position ,
+					IFNULL(options.option_value,'$no_position') as position,
 					hours.hour_start
 				FROM users u
 				LEFT JOIN hours
