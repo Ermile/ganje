@@ -109,8 +109,9 @@ class model extends \mvc\model
 
 		$query = "
 				SELECT
-					u.id,u.user_displayname,options.option_value
+				u.id,u.user_displayname,options.option_value, hours.hour_start
 				FROM users u
+				LEFT JOIN hours on hours.user_id = u.id and hours.hour_date = DATE(NOW())  AND hours.hour_end is null
 				LEFT JOIN options ON
 				options.user_id = u.id AND options.option_cat = 'user_meta' AND options.option_key = 'position'
 				WHERE u.user_status = 'active'  ";

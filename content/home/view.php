@@ -14,7 +14,7 @@ class view extends \mvc\view
 			$this->include->css          = true;
 		}
 		//----- list of users
-		$this->data->list = $this->model()->post_list();
+		$this->data->datatable = $this->model()->post_list();
 	}
 
 
