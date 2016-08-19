@@ -135,30 +135,6 @@ html, body { height: 100%; }
 	z-index: 999;
 }
 
-.pt-page-1 {
-	/*background: #0ac2d2;*/
-}
-
-.pt-page-2 {
-	/*background: #7bb7fa;*/
-}
-
-.pt-page-3 {
-	background: #60d7a9;
-}
-
-.pt-page-4 {
-	background: #fdc162;
-}
-
-.pt-page-5 {
-	background: #fd6a62;
-}
-
-.pt-page-6 {
-	background: #f68dbb;
-}
-
 /* Triggers (menu and button) */
 
 .pt-triggers {

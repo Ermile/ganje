@@ -35,7 +35,7 @@
 
 {% for i, user in datatable.list %}
 
-      <div class="person card {% if user.hour_start is not null %} active {%endif%}">
+      <div class="person card{% if user.hour_start is not null %} active{%endif%}">
        <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
 {% set name = user.user_displayname %}
        <div class="info">
@@ -65,50 +65,53 @@
    <!--  next page  -->
 
 {%for key, value in datatable.summary %}
-  <div class="pt-page pt-page-{{key}}">
+  <div class="pt-page pt-page-{{key}} pt-page-background">
    <div class="container">
     <div class="row">
 
-     <div class="span5 user-avatar">
-      <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
-      <div class="name">{{value.name}}</div>
+     <div class="span5">
+      <div class="person card active big">
+        <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
+
+        <div class="info">
+          <div class="header">
+            {% set name = value.name %}
+            {% trans name %}
+          </div>
+
+          <div>
+            {% if value.month.total %}
+              {{value.month.total}}
+            {% else %}
+              120 hours in this month
+            {% endif %}
+          </div>
+
+          <div>
+            {% if value.week.total %}
+              {{value.week.total}}
+            {% else %}
+              30 hours in this week
+            {% endif %}
+          </div>
+
+          <div>35 hours remote time in this week</div>
+
+          <div>20 hours idle time in this week</div>
+        </div>
+      </div>
      </div>
 
-     <div class="span7 user-info">
-      <ul>
-       <li class="today">{{value.week.total}}</li>
-       <li class="today">{{value.month.total}}</li>
-       <li class="today">{{value.week.plus}}</li>
-       <li class="today">{{value.week.diff}}</li>
-       <li class="today">{{value.week.minus}}</li>
-       <li class="remote">100</li>
-       <li class="idle">20</li>
-      </ul>
+     <div class="span7">
+      <div class="person_statistics">
+
+      </div>
      </div>
     </div>
    </div>
   </div>
 {%endfor%}
 
-
- <div class="pt-page pt-page-2">
-  <div class="container">
-   <div class="row">
-    <div class="span5 user-avatar">
-     <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
-     <div class="name">جواد عوض زاده</div>
-    </div>
-    <div class="span7 user-info">
-     <ul>
-      <li class="today">02:25</li>
-      <li class="remote">100</li>
-      <li class="idle">20</li>
-     </ul>
-    </div>
-   </div>
-  </div>
- </div>
-</div>
 {%endblock%}
 
 
