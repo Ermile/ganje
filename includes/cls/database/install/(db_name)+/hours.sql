@@ -36,6 +36,8 @@ CREATE TABLE `hours` (
   `hour_minus` smallint(5) UNSIGNED DEFAULT NULL,
   `hour_plus` smallint(5) UNSIGNED DEFAULT NULL,
   `hour_total` smallint(5) UNSIGNED DEFAULT NULL,
+  `hour_status` enum('raw','mines','plus','all','disable','enable','expire') NOT NULL DEFAULT 'raw',
+  `hour_accepted` smallint(6) NULL,
   `date_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 --
@@ -60,7 +62,3 @@ ALTER TABLE `hours`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-
