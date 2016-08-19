@@ -26,9 +26,9 @@ class model extends \mvc\model
 				break;
 		}
 		//----------- get value
-		$this->user_id = intval(utility::post('userId'));
-		$this->plus = (utility::post('plus') == null) ? 0 : intval(utility::post('plus'));
-		$this->minus = (utility::post('minus') == null) ? 0 : intval(utility::post('minus'));
+		$this->user_id = utility::post('userId');
+		$this->plus = (utility::post('plus') == null) ? 0 : utility::post('plus');
+		$this->minus = (utility::post('minus') == null) ? 0 : utility::post('minus');
 
 		//----------- check users status
 		if($this->check_user()){
@@ -41,8 +41,14 @@ class model extends \mvc\model
 	* check users status
 	*/
 	public function check_user(){
+		$query = "
+				SELECT
+					user_status
+				FROM users
+				WHERE id = {$this->user_id}
+				LIMIT 1";
 
-		$check_user = db::get("SELECT * FROM users WHERE id = {$this->user_id} LIMIT 1", "user_status", true);
+		$check_user = db::get($query, "user_status", true);
 
 		if($check_user != "active"){
 			debug::error(T_("User not found"));
@@ -87,7 +93,9 @@ class model extends \mvc\model
 							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
 							hour_plus = {$this->plus},
 							hour_minus = {$this->minus},
-							hour_total = (hour_diff + hour_plus - hour_minus)
+							hour_total = (hour_diff + hour_plus - hour_minus),
+							hour_status = 'raw',
+							hour_accepted = hour_total
 
 						WHERE
 							id = {$check_date['id']} ";

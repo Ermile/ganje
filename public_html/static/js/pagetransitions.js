@@ -61,15 +61,15 @@ var PageTransitions = (function() {
 
 	function summary(){
 		$(".avatar img").attr("src");
-		
+
 		$.ajax({
 			type: "POST",
 			url : "/",
-			data : {'type' : "summary"},
-			success : function(data){		
-				console.log(data.msg.data);
+			data : {'userId' : 4},
+			success : function(data){
+				console.log(data);
 			}
-		});	
+		});
 	}
 
 	function nextPage(options ) {

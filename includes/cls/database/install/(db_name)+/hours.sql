@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 14, 2016 at 07:15 PM
+-- Generation Time: Aug 19, 2016 at 11:48 AM
 -- Server version: 5.7.13-0ubuntu0.16.04.2
 -- PHP Version: 7.0.8-0ubuntu0.16.04.2
 
@@ -37,7 +37,7 @@ CREATE TABLE `hours` (
   `hour_plus` smallint(5) UNSIGNED DEFAULT NULL,
   `hour_total` smallint(5) UNSIGNED DEFAULT NULL,
   `hour_status` enum('raw','mines','plus','all','disable','enable','expire') NOT NULL DEFAULT 'raw',
-  `hour_accepted` smallint(6) NULL,
+  `hour_accepted` smallint(6) DEFAULT NULL,
   `date_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 --
@@ -58,7 +58,7 @@ ALTER TABLE `hours`
 -- AUTO_INCREMENT for table `hours`
 --
 ALTER TABLE `hours`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

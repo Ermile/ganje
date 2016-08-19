@@ -25,6 +25,13 @@ private function transtext()
 	// ------------------------------------------------------------ Table hours
 	echo T_("hours");               // Table hours
 	echo T_("hour");                // hour
+	echo T_("raw");                 // Enum raw
+	echo T_("mines");               // Enum mines
+	echo T_("plus");                // Enum plus
+	echo T_("all");                 // Enum all
+	echo T_("disable");             // Enum disable
+	echo T_("enable");              // Enum enable
+	echo T_("expire");              // Enum expire
 	echo T_("date");                // hour_date
 	echo T_("start");               // hour_start
 	echo T_("end");                 // hour_end
@@ -32,6 +39,8 @@ private function transtext()
 	echo T_("minus");               // hour_minus
 	echo T_("plus");                // hour_plus
 	echo T_("total");               // hour_total
+	echo T_("status");              // hour_status
+	echo T_("accepted");            // hour_accepted
 
 	// ------------------------------------------------------------ Table logitems
 	echo T_("logitems");            // Table logitems
@@ -48,9 +57,6 @@ private function transtext()
 	// ------------------------------------------------------------ Table logs
 	echo T_("logs");                // Table logs
 	echo T_("log");                 // log
-	echo T_("enable");              // Enum enable
-	echo T_("disable");             // Enum disable
-	echo T_("expire");              // Enum expire
 	echo T_("deliver");             // Enum deliver
 	echo T_("logitem");             // logitem_id
 	echo T_("data");                // log_data
