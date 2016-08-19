@@ -43,36 +43,42 @@ class model extends \mvc\model
 
 		$check = db::get("SELECT * FROM hours WHERE id = $id LIMIT 1 ",null, true);
 
-		//------- time unchange when updating status
-		$saved_time = "hour_start";
-		$time       = "hour_end";
+		if(!$check) {
+			debug::error(T_("id not found"));
+		}else{
 
-		//-------- update time when time posted
-		if($check['hour_end'] == null AND $edit) {
+			//------- time unchange when updating status
+			$saved_time = "hour_start";
+			$time       = "hour_end";
 
-			$saved_time = $check['hour_start'];
+			//-------- update time when time posted
+			if($check['hour_end'] == null AND $edit) {
 
-			if($saved_time > $time){
-				$temp = $time;
-				$time = "'$saved_time'";
-				$saved_time = "'$temp'";
+				$saved_time = $check['hour_start'];
+
+				if($saved_time > $time){
+					$temp = $time;
+					$time = "'$saved_time'";
+					$saved_time = "'$temp'";
+				}
+
 			}
 
+			$update = "UPDATE hours
+						SET
+							hour_start = $saved_time,
+							hour_end = $time,
+							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
+							hour_total = (hour_diff + hour_plus - hour_minus)
+							$status
+						WHERE
+							id = $id ";
+
+			db::query($update);
+
+			debug::true("Saved");
+
 		}
-
-		$update = "UPDATE hours
-					SET
-						hour_start = $saved_time,
-						hour_end = $time,
-						hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-						hour_total = (hour_diff + hour_plus - hour_minus)
-						$status
-					WHERE
-						id = $id ";
-
-		db::query($update);
-
-		debug::true("Saved");
 	}
 
 }
