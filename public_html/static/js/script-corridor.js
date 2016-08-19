@@ -15,7 +15,14 @@ function event_corridor(e, _self, _key)
   var shift  = e.shiftKey ? 'shift' : '';
   var alt    = e.altKey   ? 'alt'   : '';
   var mytxt  = String(_key) + ctrl + alt + shift;
+  var num    = _key - 48;
 
+  // select item with number
+  if(num > 0 || num < 9)
+  {
+    $('.person').removeClass('selected');
+    $('.person:eq('+ (num-1) +')').addClass('selected');
+  }
 
   switch(mytxt)
   {

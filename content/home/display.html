@@ -33,7 +33,7 @@
 
 {% for i, user in datatable.list %}
 
-      <div class="person card{% if user.hour_start is not null %} active{%endif%}">
+      <div data-id="{{user.id}}" class="person card{% if user.hour_start is not null %} active{%endif%}">
        <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
 {% set name = user.user_displayname %}
        <div class="info">
