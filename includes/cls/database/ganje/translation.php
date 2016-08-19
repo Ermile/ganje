@@ -26,7 +26,7 @@ private function transtext()
 	echo T_("hours");               // Table hours
 	echo T_("hour");                // hour
 	echo T_("raw");                 // Enum raw
-	echo T_("mines");               // Enum mines
+	echo T_("minus");               // Enum minus
 	echo T_("plus");                // Enum plus
 	echo T_("all");                 // Enum all
 	echo T_("disable");             // Enum disable

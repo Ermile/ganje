@@ -11,8 +11,8 @@ class controller extends \mvc\controller
 	// for routing check
 	function _route()
 	{
-		// $this->post("edit")->ALL();
-		$this->get(null,"edit")->ALL("/edit\=\d+^/");
+		$this->post("edit")->ALL();
+		// $this->get(null,"edit")->ALL("/edit\=\d+^/");
 	}
 }
 ?>

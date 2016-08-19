@@ -11,7 +11,7 @@ class hours
 	public $hour_minus    = ['null'=>'YES' ,'show'=>'YES'     ,'label'=>'minus'           ,'type'=>'smallint@5'];
 	public $hour_plus     = ['null'=>'YES' ,'show'=>'YES'     ,'label'=>'plus'            ,'type'=>'smallint@5'];
 	public $hour_total    = ['null'=>'YES' ,'show'=>'YES'     ,'label'=>'total'           ,'type'=>'smallint@5'];
-	public $hour_status   = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'status'          ,'type'=>'enum@raw,mines,plus,all,disable,enable,expire!raw'];
+	public $hour_status   = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'status'          ,'type'=>'enum@raw,minus,plus,all,disable,enable,expire!raw'];
 	public $hour_accepted = ['null'=>'YES' ,'show'=>'YES'     ,'label'=>'accepted'        ,'type'=>'smallint@6'];
 	public $date_modified = ['null'=>'YES' ,'show'=>'YES'     ,'label'=>'modified'        ,'type'=>'timestamp@'];
 
