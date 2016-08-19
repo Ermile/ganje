@@ -12,8 +12,6 @@ class view extends \mvc\view
 			$this->data->bodyclass  = 'unselectable';
 			$this->include->js_main      = false;
 			$this->include->css          = false;
-			var_dump("11111");
-
 		}
 	}
 
