@@ -1,138 +1,113 @@
 {%extends display.mvc%}
 
 {%block head_css%}
-<link rel="stylesheet" href="/static/css/default.css" />
-<link rel="stylesheet" href="/static/css/multilevelmenu.css" />
-<link rel="stylesheet" href="/static/css/component.css" />
-<link rel="stylesheet" href="/static/css/animations.css" />
+ <link rel="stylesheet"       href="/static/css/default.css" />
+ <link rel="stylesheet"       href="/static/css/animations.css" />
 {%endblock%}
 
 
 {%block body%}
 <div id="pt-main" class="pt-perspective">
-	<div class="pt-page pt-page-1 pt-page-current">
-		<div class="row auto">
-			<div class="span3">
-				<div class="sidebar">
-					<div id="besmellah">{% trans "In the Name of God" %}</div>
+ <div class="pt-page pt-page-1 pt-page-current">
+  <div class="row auto">
 
-					<div id="time">
-						<span class="hour"></span>:<span class="minute"></span>:<span class="second"></span>
-					</div>
+   <div class="span3">
+    <div class="sidebar">
+     <div id="besmellah">{% trans "In the Name of God" %}</div>
+     <div id="time"><span class="hour"></span>:<span class="minute"></span>:<span class="second"></span></div>
+     <div id="date">{% if site.currentlang == "fa" %} {{"now"|jdate("l j F Y")}} {% else %} {{"now"|date("l j F Y")}} {% endif %}</div>
 
-				{% if site.currentlang == "fa" %}
-					<div id="date">{{"now"|jdate("l j F Y")}}</div>
-				{% else %}
-					<div id="date">{{"now"|date("l j F Y")}}</div>
-				{% endif %}
+     <div id="logo"></div>
+     <h1>{% trans "Ermile" %}</h1>
 
+{% if site.currentlang == "fa" %}
+     <div id="poem">
+      <div>از دست غیبت تو شکایت نمی‌کنم</div>
+      <div>تا نیست غیبتی نبود لذت حضور</div>
+     </div>
+{% endif %}
+    </div>
+   </div>
 
-					<div id="logo"></div>
+   <div class="span9 content">
+    <div class="container">
+     <div class="row">
 
-					<h1>{% trans "Ermile" %}</h1>
+{% for i, user in datatable.list %}
 
-				{% if site.currentlang == "fa" %}
-					<div id="poem">
-						<div>از دست غیبت تو شکایت نمی‌کنم</div>
-						<div>تا نیست غیبتی نبود لذت حضور</div>
-					</div>
-				{% endif %}
-				</div>
-			</div>
+      <div class="person card {% if user.hour_start is not null %} active {%endif%}">
+       <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
+{% set name = user.user_displayname %}
+       <div class="info">
+        <div class="header">{% trans name %}</div>
+        <div class="description">{{user.position}}</div>
+        <div class="meta">{{user.id}}</div>
+       </div>
+      </div>
 
-			<div class="span9 content">
+     {%endfor%}
 
-				<div class="container">
-					<div class="row">
+      <div class="clear:both"></div>
+     </div>
+    </div>
 
-					{% for i, user in datatable.list %}
+   </div>
+  </div>
 
-						<div class="person card {% if user.hour_start is not null %} active {%endif%}">
-							<div class="avatar">
+  <!-- <form method="post">
+  <input type="text" name="userId">
+  <input type="text" name="minus">
+  <input type="text" name="plus">
+  <input type="submit" name="submit">
+  </form> -->
+   </div>
 
-								<img src="/static/images/avatar/{{random(14)}}.png">
-							</div>
+   <!--  next page  -->
 
-							<div class="info">
-								{% set name = user.user_displayname %}
+{%for key, value in datatable.summary %}
+  <div class="pt-page pt-page-{{key}}">
+   <div class="container">
+    <div class="row">
 
-								<div class="header">{% trans name %}</div>
-								<div class="description">{{user.position}}</div>
-								<div class="meta">{{user.id}}</div>
-							</div>
-						</div>
+     <div class="span5 user-avatar">
+      <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
+      <div class="name">{{value.name}}</div>
+     </div>
 
-					{%endfor%}
-
-						<div class="clear:both"></div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<!-- <form method="post">
-		<input type="text" name="userId">
-		<input type="text" name="minus">
-		<input type="text" name="plus">
-		<input type="submit" name="submit">
-		</form> -->
-  	</div>
-
-  	<!--  next page  -->
-
-  	{%for key, value in datatable.summary %}
-
-		<div class="pt-page pt-page-{{key}}">
-			<div class="container">
-				<div class="row">
-					<div class="span5 user-avatar">
-						<div class="avatar">
-							<img src="/static/images/avatar/{{random(14)}}.png">
-						</div>
-
-						<div class="name">{{value.name}}</div>
-					</div>
-					<div class="span7 user-info">
-						<ul>
-							<li class="today">{{value.week.total}}</li>
-							<li class="today">{{value.month.total}}</li>
-							<li class="today">{{value.week.plus}}</li>
-							<li class="today">{{value.week.diff}}</li>
-							<li class="today">{{value.week.minus}}</li>
-
-							<li class="remote">100</li>
-							<li class="idle">20</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+     <div class="span7 user-info">
+      <ul>
+       <li class="today">{{value.week.total}}</li>
+       <li class="today">{{value.month.total}}</li>
+       <li class="today">{{value.week.plus}}</li>
+       <li class="today">{{value.week.diff}}</li>
+       <li class="today">{{value.week.minus}}</li>
+       <li class="remote">100</li>
+       <li class="idle">20</li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+{%endfor%}
 
 
-	{%endfor%}
-
-
-	<div class="pt-page pt-page-2">
-		<div class="container">
-			<div class="row">
-				<div class="span5 user-avatar">
-					<div class="avatar">
-						<img src="/static/images/avatar/{{random(14)}}.png">
-					</div>
-
-					<div class="name">جواد عوض زاده</div>
-				</div>
-				<div class="span7 user-info">
-					<ul>
-						<li class="today">02:25</li>
-						<li class="remote">100</li>
-						<li class="idle">20</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+ <div class="pt-page pt-page-2">
+  <div class="container">
+   <div class="row">
+    <div class="span5 user-avatar">
+     <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
+     <div class="name">جواد عوض زاده</div>
+    </div>
+    <div class="span7 user-info">
+     <ul>
+      <li class="today">02:25</li>
+      <li class="remote">100</li>
+      <li class="idle">20</li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
 </div>
 {%endblock%}
 
