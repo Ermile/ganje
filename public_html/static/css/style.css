@@ -228,7 +228,7 @@ body {
     padding: 1em 2em;
     font-size: 1em;
     font-weight: 700;
-    box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .person_statistics .card.exit {
@@ -239,7 +239,7 @@ body {
     padding: 1em 2em;
     font-size: 1em;
     font-weight: 700;
-    box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .person_statistics .card.diff {
@@ -252,5 +252,6 @@ body {
     bottom: 0.45em;
     right: 25%;
     z-index: 3;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background: #fff;
 }
