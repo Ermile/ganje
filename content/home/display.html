@@ -11,8 +11,7 @@
  <div class="pt-page pt-page-1 pt-page-current">
   <div class="row auto">
 
-   <div class="span3">
-    <div class="sidebar">
+   <div class="span3 sidebar">
      <div id="besmellah">{% trans "In the Name of God" %}</div>
      <div id="time"><span class="hour"></span>:<span class="minute"></span>:<span class="second"></span></div>
      <div id="date">{% if site.currentlang == "fa" %} {{"now"|jdate("l j F Y")}} {% else %} {{"now"|date("l j F Y")}} {% endif %}</div>
@@ -26,7 +25,6 @@
       <div>تا نیست غیبتی نبود لذت حضور</div>
      </div>
 {% endif %}
-    </div>
    </div>
 
    <div class="span9 content">
@@ -50,7 +48,6 @@
       <div class="clear:both"></div>
      </div>
     </div>
-
    </div>
   </div>
 
@@ -61,8 +58,6 @@
   <input type="submit" name="submit">
   </form> -->
    </div>
-
-   <!--  next page  -->
 
 {%for key, value in datatable.summary %}
   <div class="pt-page pt-page-{{key}} pt-page-background">
@@ -103,9 +98,7 @@
      </div>
 
      <div class="span7">
-      <div class="person_statistics">
-
-      </div>
+      <div class="person_statistics"></div>
      </div>
     </div>
    </div>

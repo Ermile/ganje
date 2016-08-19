@@ -122,7 +122,6 @@ body {
 
 .person.card.active {
 	opacity: 1;
-	/*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
 	box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
 }
 
@@ -206,6 +205,10 @@ body {
 .person_statistics > div {
 	font-size: 2em;
 	font-weight: 700;
+}
+
+.selected {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 @media screen and (max-height: 700px) {
