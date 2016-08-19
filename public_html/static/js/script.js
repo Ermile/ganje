@@ -24,3 +24,9 @@ function checkTime(i) {
 $(document).ready(function() {
   startTime();
 });
+
+
+
+
+$('.person').eq(0).addClass('selected');
+$(document).keydown(function(e) { event_corridor.call(this, e, $('.person.selected')[0], e.which ); });

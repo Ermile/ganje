@@ -55,7 +55,7 @@ var PageTransitions = (function() {
 				default:
 					break;
 			}
-			console.log(e.keyCode);
+			// console.log(e.keyCode);
 		});
 	}
 
