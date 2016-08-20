@@ -12,6 +12,7 @@ class controller extends \mvc\controller
 	function _route()
 	{
 		$this->post("lists")->ALL();
+		// $this->get(null, 'datatable')->ALL('/^[^\/]d*$/');
 		// $this->get(false, "list")->ALL();
 	}
 }

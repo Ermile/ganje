@@ -10,11 +10,15 @@ class view extends \mvc\view
 		if($this->module() === 'home')
 		{
 			$this->data->bodyclass  = 'unselectable';
-			$this->include->js_main      = false;
-			$this->include->css          = false;
+			$this->include->js_main = false;
 
 		}
-		$this->include->datatable    = true;
+		// $this->include->ermile_css = true;
+		$this->include->datatable  = true;
+		$this->include->cp  = true;
+
+		$this->data->datatable     =  $this->model()->get_datatable();
+		// var_dump($this->data->datatable);
 	}
 
 
@@ -33,5 +37,6 @@ class view extends \mvc\view
 	public function view_list() {
 		$this->data->list =  $this->model()->list();
 	}
+
 }
 ?>

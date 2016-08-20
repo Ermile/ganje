@@ -10,5 +10,67 @@
 	lang:<input type="text" name="lang"><br>
 	<input type="submit" value="search"><br>
 </form>
-{{dump(list)}}
+
+{%set dtperm = attribute(perm,module)%}
+ <div class="row">
+  <div class="span12">
+   <div class="panel panel-default display-none">
+     <div class="panel-body">
+{%block datatable%}
+{%if include.datatable%}
+       <table class="{%if datatable.total <1000 %}datatable{%else%}hidden{%endif%} display responsive nowrap" cellspacing="0" width="100%" {%if datatable.total >100 %}data-tablesrc='{{module}}/list' {%endif%}>
+{%-if datatable.total >1000-%}
+        <tbody>
+          <tr>
+           <td>{%set datatable = datatable|merge({"recordsFiltered": datatable.filter, "recordsTotal": datatable.total})%}{{-datatable|json_encode()|raw-}}</td>
+          </tr>
+        </tbody>
+{%else%}
+        <thead>
+        <tr>
+        <th class="column_row"></th>
+{%for value in datatable.columns%}
+        <th>{{value.label}}</th>
+{%endfor%}
+        <th class="column_actions">{%trans "Actions"%}</th>
+        </tr>
+        </thead>
+
+        <tbody>
+{%block tbody%}
+{%for d in datatable.data%}
+        <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
+         <td class="col_row">{{loop.index}}</td>
+{%for col,value in datatable.columns%}
+{%set myvalue = attribute(d,col)%}
+
+         <td class="col_{{value.value}}">{%trans myvalue%}</td>
+{%endfor%}
+         <td class="col_actions">
+{%if dtperm.edit%}
+          <span class="fa-stack">
+            <a class="fa fa-pencil fa-stack-1x label-default" href="{{url.base}}{{module}}/edit={{d.id}}" ></a>
+          </span>
+{%endif%}
+{%if dtperm.delete%}
+          <span class="fa-stack">
+            <a class="fa fa-times fa-stack-1x label-danger" href="{{url.base}}{{module}}/delete={{d.id}}" data-data='{"id": {{d.id}}}' data-method="post" data-modal="delete-confirm"></a>
+          </span>
+{%endif%}
+         </td>
+        </tr>
+{%endfor%}
+{%endblock%}
+        </tbody>
+{%endif%}
+       </table>
+{%else%}
+  <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
+{%endif%}
+{%endblock%}
+
+     </div>
+   </div>
+  </div>
+ </div>
 {%endblock%}
