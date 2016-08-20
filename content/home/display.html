@@ -4,7 +4,7 @@
 {%block body%}
 <div id="pt-main" class="pt-perspective">
 
- <div data-id="home" class="page page-current">
+ <content data-id="home" class="page page-current">
   <div class="row auto">
    <aside class="span3 sidebar">
      <h2 id="god">{% trans "In the Name of God" %}</h2>
@@ -38,70 +38,39 @@
     </div>
    </content>
   </div>
- </div>
+ </content>
 
-{%for key, value in datatable.summary %}
-  <div data-id="{{key+1}}" class="page">
-   <div class="container">
-    <div class="row">
-
-     <div class="span5">
-      <div class="person card present big">
-        <div class="avatar"><img src="{{url.static}}images/avatar/{{random(14)}}.png"></div>
-
-        <div class="info">
-          <div class="header">{{key}}
-            {% set name = value.name %}
-            {% trans name %}
-          </div>
-
-          <div>
-            {% if value.month.total %}
-              {{value.month.total}}
-            {% else %}
-              120 hours in this month
-            {% endif %}
-          </div>
-
-          <div>
-            {% if value.week.total %}
-              {{value.week.total}}
-            {% else %}
-              30 hours in this week
-            {% endif %}
-          </div>
-
-          <div>35 hours remote time in this week</div>
-
-          <div>20 hours idle time in this week</div>
-        </div>
-      </div>
-     </div>
-
-     <div class="span7">
-      <div class="statistics">
-        <div class="person_statistics">
-
-
-        <div class="card enter">
-          <div>ورود</div>
-        </div>
-
-        <div class="card diff">
-          <div>تفاوت</div>
-        </div>
-
-        <div class="card exit">
-          <div>خروج</div>
-        </div>
-
-
-      </div>
+{%for key, value in datatable.list %}
+  <content data-id="{{key}}" class="page detail">
+   <div class="container row auto">
+    <div class="span5">
+     <div class="card">
+      <img class="random" src="{{url.static}}images/avatar/{{random(14)}}.png">
+      <div class="info">
+       <div class="name">{% set name = value.name %}{% trans name %}</div>
+       <span>{{value.week.total}} {%trans "hours in this week"%}</span><br />
+       <span>{{value.month.total}} {%trans "hours in this month"%}</span><br />
+       <span>{{value.month.plus}} {%trans "hours remote in this month"%}</span><br />
+       <span>{{value.month.minus}} {%trans "hours in idle this month"%}</span>
+        <div class="id">{{key}}</div>
       </div>
      </div>
     </div>
+
+    <div class="span7">
+     <div class="statistics">
+      <div class="row">
+       <div class="side enter">{{user.hour_start}}<span>{%trans "Enter"%}</span></div>
+       <div class="diff"><span>{%trans "Difference"%}</span></div>
+       <div class="side exit"><span>{%trans "Exit"%}</span></div>
+      </div>
+      <p class="minus"><span>{%trans "Minus"%}</span></p>
+      <p class="plus"><span>{%trans "Plus"%}</span></p>
+      <p class="total"><span>{%trans "Total"%}</span></p>
+     </div>
+    </div>
    </div>
-  </div>
+  </content>
 {%endfor%}
  </div>
 {%endblock%}

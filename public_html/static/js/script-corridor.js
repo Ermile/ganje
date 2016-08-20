@@ -34,6 +34,11 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Enter
     case '13':              // Enter
+        var selected = $('.card.selected').attr("data-id");
+        if(selected)
+        {
+          transfer('home', selected);
+        }
       break;
 
 
@@ -47,31 +52,6 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Space
     case '32':              // space
-        // outClass = 'page-scaleDown';
-        // inClass = 'page-scaleUpDown page-delay300';
-
-        var selected = $('.card.selected').attr("data-id");
-        if(selected)
-        {
-          console.log('selected');
-          console.log(selected);
-
-          transferUser(selected);
-          // $('.page[data-id="home"]').addClass('page-current page-scaleDown');
-          // $('.page[data-id="'+selected+'"]').addClass('page-current page-scaleUpDown page-delay300');
-
-          // setTimeout(function()
-          // {
-          //   console.log('timeeeeeer');
-
-          //   $('.page[data-id="home"]').removeClass('page-scaleDown');
-          //   $('.page[data-id="'+selected+'"]').removeClass('page-scaleUpDown page-delay300');
-          // }, 1000);
-        }
-
-
-
-
     case '32shift':         // space + shift
     case '32ctrl':          // space + ctrl
     case '32ctrlshift':     // space + ctrl + shift

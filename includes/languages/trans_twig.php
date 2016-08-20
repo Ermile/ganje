@@ -19,7 +19,7 @@ private function transtext()
 	echo T_("+98 25 3773 5183");                                                      // Line 92
 	echo T_("Another Languages");                                                     // Line 95
 	echo T_(" is a free to use, open source PHP framework created by");               // Line 104
-	echo T_("Ermile");                                                                // Line 20
+	echo T_("Ermile");                                                                // Line 15
 	echo T_("Copyright");                                                             // Line 113
 	echo T_("2013");                                                                  // Line 8 Seperate
 
@@ -29,9 +29,17 @@ private function transtext()
 	//----------------------------------------------------content\edit\layout-xhr.html
 
 	//-------------------------------------------------------content\home\display.html
-	echo T_("In the Name of God");                                                    // Line 15
+	echo T_("In the Name of God");                                                    // Line 10
+	echo T_("hours in this week");                                                    // Line 22 Seperate
+	echo T_("hours in this month");                                                   // Line 23 Seperate
+	echo T_("hours remote in this month");                                            // Line 24 Seperate
+	echo T_("hours in idle this month");                                              // Line 25 Seperate
 
 	//----------------------------------------------------content\home\layout-xhr.html
+
+	//------------------------------------------------------content\lists\display.html
+	echo T_("Actions");                                                               // Line 35
+	echo T_("Data not exist!");                                                       // Line 68
 
 	//---------------------------------------------------content\lists\layout-xhr.html
 
@@ -53,7 +61,7 @@ private function transtext()
 	echo T_("SeyedMahdi Hoseini");                                                    // Line 18 Seperate
 	echo T_("Ali Kharidar");                                                          // Line 19 Seperate
 	echo T_("MohamadAli Salehi");                                                     // Line 20 Seperate
-	echo T_(" ");                                                                     // Line 22 Seperate
+	echo T_(" ");                                                                     // Line 27 Seperate
 
 }
 ?>
