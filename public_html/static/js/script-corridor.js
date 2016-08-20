@@ -15,14 +15,15 @@ function event_corridor(e, _self, _key)
   var shift  = e.shiftKey ? 'shift' : '';
   var alt    = e.altKey   ? 'alt'   : '';
   var mytxt  = String(_key) + ctrl + alt + shift;
-  var num    = _key - 48;
+  var keyp   = String.fromCharCode(e.keyCode);
 
   // select item with number
-  if(num > 0 || num < 9)
+  if(keyp > 0 || keyp < 9)
   {
     $('.card').removeClass('selected');
-    $('.card:eq('+ (num-1) +')').addClass('selected');
+    $('.card:eq('+ (keyp-1) +')').addClass('selected');
   }
+
 
   switch(mytxt)
   {
