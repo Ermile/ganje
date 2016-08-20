@@ -27,8 +27,8 @@ class model extends \mvc\model
 		}
 		//----------- get value
 		$this->user_id = utility::post('userId');
-		$this->plus = (utility::post('plus') == null) ? 0 : utility::post('plus');
-		$this->minus = (utility::post('minus') == null) ? 0 : utility::post('minus');
+		$this->plus    = (utility::post('plus') == null) ? 0 : utility::post('plus');
+		$this->minus   = (utility::post('minus') == null) ? 0 : utility::post('minus');
 
 		//----------- check users status
 		if($this->check_user()){

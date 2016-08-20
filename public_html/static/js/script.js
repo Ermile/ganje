@@ -28,5 +28,5 @@ $(document).ready(function() {
 
 
 
-$('.person').eq(0).addClass('selected');
-$(document).keydown(function(e) { event_corridor.call(this, e, $('.person.selected')[0], e.which ); });
+// $('.card').eq(0).addClass('selected');
+$(document).keydown(function(e) { event_corridor.call(this, e, $('.card.selected')[0], e.which ); });

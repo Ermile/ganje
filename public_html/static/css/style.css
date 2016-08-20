@@ -1,14 +1,19 @@
 body {
-	background: #333;
+	background: #eee;
 }
+
 
 .pt-perspective {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	-webkit-perspective: 1200px;
+	-moz-perspective: 1200px;
 	perspective: 1200px;
+
 	transform-style: preserve-3d;
 }
+
 
 .pt-page {
 	width: 100%;
@@ -28,72 +33,27 @@ body {
 	visibility: visible;
 }
 
-.no-js body {
-	overflow: auto;
-}
-
 .pt-page-ontop {
 	z-index: 999;
 }
 
+.pt-page-current, .pt-page
+{
+	visibility: visible;
+}
+
 /*sidebar*/
-.sidebar {
-	height: 100vh;
-	padding-top: 2em;
-	background-color: rgba(255,255,255,0.2);
-	position: relative;
-}
-
-.sidebar > #besmellah {
-	font-size: 0.8em;
-	font-weight: 700;
-    text-align: center;
-    margin-bottom: 3em;
-}
-
-.sidebar > #time {
-	text-align: center;
-	font-size: 3em;
-	text-shadow: 0 0 1px #000;
-}
-
-.sidebar > #date {
-	font-weight: 500;
-	text-align: center;
-	margin-bottom: 50%;
-	margin-top: -10px;
-}
-
-.sidebar > #time > .hour {
-	font-weight: 500;
-}
-
-.sidebar > #time > .minute, .sidebar > #time > .second {
-	font-weight: 200;
-}
-
-.sidebar > #logo {
-	background-image: url(../images/logo.png);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: contain;
-	height: 200px;
-}
-
-.sidebar > h1 {
-	text-align: center;
-	font-weight: 700;
-	text-shadow: 0 0 1px #000;
-}
-
-.sidebar > #poem {
-	position: absolute;
-	bottom: 1em;
-	width: 100%;
-	font-size: 0.8em;
-	font-weight: 500;
-	text-align: center;
-}
+.sidebar {height: 100vh;padding-top: 2em;background-color: rgba(255,255,255,0.2);position: relative;}
+.sidebar #god {font-size: 0.8em;font-weight: 700;text-align: center;margin-bottom: 3em;}
+.sidebar #time {text-align: center;font-size: 3.5em;text-shadow: 0 0 1px #000;}
+.sidebar #time .hour {font-weight: 500;}
+.sidebar #time .minute, .sidebar #time .second {font-weight: 200;}
+.sidebar #date {font-weight: 500;text-align: center;margin-bottom: 40%;margin-top: -10px;}
+.sidebar #logo{text-align: center;}
+.sidebar #logo img{height: 200px;}
+.sidebar #logo h1 {font-weight: bold;line-height: 2em;text-shadow: 0 0 1px #000;}
+.sidebar #poem {position: absolute;bottom: 1em;width: 100%;font-size: 0.8em;font-weight: 500;text-align: center;}
+@media screen and (max-height: 700px) { .sidebar #poem {display: none;}}
 
 /*content*/
 .content {
@@ -102,93 +62,39 @@ body {
 }
 
 /* card ui */
-.person.card {
-	display: inline-block;
-	margin: 1em 0.5em;
-	width: 200px;
-	min-height: 0;
-	background-color: #fff;
-	padding: 0;
-	border: none;
-	border-radius: .28571429rem;
-	opacity: 0.3;
-	overflow: hidden;
-}
+.card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:1em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;overflow: hidden; background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);}
+.card:last-child {margin-bottom: 0;clear: both}
+.card.selected {opacity: 0.5;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+.card.present {opacity: 1;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
+.card.present.selected{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+.card img.random {position: relative;top: 25px;}
 
-.person.card:last-child {
-	margin-bottom: 0;
-}
+.card .info {background-color: #fff;border: none;border-top: 1px solid rgba(34,36,38,.1);margin: 0;padding: 1em;box-shadow: none;font-size: 1em;text-align: left;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.rtl .card .info {text-align: right;}
+.card .info .name {font-weight: 700;font-size: 1em;line-height: 1.2em;color: rgba(0,0,0,.85);}
+.card .info .position {font-size: 0.8em;color: #777;}
+.card .info .id {font-size: 0.8em;color: rgba(0,0,0,.4);width:20%;text-align:center;background-color:#f7f5f5;color:#333;position: absolute;bottom: 15%;right: 0;}
+.rtl .card .info .id {right: unset;left: 0;}
 
-.person.card.active {
-	opacity: 1;
-	box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
-}
 
-.person.card > .avatar {
-	overflow: hidden;
-	background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-}
-
-.person.card > .avatar > img {
-	position: relative;
-	top: 25px;
-}
-
-.person.card > .info {
-	border: none;
-	border-top: 1px solid rgba(34,36,38,.1);
-	margin: 0;
-	padding: 1em;
-	box-shadow: none;
-	font-size: 1em;
-	text-align: left;
-	position: relative;
-}
-
-.rtl .person.card > .info {
-	text-align: right;
-}
-
-.person.card > .info > .header {
-	font-weight: 700;
-	font-size: 1em;
-	margin-top: 0;
-	line-height: 1.2857em;
-	color: rgba(0,0,0,.85);
-}
-
-.person.card > .info > .meta {
-	font-size: 0.8em;
-	color: rgba(0,0,0,.4);
-	position: absolute;
-    top: 5px;
-    right: 10px;
-}
-
-.rtl .person.card > .info > .meta {
-	right: unset;
-	left: 10px;
-}
-
-.person.card > .info > .description {
-	font-size: 0.8em;
-}
-
-.person.card.active.big {
+.card.present.big {
 	display: block;
 	margin: 10vh auto;
 	width: 80%;
 	box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
 }
 
-.person.card.big > .avatar > img {
+.card.big > .avatar > img {
 	width: 100%;
 	top: 30px;
 }
 
-.person.card.big > .info > .header {
+.card.big > .info > .name {
 	font-size: 3em;
 }
+
+
+
 
 .statistics {
 	min-height: 0;
@@ -199,16 +105,6 @@ body {
 	overflow: hidden;
 	margin: 10vh auto;
 	box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
-}
-
-.person.card.selected {
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-@media screen and (max-height: 700px) {
-	.sidebar > #poem {
-		display: none;
-	}
 }
 
 .person_statistics {
@@ -228,7 +124,7 @@ body {
     padding: 1em 2em;
     font-size: 1em;
     font-weight: 700;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
 }
 
 .person_statistics .card.exit {
@@ -239,7 +135,7 @@ body {
     padding: 1em 2em;
     font-size: 1em;
     font-weight: 700;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;
 }
 
 .person_statistics .card.diff {
@@ -252,6 +148,5 @@ body {
     bottom: 0.45em;
     right: 25%;
     z-index: 3;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    background: #fff;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }

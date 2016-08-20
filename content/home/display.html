@@ -11,44 +11,37 @@
  <div class="pt-page pt-page-1 pt-page-current">
   <div class="row auto">
 
-   <div class="span3 sidebar">
-     <div id="besmellah">{% trans "In the Name of God" %}</div>
-     <div id="time"><span class="hour"></span>:<span class="minute"></span>:<span class="second"></span></div>
+   <aside class="span3 sidebar">
+     <h2 id="god">{% trans "In the Name of God" %}</h2>
+     <div id="time"><span class="hour">{{ "now"|date("h") }}</span>:<span class="minute">{{ "now"|date("i") }}</span>:<span class="second">{{ "now"|date("s") }}</span></div>
      <div id="date">{% if site.currentlang == "fa" %} {{"now"|jdate("l j F Y")}} {% else %} {{"now"|date("l j F Y")}} {% endif %}</div>
-
-     <div id="logo"></div>
-     <h1>{% trans "Ermile" %}</h1>
-
+     <header id="logo">
+      <img src="{{url.base}}/static/images/logo.png" alt='{%trans "Ermile"%}'>
+      <h1>{% trans "Ermile" %}</h1>
+     </header>
 {% if site.currentlang == "fa" %}
-     <div id="poem">
-      <div>از دست غیبت تو شکایت نمی‌کنم</div>
-      <div>تا نیست غیبتی نبود لذت حضور</div>
-     </div>
+     <div id="poem"><span>از دست غیبت تو شکایت نمی‌کنم</span><br /><span>تا نیست غیبتی نبود لذت حضور</span></div>
 {% endif %}
-   </div>
+   </aside>
 
-   <div class="span9 content">
-    <div class="container">
-     <div class="row">
-
+   <content class="span9 content">
+    <div class="container row">
 {% for i, user in datatable.list %}
 
-      <div data-id="{{user.id}}" class="person card{% if user.hour_start is not null %} active{%endif%}">
-       <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
+      <div data-id="{{user.id}}" class="card {% if user.hour_start is not null %}present{%endif%}">
+       <img class="random" src="/static/images/avatar/{{random(14)}}.png">
 {% set name = user.user_displayname %}
        <div class="info">
-        <div class="header">{% trans name %}</div>
-        <div class="description">{{user.position}}</div>
-        <div class="meta">{{user.id}}</div>
+        <div class="name">{% trans name %}</div>
+        <div class="position">{{user.position}}</div>
+        <div class="id">{{user.id}}</div>
        </div>
       </div>
-
      {%endfor%}
 
       <div class="clear:both"></div>
-     </div>
     </div>
-   </div>
+   </content>
   </div>
 
   <!-- <form method="post">
@@ -57,7 +50,7 @@
   <input type="text" name="plus">
   <input type="submit" name="submit">
   </form> -->
-   </div>
+ </div>
 
 {%for key, value in datatable.summary %}
   <div class="pt-page pt-page-{{key}} pt-page-background">
@@ -65,7 +58,7 @@
     <div class="row">
 
      <div class="span5">
-      <div class="person card active big">
+      <div class="person card present big">
         <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
 
         <div class="info">

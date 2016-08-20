@@ -9,7 +9,7 @@ function event_corridor(e, _self, _key)
 {
   _self = $(_self);
   var cid    = parseInt(_self.index());
-  var lastid = parseInt($('.person').length) - 1;
+  var lastid = parseInt($('.card').length) - 1;
 
   var ctrl   = e.ctrlKey  ? 'ctrl'  : '';
   var shift  = e.shiftKey ? 'shift' : '';
@@ -20,8 +20,8 @@ function event_corridor(e, _self, _key)
   // select item with number
   if(num > 0 || num < 9)
   {
-    $('.person').removeClass('selected');
-    $('.person:eq('+ (num-1) +')').addClass('selected');
+    $('.card').removeClass('selected');
+    $('.card:eq('+ (num-1) +')').addClass('selected');
   }
 
   switch(mytxt)
@@ -88,8 +88,8 @@ function event_corridor(e, _self, _key)
       {
         _id = 0;
       }
-      $('.person:eq('+ cid +')').removeClass('selected');
-      $('.person:eq('+ _id +')').addClass('selected');
+      $('.card:eq('+ cid +')').removeClass('selected');
+      $('.card:eq('+ _id +')').addClass('selected');
 
       break;
 
@@ -104,8 +104,8 @@ function event_corridor(e, _self, _key)
       {
         _id = lastid-1;
       }
-      $('.person:eq('+ cid +')').removeClass('selected');
-      $('.person:eq('+ _id +')').addClass('selected');
+      $('.card:eq('+ cid +')').removeClass('selected');
+      $('.card:eq('+ _id +')').addClass('selected');
       break;
 
     // ---------------------------------------------------------- Down
