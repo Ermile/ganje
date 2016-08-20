@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Amon - Persian\n"
-"POT-Creation-Date: 2016-08-18 13:44+0430\n"
-"PO-Revision-Date: 2016-08-18 13:48+0430\n"
+"POT-Creation-Date: 2016-08-20 10:06+0430\n"
+"PO-Revision-Date: 2016-08-20 10:07+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -17,29 +17,33 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: content/edit/model.php:42
-msgid "All Time Saved! Can not edit"
-msgstr "تمام زمان‌ها ذخیره شدند! نمی‌توانید تغییر دهید"
+#: content/edit/model.php:47
+msgid "id not found"
+msgstr "آی‌دی یافت نشد"
 
-#: content/home/model.php:48
+#: content/home/model.php:54
 msgid "User not found"
 msgstr "کاربر یافت نشد"
 
-#: content/home/model.php:80
+#: content/home/model.php:86
 msgid "Your are Entered"
 msgstr "شما وارد سیستم شدید"
 
-#: content/home/model.php:97
+#: content/home/model.php:105
 msgid "Your are Exited"
-msgstr ""
+msgstr "شما خارج شدید!"
+
+#: content/home/model.php:117
+msgid "Undefined"
+msgstr "تعریف‌نشده"
 
 #: includes/cls/database/ganje/translation.php:6
-#: includes/cls/database/ganje/translation.php:123
+#: includes/cls/database/ganje/translation.php:129
 msgid "comments"
 msgstr "دیدگاه ها"
 
 #: includes/cls/database/ganje/translation.php:7
-#: includes/cls/database/ganje/translation.php:97
+#: includes/cls/database/ganje/translation.php:103
 msgid "comment"
 msgstr "دیدگاه"
 
@@ -64,7 +68,7 @@ msgid "id"
 msgstr "کد"
 
 #: includes/cls/database/ganje/translation.php:13
-#: includes/cls/database/ganje/translation.php:84
+#: includes/cls/database/ganje/translation.php:90
 #: includes/languages/trans_addons.php:332
 msgid "post"
 msgstr "نوشته"
@@ -74,51 +78,52 @@ msgid "author"
 msgstr "کاربر"
 
 #: includes/cls/database/ganje/translation.php:15
-#: includes/cls/database/ganje/translation.php:138
+#: includes/cls/database/ganje/translation.php:144
 msgid "email"
 msgstr "رایانامه"
 
 #: includes/cls/database/ganje/translation.php:16
-#: includes/cls/database/ganje/translation.php:70
-#: includes/cls/database/ganje/translation.php:93
-#: includes/cls/database/ganje/translation.php:111
+#: includes/cls/database/ganje/translation.php:76
+#: includes/cls/database/ganje/translation.php:99
+#: includes/cls/database/ganje/translation.php:117
 msgid "url"
 msgstr "نشانی اینترنتی"
 
 #: includes/cls/database/ganje/translation.php:17
-#: includes/cls/database/ganje/translation.php:68
-#: includes/cls/database/ganje/translation.php:94
+#: includes/cls/database/ganje/translation.php:74
+#: includes/cls/database/ganje/translation.php:100
 msgid "content"
 msgstr "محتوا"
 
 #: includes/cls/database/ganje/translation.php:18
-#: includes/cls/database/ganje/translation.php:45
-#: includes/cls/database/ganje/translation.php:57
-#: includes/cls/database/ganje/translation.php:69
-#: includes/cls/database/ganje/translation.php:79
-#: includes/cls/database/ganje/translation.php:95
-#: includes/cls/database/ganje/translation.php:113
-#: includes/cls/database/ganje/translation.php:141
+#: includes/cls/database/ganje/translation.php:54
+#: includes/cls/database/ganje/translation.php:63
+#: includes/cls/database/ganje/translation.php:75
+#: includes/cls/database/ganje/translation.php:85
+#: includes/cls/database/ganje/translation.php:101
+#: includes/cls/database/ganje/translation.php:119
+#: includes/cls/database/ganje/translation.php:147
 msgid "meta"
 msgstr "متا"
 
 #: includes/cls/database/ganje/translation.php:19
-#: includes/cls/database/ganje/translation.php:58
-#: includes/cls/database/ganje/translation.php:71
-#: includes/cls/database/ganje/translation.php:80
-#: includes/cls/database/ganje/translation.php:100
-#: includes/cls/database/ganje/translation.php:142
+#: includes/cls/database/ganje/translation.php:42
+#: includes/cls/database/ganje/translation.php:64
+#: includes/cls/database/ganje/translation.php:77
+#: includes/cls/database/ganje/translation.php:86
+#: includes/cls/database/ganje/translation.php:106
+#: includes/cls/database/ganje/translation.php:148
 msgid "status"
 msgstr "وضعیت"
 
 #: includes/cls/database/ganje/translation.php:20
-#: includes/cls/database/ganje/translation.php:101
-#: includes/cls/database/ganje/translation.php:114
+#: includes/cls/database/ganje/translation.php:107
+#: includes/cls/database/ganje/translation.php:120
 msgid "parent"
 msgstr "والد"
 
 #: includes/cls/database/ganje/translation.php:21
-#: includes/cls/database/ganje/translation.php:131
+#: includes/cls/database/ganje/translation.php:137
 msgid "user"
 msgstr "کاربر"
 
@@ -141,273 +146,287 @@ msgid "hour"
 msgstr "ساعت"
 
 #: includes/cls/database/ganje/translation.php:28
-msgid "date"
-msgstr "تاریخ"
+msgid "raw"
+msgstr "خالی"
 
 #: includes/cls/database/ganje/translation.php:29
-msgid "start"
-msgstr "شروع"
-
-#: includes/cls/database/ganje/translation.php:30
-msgid "end"
-msgstr "پایان"
-
-#: includes/cls/database/ganje/translation.php:31
-msgid "diff"
-msgstr "تفاوت"
-
-#: includes/cls/database/ganje/translation.php:32
+#: includes/cls/database/ganje/translation.php:39
 msgid "minus"
 msgstr "منها"
 
-#: includes/cls/database/ganje/translation.php:33
+#: includes/cls/database/ganje/translation.php:30
+#: includes/cls/database/ganje/translation.php:40
 msgid "plus"
 msgstr "گوگل پلاس"
 
+#: includes/cls/database/ganje/translation.php:31
+msgid "all"
+msgstr "همه"
+
+#: includes/cls/database/ganje/translation.php:32
+msgid "disable"
+msgstr "غیرفعال"
+
+#: includes/cls/database/ganje/translation.php:33
+msgid "enable"
+msgstr "فعال"
+
 #: includes/cls/database/ganje/translation.php:34
+msgid "expire"
+msgstr "منقضی شده"
+
+#: includes/cls/database/ganje/translation.php:35
+msgid "date"
+msgstr "تاریخ"
+
+#: includes/cls/database/ganje/translation.php:36
+msgid "start"
+msgstr "شروع"
+
+#: includes/cls/database/ganje/translation.php:37
+msgid "end"
+msgstr "پایان"
+
+#: includes/cls/database/ganje/translation.php:38
+msgid "diff"
+msgstr "تفاوت"
+
+#: includes/cls/database/ganje/translation.php:41
 msgid "total"
 msgstr "مجموع"
 
-#: includes/cls/database/ganje/translation.php:37
+#: includes/cls/database/ganje/translation.php:43
+msgid "accepted"
+msgstr "تاییدشده"
+
+#: includes/cls/database/ganje/translation.php:46
 msgid "logitems"
 msgstr "مواردلاگ‌ها"
 
-#: includes/cls/database/ganje/translation.php:38
-#: includes/cls/database/ganje/translation.php:55
+#: includes/cls/database/ganje/translation.php:47
+#: includes/cls/database/ganje/translation.php:61
 msgid "logitem"
 msgstr "موارد لاگ"
 
-#: includes/cls/database/ganje/translation.php:39
+#: includes/cls/database/ganje/translation.php:48
 msgid "critical"
 msgstr "بحرانی"
 
-#: includes/cls/database/ganje/translation.php:40
+#: includes/cls/database/ganje/translation.php:49
 msgid "high"
 msgstr "بالا"
 
-#: includes/cls/database/ganje/translation.php:41
+#: includes/cls/database/ganje/translation.php:50
 msgid "medium"
 msgstr "متوسط"
 
-#: includes/cls/database/ganje/translation.php:42
+#: includes/cls/database/ganje/translation.php:51
 msgid "low"
 msgstr "کم"
 
-#: includes/cls/database/ganje/translation.php:43
-#: includes/cls/database/ganje/translation.php:67
-#: includes/cls/database/ganje/translation.php:91
-#: includes/cls/database/ganje/translation.php:109
+#: includes/cls/database/ganje/translation.php:52
+#: includes/cls/database/ganje/translation.php:73
+#: includes/cls/database/ganje/translation.php:97
+#: includes/cls/database/ganje/translation.php:115
 #: includes/languages/trans_addons.php:404
 msgid "title"
 msgstr "عنوان"
 
-#: includes/cls/database/ganje/translation.php:44
-#: includes/cls/database/ganje/translation.php:112
+#: includes/cls/database/ganje/translation.php:53
+#: includes/cls/database/ganje/translation.php:118
 msgid "desc"
 msgstr "توضیح"
 
-#: includes/cls/database/ganje/translation.php:46
+#: includes/cls/database/ganje/translation.php:55
 msgid "priority"
 msgstr "اولویت"
 
-#: includes/cls/database/ganje/translation.php:49
+#: includes/cls/database/ganje/translation.php:58
 msgid "logs"
 msgstr "لاگ‌ها"
 
-#: includes/cls/database/ganje/translation.php:50
+#: includes/cls/database/ganje/translation.php:59
 msgid "log"
 msgstr "لاگ"
 
-#: includes/cls/database/ganje/translation.php:51
-msgid "enable"
-msgstr "فعال"
-
-#: includes/cls/database/ganje/translation.php:52
-msgid "disable"
-msgstr "غیرفعال"
-
-#: includes/cls/database/ganje/translation.php:53
-msgid "expire"
-msgstr "منقضی شده"
-
-#: includes/cls/database/ganje/translation.php:54
+#: includes/cls/database/ganje/translation.php:60
 msgid "deliver"
 msgstr "تحویل‌داده‌شده"
 
-#: includes/cls/database/ganje/translation.php:56
+#: includes/cls/database/ganje/translation.php:62
 msgid "data"
 msgstr "داده"
 
-#: includes/cls/database/ganje/translation.php:59
-#: includes/cls/database/ganje/translation.php:144
+#: includes/cls/database/ganje/translation.php:65
+#: includes/cls/database/ganje/translation.php:150
 msgid "createdate"
 msgstr "تاریخ ایجاد"
 
-#: includes/cls/database/ganje/translation.php:62
+#: includes/cls/database/ganje/translation.php:68
 msgid "notifications"
 msgstr "آگاه سازی ها"
 
-#: includes/cls/database/ganje/translation.php:63
+#: includes/cls/database/ganje/translation.php:69
 msgid "notification"
 msgstr "آگاه سازی"
 
-#: includes/cls/database/ganje/translation.php:64
+#: includes/cls/database/ganje/translation.php:70
 msgid "read"
 msgstr "خوانده شده"
 
-#: includes/cls/database/ganje/translation.php:65
+#: includes/cls/database/ganje/translation.php:71
 msgid "unread"
 msgstr "خوانده نشده"
 
-#: includes/cls/database/ganje/translation.php:66
+#: includes/cls/database/ganje/translation.php:72
 msgid "user sender"
 msgstr "کاربر فرستنده"
 
-#: includes/cls/database/ganje/translation.php:74
+#: includes/cls/database/ganje/translation.php:80
 msgid "options"
 msgstr "تنظیمات"
 
-#: includes/cls/database/ganje/translation.php:75
+#: includes/cls/database/ganje/translation.php:81
 #: includes/languages/trans_addons.php:340
 msgid "option"
 msgstr "تنظیمات"
 
-#: includes/cls/database/ganje/translation.php:76
+#: includes/cls/database/ganje/translation.php:82
 msgid "cat"
 msgstr "دسته"
 
-#: includes/cls/database/ganje/translation.php:77
+#: includes/cls/database/ganje/translation.php:83
 msgid "key"
 msgstr "کلید"
 
-#: includes/cls/database/ganje/translation.php:78
+#: includes/cls/database/ganje/translation.php:84
 msgid "value"
 msgstr "مقدار"
 
-#: includes/cls/database/ganje/translation.php:83
-#: includes/cls/database/ganje/translation.php:119
+#: includes/cls/database/ganje/translation.php:89
+#: includes/cls/database/ganje/translation.php:125
 msgid "posts"
 msgstr "نوشته‌ها"
 
-#: includes/cls/database/ganje/translation.php:85
+#: includes/cls/database/ganje/translation.php:91
 msgid "open"
 msgstr "باز"
 
-#: includes/cls/database/ganje/translation.php:86
+#: includes/cls/database/ganje/translation.php:92
 msgid "closed"
 msgstr "بسته"
 
-#: includes/cls/database/ganje/translation.php:87
+#: includes/cls/database/ganje/translation.php:93
 msgid "publish"
 msgstr "منتشر شده"
 
-#: includes/cls/database/ganje/translation.php:88
+#: includes/cls/database/ganje/translation.php:94
 msgid "draft"
 msgstr "پیش نویس"
 
-#: includes/cls/database/ganje/translation.php:89
+#: includes/cls/database/ganje/translation.php:95
 msgid "schedule"
 msgstr "زمان بندی شده"
 
-#: includes/cls/database/ganje/translation.php:90
-#: includes/cls/database/ganje/translation.php:107
+#: includes/cls/database/ganje/translation.php:96
+#: includes/cls/database/ganje/translation.php:113
 msgid "language"
 msgstr "زبان"
 
-#: includes/cls/database/ganje/translation.php:92
-#: includes/cls/database/ganje/translation.php:110
+#: includes/cls/database/ganje/translation.php:98
+#: includes/cls/database/ganje/translation.php:116
 msgid "slug"
 msgstr "نامک"
 
-#: includes/cls/database/ganje/translation.php:96
-#: includes/cls/database/ganje/translation.php:108
+#: includes/cls/database/ganje/translation.php:102
+#: includes/cls/database/ganje/translation.php:114
 msgid "type"
 msgstr "نوع"
 
-#: includes/cls/database/ganje/translation.php:98
+#: includes/cls/database/ganje/translation.php:104
 msgid "count"
 msgstr "تعداد"
 
-#: includes/cls/database/ganje/translation.php:99
-#: includes/cls/database/ganje/translation.php:127
+#: includes/cls/database/ganje/translation.php:105
+#: includes/cls/database/ganje/translation.php:133
 msgid "order"
 msgstr "ترتیب"
 
-#: includes/cls/database/ganje/translation.php:102
+#: includes/cls/database/ganje/translation.php:108
 msgid "publishdate"
 msgstr "زمان انتشار"
 
-#: includes/cls/database/ganje/translation.php:105
+#: includes/cls/database/ganje/translation.php:111
 msgid "terms"
 msgstr "عبارت ها"
 
-#: includes/cls/database/ganje/translation.php:106
-#: includes/cls/database/ganje/translation.php:124
+#: includes/cls/database/ganje/translation.php:112
+#: includes/cls/database/ganje/translation.php:130
 msgid "term"
 msgstr "عبارت"
 
-#: includes/cls/database/ganje/translation.php:117
+#: includes/cls/database/ganje/translation.php:123
 msgid "termusages"
 msgstr "موارد استفاده عبارت"
 
-#: includes/cls/database/ganje/translation.php:118
-#: includes/cls/database/ganje/translation.php:125
+#: includes/cls/database/ganje/translation.php:124
+#: includes/cls/database/ganje/translation.php:131
 msgid "termusage"
 msgstr "محل استفاده عبارت"
 
-#: includes/cls/database/ganje/translation.php:120
+#: includes/cls/database/ganje/translation.php:126
 msgid "products"
 msgstr "کالاها"
 
-#: includes/cls/database/ganje/translation.php:121
+#: includes/cls/database/ganje/translation.php:127
 msgid "attachments"
 msgstr "ضمیمه‌ها"
 
-#: includes/cls/database/ganje/translation.php:122
+#: includes/cls/database/ganje/translation.php:128
 msgid "files"
 msgstr "فایل ها"
 
-#: includes/cls/database/ganje/translation.php:126
+#: includes/cls/database/ganje/translation.php:132
 msgid "foreign"
 msgstr "کلیدخارجی"
 
-#: includes/cls/database/ganje/translation.php:130
+#: includes/cls/database/ganje/translation.php:136
 msgid "users"
 msgstr "کاربران"
 
-#: includes/cls/database/ganje/translation.php:132
+#: includes/cls/database/ganje/translation.php:138
 msgid "active"
 msgstr "فعال"
 
-#: includes/cls/database/ganje/translation.php:133
+#: includes/cls/database/ganje/translation.php:139
 msgid "awaiting"
 msgstr "در حال انتظار"
 
-#: includes/cls/database/ganje/translation.php:134
+#: includes/cls/database/ganje/translation.php:140
 msgid "deactive"
 msgstr "غیرفعال"
 
-#: includes/cls/database/ganje/translation.php:135
+#: includes/cls/database/ganje/translation.php:141
 msgid "removed"
 msgstr "حذف شده"
 
-#: includes/cls/database/ganje/translation.php:136
+#: includes/cls/database/ganje/translation.php:142
 msgid "filter"
 msgstr "فیلتر"
 
-#: includes/cls/database/ganje/translation.php:137
+#: includes/cls/database/ganje/translation.php:143
 msgid "mobile"
 msgstr "موبایل"
 
-#: includes/cls/database/ganje/translation.php:139
+#: includes/cls/database/ganje/translation.php:145
 msgid "pass"
 msgstr "کلمه عبور"
 
-#: includes/cls/database/ganje/translation.php:140
+#: includes/cls/database/ganje/translation.php:146
 msgid "displayname"
 msgstr "نام برای نمایش عمومی"
 
-#: includes/cls/database/ganje/translation.php:143
+#: includes/cls/database/ganje/translation.php:149
 msgid "permission"
 msgstr "سطح دسترسی"
 
@@ -602,7 +621,8 @@ msgstr "خروج از سیستم"
 
 #: includes/languages/trans_addons.php:69
 msgid "We glad to working for you and hope you enjoy using our system"
-msgstr "ما از کار برای شما خوشحال بوده و امیدواریم شما نیز از سیستم ما لذت ببرید"
+msgstr ""
+"ما از کار برای شما خوشحال بوده و امیدواریم شما نیز از سیستم ما لذت ببرید"
 
 #: includes/languages/trans_addons.php:70
 msgid "Some right reserved"
@@ -719,8 +739,8 @@ msgstr "برگشت به"
 #: includes/languages/trans_addons.php:104
 msgid "list of current permissions is listed here, for edit click on it"
 msgstr ""
-"لیست سطوح‌دسترسی فعلی در اینجا وجود دارد که با کلیک بر روی هر کدام می‌توانید آن را "
-"ویرایش کنید"
+"لیست سطوح‌دسترسی فعلی در اینجا وجود دارد که با کلیک بر روی هر کدام می‌توانید آن "
+"را ویرایش کنید"
 
 #: includes/languages/trans_addons.php:105
 msgid "delete permission"
@@ -751,7 +771,8 @@ msgid "Edit permission of"
 msgstr "ویرایش دسترسی به"
 
 #: includes/languages/trans_addons.php:114
-msgid "Allow or disallow user to access all part of service with full permission!"
+msgid ""
+"Allow or disallow user to access all part of service with full permission!"
 msgstr "اجازه یا عدم اجازه به کاربر برای دسترسی کامل به تمام بخش‌های سرویس!"
 
 #: includes/languages/trans_addons.php:115
@@ -813,7 +834,8 @@ msgstr "عنوان مطلب خود را در اینجا وارد کنید"
 #: includes/languages/trans_addons.php:131
 msgid "Url of your content appear here, click on it to view"
 msgstr ""
-"آدرس مطلب شما در این بخش نمایش داده می‌شود که با کلیک می‌توانید آن را مشاهده کنید"
+"آدرس مطلب شما در این بخش نمایش داده می‌شود که با کلیک می‌توانید آن را مشاهده "
+"کنید"
 
 #: includes/languages/trans_addons.php:132
 msgid "Check result"
@@ -833,15 +855,18 @@ msgstr "چکیده"
 
 #: includes/languages/trans_addons.php:136
 msgid "If excerpt is empty we get it automatically from content"
-msgstr "اگر چکیده را خالی بگذارید ما آن را به صورت خودکار از روی نوشته پر میکنیم"
+msgstr ""
+"اگر چکیده را خالی بگذارید ما آن را به صورت خودکار از روی نوشته پر میکنیم"
 
 #: includes/languages/trans_addons.php:137
 msgid "Summaries of your content that can be used as page description."
-msgstr "خلاصه ای از نوشته شما که برای نمایش به عنوان توضیح نوشته استفاده می شود."
+msgstr ""
+"خلاصه ای از نوشته شما که برای نمایش به عنوان توضیح نوشته استفاده می شود."
 
 #: includes/languages/trans_addons.php:138
 msgid "Write your tag and press enter to add new keyword to content"
-msgstr "کلیدواژه‌ی مورد نظر خود را نوشته و با فشردن انتر آن را به مطلب اضافه کنید"
+msgstr ""
+"کلیدواژه‌ی مورد نظر خود را نوشته و با فشردن انتر آن را به مطلب اضافه کنید"
 
 #: includes/languages/trans_addons.php:139
 msgid "Enter Tags here"
@@ -853,13 +878,13 @@ msgstr "تگ را وارد کنید"
 
 #: includes/languages/trans_addons.php:141
 msgid ""
-"Normally, tags are ad-hoc keywords that identify important information in your "
-"post (names, subjects, etc) that may or may not recur in other posts, while "
-"categories are pre-determined sections."
+"Normally, tags are ad-hoc keywords that identify important information in "
+"your post (names, subjects, etc) that may or may not recur in other posts, "
+"while categories are pre-determined sections."
 msgstr ""
-"به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در نوشته "
-"شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها مشخص "
-"نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
+"به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در "
+"نوشته شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها "
+"مشخص نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
 
 #: includes/languages/trans_addons.php:142
 msgid "View list of tags"
@@ -916,8 +941,8 @@ msgstr "وضعیت"
 
 #: includes/languages/trans_addons.php:154
 msgid ""
-"All of content set as draft in default, for showing it to visitors you must set "
-"it to publish"
+"All of content set as draft in default, for showing it to visitors you must "
+"set it to publish"
 msgstr ""
 "تمام مطالب به صورت پیش فرض در حالت پیش نویس قرار می‌گیرند که شما برای انتشار و "
 "نمایش آن به بازدیدکنندگان باید وضعیت آن را به منتشرشده تغییر دهید"
@@ -991,10 +1016,11 @@ msgid "Set featured image"
 msgstr "تنظیم تصویر شاخص"
 
 #: includes/languages/trans_addons.php:171
-msgid "You can see type of your file and click on image to direct access to file"
+msgid ""
+"You can see type of your file and click on image to direct access to file"
 msgstr ""
-"شما می‌توانید نوع فایل را دیده و با کلیک روی عکس آن، مستقیما به آن دسترسی داشته "
-"باشید"
+"شما می‌توانید نوع فایل را دیده و با کلیک روی عکس آن، مستقیما به آن دسترسی "
+"داشته باشید"
 
 #: includes/languages/trans_addons.php:172
 msgid "Click to view"
@@ -1041,7 +1067,8 @@ msgid ""
 "You can nest category under other category by making one the “Parent” of the "
 "other."
 msgstr ""
-"شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت کنید."
+"شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت "
+"کنید."
 
 #: includes/languages/trans_addons.php:190
 msgid "Actions"
@@ -1141,13 +1168,13 @@ msgstr "تفاوت بین نوشته و برگه در چیست؟"
 
 #: includes/languages/trans_addons.php:220
 msgid ""
-"Pages are similar to Posts in that they have a title, body text, and associated "
-"metadata, but they are different in that they are not part of the chronological "
-"blog stream, kind of like permanent posts."
+"Pages are similar to Posts in that they have a title, body text, and "
+"associated metadata, but they are different in that they are not part of the "
+"chronological blog stream, kind of like permanent posts."
 msgstr ""
-"برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی آن "
-"ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در حقیقت "
-"شبیه به یک پست دائمی هستند."
+"برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی "
+"آن ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در "
+"حقیقت شبیه به یک پست دائمی هستند."
 
 #: includes/languages/trans_addons.php:221
 msgid "Pages are not categorized or tagged, but can have a hierarchy."
@@ -1244,7 +1271,7 @@ msgstr "قدرت گرفته از سالوس"
 
 #: includes/languages/trans_addons.php:250
 msgid "Javad Evazzadeh"
-msgstr "جواد عوض زاده"
+msgstr "جواد عوض‌زاده"
 
 #: includes/languages/trans_addons.php:251
 msgid "Hasan Salehi"
@@ -1541,7 +1568,8 @@ msgstr "از دسته ها برای تعریف بخش های سایت و دست�
 
 #: includes/languages/trans_addons.php:325
 msgid "Use categories to define sections of your site and group related files"
-msgstr "از دسته‌بندی برای تعریف بخش‌های مختلف برای گروه‌بندی کردن فایل‌ها استفاده کنید"
+msgstr ""
+"از دسته‌بندی برای تعریف بخش‌های مختلف برای گروه‌بندی کردن فایل‌ها استفاده کنید"
 
 #: includes/languages/trans_addons.php:326
 msgid "Use posts to share your news in specefic category"
@@ -1562,8 +1590,8 @@ msgstr "صفحه"
 #: includes/languages/trans_addons.php:330
 msgid "If you want to change password enter it, else leave it blank"
 msgstr ""
-"در صورت تمایل به تغییر گذرواژه آن را وارد کنید،‌ در غیر این ‌صورت این فیلد را خالی "
-"بگذارید"
+"در صورت تمایل به تغییر گذرواژه آن را وارد کنید،‌ در غیر این ‌صورت این فیلد را "
+"خالی بگذارید"
 
 #: includes/languages/trans_addons.php:331
 msgid "Enter password within 5 to 40 character"
@@ -1848,8 +1876,8 @@ msgstr "سایت"
 #: includes/languages/trans_addons.php:405
 msgid "For multilanguage sites enter title in English and translate it"
 msgstr ""
-"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم آن "
-"را به سایر زبان‌ها ترجمه کنید"
+"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم "
+"آن را به سایر زبان‌ها ترجمه کنید"
 
 #: includes/languages/trans_addons.php:406
 msgid "main URL"
@@ -2204,7 +2232,8 @@ msgid "You can edit this permission"
 msgstr "شما می‌توانید این سطح‌دسترسی را ویرایش کنید"
 
 #: includes/languages/trans_addons.php:494
-msgid "Define or edit user permissions to allow or block access to special pages"
+msgid ""
+"Define or edit user permissions to allow or block access to special pages"
 msgstr "تعریف یا ویرایش سطوح‌دسترسی برای اجازه یا ممنوع کردن دسترسی به صفحات خاص"
 
 #: includes/languages/trans_addons.php:495
@@ -2260,7 +2289,8 @@ msgid "We need your phone number to verifying your account."
 msgstr "ما برای اعتبارسنجی اکانت، نیاز به شماره موبایل شما داریم."
 
 #: includes/languages/trans_addons.php:508
-msgid "If you dont want share your number, we cant presenting our services to you!"
+msgid ""
+"If you dont want share your number, we cant presenting our services to you!"
 msgstr ""
 "اگر شما مایل به ارائه شماره خود نباشید، ما امکان سرویس‌دهی به شما را نداریم!"
 
@@ -2324,7 +2354,7 @@ msgstr "ما به مخاطب سایر کاربران نیاز نداریم:؟)"
 msgid "We need mobile number!"
 msgstr "ما به شماره موبایل نیاز داریم!"
 
-#: includes/languages/trans_addons.php:524 includes/languages/trans_twig.php:51
+#: includes/languages/trans_addons.php:524 includes/languages/trans_twig.php:56
 msgid " "
 msgstr " "
 
@@ -2432,6 +2462,26 @@ msgstr "۱۳۹۷"
 msgid "2019"
 msgstr "۱۳۹۸"
 
+#: includes/languages/trans_twig.php:51
+msgid "Sadegh Salehi"
+msgstr "صادق صالحی"
+
+#: includes/languages/trans_twig.php:52
+msgid "Ali Modabber"
+msgstr "علی مدبر"
+
+#: includes/languages/trans_twig.php:53
+msgid "SeyedMahdi Hoseini"
+msgstr "سیدمهدی حسینی"
+
+#: includes/languages/trans_twig.php:54
+msgid "Ali Kharidar"
+msgstr "علی خریدار"
+
+#: includes/languages/trans_twig.php:55
+msgid "MohamadAli Salehi"
+msgstr "محمدعلی صالحی"
+
 #: includes/mvc/view.php:10
 msgid "Ganje"
 msgstr "گنجه"
@@ -2443,6 +2493,9 @@ msgstr "سرویس حضور و غیاب رایگان و منبع‌باز"
 #: includes/mvc/view.php:12
 msgid "Enjoy work time"
 msgstr "از زمان کاری خود لذت ببرید"
+
+#~ msgid "All Time Saved! Can not edit"
+#~ msgstr "تمام زمان‌ها ذخیره شدند! نمی‌توانید تغییر دهید"
 
 #~ msgid "Polls"
 #~ msgstr "نظرسنجی‌ها"
@@ -2646,7 +2699,8 @@ msgstr "از زمان کاری خود لذت ببرید"
 #~ msgstr "ابزارها"
 
 #~ msgid "Go to your profile or logout from conrtol panel"
-#~ msgstr "از این قسمت به پروفایل خود رفته و یا از کنترل پنل خروج امن داشته باشید"
+#~ msgstr ""
+#~ "از این قسمت به پروفایل خود رفته و یا از کنترل پنل خروج امن داشته باشید"
 
 #~ msgid "All right reserved"
 #~ msgstr "تمام حقوق محفوظ است"
@@ -2779,7 +2833,8 @@ msgstr "از زمان کاری خود لذت ببرید"
 #~ msgstr "وب سایت رسمی آیت‌الله العظمی منتظری"
 
 #~ msgid ""
-#~ "He was a Marja, prominent Iranian scholar and Shia Islamic democracy advocate"
+#~ "He was a Marja, prominent Iranian scholar and Shia Islamic democracy "
+#~ "advocate"
 #~ msgstr "فقیه، حکیم و مجاهد نستوه عالم اسلام و تشیع"
 
 #~ msgid "Grand Ayatollah Montazeri Official Website"
@@ -2917,8 +2972,8 @@ msgstr "از زمان کاری خود لذت ببرید"
 #~ msgstr "کلمه عبور"
 
 #~ msgid ""
-#~ "He was a Muslim cleric, prominent Iranian scholar and Shia Islamic democracy "
-#~ "advocate"
+#~ "He was a Muslim cleric, prominent Iranian scholar and Shia Islamic "
+#~ "democracy advocate"
 #~ msgstr "او روحانی مسلمان، مرجع تقلید ایرانیان و "
 
 #~ msgid "this"
@@ -2946,10 +3001,11 @@ msgstr "از زمان کاری خود لذت ببرید"
 #~ msgstr "شما می توانید کلمات کلیدی را به نوشته های خود ارتباط دهید"
 
 #~ msgid ""
-#~ "You can use categories to define sections of your site and group related posts"
+#~ "You can use categories to define sections of your site and group related "
+#~ "posts"
 #~ msgstr ""
-#~ "شما می توانید از دسته ها برای تعریف بخش های سایت و دسته بندی نوشته ها استفاده "
-#~ "کنید"
+#~ "شما می توانید از دسته ها برای تعریف بخش های سایت و دسته بندی نوشته ها "
+#~ "استفاده کنید"
 
 #~ msgid "You can use posts to share your news in specefic category"
 #~ msgstr ""
