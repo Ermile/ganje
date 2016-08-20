@@ -18,7 +18,7 @@ function event_corridor(e, _self, _key)
   var keyp   = String.fromCharCode(e.keyCode);
 
   // select item with number
-  if(keyp > 0 || keyp < 9)
+  if(keyp > 0 && keyp < 9)
   {
     $('.card').removeClass('selected');
     $('.card:eq('+ (keyp-1) +')').addClass('selected');
@@ -39,30 +39,42 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Escape
     case '27':              //Escape
+      // $('.pt-page').removeClass('pt-page-current');
+      // $('.pt-page[data-id="home"]').addClass('pt-page-current');
+          transferHome();
       break;
 
 
     // ---------------------------------------------------------- Space
     case '32':              // space
+        outClass = 'pt-page-scaleDown';
+        inClass = 'pt-page-scaleUpDown pt-page-delay300';
+
+        var selected = $('.card.selected').attr("data-id");
+        if(selected)
+        {
+          console.log('selected');
+          console.log(selected);
+
+          transferUser(selected);
+          // $('.pt-page[data-id="home"]').addClass('pt-page-current pt-page-scaleDown');
+          // $('.pt-page[data-id="'+selected+'"]').addClass('pt-page-current pt-page-scaleUpDown pt-page-delay300');
+
+          // setTimeout(function()
+          // {
+          //   console.log('timeeeeeer');
+
+          //   $('.pt-page[data-id="home"]').removeClass('pt-page-scaleDown');
+          //   $('.pt-page[data-id="'+selected+'"]').removeClass('pt-page-scaleUpDown pt-page-delay300');
+          // }, 1000);
+        }
+
+
+
+
     case '32shift':         // space + shift
-      // if player exist do right thing!
-      ex_player('space');
-
-      if(!_self.hasClass('selected'))
-      {
-        ex_removeClass('selected focused zero');
-        _self.addClass('selected');
-        ex_showProp();
-      }
-      break;
-
     case '32ctrl':          // space + ctrl
     case '32ctrlshift':     // space + ctrl + shift
-      _self.toggleClass('selected');
-      if(_self.hasClass('selected'))
-      {
-        ex_showProp();
-      }
       break;
 
 

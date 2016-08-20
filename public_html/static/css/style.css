@@ -278,16 +278,11 @@ body {
 	background: url(../images/pattern/shattered_@2X.png);
 }
 
-.pt-page-current,
-.no-js .pt-page {
-	visibility: visible;
-}
-
 .pt-page-ontop {
 	z-index: 999;
 }
 
-.pt-page-current, .pt-page
+.pt-page-current
 {
 	visibility: visible;
 }

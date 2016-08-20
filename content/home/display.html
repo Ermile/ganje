@@ -7,9 +7,9 @@
 
 {%block body%}
 <div id="pt-main" class="pt-perspective">
- <div class="pt-page pt-page-1 pt-page-current">
-  <div class="row auto">
 
+ <div data-id="home" class="pt-page pt-page-1 pt-page-current">
+  <div class="row auto">
    <aside class="span3 sidebar">
      <h2 id="god">{% trans "In the Name of God" %}</h2>
      <div id="time"><span class="hour">{{ "now"|date("h") }}</span>:<span class="minute">{{ "now"|date("i") }}</span>:<span class="second">{{ "now"|date("s") }}</span></div>
@@ -42,17 +42,10 @@
     </div>
    </content>
   </div>
-
-  <!-- <form method="post">
-  <input type="text" name="userId">
-  <input type="text" name="minus">
-  <input type="text" name="plus">
-  <input type="submit" name="submit">
-  </form> -->
  </div>
 
-{%for key, value in datatable.summary %}
-  <div class="pt-page pt-page-{{key}} pt-page-background">
+{%for key, value in datatable.list %}
+  <div data-id="{{key+1}}" class="pt-page pt-page-{{key+2}} pt-page-background">
    <div class="container">
     <div class="row">
 
@@ -61,7 +54,7 @@
         <div class="avatar"><img src="{{url.static}}images/avatar/{{random(14)}}.png"></div>
 
         <div class="info">
-          <div class="header">
+          <div class="header">{{key+1}}
             {% set name = value.name %}
             {% trans name %}
           </div>
@@ -114,7 +107,7 @@
    </div>
   </div>
 {%endfor%}
-
+ </div>
 {%endblock%}
 
 
