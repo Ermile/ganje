@@ -40,18 +40,19 @@
   </div>
  </content>
 
-{%for key, value in datatable.list %}
+{%for key, user in datatable.list %}
   <content data-id="{{key}}" class="page detail">
    <div class="container row auto">
     <div class="span5">
      <div class="card">
       <img class="random" src="{{url.static}}images/avatar/{{random(14)}}.png">
       <div class="info">
-       <div class="name">{% set name = value.name %}{% trans name %}</div>
-       <span>{{value.week.total}} {%trans "hours in this week"%}</span><br />
-       <span>{{value.month.total}} {%trans "hours in this month"%}</span><br />
-       <span>{{value.month.plus}} {%trans "hours remote in this month"%}</span><br />
-       <span>{{value.month.minus}} {%trans "hours in idle this month"%}</span>
+       <div class="name">{% set name = user.user_displayname %}{% trans name %}</div>
+        <div class="position">{{user.position}}</div>
+       <span>{{user.week.total}} {%trans "hours in this week"%}</span><br />
+       <span>{{user.month.total}} {%trans "hours in this month"%}</span><br />
+       <span>{{user.month.plus}} {%trans "hours remote in this month"%}</span><br />
+       <span>{{user.month.minus}} {%trans "hours in idle this month"%}</span>
         <div class="id">{{key}}</div>
       </div>
      </div>

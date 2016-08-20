@@ -1,6 +1,6 @@
 /**
  * Ganje Style
- * V2.0
+ * V2.1
  */
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -338,12 +338,13 @@ body {
 .dashboard {padding-top: 10vh;text-align: center;}
 
 /* card ui */
-.card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:1em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;overflow: hidden; background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);}
+.card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:1em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;overflow: hidden; background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);transition: all 0.5s ease-in-out;}
 .card:last-child {margin-bottom: 0;clear: both}
 .card.selected {opacity: 0.5;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .card.present, .detail .card {opacity: 1;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
 .card.present.selected{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .card img.random {position: relative;top: 25px;}
+.card.selected .info .id {font-weight: bold;color:#000}
 
 .card .info {background-color: #fff;border: none;border-top: 1px solid rgba(34,36,38,.1);margin: 0;padding: 1em;box-shadow: none;font-size:0.8em;text-align: left;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 .rtl .card .info {text-align: right;font-size: 1em;}

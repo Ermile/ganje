@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 // $('.card').eq(0).addClass('selected');
 $(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
-
+$('.dashboard').on("click", ".card",    function(e) { event_corridor(e, e.currentTarget, 'click'); });
 
 function transfer(_from, _to)
 {

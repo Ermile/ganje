@@ -155,6 +155,9 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------------------- mouse
     case 'click':           // click
+      _id = _self.attr('data-id');
+      $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
+      $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
       break;
 
     case 'dblclick':        // Double click
