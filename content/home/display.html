@@ -1,14 +1,10 @@
 {%extends display.mvc%}
 
-{%block head_css%}
- <link rel="stylesheet"       href="{{url.static}}css/animations.css" />
-{%endblock%}
-
 
 {%block body%}
 <div id="pt-main" class="pt-perspective">
 
- <div data-id="home" class="pt-page pt-page-1 pt-page-current">
+ <div data-id="home" class="page page-current">
   <div class="row auto">
    <aside class="span3 sidebar">
      <h2 id="god">{% trans "In the Name of God" %}</h2>
@@ -45,7 +41,7 @@
  </div>
 
 {%for key, value in datatable.list %}
-  <div data-id="{{key+1}}" class="pt-page pt-page-{{key+2}} pt-page-background">
+  <div data-id="{{key+1}}" class="page">
    <div class="container">
     <div class="row">
 
@@ -112,8 +108,5 @@
 
 
 {%block js%}
- <script src="{{url.static}}js/modernizr.custom.js"></script>
- <script src="{{url.static}}js/jquery.dlmenu.js"></script>
- <script src="{{url.static}}js/pagetransitions.js"></script>
  <script src="{{url.static}}js/script-corridor.js"></script>
 {%endblock%}

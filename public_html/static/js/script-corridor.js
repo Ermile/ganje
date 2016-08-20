@@ -39,16 +39,16 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Escape
     case '27':              //Escape
-      // $('.pt-page').removeClass('pt-page-current');
-      // $('.pt-page[data-id="home"]').addClass('pt-page-current');
-          transferHome();
+      // $('.page').removeClass('page-current');
+      // $('.page[data-id="home"]').addClass('page-current');
+          transfer(null, 'home');
       break;
 
 
     // ---------------------------------------------------------- Space
     case '32':              // space
-        outClass = 'pt-page-scaleDown';
-        inClass = 'pt-page-scaleUpDown pt-page-delay300';
+        // outClass = 'page-scaleDown';
+        // inClass = 'page-scaleUpDown page-delay300';
 
         var selected = $('.card.selected').attr("data-id");
         if(selected)
@@ -57,15 +57,15 @@ function event_corridor(e, _self, _key)
           console.log(selected);
 
           transferUser(selected);
-          // $('.pt-page[data-id="home"]').addClass('pt-page-current pt-page-scaleDown');
-          // $('.pt-page[data-id="'+selected+'"]').addClass('pt-page-current pt-page-scaleUpDown pt-page-delay300');
+          // $('.page[data-id="home"]').addClass('page-current page-scaleDown');
+          // $('.page[data-id="'+selected+'"]').addClass('page-current page-scaleUpDown page-delay300');
 
           // setTimeout(function()
           // {
           //   console.log('timeeeeeer');
 
-          //   $('.pt-page[data-id="home"]').removeClass('pt-page-scaleDown');
-          //   $('.pt-page[data-id="'+selected+'"]').removeClass('pt-page-scaleUpDown pt-page-delay300');
+          //   $('.page[data-id="home"]').removeClass('page-scaleDown');
+          //   $('.page[data-id="'+selected+'"]').removeClass('page-scaleUpDown page-delay300');
           // }, 1000);
         }
 

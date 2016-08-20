@@ -48,13 +48,25 @@ function transferHome()
 
 function transfer(_from, _to)
 {
-  $('.pt-page[data-id="'+ _from+ '"]').addClass('pt-page-current pt-page-scaleDown');
-  $('.pt-page[data-id="'+ _to+ '"]').addClass('pt-page-current pt-page-scaleUpDown pt-page-delay300');
+  if(!_from)
+  {
+    _from = $('.page.page-current').attr("data-id");
+    if(_from == 'home')
+    {
+      return false;
+    }
+  }
+
+  $('.page[data-id="'+ _from+ '"]').addClass('page-scaleDown');
+  $('.page[data-id="'+ _to+ '"]').addClass('page-current page-scaleUpDown page-delay300');
 
   setTimeout(function()
   {
-    console.log('timeeeeeer');
-    $('.pt-page[data-id="'+ _from+ '"]').removeClass('pt-page-scaleDown');
-    $('.pt-page[data-id="'+ _to+ '"]').removeClass('pt-page-scaleUpDown pt-page-delay300');
-  }, 1000);
+    console.log('from: '+ _from +'  to: ' + _to);
+    $('.page[data-id="'+ _from+ '"]').removeClass('page-current page-scaleDown');
+    $('.page[data-id="'+ _to+ '"]').removeClass('page-scaleUpDown page-delay300');
+    // remove current page from all except new page
+    $('.page:not([data-id="'+_to+'"])').removeClass('page-current');
+
+  }, 700);
 }
