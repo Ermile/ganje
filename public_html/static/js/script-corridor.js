@@ -8,8 +8,8 @@
 function event_corridor(e, _self, _key)
 {
   _self = $(_self);
-  var cid    = parseInt(_self.index());
-  var lastid = parseInt($('.card').length) - 1;
+  var cid    = parseInt($('.dashboard .card.selected').attr("data-id"));
+  var lastid = parseInt($('.dashboard .card').length);
 
   var ctrl   = e.ctrlKey  ? 'ctrl'  : '';
   var shift  = e.shiftKey ? 'shift' : '';
@@ -34,7 +34,7 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Enter
     case '13':              // Enter
-        var selected = $('.card.selected').attr("data-id");
+        var selected = $('.dashboard .card.selected').attr("data-id");
         if(selected)
         {
           transfer('home', selected);
@@ -76,14 +76,20 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Left
     case '37':              // left
-      _id = cid + 1;
-      if(_id >= lastid)
+      if(!cid)
       {
-        _id = 0;
+        _id = 1;
       }
-      $('.card:eq('+ cid +')').removeClass('selected');
-      $('.card:eq('+ _id +')').addClass('selected');
-
+      else
+      {
+        _id = cid + 1;
+      }
+      if(_id > lastid)
+      {
+        _id = 1;
+      }
+      $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
+      $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
       break;
 
     // ---------------------------------------------------------- Up
@@ -92,13 +98,20 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Right
     case '39':              // right
-      _id = cid - 1;
-      if(_id < 0)
+      if(!cid)
       {
-        _id = lastid-1;
+        _id = lastid;
       }
-      $('.card:eq('+ cid +')').removeClass('selected');
-      $('.card:eq('+ _id +')').addClass('selected');
+      else
+      {
+        _id = cid - 1;
+      }
+      if(_id < 1)
+      {
+        _id = lastid;
+      }
+      $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
+      $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
       break;
 
     // ---------------------------------------------------------- Down

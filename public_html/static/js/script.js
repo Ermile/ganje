@@ -29,22 +29,8 @@ $(document).ready(function() {
 
 
 // $('.card').eq(0).addClass('selected');
-$(document).keydown(function(e) { event_corridor.call(this, e, $('.card.selected')[0], e.which ); });
+$(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
 
-
-function transferUser(_id)
-{
-  transfer('home', _id);
-  console.log(12);
-
-
-}
-
-function transferHome()
-{
-  transfer(2, 'home');
-  console.log(34);
-}
 
 function transfer(_from, _to)
 {
