@@ -1,8 +1,8 @@
 {%extends display.mvc%}
 
 {%block head_css%}
- <link rel="stylesheet"       href="/static/css/default.css" />
- <link rel="stylesheet"       href="/static/css/animations.css" />
+ <link rel="stylesheet"       href="{{url.static}}css/default.css" />
+ <link rel="stylesheet"       href="{{url.static}}css/animations.css" />
 {%endblock%}
 
 
@@ -16,7 +16,7 @@
      <div id="time"><span class="hour">{{ "now"|date("h") }}</span>:<span class="minute">{{ "now"|date("i") }}</span>:<span class="second">{{ "now"|date("s") }}</span></div>
      <div id="date">{% if site.currentlang == "fa" %} {{"now"|jdate("l j F Y")}} {% else %} {{"now"|date("l j F Y")}} {% endif %}</div>
      <header id="logo">
-      <img src="{{url.base}}/static/images/logo.png" alt='{%trans "Ermile"%}'>
+      <img src="{{url.static}}images/logo.png" alt='{%trans "Ermile"%}'>
       <h1>{% trans "Ermile" %}</h1>
      </header>
 {% if site.currentlang == "fa" %}
@@ -29,7 +29,7 @@
 {% for i, user in datatable.list %}
 
       <div data-id="{{user.id}}" class="card {% if user.hour_start is not null %}present{%endif%}">
-       <img class="random" src="/static/images/avatar/{{random(14)}}.png">
+       <img class="random" src="{{url.static}}images/avatar/{{random(14)}}.png">
 {% set name = user.user_displayname %}
        <div class="info">
         <div class="name">{% trans name %}</div>
@@ -59,7 +59,7 @@
 
      <div class="span5">
       <div class="person card present big">
-        <div class="avatar"><img src="/static/images/avatar/{{random(14)}}.png"></div>
+        <div class="avatar"><img src="{{url.static}}images/avatar/{{random(14)}}.png"></div>
 
         <div class="info">
           <div class="header">
@@ -120,8 +120,8 @@
 
 
 {%block js%}
- <script src="/static/js/modernizr.custom.js"></script>
- <script src="/static/js/jquery.dlmenu.js"></script>
- <script src="/static/js/pagetransitions.js"></script>
- <script src="/static/js/script-corridor.js"></script>
+ <script src="{{url.static}}js/modernizr.custom.js"></script>
+ <script src="{{url.static}}js/jquery.dlmenu.js"></script>
+ <script src="{{url.static}}js/pagetransitions.js"></script>
+ <script src="{{url.static}}js/script-corridor.js"></script>
 {%endblock%}
