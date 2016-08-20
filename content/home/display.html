@@ -40,7 +40,7 @@
   </div>
  </div>
 
-{%for key, value in datatable.list %}
+{%for key, value in datatable.summary %}
   <div data-id="{{key+1}}" class="page">
    <div class="container">
     <div class="row">
@@ -50,7 +50,7 @@
         <div class="avatar"><img src="{{url.static}}images/avatar/{{random(14)}}.png"></div>
 
         <div class="info">
-          <div class="header">{{key+1}}
+          <div class="header">{{key}}
             {% set name = value.name %}
             {% trans name %}
           </div>

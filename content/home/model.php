@@ -135,6 +135,9 @@ class model extends \mvc\model
 				";
 
 		$users = db::get($query);
+		$new   = array_column($users, "id");
+		$users = array_combine($new, $users);
+
 		return array('list' => $users, 'summary' => $this->summary());
 	}
 
