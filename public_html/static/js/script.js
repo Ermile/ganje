@@ -79,26 +79,28 @@ function changetime(_new, _class)
         _new = _new.replace(re, persian[i]);
     }
   }
-
-  // if time is not changed, return false
-  if($('#time .'+ _class).text() == _new)
+  $('.time .'+ _class).each(function()
   {
-    return false;
-  }
+    // if time is not changed, return false
+    if($(this).text() == _new)
+    {
+      return false;
+    }
+  });
+
   // change second without effect
   if(_class == 'second')
   {
-    $('#time .second').html(_new);
+    $('.time .second').html(_new);
     return;
   }
 
   var newel = $("<span class='"+_class+"'>"+_new+"</span>").hide();
-  $('#time .'+_class).replaceWith(newel);
+  $('.time .'+_class).replaceWith(newel);
 
-  $('#time .'+_class).fadeOut(500, function()
+  $('.time .'+_class).fadeOut(300, function()
   {
-   // $(this).replaceWith(newel);
-   $('#time .'+_class).fadeIn(1000);
+   $('.time .'+_class).fadeIn(300);
   });
 
 

@@ -6,7 +6,7 @@
   <div class="row auto">
    <aside class="span3 sidebar">
      <h2 id="god">{% trans "In the Name of God" %}</h2>
-     <div id="time"><span class="hour">{{ "now"|date("h") }}</span>:<span class="minute">{{ "now"|date("i") }}</span>:<span class="second">{{ "now"|date("s") }}</span></div>
+     <div class="time"><span class="hour">{{ "now"|date("h") }}</span>:<span class="minute">{{ "now"|date("i") }}</span>:<span class="second">{{ "now"|date("s") }}</span></div>
      <div id="date">{% if site.currentlang == "fa" %} {{"now"|jdate("l j F Y")}} {% else %} {{"now"|date("l j F Y")}} {% endif %}</div>
      <header id="logo">
       <img src="{{url.static}}images/logo.png" alt='{%trans "Ermile"%}'>
@@ -62,6 +62,10 @@
 
     <div class="span6">
      <div class="statistics">
+{% if user.hour_start is null %}
+<div class="time"><span class="hour">{{ "now"|date("h") }}</span>:<span class="minute">{{ "now"|date("i") }}</span>:<span class="second">{{ "now"|date("s") }}</span></div>
+{%trans "You loginned"%}
+{%else%}
       <div class="row">
        <div class="side enter">{{user.hour_start}}<span>{%trans "Enter"%}</span></div>
        <div class="diff"><span>{%trans "Difference"%}</span></div>
@@ -70,6 +74,7 @@
       <p class="minus"><span>{%trans "Minus"%}</span></p>
       <p class="plus"><span>{%trans "Plus"%}</span></p>
       <p class="total"><span>{%trans "Total"%}</span></p>
+{%endif%}
      </div>
     </div>
    </div>
