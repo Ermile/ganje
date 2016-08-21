@@ -104,6 +104,7 @@ body {
 .card.selected {opacity: 0.5;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .card.present, .detail .card {opacity: 1;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
 .card.present.selected{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
+.card img{display: block;width: 100%;}
 .card img.random {position: relative;top: 25px;}
 .card.selected .info .id {font-weight: bold;color:#000}
 
