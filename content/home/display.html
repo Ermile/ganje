@@ -63,7 +63,6 @@
     <div class="span6">
      <div class="statistics">
 {% if user.hour_start is null %}
-<div class="time"><span class="hour">{{ "now"|date("h") }}</span>:<span class="minute">{{ "now"|date("i") }}</span>:<span class="second">{{ "now"|date("s") }}</span></div>
 {%trans "You loginned"%}
 {%else%}
       <div class="row">

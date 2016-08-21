@@ -79,15 +79,12 @@ function changetime(_new, _class)
         _new = _new.replace(re, persian[i]);
     }
   }
-  $('.time .'+ _class).each(function()
-  {
-    // if time is not changed, return false
-    if($(this).text() == _new)
-    {
-      return false;
-    }
-  });
 
+  // if time is not changed, return false
+  if($('.time .'+ _class).text() == _new)
+  {
+    return false;
+  }
   // change second without effect
   if(_class == 'second')
   {
@@ -98,12 +95,10 @@ function changetime(_new, _class)
   var newel = $("<span class='"+_class+"'>"+_new+"</span>").hide();
   $('.time .'+_class).replaceWith(newel);
 
-  $('.time .'+_class).fadeOut(300, function()
+  $('.time .'+_class).fadeOut(500, function()
   {
-   $('.time .'+_class).fadeIn(300);
+   $('.time .'+_class).fadeIn(1000);
   });
-
-
 }
 
 
