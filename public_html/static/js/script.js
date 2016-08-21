@@ -1,40 +1,107 @@
-function startTime() {
+// declare variables
+var isAnimation = false;
+
+$(document).ready(function()
+{
+  startTime();
+});
+
+// bind keydown and click
+$(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
+$('.dashboard').on("click", ".card",    function(e) { event_corridor(e, e.currentTarget, 'click'); });
+// add location to body on start
+$('body').attr('data-location', 'dashboard' );
+
+
+
+
+/**
+ * [startTime description]
+ * @return {[type]} [description]
+ */
+function startTime()
+{
   var today = new Date();
   var h     = today.getHours();
   var m     = today.getMinutes();
   var s     = today.getSeconds();
+  // add zero to min and sec
+  m = addZero(m);
+  s = addZero(s);
 
-  m = checkTime(m);
-  s = checkTime(s);
-
-  $('.hour').html(h);
-  $('.minute').html(m);
-  $('.second').html(s);
-
-  var t = setTimeout(startTime, 500);
+  changetime(s, 'second');
+  changetime(m, 'minute');
+  changetime(h, 'hour');
+  var t = setTimeout(startTime,500);
 }
 
-function checkTime(i) {
-  if (i < 10) {
+
+/**
+ * [addZero description]
+ * @param {[type]} i [description]
+ */
+function addZero(i)
+{
+  if (i < 10)
+  {
     i = "0" + i
   };
   return i;
 }
 
-$(document).ready(function() {
-  startTime();
-});
+
+/**
+ * [changetime description]
+ * @param  {[type]} _new   [description]
+ * @param  {[type]} _class [description]
+ * @return {[type]}        [description]
+ */
+function changetime(_new, _class)
+{
+  // change time to persian if we are in rtl design
+  if($('body').hasClass('rtl'))
+  {
+    _new = String(_new);
+    // convert time to persian
+    persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
+    for(var i=0; i<=9; i++)
+    {
+        var re = new RegExp(i,"g");
+        _new = _new.replace(re, persian[i]);
+    }
+  }
+
+  // if time is not changed, return false
+  if($('#time .'+ _class).text() == _new)
+  {
+    return false;
+  }
+  // change second without effect
+  if(_class == 'second')
+  {
+    $('#time .second').html(_new);
+    return;
+  }
+
+  var newel = $("<span class='"+_class+"'>"+_new+"</span>").hide();
+  $('#time .'+_class).replaceWith(newel);
+
+  $('#time .'+_class).fadeOut(500, function()
+  {
+   // $(this).replaceWith(newel);
+   $('#time .'+_class).fadeIn(1000);
+  });
 
 
-var isAnimation = false;
+}
 
 
-// $('.card').eq(0).addClass('selected');
-$(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
-$('.dashboard').on("click", ".card",    function(e) { event_corridor(e, e.currentTarget, 'click'); });
-
-$('body').attr('data-location', 'dashboard' );
-
+/**
+ * [transfer description]
+ * @param  {[type]} _from [description]
+ * @param  {[type]} _to   [description]
+ * @return {[type]}       [description]
+ */
 function transfer(_from, _to)
 {
   // do not run animation twice
@@ -60,7 +127,6 @@ function transfer(_from, _to)
     return false;
   }
 
-
   // set location on each step
   if(_to == 'home')
   {
@@ -70,7 +136,6 @@ function transfer(_from, _to)
   {
     $('body').attr('data-location', 'personal' );
   }
-
 
   // start page transition animation
   isAnimation = true;
@@ -88,8 +153,15 @@ function transfer(_from, _to)
 }
 
 
+/**
+ * [changePerson description]
+ * @param  {[type]} _id [description]
+ * @return {[type]}     [description]
+ */
 function changePerson(_id)
 {
   $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
   $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
 }
+
+
