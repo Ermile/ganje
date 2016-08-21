@@ -171,3 +171,28 @@ function changePerson(_id)
 }
 
 
+/**
+ * [setTime description]
+ * @param {[type]} _id [description]
+ */
+function setTime(_id)
+{
+  if(isAnimation)
+  {
+    return false;
+  }
+
+  $('.page.detail .statistics').ajaxify({
+    ajax:
+    {
+      data:
+      {
+        userId:  _id,
+      }
+    }
+  });
+
+  // after set time, transfer to home
+  transfer(null, 'home');
+}
+

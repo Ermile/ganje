@@ -45,6 +45,11 @@ function event_corridor(e, _self, _key)
         {
           transfer('home', selected);
         }
+
+        if($('body').attr('data-location') == 'personal')
+        {
+          setTime(selected);
+        }
       break;
 
 
