@@ -16,6 +16,12 @@ function event_corridor(e, _self, _key)
   var alt    = e.altKey   ? 'alt'   : '';
   var mytxt  = String(_key) + ctrl + alt + shift;
   var keyp   = String.fromCharCode(_key);
+
+  if(!cid)
+  {
+    cid = 0;
+  }
+
   // handle numpad
   if(_key >= 96 && _key <= 105)
   {
@@ -32,11 +38,6 @@ function event_corridor(e, _self, _key)
 
   switch(mytxt)
   {
-    // ---------------------------------------------------------- BackSpace
-    case '8':               // Back Space
-      break;
-
-
     // ---------------------------------------------------------- Enter
     case '13':              // Enter
         var selected = $('.dashboard .card.selected').attr("data-id");
@@ -68,23 +69,41 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Page Up
     case '33':              // PageUP
-      changePerson(cid+5);
+    // ---------------------------------------------------------- Up
+    case '38':              // up
+      _id = cid - 5;
+      if(!cid || _id < 1)
+      {
+        _id = 1;
+      }
+      changePerson(_id);
       break;
+
 
     // ---------------------------------------------------------- Page Down
     case '34':              // PageDown
-      changePerson(cid-5);
+    // ---------------------------------------------------------- Down
+    case '40':              // down
+      _id = cid + 5;
+      if(!cid || _id > lastid)
+      {
+        _id = lastid;
+      }
+      changePerson(_id);
       break;
+
 
     // ---------------------------------------------------------- End
     case '35':              // End
       changePerson(lastid);
       break;
 
+
     // ---------------------------------------------------------- Home
     case '36':              // Home
       changePerson(1);
       break;
+
 
     // ---------------------------------------------------------- Left
     case '37':              // left
@@ -99,10 +118,6 @@ function event_corridor(e, _self, _key)
       changePerson(_id);
       break;
 
-    // ---------------------------------------------------------- Up
-    case '38':              // up
-      changePerson(cid-5);
-      break;
 
     // ---------------------------------------------------------- Right
     case '39':              // right
@@ -117,14 +132,13 @@ function event_corridor(e, _self, _key)
       changePerson(_id);
       break;
 
-    // ---------------------------------------------------------- Down
-    case '40':              // down
-      changePerson(cid+5);
-      break;
-
+    // ---------------------------------------------------------- BackSpace
+    case '8':               // Back Space
     // ---------------------------------------------------------- Delete
     case '46':              // delete
+      changePerson(0);
       break;
+
 
     // ---------------------------------------------------------------------- shortcut
     case '65ctrl':          // a + ctrl
