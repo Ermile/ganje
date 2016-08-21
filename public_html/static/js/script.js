@@ -26,6 +26,7 @@ $(document).ready(function() {
 });
 
 
+var isAnimation = false;
 
 
 // $('.card').eq(0).addClass('selected');
@@ -36,6 +37,12 @@ $('body').attr('data-location', 'dashboard' );
 
 function transfer(_from, _to)
 {
+  // do not run animation twice
+  if(isAnimation)
+  {
+    return false;
+  }
+
   // set from value
   if(!_from)
   {
@@ -66,6 +73,7 @@ function transfer(_from, _to)
 
 
   // start page transition animation
+  isAnimation = true;
   $('.page[data-id="'+ _from+ '"]').addClass('page-scaleDown');
   $('.page[data-id="'+ _to+ '"]').addClass('page-current page-scaleUpDown page-delay300');
 
@@ -75,6 +83,13 @@ function transfer(_from, _to)
     $('.page').removeClass('page-scaleDown page-scaleUpDown page-delay300');
     // remove current page from all except new page
     $('.page:not([data-id="'+_to+'"])').removeClass('page-current');
-
+    isAnimation = false;
   }, 700);
+}
+
+
+function changePerson(_id)
+{
+  $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
+  $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
 }

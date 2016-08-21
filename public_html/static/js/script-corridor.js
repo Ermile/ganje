@@ -49,9 +49,8 @@ function event_corridor(e, _self, _key)
 
     // ---------------------------------------------------------- Escape
     case '27':              //Escape
-      // $('.page').removeClass('page-current');
-      // $('.page[data-id="home"]').addClass('page-current');
-          transfer(null, 'home');
+      transfer(null, 'home');
+      changePerson(0);
       break;
 
 
@@ -60,28 +59,36 @@ function event_corridor(e, _self, _key)
     case '32shift':         // space + shift
     case '32ctrl':          // space + ctrl
     case '32ctrlshift':     // space + ctrl + shift
+      if(!cid)
+      {
+        changePerson(1);
+      }
       break;
 
 
     // ---------------------------------------------------------- Page Up
     case '33':              // PageUP
+      changePerson(cid+5);
       break;
 
     // ---------------------------------------------------------- Page Down
     case '34':              // PageDown
+      changePerson(cid-5);
       break;
 
     // ---------------------------------------------------------- End
     case '35':              // End
+      changePerson(lastid);
       break;
 
     // ---------------------------------------------------------- Home
     case '36':              // Home
+      changePerson(1);
       break;
 
     // ---------------------------------------------------------- Left
     case '37':              // left
-      if(!cid)
+      if(!cid || (cid + 1) > lastid)
       {
         _id = 1;
       }
@@ -89,21 +96,17 @@ function event_corridor(e, _self, _key)
       {
         _id = cid + 1;
       }
-      if(_id > lastid)
-      {
-        _id = 1;
-      }
-      $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
-      $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
+      changePerson(_id);
       break;
 
     // ---------------------------------------------------------- Up
     case '38':              // up
+      changePerson(cid-5);
       break;
 
     // ---------------------------------------------------------- Right
     case '39':              // right
-      if(!cid)
+      if(!cid || (cid - 1) < 1)
       {
         _id = lastid;
       }
@@ -111,16 +114,12 @@ function event_corridor(e, _self, _key)
       {
         _id = cid - 1;
       }
-      if(_id < 1)
-      {
-        _id = lastid;
-      }
-      $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
-      $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
+      changePerson(_id);
       break;
 
     // ---------------------------------------------------------- Down
     case '40':              // down
+      changePerson(cid+5);
       break;
 
     // ---------------------------------------------------------- Delete
@@ -161,8 +160,7 @@ function event_corridor(e, _self, _key)
     // ---------------------------------------------------------------------- mouse
     case 'click':           // click
       _id = _self.attr('data-id');
-      $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
-      $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
+      changePerson(_id);
       break;
 
     case 'dblclick':        // Double click
