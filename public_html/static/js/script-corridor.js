@@ -15,10 +15,15 @@ function event_corridor(e, _self, _key)
   var shift  = e.shiftKey ? 'shift' : '';
   var alt    = e.altKey   ? 'alt'   : '';
   var mytxt  = String(_key) + ctrl + alt + shift;
-  var keyp   = String.fromCharCode(e.keyCode);
+  var keyp   = String.fromCharCode(_key);
+  // handle numpad
+  if(_key >= 96 && _key <= 105)
+  {
+    keyp = _key - 96;
+  }
 
   // select item with number
-  if(keyp > 0 && keyp < 9)
+  if($('body').attr('data-location') == 'dashboard' && keyp > 0 && keyp < 9)
   {
     $('.card').removeClass('selected');
     $('.card:eq('+ (keyp-1) +')').addClass('selected');

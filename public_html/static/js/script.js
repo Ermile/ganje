@@ -36,18 +36,25 @@ $('body').attr('data-location', 'dashboard' );
 
 function transfer(_from, _to)
 {
+  // set from value
   if(!_from)
   {
     _from = $('.page.page-current').attr("data-id");
-    if(_from == 'home')
-    {
-      return false;
-    }
   }
 
-  $('.page[data-id="'+ _from+ '"]').addClass('page-scaleDown');
-  $('.page[data-id="'+ _to+ '"]').addClass('page-current page-scaleUpDown page-delay300');
+  // if want go from home to home
+  if($('body').attr('data-location') == 'dashboard' && _to == 'home')
+  {
+    return false;
+  }
+  // if want go from page to another page
+  else if($('body').attr('data-location') == 'personal' && _to !== 'home')
+  {
+    return false;
+  }
 
+
+  // set location on each step
   if(_to == 'home')
   {
     $('body').attr('data-location', 'dashboard' );
@@ -57,11 +64,15 @@ function transfer(_from, _to)
     $('body').attr('data-location', 'personal' );
   }
 
+
+  // start page transition animation
+  $('.page[data-id="'+ _from+ '"]').addClass('page-scaleDown');
+  $('.page[data-id="'+ _to+ '"]').addClass('page-current page-scaleUpDown page-delay300');
+
+  // remove animation effects after some time
   setTimeout(function()
   {
-    console.log('from: '+ _from +'  to: ' + _to);
-    $('.page[data-id="'+ _from+ '"]').removeClass('page-current page-scaleDown');
-    $('.page[data-id="'+ _to+ '"]').removeClass('page-scaleUpDown page-delay300');
+    $('.page').removeClass('page-scaleDown page-scaleUpDown page-delay300');
     // remove current page from all except new page
     $('.page:not([data-id="'+_to+'"])').removeClass('page-current');
 
