@@ -42,7 +42,8 @@
 {%for key, user in datatable.list %}
   <content data-id="{{key}}" class="page detail">
    <div class="row auto">
-    <div class="span5">
+    <div class="span2"></div>
+    <div class="span3">
      <div class="card">
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
 {%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}

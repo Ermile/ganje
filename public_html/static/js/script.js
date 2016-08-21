@@ -4,6 +4,8 @@ var isAnimation = false;
 $(document).ready(function()
 {
   startTime();
+  // reload page every 7 min to disallow session closing
+  setTimeout(function () { location.reload(1); }, 420000);
 });
 
 // bind keydown and click

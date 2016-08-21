@@ -117,13 +117,15 @@ body {
 .card .info .id {font-size: 0.8em;color: rgba(0,0,0,.4);width:20%;text-align:center;background-color:#f7f5f5;color:#333;position: absolute;bottom: 15%;right: 0;}
 .rtl .card .info .id {right: unset;left: 0;}
 
-.detail .card {display: block;margin: 10vh auto 0;width: 80%;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
+
+.page.detail > .row{margin-top: 10vh}
+.detail .card {display: block;margin:0 auto;width:100%;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
 .detail .card img {width: 100%;}
 .detail .card img.random{top: 30px;position: relative;}
 .detail .card .info .name {font-size: 3em;}
 
 
-.detail .statistics{background-color: #fff;padding: 1em;border: none;border-radius: .28571429rem;overflow: hidden;margin: 10vh auto;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;min-height: 10em;position: relative;text-align: center;}
+.detail .statistics{background-color: #fff;padding: 1em;border: none;border-radius: .28rem;overflow: hidden;margin: 0 auto;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;min-height: 10em;position: relative;text-align: center;}
 .detail .statistics .row{position: relative;}
 .detail .statistics .diff{display: inline-block;width: 50%;padding: 1em 2em;font-size: 2em;font-weight: 700;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .detail .statistics .side{width: 25%;position: absolute;bottom: 1em;padding: 1em 2em;font-size: 1em;font-weight: 700;}
