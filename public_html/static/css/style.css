@@ -96,7 +96,7 @@ body {
 @keyframes scaleUpDown { from { opacity: 0; -webkit-transform: scale(1.2); transform: scale(1.2); } }
 
 /*content*/
-.dashboard {padding-top: 10vh;text-align: center;font-size: 1.8em;}
+.dashboard {padding-top: 10vh;text-align: center;font-size: 1.6em;}
 
 /* card ui */
 .card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:1em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;overflow: hidden; background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);transition: all 0.3s ease-in-out;}

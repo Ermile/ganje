@@ -11,7 +11,14 @@ $(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .ca
 $('.dashboard').on("click", ".card",    function(e) { event_corridor(e, e.currentTarget, 'click'); });
 // add location to body on start
 $('body').attr('data-location', 'dashboard' );
-
+// add random class to image get random
+$(".dashboard .card img").each(function()
+{
+  if(this.src.indexOf('/default/') > -1)
+  {
+    $(this).addClass('random');
+  }
+});
 
 
 
