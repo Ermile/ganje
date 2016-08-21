@@ -2,8 +2,6 @@
 
 
 {%block body%}
-<div id="pt-main" class="pt-perspective">
-
  <content data-id="home" class="page page-current">
   <div class="row auto">
    <aside class="span3 sidebar">
@@ -20,7 +18,7 @@
    </aside>
 
    <content class="span9 dashboard">
-    <div class="container row">
+    <div class="row">
 {% for i, user in datatable.list %}
 
       <div data-id="{{user.id}}" class="card {% if user.hour_start is not null %}present{%endif%}">
@@ -33,7 +31,6 @@
        </div>
       </div>
      {%endfor%}
-
       <div class="clear:both"></div>
     </div>
    </content>
@@ -42,7 +39,7 @@
 
 {%for key, user in datatable.list %}
   <content data-id="{{key}}" class="page detail">
-   <div class="container row auto">
+   <div class="row auto">
     <div class="span5">
      <div class="card">
       <img class="random" src="{{url.static}}images/avatar/{{random(14)}}.png">
@@ -73,7 +70,6 @@
    </div>
   </content>
 {%endfor%}
- </div>
 {%endblock%}
 
 

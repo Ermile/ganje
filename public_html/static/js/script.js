@@ -32,6 +32,8 @@ $(document).ready(function() {
 $(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
 $('.dashboard').on("click", ".card",    function(e) { event_corridor(e, e.currentTarget, 'click'); });
 
+$('body').attr('data-location', 'dashboard' );
+
 function transfer(_from, _to)
 {
   if(!_from)
@@ -45,6 +47,15 @@ function transfer(_from, _to)
 
   $('.page[data-id="'+ _from+ '"]').addClass('page-scaleDown');
   $('.page[data-id="'+ _to+ '"]').addClass('page-current page-scaleUpDown page-delay300');
+
+  if(_to == 'home')
+  {
+    $('body').attr('data-location', 'dashboard' );
+  }
+  else
+  {
+    $('body').attr('data-location', 'personal' );
+  }
 
   setTimeout(function()
   {
