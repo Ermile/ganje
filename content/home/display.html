@@ -51,11 +51,11 @@
        <img src="{{avatar2 | exist(avatar | exist(avatar_default))}}">
       <div class="info">
        <div class="name">{% set name = user.user_displayname %}{% trans name %}</div>
-        <div class="position">{{user.position}}</div>
-       <span>{{user.week.total}} {%trans "hours in this week"%}</span><br />
-       <span>{{user.month.total}} {%trans "hours in this month"%}</span><br />
-       <span>{{user.month.plus}} {%trans "hours remote in this month"%}</span><br />
-       <span>{{user.month.minus}} {%trans "hours in idle this month"%}</span>
+    	<div class="position">{{user.position}}</div>
+   		<span class="week">{{user.week.total}} {%trans "hours in this week"%}</span><br />
+       	<span>{{user.month.total}} {%trans "hours in this month"%}</span><br />
+       	<span>{{user.month.plus}} {%trans "hours remote in this month"%}</span><br />
+       	<span>{{user.month.minus}} {%trans "hours in idle this month"%}</span>
         <div class="id">{{key | persian}}</div>
       </div>
      </div>
@@ -76,6 +76,7 @@
       </div>
 
       <div class="off">
+      	<div class="time"><span class="hour"></span>:<span class="minute"></span>:<span class="second"></span></div>
        <p>{%trans "You loginned"%}</p>
       </div>
 
