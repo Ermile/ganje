@@ -19,7 +19,7 @@ private function transtext()
 	echo T_("+98 25 3773 5183");                                                      // Line 92
 	echo T_("Another Languages");                                                     // Line 95
 	echo T_(" is a free to use, open source PHP framework created by");               // Line 104
-	echo T_("Ermile");                                                                // Line 15
+	echo T_("Ermile");                                                                // Line 13
 	echo T_("Copyright");                                                             // Line 113
 	echo T_("2013");                                                                  // Line 8 Seperate
 
@@ -29,11 +29,19 @@ private function transtext()
 	//----------------------------------------------------content\edit\layout-xhr.html
 
 	//-------------------------------------------------------content\home\display.html
-	echo T_("In the Name of God");                                                    // Line 10
-	echo T_("hours in this week");                                                    // Line 22 Seperate
-	echo T_("hours in this month");                                                   // Line 23 Seperate
-	echo T_("hours remote in this month");                                            // Line 24 Seperate
-	echo T_("hours in idle this month");                                              // Line 25 Seperate
+	echo T_("In the Name of God");                                                    // Line 8
+	echo T_("hours in this week");                                                    // Line 23 Seperate
+	echo T_("hours in this month");                                                   // Line 24 Seperate
+	echo T_("hours remote in this month");                                            // Line 25 Seperate
+	echo T_("hours in idle this month");                                              // Line 26 Seperate
+	echo T_("You loginned");                                                          // Line 67
+	echo T_("Enter Time");                                                            // Line 70
+	echo T_("Difference between enter and exit");                                     // Line 71
+	echo T_("Operation Time");                                                        // Line 71
+	echo T_("Exit Time");                                                             // Line 72
+	echo T_("Minus");                                                                 // Line 74
+	echo T_("Plus");                                                                  // Line 75
+	echo T_("Total");                                                                 // Line 76
 
 	//----------------------------------------------------content\home\layout-xhr.html
 
@@ -61,7 +69,8 @@ private function transtext()
 	echo T_("SeyedMahdi Hoseini");                                                    // Line 18 Seperate
 	echo T_("Ali Kharidar");                                                          // Line 19 Seperate
 	echo T_("MohamadAli Salehi");                                                     // Line 20 Seperate
-	echo T_(" ");                                                                     // Line 27 Seperate
+	echo T_("Sara Torkamani");                                                        // Line 21 Seperate
+	echo T_(" ");                                                                     // Line 28 Seperate
 
 }
 ?>

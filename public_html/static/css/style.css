@@ -1,6 +1,6 @@
 /**
  * Ganje Style
- * V2.2
+ * V3
  */
 
 body {
@@ -127,10 +127,11 @@ body {
 
 .detail .statistics{background-color: #fff;padding: 1em;border: none;border-radius: .28rem;overflow: hidden;margin: 0 auto;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;min-height: 10em;position: relative;text-align: center;}
 .detail .statistics .row{position: relative;}
-.detail .statistics .diff{display: inline-block;width: 50%;padding: 1em 2em;font-size: 2em;font-weight: 700;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
-.detail .statistics .side{width: 25%;position: absolute;bottom: 1em;padding: 1em 2em;font-size: 1em;font-weight: 700;}
-.detail .statistics .enter{right: 1em}
-.detail .statistics .exit{left: 1em}
+.detail .statistics abbr{clear: both;display: block;color:#777;font-size: 1.2rem;opacity: 0.3;border:none;}
+.detail .statistics .diff{display: inline-block;width: 50%;font-size: 3em;font-weight: 700;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);padding-top: 1em}
+.detail .statistics .side{width: 25%;position: absolute;bottom: 0;padding:0;font-size: 1em;font-weight: 700;color:#777;font-size: 2em}
+.detail .statistics .enter{right: 0}
+.detail .statistics .exit{left: 0}
 .detail .statistics .minus{margin-top:3em;}
 
 
