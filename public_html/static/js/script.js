@@ -31,16 +31,10 @@ $(".dashboard .card img").each(function()
 function startTime()
 {
   var today = new Date();
-  var h     = today.getHours();
-  var m     = today.getMinutes();
-  var s     = today.getSeconds();
-  // add zero to min and sec
-  m = addZero(m);
-  s = addZero(s);
 
-  changetime(s, 'second');
-  changetime(m, 'minute');
-  changetime(h, 'hour');
+  changetime(addZero(today.getSeconds()), 'second');
+  changetime(addZero(today.getMinutes()), 'minute');
+  changetime(today.getHours(), 'hour');
   var t = setTimeout(startTime,500);
 }
 
@@ -142,6 +136,7 @@ function transfer(_from, _to)
   else
   {
     $('body').attr('data-location', 'personal' );
+    fillTimes(_to);
   }
 
   // start page transition animation
@@ -173,6 +168,41 @@ function changePerson(_id)
 
 
 /**
+ * [fillTimes description]
+ * @param  {[type]} _id [description]
+ * @return {[type]}     [description]
+ */
+function fillTimes(_id)
+{
+  var today  = new Date();
+  var enter  = $('.page[data-id="'+ _id+ '"] .enter span').text();
+  var exit   = today.getHours() + ":" + today.getMinutes();
+  var tenter = String(enter).split(':');
+  tenter     = new Date(today.getFullYear(), today.getMonth(), today.getDate(), tenter[0], tenter[1]);
+  var diff  = Math.round((today - tenter) / 1000 / 60);
+
+  // fill exit time
+  $('.page[data-id="'+ _id+ '"] .exit span').text(exit);
+
+  $('.page[data-id="'+ _id+ '"] .diff span').text(diff);
+  $('.page[data-id="'+ _id+ '"] .diff').attr('data-time', diff);
+
+  calcTotalTime(_id);
+}
+
+
+function calcTotalTime(_id)
+{
+    var diff  = parseInt($('.page[data-id="'+ _id+ '"] .diff').attr('data-time'));
+    var minus = parseInt($('.page[data-id="'+ _id+ '"] .minus').attr('data-time'));
+    var plus  = parseInt($('.page[data-id="'+ _id+ '"] .plus').attr('data-time'));
+    var total = diff - minus + plus;
+
+    $('.page[data-id="'+ _id+ '"] .total span').attr('data-time', total);
+    $('.page[data-id="'+ _id+ '"] .total span').text(total);
+}
+
+/**
  * [setTime description]
  * @param {[type]} _id [description]
  */
@@ -197,26 +227,27 @@ function setTime(_id)
       {
         var myResult   = x.responseJSON.result;
         var elSelected = $('.dashboard .card[data-id="'+_id+'"]');
+        var elStatus   = $('.page[data-id="'+_id+'"]');
 
         if(myResult == undefined)
         {
-          console.log('undef');
-          return;
-        }
-        else if(myResult == 'exit')
-        {
-          // set status for this user on dashboard
-          elSelected.removeClass('present');
+          return false;
         }
         else if(myResult == 'enter')
         {
           // set status for this user on dashboard
           elSelected.addClass('present');
+          elStatus.attr('data-status', 'on');
+        }
+        else if(myResult == 'exit')
+        {
+          // set status for this user on dashboard
+          elSelected.removeClass('present');
+          elStatus.attr('data-status', 'off');
         }
       }
     }
   });
-
 
   // after set time, transfer to home
   transfer(_id, 'home');

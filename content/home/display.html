@@ -67,12 +67,12 @@
       <div class="on">
        <div class="row">
         <div class="side enter"><span>{{user.hour_start |date("H:i") }}</span><abbr>{%trans "Enter Time"%}</abbr></div>
-        <div class="diff"><span>123</span><abbr title='{%trans "Difference between enter and exit"%}'>{%trans "Operation Time"%}</abbr></div>
+        <div class="diff" data-time=0><span>123</span><abbr title='{%trans "Difference between enter and exit"%}'>{%trans "Operation Time"%}</abbr></div>
         <div class="side exit"><span>23</span><abbr>{%trans "Exit Time"%}</abbr></div>
        </div>
-       <p class="minus"><span>-</span><abbr>{%trans "Minus"%}</abbr></p>
-       <p class="plus"><span>-</span><abbr>{%trans "Plus"%}</abbr></p>
-       <p class="total"><span>-</span><abbr>{%trans "Total"%}</abbr></p>
+       <p class="minus" data-time=0><span>0</span><abbr>{%trans "Minus"%}</abbr></p>
+       <p class="plus" data-time=0><span>0</span><abbr>{%trans "Plus"%}</abbr></p>
+       <p class="total" data-time=0><span>0</span><abbr>{%trans "Total"%}</abbr></p>
       </div>
 
       <div class="off">
