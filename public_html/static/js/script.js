@@ -137,6 +137,7 @@ function transfer(_from, _to)
   if(_to == 'home')
   {
     $('body').attr('data-location', 'dashboard' );
+    $('body .dashboard').attr('data-last', _from);
   }
   else
   {
@@ -181,18 +182,43 @@ function setTime(_id)
   {
     return false;
   }
-
+  // remove selected item after setting time
+  $('.dashboard .card').removeClass('selected');
+  // send ajax and do best work on respnse
   $('.page.detail .statistics').ajaxify({
     ajax:
     {
       data:
       {
-        userId:  _id,
+        userId: _id,
+      },
+      abort: false,
+      success: function(e, data, x)
+      {
+        var myResult   = x.responseJSON.result;
+        var elSelected = $('.dashboard .card[data-id="'+_id+'"]');
+
+        if(myResult == undefined)
+        {
+          console.log('undef');
+          return;
+        }
+        else if(myResult == 'exit')
+        {
+          // set status for this user on dashboard
+          elSelected.removeClass('present');
+        }
+        else if(myResult == 'enter')
+        {
+          // set status for this user on dashboard
+          elSelected.addClass('present');
+        }
       }
     }
   });
 
+
   // after set time, transfer to home
-  transfer(null, 'home');
+  transfer(_id, 'home');
 }
 

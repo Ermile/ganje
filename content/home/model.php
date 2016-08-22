@@ -13,7 +13,8 @@ class model extends \mvc\model
 
 	public function post_hours(){
 
-		$type = utility::post("type");
+		$type   = utility::post("type");
+		$result = null;
 
 		switch ($type) {
 			case 'summary':
@@ -33,8 +34,11 @@ class model extends \mvc\model
 		//----------- check users status
 		if($this->check_user()){
 			//------- set time
-			$this->set_time();
+			$result = $this->set_time();
 		}
+
+		// send class name for absent on present
+		debug::property('result', $result);
 	}
 
 	/*
@@ -55,7 +59,7 @@ class model extends \mvc\model
 			return false;
 		}
 
-		return true;
+		return 'true';
 	}
 
 	public function set_time(){
@@ -84,6 +88,7 @@ class model extends \mvc\model
 			db::query($insert);
 
 			debug::true(T_("Your are Entered"));
+			return 'enter';
 
 		}elseif($check_date['hour_end'] == null){
 
@@ -103,6 +108,7 @@ class model extends \mvc\model
 			db::query($update);
 
 			debug::true(T_("Your are Exited"));
+			return 'exit';
 
 		}
 

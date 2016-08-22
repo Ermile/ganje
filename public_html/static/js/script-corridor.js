@@ -40,15 +40,17 @@ function event_corridor(e, _self, _key)
   {
     // ---------------------------------------------------------- Enter
     case '13':              // Enter
-        var selected = $('.dashboard .card.selected').attr("data-id");
-        if(selected)
+        if(cid)
         {
-          transfer('home', selected);
+          transfer('home', cid);
         }
+      break;
 
+    case '13ctrl':          // ctrl + Enter
+    case '106':             // *
         if($('body').attr('data-location') == 'personal')
         {
-          setTime(selected);
+          setTime(cid);
         }
       break;
 
