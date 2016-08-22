@@ -113,10 +113,11 @@ body {
 .card .info {background-color: #fff;border: none;border-top: 1px solid rgba(34,36,38,.1);margin: 0;padding: 1em;box-shadow: none;font-size:0.8em;text-align: left;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 .rtl .card .info {text-align: right;font-size: 1em;}
 .card .info .name {font-weight: 700;font-size: 1em;line-height: 1.2em;color: rgba(0,0,0,.85);}
-.card .info .position {font-size: 1.2em;color: #aaa;margin: 0.2em 0 0.5em;}
-.card .info .id {font-size: 0.8em;color: rgba(0,0,0,.4);width:15%;text-align:center;background-color:#f7f5f5;background-color: #dedede;color:#333;position: absolute;bottom: 10%;right: 0;}
+.card .info .position {font-size: 1.5em;color: #aaa;margin: 0.2em 0 0.5em;}
+.card .info .id {font-size: 1em;color: rgba(0,0,0,.4);width:15%;text-align:center;background-color:#f7f5f5;background-color: #dedede;color:#333;position: absolute;bottom: 10%;right: 0;}
 .rtl .card .info .id {right: unset;left: 0;}
 .card .info .week {font-weight: 700;}
+.card .info span {font-size: 1.2em;}
 
 .dashboard .card .position {font-size: 0.8em;}
 .dashboard .card .id {background-color: transparent;}
