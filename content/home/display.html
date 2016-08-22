@@ -40,7 +40,7 @@
  </content>
 
 {%for key, user in datatable.list %}
-  <content data-id="{{key}}" class="page detail">
+  <content data-id="{{key}}" class="page detail" data-status="{%if user.hour_start is not null %}on{%else%}off{%endif%}">
    <div class="row auto">
     <div class="span2"></div>
     <div class="span3">
@@ -63,18 +63,22 @@
 
     <div class="span6">
      <div class="statistics" data-action="/" data-method="post">
-{% if user.hour_start is null %}
-{%trans "You loginned"%}
-{%else%}
-      <div class="row">
-       <div class="side enter"><span>{{user.hour_start |date("H:i") }}</span><abbr>{%trans "Enter Time"%}</abbr></div>
-       <div class="diff"><span>123</span><abbr title='{%trans "Difference between enter and exit"%}'>{%trans "Operation Time"%}</abbr></div>
-       <div class="side exit"><span>23</span><abbr>{%trans "Exit Time"%}</abbr></div>
+
+      <div class="on">
+       <div class="row">
+        <div class="side enter"><span>{{user.hour_start |date("H:i") }}</span><abbr>{%trans "Enter Time"%}</abbr></div>
+        <div class="diff"><span>123</span><abbr title='{%trans "Difference between enter and exit"%}'>{%trans "Operation Time"%}</abbr></div>
+        <div class="side exit"><span>23</span><abbr>{%trans "Exit Time"%}</abbr></div>
+       </div>
+       <p class="minus"><span>-</span><abbr>{%trans "Minus"%}</abbr></p>
+       <p class="plus"><span>-</span><abbr>{%trans "Plus"%}</abbr></p>
+       <p class="total"><span>-</span><abbr>{%trans "Total"%}</abbr></p>
       </div>
-      <p class="minus"><span>-</span><abbr>{%trans "Minus"%}</abbr></p>
-      <p class="plus"><span>-</span><abbr>{%trans "Plus"%}</abbr></p>
-      <p class="total"><span>-</span><abbr>{%trans "Total"%}</abbr></p>
-{%endif%}
+
+      <div class="off">
+       <p>{%trans "You loginned"%}</p>
+      </div>
+
      </div>
     </div>
    </div>
