@@ -59,12 +59,12 @@ function addZero(i)
  * @param  {[type]} _class [description]
  * @return {[type]}        [description]
  */
-function changetime(_new, _class)
+function changetime(_value, _class)
 {
   // change time to persian if we are in rtl design
   if($('body').hasClass('rtl'))
   {
-    _new = String(_new);
+    _new = String(_value);
     // convert time to persian
     persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
     for(var i=0; i<=9; i++)
@@ -73,26 +73,13 @@ function changetime(_new, _class)
         _new = _new.replace(re, persian[i]);
     }
   }
-
   // if time is not changed, return false
-  if($('.time .'+ _class).text() == _new)
+  if($('.time .'+ _class).attr('data-time') == _value)
   {
     return false;
   }
-  // change second without effect
-  if(_class == 'second')
-  {
-    $('.time .second').html(_new);
-    return;
-  }
-
-  var newel = $("<span class='"+_class+"'>"+_new+"</span>").hide();
-  $('.time .'+_class).replaceWith(newel);
-
-  $('.time .'+_class).fadeOut(500, function()
-  {
-   $('.time .'+_class).fadeIn(1000);
-  });
+  // set new value with effect
+  $('.time .'+ _class).html(_new).attr('data-time', _value);
 }
 
 
@@ -180,9 +167,6 @@ function fillTimes(_id)
   var tenter = String(enter).split(':');
   tenter     = new Date(today.getFullYear(), today.getMonth(), today.getDate(), tenter[0], tenter[1]);
   var diff  = Math.round((today - tenter) / 1000 / 60);
-
-  // fill exit time
-  $('.page[data-id="'+ _id+ '"] .exit span').text(exit);
 
   $('.page[data-id="'+ _id+ '"] .diff span').text(diff);
   $('.page[data-id="'+ _id+ '"] .diff').attr('data-time', diff);

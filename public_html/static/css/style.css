@@ -9,7 +9,6 @@ body {
 	height: 100%;
 	overflow: hidden;
 }
-
 .page {
 	width: 100%;
 	height: 100%;
@@ -131,8 +130,8 @@ body {
 .detail[data-status='on'] .statistics .off{display: none}
 .detail[data-status='off'] .statistics .on{display: none}
 
-.off .enter-time {font-size: 5em;text-shadow: 0 0 1px #000;}
-.off .enter-time .hour {font-weight: 700;}
+.off .time {font-size: 5em;text-shadow: 0 0 1px #000;}
+.off .time .hour {font-weight: 700;}
 
 .detail .statistics{background-color: #fff;padding: 1em;border: none;border-radius: .28rem;overflow: hidden;margin: 0 auto;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;min-height: 10em;position: relative;text-align: center;}
 .detail .statistics .row{position: relative;}
@@ -142,6 +141,5 @@ body {
 .detail .statistics .enter{right: 0}
 .detail .statistics .exit{left: 0}
 .detail .statistics .minus{margin-top:3em;}
-
 
 

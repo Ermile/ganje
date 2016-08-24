@@ -87,7 +87,7 @@ class model extends \mvc\model
 
 			db::query($insert);
 
-			debug::true(T_("Your are Entered"));
+			debug::true(T_("Enter was registered."). ' '. T_("Have a good time."));
 			return 'enter';
 
 		}elseif($check_date['hour_end'] == null){
@@ -107,7 +107,7 @@ class model extends \mvc\model
 
 			db::query($update);
 
-			debug::true(T_("Your are Exited"));
+			debug::true(T_("Bye Bye;)"));
 			return 'exit';
 
 		}

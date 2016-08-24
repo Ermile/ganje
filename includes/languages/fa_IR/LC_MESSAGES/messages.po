@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Amon - Persian\n"
-"POT-Creation-Date: 2016-08-22 14:57+0430\n"
-"PO-Revision-Date: 2016-08-22 14:57+0430\n"
+"POT-Creation-Date: 2016-08-24 14:55+0430\n"
+"PO-Revision-Date: 2016-08-24 14:55+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -26,12 +26,16 @@ msgid "User not found"
 msgstr "کاربر یافت نشد"
 
 #: content/home/model.php:90
-msgid "Your are Entered"
-msgstr "شما وارد سیستم شدید"
+msgid "Enter was registered."
+msgstr "ورود ثبت شد."
+
+#: content/home/model.php:90
+msgid "Have a good time."
+msgstr "اوقات خوبی داشته باشید."
 
 #: content/home/model.php:110
-msgid "Your are Exited"
-msgstr "شما خارج شدید!"
+msgid "Bye Bye;)"
+msgstr "خدانگهدار ;)"
 
 #: content/home/model.php:123
 msgid "Undefined"
@@ -632,7 +636,7 @@ msgstr "برخی از حقوق محفوظ است!"
 msgid "Powered by"
 msgstr "قدرت گرفته از"
 
-#: includes/languages/trans_addons.php:72 includes/languages/trans_twig.php:60
+#: includes/languages/trans_addons.php:72 includes/languages/trans_twig.php:61
 msgid "Saloos"
 msgstr "سالوس"
 
@@ -1070,11 +1074,11 @@ msgstr ""
 "شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت "
 "کنید."
 
-#: includes/languages/trans_addons.php:190 includes/languages/trans_twig.php:49
+#: includes/languages/trans_addons.php:190 includes/languages/trans_twig.php:50
 msgid "Actions"
 msgstr "عملیات"
 
-#: includes/languages/trans_addons.php:191 includes/languages/trans_twig.php:50
+#: includes/languages/trans_addons.php:191 includes/languages/trans_twig.php:51
 msgid "Data not exist!"
 msgstr "داده‌ای برای نمایش وجود ندارد!"
 
@@ -2354,7 +2358,7 @@ msgstr "ما به مخاطب سایر کاربران نیاز نداریم:؟)"
 msgid "We need mobile number!"
 msgstr "ما به شماره موبایل نیاز داریم!"
 
-#: includes/languages/trans_addons.php:524 includes/languages/trans_twig.php:73
+#: includes/languages/trans_addons.php:524 includes/languages/trans_twig.php:74
 msgid " "
 msgstr " "
 
@@ -2451,86 +2455,94 @@ msgid "hours in idle this month"
 msgstr "ساعت هدر داده در این ماه"
 
 #: includes/languages/trans_twig.php:37
-msgid "You loginned"
-msgstr "شما وارد شدید!"
-
-#: includes/languages/trans_twig.php:38
 msgid "Enter Time"
 msgstr "زمان ورود"
 
-#: includes/languages/trans_twig.php:39
+#: includes/languages/trans_twig.php:38
 msgid "Difference between enter and exit"
 msgstr "تفاوت بین زمان ورود و خروج"
 
-#: includes/languages/trans_twig.php:40
+#: includes/languages/trans_twig.php:39
 msgid "Operation Time"
 msgstr "زمان فعالیت"
 
-#: includes/languages/trans_twig.php:41
+#: includes/languages/trans_twig.php:40
 msgid "Exit Time"
 msgstr "زمان خروج"
 
-#: includes/languages/trans_twig.php:42
+#: includes/languages/trans_twig.php:41
 msgid "Minus"
 msgstr "هدر رفت"
 
-#: includes/languages/trans_twig.php:43
+#: includes/languages/trans_twig.php:42
 msgid "Plus"
 msgstr "دور کاری"
 
-#: includes/languages/trans_twig.php:44
+#: includes/languages/trans_twig.php:43
 msgid "Total"
 msgstr "مجموع"
 
-#: includes/languages/trans_twig.php:57
+#: includes/languages/trans_twig.php:44
+msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."
+msgstr ""
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت "
+"نمایید."
+
+#: includes/languages/trans_twig.php:45
+msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."
+msgstr ""
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت "
+"نمایید."
+
+#: includes/languages/trans_twig.php:58
 msgid "Some right reserved!"
 msgstr "برخی از حقوق محفوظ است!"
 
-#: includes/languages/trans_twig.php:61
+#: includes/languages/trans_twig.php:62
 msgid "2014"
 msgstr "۱۳۹۳"
 
-#: includes/languages/trans_twig.php:62
+#: includes/languages/trans_twig.php:63
 msgid "2015"
 msgstr "۱۳۹۴"
 
-#: includes/languages/trans_twig.php:63
+#: includes/languages/trans_twig.php:64
 msgid "2016"
 msgstr "۱۳۹۵"
 
-#: includes/languages/trans_twig.php:64
+#: includes/languages/trans_twig.php:65
 msgid "2017"
 msgstr "۱۳۹۶"
 
-#: includes/languages/trans_twig.php:65
+#: includes/languages/trans_twig.php:66
 msgid "2018"
 msgstr "۱۳۹۷"
 
-#: includes/languages/trans_twig.php:66
+#: includes/languages/trans_twig.php:67
 msgid "2019"
 msgstr "۱۳۹۸"
 
-#: includes/languages/trans_twig.php:67
+#: includes/languages/trans_twig.php:68
 msgid "Sadegh Salehi"
 msgstr "صادق صالحی"
 
-#: includes/languages/trans_twig.php:68
+#: includes/languages/trans_twig.php:69
 msgid "Ali Modabber"
 msgstr "علی مدبر"
 
-#: includes/languages/trans_twig.php:69
+#: includes/languages/trans_twig.php:70
 msgid "SeyedMahdi Hoseini"
 msgstr "سیدمهدی حسینی"
 
-#: includes/languages/trans_twig.php:70
+#: includes/languages/trans_twig.php:71
 msgid "Ali Kharidar"
 msgstr "علی خریدار"
 
-#: includes/languages/trans_twig.php:71
+#: includes/languages/trans_twig.php:72
 msgid "MohamadAli Salehi"
 msgstr "محمدعلی صالحی"
 
-#: includes/languages/trans_twig.php:72
+#: includes/languages/trans_twig.php:73
 msgid "Sara Torkamani"
 msgstr "سارا ترکمنی"
 
@@ -2545,6 +2557,18 @@ msgstr "سرویس حضور و غیاب رایگان و منبع‌باز"
 #: includes/mvc/view.php:12
 msgid "Enjoy work time"
 msgstr "از زمان کاری خود لذت ببرید"
+
+#~ msgid "Have a good time"
+#~ msgstr "اوغات خوبی داشته باشید"
+
+#~ msgid "Your are Entered"
+#~ msgstr "شما وارد سیستم شدید"
+
+#~ msgid "Your are Exited"
+#~ msgstr "شما خارج شدید!"
+
+#~ msgid "You loginned"
+#~ msgstr "شما وارد شدید!"
 
 #~ msgid "All Time Saved! Can not edit"
 #~ msgstr "تمام زمان‌ها ذخیره شدند! نمی‌توانید تغییر دهید"

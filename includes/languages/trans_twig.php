@@ -34,14 +34,15 @@ private function transtext()
 	echo T_("hours in this month");                                                   // Line 24 Seperate
 	echo T_("hours remote in this month");                                            // Line 25 Seperate
 	echo T_("hours in idle this month");                                              // Line 26 Seperate
-	echo T_("You loginned");                                                          // Line 67
-	echo T_("Enter Time");                                                            // Line 70
-	echo T_("Difference between enter and exit");                                     // Line 71
-	echo T_("Operation Time");                                                        // Line 71
-	echo T_("Exit Time");                                                             // Line 72
-	echo T_("Minus");                                                                 // Line 74
-	echo T_("Plus");                                                                  // Line 75
-	echo T_("Total");                                                                 // Line 76
+	echo T_("Enter Time");                                                            // Line 69
+	echo T_("Difference between enter and exit");                                     // Line 70
+	echo T_("Operation Time");                                                        // Line 70
+	echo T_("Exit Time");                                                             // Line 71
+	echo T_("Minus");                                                                 // Line 73
+	echo T_("Plus");                                                                  // Line 74
+	echo T_("Total");                                                                 // Line 75
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 76
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 81
 
 	//----------------------------------------------------content\home\layout-xhr.html
 
