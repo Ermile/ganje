@@ -101,12 +101,12 @@ body {
 @media screen and (min-width: 2000px) { .dashboard{font-size: 2em;}}
 
 /* card ui */
-.card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:1em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;overflow: hidden; background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);transition: all 0.3s ease-in-out;cursor: pointer}
+.card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:1em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;overflow: hidden; background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);transition: all 0.3s ease-in-out;}
 .card:last-child {margin-bottom: 0;clear: both}
 .card.selected {opacity: 0.5;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .card.present, .detail .card {opacity: 1;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
 .card.present.selected{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
-.card img{display: block;width: 100%;}
+.card img{display: block;width: 100%;cursor: pointer}
 .card img.random {position: relative;top: 25px;}
 .card.selected .info .id {font-weight: bold;color:#000}
 

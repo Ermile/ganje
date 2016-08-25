@@ -185,10 +185,19 @@ function event_corridor(e, _self, _key)
       break;
 
     case 'dblclick':        // Double click
-       if(cid)
+      if (_self.parents('.detail').length)
+      {
+        if($('body').attr('data-location') == 'personal')
         {
-          transfer('home', cid);
+          _id = _self.parents('.detail').attr('data-id');
+          setTime(_id);
         }
+      }
+
+      if(cid)
+      {
+        transfer('home', cid);
+      }
       break;
 
     case 'rightclick':        // Double click

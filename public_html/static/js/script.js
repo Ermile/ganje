@@ -10,8 +10,8 @@ $(document).ready(function()
 
 // bind keydown and click
 $(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
-$('.dashboard').on("click", ".card", function(e) { event_corridor(e, e.currentTarget, 'click'); });
-$('.dashboard').on("dblclick", ".card", function(e) { event_corridor(e, e.currentTarget, 'dblclick'); });
+$(document).on("click", ".card", function(e) { event_corridor(e, e.currentTarget, 'click'); });
+$(document).on("dblclick", ".card", function(e) { event_corridor(e, e.currentTarget, 'dblclick'); });
 $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(e, e.currentTarget, 'rightclick'); });
 
 // add location to body on start
