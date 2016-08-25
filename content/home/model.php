@@ -123,21 +123,21 @@ class model extends \mvc\model
 		$no_position = T_("Undefined");
 		$query =
 				"SELECT
-					u.id,
-					u.user_displayname,
+					users.id,
+					users.user_displayname,
 					IFNULL(options.option_value,'$no_position') as position,
 					hours.hour_start
-				FROM users u
+				FROM users
 				LEFT JOIN hours
-					ON hours.user_id = u.id
+					ON hours.user_id = users.id
 					AND hours.hour_date = DATE(NOW())
 					AND hours.hour_end is null
 				LEFT JOIN options ON
-					options.user_id = u.id
+					options.user_id = users.id
 					AND options.option_cat = 'user_meta'
 					AND options.option_key = 'position'
-				WHERE u.user_status = 'active'
-				ORDER BY u.id
+				WHERE users.user_status = 'active'
+				ORDER BY users.id
 				";
 
 		$users = db::get($query);
@@ -148,19 +148,19 @@ class model extends \mvc\model
 	}
 
 	public function summary() {
+		
 		$date = date("Y-m-d");
-
-		//-------- sql_mode = "" => SET GLOBAL sql_mode = '';
 
 		$report = array();
 
 		//--------- repeat to every query
 		$field = "users.id,users.user_displayname,
-				  sum(hours.hour_total) as total,
-				  sum(hours.hour_diff) as diff,
-				  sum(hours.hour_plus) as plus,
-				  sum(hours.hour_minus) as minus
+				 SEC_TO_TIME(SUM(hours.hour_total) * 60 ) as 'total',
+				 SEC_TO_TIME(SUM(hours.hour_diff)  * 60 ) as 'diff',
+				 SEC_TO_TIME(SUM(hours.hour_plus)  * 60 ) as 'plus',
+				 SEC_TO_TIME(SUM(hours.hour_minus) * 60 ) as 'minus'
 				";
+
 		$join =	"FROM hours
 				  INNER JOIN users on hours.user_id = users.id
 				  WHERE 1 ";
@@ -191,9 +191,7 @@ class model extends \mvc\model
 
 		";
 		$report = db::get($qry);
-
-
-		// var_dump($report);exit();
+		
 		$return  = array();
 		foreach ($report as $key => $value) {
 			$id = $value['id'];
@@ -211,9 +209,6 @@ class model extends \mvc\model
 
 		}
 		return $return;
-		//-------- return json
-		// debug::msg("data", $report);
-		// $this->_processor(['force_json'=>true, 'not_redirect'=>true]);
 	}
 
 }
