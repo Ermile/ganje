@@ -185,6 +185,15 @@ function event_corridor(e, _self, _key)
       break;
 
     case 'dblclick':        // Double click
+       if(cid)
+        {
+          transfer('home', cid);
+        }
+      break;
+
+    case 'rightclick':        // Double click
+      transfer(null, 'home');
+      changePerson(0);
       break;
 
     default:                // exit this handler for other keys
