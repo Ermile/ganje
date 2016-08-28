@@ -29,7 +29,7 @@ function event_corridor(e, _self, _key)
   }
 
   // select item with number
-  if($('body').attr('data-location') == 'dashboard' && keyp > 0 && keyp < 9)
+  if($('body').attr('data-location') == 'dashboard' && keyp >= 0 && keyp <= 9)
   {
     $('.card').removeClass('selected');
     $('.card:eq('+ (keyp-1) +')').addClass('selected');
