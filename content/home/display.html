@@ -52,10 +52,10 @@
       <div class="info">
        <div class="name">{% set name = user.user_displayname %}{% trans name %}</div>
     	<div class="position">{{user.position}}</div>
-   		<span class="week">{{datatable['summary'][user.id]['week']['total'] | date('H:i')}} {%trans "hours in this week"%}</span><br />
-       	<span>{{datatable['summary'][user.id]['month']['total'] | date('H:i')}} {%trans "hours in this month"%}</span><br />
-       	<span>{{datatable['summary'][user.id]['month']['plus'] | date('H:i')}} {%trans "hours remote in this month"%}</span><br />
-       	<span>{{datatable['summary'][user.id]['month']['minus'] | date('H:i')}} {%trans "hours in idle this month"%}</span>
+   		<span class="week">{{datatable['summary'][user.id]['week']['total']}} {%trans "hours in this week"%}</span><br />
+       	<span>{{datatable['summary'][user.id]['month']['total']}} {%trans "hours in this month"%}</span><br />
+       	<span>{{datatable['summary'][user.id]['month']['plus']}} {%trans "hours remote in this month"%}</span><br />
+       	<span>{{datatable['summary'][user.id]['month']['minus']}} {%trans "hours in idle this month"%}</span>
         <div class="id">{{key | persian}}</div>
       </div>
      </div>
