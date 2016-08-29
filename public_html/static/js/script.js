@@ -199,8 +199,7 @@ function setTime(_id)
   {
     return false;
   }
-  // remove selected item after setting time
-  $('.dashboard .card').removeClass('selected');
+
   // send ajax and do best work on respnse
   $('.page.detail .statistics').ajaxify({
     ajax:
@@ -232,6 +231,8 @@ function setTime(_id)
           elSelected.removeClass('present');
           elStatus.attr('data-status', 'off');
         }
+        // remove selected item after setting time
+        $('.dashboard .card').removeClass('selected');
       }
     }
   });
