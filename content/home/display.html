@@ -25,10 +25,10 @@
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
 {%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
        <img src="{{avatar | exist(avatar_default)}}">
-{% set name = user.user_displayname %}
+{% set name = user.displayname %}
        <div class="info">
         <div class="name">{% trans name %}</div>
-        <div class="position">{{user.position}}</div>
+        <div class="position">{{user.meta | decode('position')}}</div>
         <div class="id">{{user.id | persian}}</div>
        </div>
       </div>
@@ -50,8 +50,8 @@
 {%set avatar2 = url.static ~ 'images/avatar/' ~ user.id ~ '-v2.jpg' %}
        <img src="{{avatar2 | exist(avatar | exist(avatar_default))}}">
       <div class="info">
-       <div class="name">{% set name = user.user_displayname %}{% trans name %}</div>
-    	<div class="position">{{user.position}}</div>
+       <div class="name">{% set name = user.displayname %}{% trans name %}</div>
+    	<div class="position">{{user.meta | decode('position')}}</div>
    		<span class="week">{{datatable['summary'][user.id]['week']['total']}} {%trans "hours in this week"%}</span><br />
        	<span>{{datatable['summary'][user.id]['month']['total']}} {%trans "hours in this month"%}</span><br />
        	<span>{{datatable['summary'][user.id]['month']['plus']}} {%trans "hours remote in this month"%}</span><br />

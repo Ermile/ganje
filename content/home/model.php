@@ -124,22 +124,17 @@ class model extends \mvc\model
 		$query =
 				"SELECT
 					users.id,
-					users.user_displayname,
-					IFNULL(options.option_value,'$no_position') as position,
+					users.user_displayname as displayname,
+					IFNULL(users.user_meta,'$no_position') as meta,
+
 					hours.hour_start
 				FROM users
 				LEFT JOIN hours
 					ON hours.user_id = users.id
 					AND hours.hour_date = DATE(NOW())
 					AND hours.hour_end is null
-				LEFT JOIN options ON
-					options.user_id = users.id
-					AND options.option_cat = 'user_meta'
-					AND options.option_key = 'position'
-				WHERE users.user_status = 'active'
 				ORDER BY users.id
 				";
-
 		$users = db::get($query);
 		$new   = array_column($users, "id");
 		$users = array_combine($new, $users);
@@ -148,13 +143,13 @@ class model extends \mvc\model
 	}
 
 	public function summary() {
-		
+
 		$date = date("Y-m-d");
 
 		$report = array();
 
 		//--------- repeat to every query
-		$field = "users.id,users.user_displayname,
+		$field = "users.id,users.user_displayname as displayname,
 				 SEC_TO_TIME(SUM(hours.hour_total) * 60 ) as 'total',
 				 SEC_TO_TIME(SUM(hours.hour_diff)  * 60 ) as 'diff',
 				 SEC_TO_TIME(SUM(hours.hour_plus)  * 60 ) as 'plus',
@@ -191,7 +186,7 @@ class model extends \mvc\model
 
 		";
 		$report = db::get($qry);
-		
+
 		$return  = array();
 		foreach ($report as $key => $value) {
 			$id = $value['id'];
@@ -199,7 +194,7 @@ class model extends \mvc\model
 
 				$return[$id] = [];
 				$return[$id]['id'] = $id;
-				$return[$id]['name'] = $value['user_displayname'];
+				$return[$id]['name'] = $value['displayname'];
 			}
 
 			$return[$id][$value['type']]['diff'] = $value['diff'];
