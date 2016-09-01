@@ -34,15 +34,15 @@ private function transtext()
 	echo T_("hours in this month");                                                   // Line 24 Seperate
 	echo T_("hours remote in this month");                                            // Line 25 Seperate
 	echo T_("hours in idle this month");                                              // Line 26 Seperate
-	echo T_("Enter Time");                                                            // Line 69
-	echo T_("Difference between enter and exit");                                     // Line 70
-	echo T_("Operation Time");                                                        // Line 70
-	echo T_("Exit Time");                                                             // Line 71
-	echo T_("Minus");                                                                 // Line 73
-	echo T_("Plus");                                                                  // Line 74
-	echo T_("Total");                                                                 // Line 75
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 76
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 81
+	echo T_("Enter Time");                                                            // Line 72
+	echo T_("Difference between enter and exit");                                     // Line 73
+	echo T_("Operation Time");                                                        // Line 73
+	echo T_("Exit Time");                                                             // Line 74
+	echo T_("Minus");                                                                 // Line 76
+	echo T_("Plus");                                                                  // Line 77
+	echo T_("Total");                                                                 // Line 78
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 79
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 84
 
 	//----------------------------------------------------content\home\layout-xhr.html
 
@@ -71,7 +71,16 @@ private function transtext()
 	echo T_("Ali Kharidar");                                                          // Line 19 Seperate
 	echo T_("MohamadAli Salehi");                                                     // Line 20 Seperate
 	echo T_("Sara Torkamani");                                                        // Line 21 Seperate
-	echo T_(" ");                                                                     // Line 28 Seperate
+	echo T_("Founder & CEO");                                                         // Line 28 Seperate
+	echo T_("CEO");                                                                   // Line 29 Seperate
+	echo T_("Full Stack Developer");                                                  // Line 30 Seperate
+	echo T_("Backend Developer");                                                     // Line 31 Seperate
+	echo T_("Frontend Developer");                                                    // Line 32 Seperate
+	echo T_("UI Designer");                                                           // Line 33 Seperate
+	echo T_("Graphic Designer");                                                      // Line 34 Seperate
+	echo T_("Shareholder");                                                           // Line 35 Seperate
+	echo T_("Chrikt");                                                                // Line 36 Seperate
+	echo T_(" ");                                                                     // Line 38 Seperate
 
 }
 ?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ganje - Persian\n"
-"POT-Creation-Date: 2016-09-01 15:23+0430\n"
-"PO-Revision-Date: 2016-09-01 15:24+0430\n"
+"POT-Creation-Date: 2016-09-01 16:56+0430\n"
+"PO-Revision-Date: 2016-09-01 16:57+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -1801,19 +1801,19 @@ msgstr "پترابایت"
 
 #: ganje/includes/languages/trans_addons.php:280
 #: saloos/saloos-addons/includes/languages/trans_addons.php:279
-#: saloos/saloos-addons/lib/mvc/models/cp.php:207
+#: saloos/saloos-addons/lib/mvc/models/cp.php:219
 msgid "id does not exist!"
 msgstr "این کد در سیستم وجود ندارد!"
 
 #: ganje/includes/languages/trans_addons.php:281
 #: saloos/saloos-addons/includes/languages/trans_addons.php:280
-#: saloos/saloos-addons/lib/mvc/models/cp.php:130
+#: saloos/saloos-addons/lib/mvc/models/cp.php:142
 msgid "all require fields must fill"
 msgstr "تمام رکوردهای الزامی باید پر شوند"
 
 #: ganje/includes/languages/trans_addons.php:282
 #: saloos/saloos-addons/includes/languages/trans_addons.php:281
-#: saloos/saloos-addons/lib/mvc/models/cp.php:136
+#: saloos/saloos-addons/lib/mvc/models/cp.php:148
 msgid "some fields must be change for update!"
 msgstr "برای بروزرسانی باید حداقل یک فیلد را تغییر دهید!"
 
@@ -3151,7 +3151,7 @@ msgid "We need mobile number!"
 msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: ganje/includes/languages/trans_addons.php:524
-#: ganje/includes/languages/trans_twig.php:74
+#: ganje/includes/languages/trans_twig.php:83
 #: saloos/saloos-addons/includes/languages/trans_addons.php:501
 msgid " "
 msgstr " "
@@ -3341,6 +3341,42 @@ msgstr "محمدعلی صالحی"
 msgid "Sara Torkamani"
 msgstr "سارا ترکمنی"
 
+#: ganje/includes/languages/trans_twig.php:74
+msgid "Founder & CEO"
+msgstr "موسس و مدیرعامل"
+
+#: ganje/includes/languages/trans_twig.php:75
+msgid "CEO"
+msgstr "مدیرعامل"
+
+#: ganje/includes/languages/trans_twig.php:76
+msgid "Full Stack Developer"
+msgstr "برنامه نویس تمام‌عیار"
+
+#: ganje/includes/languages/trans_twig.php:77
+msgid "Backend Developer"
+msgstr "برنامه‌نویس سمت سرور"
+
+#: ganje/includes/languages/trans_twig.php:78
+msgid "Frontend Developer"
+msgstr "برنامه‌نویس سمت کاربر"
+
+#: ganje/includes/languages/trans_twig.php:79
+msgid "UI Designer"
+msgstr "طراح رابط کاربری"
+
+#: ganje/includes/languages/trans_twig.php:80
+msgid "Graphic Designer"
+msgstr "طراح گرافیک"
+
+#: ganje/includes/languages/trans_twig.php:81
+msgid "Shareholder"
+msgstr "سهام‌دار"
+
+#: ganje/includes/languages/trans_twig.php:82
+msgid "Chrikt"
+msgstr "چریکت"
+
 #: ganje/includes/mvc/view.php:10
 msgid "Ganje"
 msgstr "گنجه"
@@ -3403,7 +3439,7 @@ msgstr "شما ابتدا باید وارد سیستم شوید!"
 msgid "Not found!"
 msgstr "یافت نشد"
 
-#: saloos/saloos-addons/content_cp/home/view.php:335
+#: saloos/saloos-addons/content_cp/home/view.php:331
 msgid "position"
 msgstr "موقعیت"
 
