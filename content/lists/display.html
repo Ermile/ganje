@@ -1,15 +1,44 @@
 {%extends display.mvc%}
 {%block body%}
 <h1>SEARCH</h1>
-<form method="post">
-	USER:<input type="text" name="user"><br>
-	DAY:<input type="text" name="day"><br>
-	WEEK:<input type="text" name="week"><br>
-	MONTH:<input type="text" name="month"><br>
-	YEAR:<input type="text" name="year"><br>
-	lang:<input type="text" name="lang"><br>
-	<input type="submit" value="search"><br>
-</form>
+<div class="row auto">
+    <div class="span4">
+        <form method="post" class="form inline">
+            <div class="field">
+                <label>User</label>
+                <input type="text" name="user">
+            </div>
+            <div class="field">
+                <label>Day</label>
+                <input type="text" name="day">
+            </div>
+            <div class="field">
+                <label>Week</label>
+                <input type="text" name="week">
+            </div>
+            <div class="field">
+                <label>Month</label>
+                <input type="text" name="month">
+            </div>
+            <div class="field">
+                <label>Year</label>
+                <input type="text" name="year">
+            </div>
+            <div class="field">
+                <label>Language</label>
+                <input type="text" name="lang">
+            </div>
+            <div class="field">
+                <label></label>
+                <input type="submit" value="search">
+                <br>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
 
 {%set dtperm = attribute(perm,module)%}
  <div class="row">
