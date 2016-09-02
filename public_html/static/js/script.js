@@ -152,8 +152,11 @@ function transfer(_from, _to)
  */
 function changePerson(_id)
 {
-  $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
-  $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
+  if($('body').attr('data-location') === 'dashboard')
+  {
+    $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');
+    $('.dashboard .card[data-id="'+ _id+ '"]').addClass('selected');
+  }
 }
 
 
