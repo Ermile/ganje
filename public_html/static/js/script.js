@@ -29,6 +29,26 @@ $(".dashboard .card img").each(function()
 });
 
 
+// up and down minus with scrool
+$('.statistics .minus').bind('mousewheel', function(e){
+  if(e.originalEvent.wheelDelta /120 > 0) {
+    setExtra('minus', 5);
+  }
+  else{
+    setExtra('minus', -5);
+  }
+});
+// up and down plus with scrool
+$('.statistics .plus').bind('mousewheel', function(e){
+  if(e.originalEvent.wheelDelta /120 > 0) {
+    setExtra('plus', 5);
+  }
+  else{
+    setExtra('plus', -5);
+  }
+});
+
+
 
 /**
  * [startTime description]
@@ -83,9 +103,15 @@ function setExtra(_type, _increase)
     {
       return false;
     }
-    var newVal = parseInt(_this.attr('data-time')) + _increase;
+    var newVal     = parseInt(_this.attr('data-time')) + _increase;
+    var newValReal = newVal;
+    if(newVal < 0)
+    {
+      newVal     = ':|';
+      newValReal = 0;
+    }
     // set new period for date
-    _this.attr('data-time', newVal);
+    _this.attr('data-time', newValReal);
     _this.children('span').text(newVal);
   }
 
