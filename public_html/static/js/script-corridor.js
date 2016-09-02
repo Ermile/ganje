@@ -16,6 +16,8 @@ function event_corridor(e, _self, _key)
   var alt    = e.altKey   ? 'alt'   : '';
   var mytxt  = String(_key) + ctrl + alt + shift;
   var keyp   = String.fromCharCode(_key);
+  console.log(mytxt);
+
 
   if(!cid)
   {
@@ -162,12 +164,17 @@ function event_corridor(e, _self, _key)
 
     case '107':             // plus +
     case '187shift':        // plus +
-      setExtra('plus', 5);
+      setExtra('plus', 10);
       break;
 
     case '109':             // minus -
     case '189shift':        // minus -
       setExtra('minus', 5);
+      break;
+
+    case '110':             // .
+    case '190':             // .
+      setExtra(false);
       break;
 
     case '112':             // f1
