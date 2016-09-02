@@ -47,8 +47,8 @@ private function transtext()
 	//----------------------------------------------------content\home\layout-xhr.html
 
 	//------------------------------------------------------content\lists\display.html
-	echo T_("Actions");                                                               // Line 35
-	echo T_("Data not exist!");                                                       // Line 68
+	echo T_("Actions");                                                               // Line 64
+	echo T_("Data not exist!");                                                       // Line 97
 
 	//---------------------------------------------------content\lists\layout-xhr.html
 
@@ -72,15 +72,17 @@ private function transtext()
 	echo T_("MohamadAli Salehi");                                                     // Line 20 Seperate
 	echo T_("Sara Torkamani");                                                        // Line 21 Seperate
 	echo T_("Founder & CEO");                                                         // Line 28 Seperate
-	echo T_("CEO");                                                                   // Line 29 Seperate
-	echo T_("Full Stack Developer");                                                  // Line 30 Seperate
-	echo T_("Backend Developer");                                                     // Line 31 Seperate
-	echo T_("Frontend Developer");                                                    // Line 32 Seperate
-	echo T_("UI Designer");                                                           // Line 33 Seperate
-	echo T_("Graphic Designer");                                                      // Line 34 Seperate
-	echo T_("Shareholder");                                                           // Line 35 Seperate
-	echo T_("Chrikt");                                                                // Line 36 Seperate
-	echo T_(" ");                                                                     // Line 38 Seperate
+	echo T_("CEO & Solution Designer");                                               // Line 29 Seperate
+	echo T_("CEO");                                                                   // Line 30 Seperate
+	echo T_("Solution Designer");                                                     // Line 31 Seperate
+	echo T_("Full Stack Developer");                                                  // Line 32 Seperate
+	echo T_("Backend Developer");                                                     // Line 33 Seperate
+	echo T_("Frontend Developer");                                                    // Line 34 Seperate
+	echo T_("UI Designer");                                                           // Line 35 Seperate
+	echo T_("Graphic Designer");                                                      // Line 36 Seperate
+	echo T_("Shareholder");                                                           // Line 37 Seperate
+	echo T_("Chrikt");                                                                // Line 38 Seperate
+	echo T_(" ");                                                                     // Line 40 Seperate
 
 }
 ?>
