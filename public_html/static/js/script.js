@@ -14,6 +14,9 @@ $(document).on("click", ".card", function(e) { event_corridor(e, e.currentTarget
 $(document).on("dblclick", ".card", function(e) { event_corridor(e, e.currentTarget, 'dblclick'); });
 $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(e, e.currentTarget, 'rightclick'); });
 
+$(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });
+$(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10) });
+
 // add location to body on start
 $('body').attr('data-location', 'dashboard' );
 // add random class to image get random
@@ -39,6 +42,55 @@ function startTime()
   changetime(addZero(today.getMinutes()), 'minute');
   changetime(today.getHours(), 'hour');
   var t = setTimeout(startTime,500);
+}
+
+
+
+function setExtra(_type, _increase)
+{
+  if(_type === false)
+  {
+    $('body').removeAttr('data-editing');
+    // remove real value of times to zero
+    $('.page .minus').attr("data-time", 0);
+    $('.page .plus').attr("data-time", 0);
+    // remove show value of times to zero
+    $('.page .minus span').text(0);
+    $('.page .plus span').text(0);
+  }
+  else
+  {
+    _increase = parseInt(_increase);
+    if(_increase === undefined || isNaN(_increase))
+    {
+      _increase = 5;
+    }
+    // goto editing mode
+    $('body').attr('data-editing', _type);
+
+    // set variabels
+    var _this  = $('.statistics .' + _type);
+
+    if(_this.hasClass('minus') )
+    {
+
+    }
+    else if(_this.hasClass('plus'))
+    {
+
+    }
+    else
+    {
+      return false;
+    }
+    var newVal = parseInt(_this.attr('data-time')) + _increase;
+    // set new period for date
+    _this.attr('data-time', newVal);
+    _this.children('span').text(newVal);
+  }
+
+  // finally calc total time
+  calcTotalTime();
 }
 
 
@@ -122,6 +174,8 @@ function transfer(_from, _to)
   {
     $('body').attr('data-location', 'dashboard' );
     $('body .dashboard').attr('data-last', _from);
+    // remove editing mode
+    setExtra(false);
   }
   else
   {
@@ -183,13 +237,22 @@ function fillTimes(_id)
 
 function calcTotalTime(_id)
 {
-    var diff  = parseInt($('.page[data-id="'+ _id+ '"] .diff').attr('data-time'));
-    var minus = parseInt($('.page[data-id="'+ _id+ '"] .minus').attr('data-time'));
-    var plus  = parseInt($('.page[data-id="'+ _id+ '"] .plus').attr('data-time'));
-    var total = diff - minus + plus;
+  if(_id === undefined)
+  {
+    _id = parseInt($('.dashboard .card.selected').attr("data-id"));
+  }
+  var diff       = parseInt($('.page[data-id="'+ _id+ '"] .diff').attr('data-time'));
+  var minus      = parseInt($('.page[data-id="'+ _id+ '"] .minus').attr('data-time'));
+  var plus       = parseInt($('.page[data-id="'+ _id+ '"] .plus').attr('data-time'));
+  var total      = diff - minus + plus;
+  var totalHuman = Math.floor(total / 60) + ":" + total % 60;
+  if(total < 0)
+  {
+    totalHuman = ":/";
+  }
 
-    $('.page[data-id="'+ _id+ '"] .total span').attr('data-time', total);
-    $('.page[data-id="'+ _id+ '"] .total span').text(total);
+  $('.page[data-id="'+ _id+ '"] .total span').attr('data-time', total);
+  $('.page[data-id="'+ _id+ '"] .total span').text(totalHuman);
 }
 
 /**
@@ -202,6 +265,8 @@ function setTime(_id)
   {
     return false;
   }
+  minus = $('.page[data-id="'+ _id+ '"] .minus').attr('data-time');
+  plus  = $('.page[data-id="'+ _id+ '"] .plus').attr('data-time');
 
   // send ajax and do best work on respnse
   $('.page.detail .statistics').ajaxify({
@@ -210,6 +275,8 @@ function setTime(_id)
       data:
       {
         userId: _id,
+        minus: minus,
+        plus: plus,
       },
       abort: false,
       success: function(e, data, x)

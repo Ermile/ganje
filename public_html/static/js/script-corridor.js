@@ -160,6 +160,16 @@ function event_corridor(e, _self, _key)
     case '72shift':         // h + shift (Home page)
       break;
 
+    case '107':             // plus +
+    case '187shift':        // plus +
+      setExtra('plus', 5);
+      break;
+
+    case '109':             // minus -
+    case '189shift':        // minus -
+      setExtra('minus', 5);
+      break;
+
     case '112':             // f1
       break;
 

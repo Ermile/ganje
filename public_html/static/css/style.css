@@ -142,5 +142,7 @@ body {
 .detail .statistics .enter{right: 0}
 .detail .statistics .exit{left: 0}
 .detail .statistics .minus{margin-top:3em;}
+.detail .statistics .total{font-weight: bold;}
+.detail .statistics .total span{font-size: 3em}
 
 
