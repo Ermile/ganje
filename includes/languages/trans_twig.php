@@ -72,17 +72,19 @@ private function transtext()
 	echo T_("MohamadAli Salehi");                                                     // Line 20 Seperate
 	echo T_("Sara Torkamani");                                                        // Line 21 Seperate
 	echo T_("Founder & CEO");                                                         // Line 28 Seperate
-	echo T_("CEO & Solution Designer");                                               // Line 29 Seperate
-	echo T_("CEO");                                                                   // Line 30 Seperate
-	echo T_("Solution Designer");                                                     // Line 31 Seperate
-	echo T_("Full Stack Developer");                                                  // Line 32 Seperate
-	echo T_("Backend Developer");                                                     // Line 33 Seperate
-	echo T_("Frontend Developer");                                                    // Line 34 Seperate
-	echo T_("UI Designer");                                                           // Line 35 Seperate
-	echo T_("Graphic Designer");                                                      // Line 36 Seperate
-	echo T_("Shareholder");                                                           // Line 37 Seperate
-	echo T_("Chrikt");                                                                // Line 38 Seperate
-	echo T_(" ");                                                                     // Line 40 Seperate
+	echo T_("Founder and CEO");                                                       // Line 29 Seperate
+	echo T_("CEO & Solution Designer");                                               // Line 30 Seperate
+	echo T_("CEO and Solution Designer");                                             // Line 31 Seperate
+	echo T_("CEO");                                                                   // Line 32 Seperate
+	echo T_("Solution Designer");                                                     // Line 33 Seperate
+	echo T_("Full Stack Developer");                                                  // Line 34 Seperate
+	echo T_("Backend Developer");                                                     // Line 35 Seperate
+	echo T_("Frontend Developer");                                                    // Line 36 Seperate
+	echo T_("UI Designer");                                                           // Line 37 Seperate
+	echo T_("Graphic Designer");                                                      // Line 38 Seperate
+	echo T_("Shareholder");                                                           // Line 39 Seperate
+	echo T_("Chrikt");                                                                // Line 40 Seperate
+	echo T_(" ");                                                                     // Line 42 Seperate
 
 }
 ?>
