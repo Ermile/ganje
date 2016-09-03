@@ -30,5 +30,23 @@ class date {
 
 		return [date("Y",$current_date), date("m", $current_date), date("d", $current_date)];
 	}
+
+
+	/**
+	 * [convert_date description]
+	 * @param  [type] $year  [description]
+	 * @return string 		converted year
+	 */
+	public static function year($year = null) {
+
+		//----- current jalali year
+		if (!$year) {
+			$year = jdate::date("Y", false, false);
+		}
+
+		$current_date = jdate::mktime(0, 0, 0, 0, 0, $year, true);
+
+		return date("Y",$current_date);
+	}
 }
 ?>

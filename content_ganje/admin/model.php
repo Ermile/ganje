@@ -91,36 +91,6 @@ class model extends \mvc\model
 	}
 
 
-
-	public function lists() {
-		//--------- repeat to every query
-		$query = "
-				SELECT
-					hours.id 									as id,
-					hours.hour_date 							as 'date',
-					hours.hour_start 							as start,
-					hours.hour_end 								as 'end',
-					hours.hour_end 								as 'end',
-					users.user_displayname 						as name,
-					SEC_TO_TIME(hours.hour_total 	* 60)	 	as total,
-					SEC_TO_TIME(hours.hour_diff 	* 60) 		as diff,
-					SEC_TO_TIME(hours.hour_plus 	* 60) 		as plus,
-					SEC_TO_TIME(hours.hour_minus 	* 60) 		as minus,
-					hours.hour_status							as 'status',
-					SEC_TO_TIME(hours.hour_accepted * 60)	 	as 'accepted'
-				FROM
-					hours
-				LEFT JOIN users on hours.user_id = users.id
-				ORDER BY
-					hours.id DESC
-				";
-
-		$report = db::get($query);
-
-		return $report;
-	}
-
-
 	public function get_datatable() {
 		// creat data for datatable
 		$result =  [
@@ -137,7 +107,7 @@ class model extends \mvc\model
 					'status'  => ['label' => "وضعیت", 'value' => "status"],
 					'accepted'  => ['label' => "ساعات تایید شده", 'value' => "accepted"]
 				],
-			'data'   => $this->lists(),
+			'data'   => \lib\db\last::get(),
 			'total'  => 98,
 			'filter' => 4
 		];

@@ -5,7 +5,6 @@ use \lib\db;
 class summary {
 
 	public static function get($_args){
-
 		$user  = isset($_args['user'])  ? $_args['user']  : null;
 		$day   = isset($_args['day'])   ? $_args['day']   : null;
 		$week  = isset($_args['week'])  ? $_args['week']  : null;
@@ -13,9 +12,20 @@ class summary {
 		$year  = isset($_args['year'])  ? $_args['year']  : null;
 		$lang  = isset($_args['lang'])  ? $_args['lang']  : null;
 
-		if($lang == "fa") {
-			list($year,$month,$day) = date::convert($year,$month,$day);
+		if($month == '0') {
+			$month = null;
 		}
+
+		if($lang == "fa") {
+			if($year){
+				$year = date::year($year);
+			}
+
+			if($month){
+				list($year,$month,$day) = date::convert($year,$month,$day);
+			}
+		}
+
 
 		$start  = (isset($_args["start"])) ? $_args["start"] : 0; // start limit
 		$end    = (isset($_args["end"]))   ? $_args["end"]   : 10; // end limit
