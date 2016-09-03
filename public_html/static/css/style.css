@@ -164,8 +164,8 @@ body#summary .field { display: inline-block; width: 90% }
 
 body#admin {}
 .panel { border-radius: 0.2em; margin-top: 5vh }
-table.datatable { background: #fff; border-collapse: collapse; transition: all 0.5s ease }
-table.datatable tr td { background: #fff }
-table.datatable tr:hover td { background: #4E5066; color: #fff; border-top: 1px solid #22262e; border-bottom: 1px solid #22262e }
-table.datatable tr:nth-child(odd) td { background-color: #EBEBEB }
-table.datatable tr:nth-child(odd):hover td { background-color: #4E5066 }
+body#admin table.datatable { background: #fff; border-collapse: collapse; transition: all 0.5s ease }
+body#admin table.datatable tr td { background: #fff }
+body#admin table.datatable tr:hover td { background: #4E5066; color: #fff; border-top: 1px solid #22262e; border-bottom: 1px solid #22262e }
+body#admin table.datatable tr:nth-child(odd) td { background-color: #EBEBEB }
+body#admin table.datatable tr:nth-child(odd):hover td { background-color: #4E5066 }
