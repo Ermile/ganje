@@ -57,9 +57,9 @@
                     <label>{% trans "Year" %}</label>
 
                     {% if site.currentlang == 'fa' %}
-                    <input type="number" name="year" value='1395' min="1395" max="1400">
+                    <input type="number" name="year" value='{{"now"|jdate("Y", false)}}' min="1395" max="1400">
                     {% else %}
-                    <input type="number" name="year" value='2016' min="2016" max="2020">
+                    <input type="number" name="year" value='{{"now"|date("Y")}}' min="2016" max="2020">
                     {% endif %}
                 </div>
             </div>
@@ -74,5 +74,68 @@
     </form>
 </div>
 
-<div class="row low-padding">Datatable</div>
+<div class="row low-padding">
+<div class="panel">
+
+{%block datatable%}
+{%if include.datatable%}
+       <table class="{%if datatable.total <1000 %}datatable{%else%}hidden{%endif%} display responsive nowrap" cellspacing="0" width="100%" {%if datatable.total >100 %}data-tablesrc='{{module}}/list' {%endif%}>
+{%-if datatable.total >1000-%}
+        <tbody>
+          <tr>
+           <td>{%set datatable = datatable|merge({"recordsFiltered": datatable.filter, "recordsTotal": datatable.total})%}{{-datatable|json_encode()|raw-}}</td>
+          </tr>
+        </tbody>
+{%else%}
+        <thead>
+        <tr>
+        <th class="column_row"></th>
+{%for value in datatable.columns%}
+        <th>{{value.label}}</th>
+{%endfor%}
+        <th class="column_actions">{%trans "Actions"%}</th>
+        </tr>
+        </thead>
+
+        <tbody>
+{%block tbody%}
+{%for d in datatable.data%}
+        <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
+         <td class="col_row">{{loop.index}}</td>
+{%for col,value in datatable.columns%}
+{%set myvalue = attribute(d,col)%}
+{% if value.value == 'date' %}
+         <td class="col_{{value.value}}">{{myvalue|jdate}}</td>
+{%else%}
+         <td class="col_{{value.value}}">{%trans myvalue%}</td>
+{%endif%}
+
+{%endfor%}
+
+         <td class="col_actions">
+
+          <span class="fa-stack">
+            <a class="fa fa-pencil fa-stack-1x label-default" href="{{url.base}}edit/id={{d.id}}" ></a>
+          </span>
+
+
+          <span class="fa-stack">
+            <a class="fa fa-times fa-stack-1x label-danger" href="{{url.base}}{{module}}/delete={{d.id}}" data-data='{"id": {{d.id}}}' data-method="post" data-modal="delete-confirm"></a>
+          </span>
+
+         </td>
+        </tr>
+{%endfor%}
+{%endblock%}
+        </tbody>
+{%endif%}
+       </table>
+{%else%}
+  <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
+{%endif%}
+{%endblock%}
+
+
+</div>
+</div>
 {% endblock %}

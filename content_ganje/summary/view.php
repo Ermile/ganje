@@ -14,6 +14,8 @@ class view extends \mvc\view
 			$this->include->css          = false;
 
 		}
+		$this->include->datatable  = true;
+		$this->include->cp  = true;
 	}
 
 

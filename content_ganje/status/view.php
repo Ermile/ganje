@@ -17,6 +17,8 @@ class view extends \mvc\view
 		}
 		$this->data->datatable = $this->model()->get_u();
 		$this->data->datatable_col = ['id', 'date', 'start', 'end', 'total', 'diff', 'plus', 'minus', 'accepted'];
+		$this->include->cp  = true;
+
 	}
 
 
