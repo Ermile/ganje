@@ -148,7 +148,7 @@ body {
 .low-padding { padding-right: 5%; padding-left: 5% }
 
 /*Accountant Page*/
-body#summary { background: url(../images/pattern/shattered_@2X.png) }
+body#summary, body#status { background: url(../images/pattern/shattered_@2X.png) }
 body#summary .row.cards { text-align: center }
 body#summary .card { position: relative; cursor: pointer }
 body#summary .card:last-child { margin: 1em 0.5em }
