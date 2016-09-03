@@ -3,10 +3,12 @@
 {% block body %}
 
 <div class="row auto low-padding">
-	<div class="card present">
-		<img src="http://ganje.dev/static/images/avatar/3.jpg">
-		<div class="absolute-info">Ahmad Karimi</div>
-	</div>
+	{%for key, value in users%}
+		<div class="card present">
+			<img src="http://ganje.dev/static/images/avatar/{{value.id}}.jpg">
+			<div class="absolute-info">{{value.displayname}}</div>
+		</div>
+	{%endfor%}
 </div>
 
 {% endblock %}

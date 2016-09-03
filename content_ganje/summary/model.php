@@ -55,7 +55,7 @@ class model extends \mvc\model
 		";
 		$report = db::get($qry);
 
-		return $report;
+		return ['users' => \lib\db\users::get(), 'summary' => $report];
 
 	}
 
