@@ -8,9 +8,11 @@
     <div class="row auto low-padding">
         <div class="span3">
             <div class="card">
-                <img src="http://ganje.dev/static/images/avatar/3.jpg">
+{%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
+{%set avatar = url.static ~ 'images/avatar/' ~ login.id ~ '.jpg' %}
+                <img src="{{avatar | exist(avatar_default)}}">
                 <div class="info">
-                    <div class="name">Ahmad Karimi</div>
+                    <div class="name">{{login.displayname}}</div>
                     <div class="position">Frond-end Developer</div>
                 </div>
             </div>
