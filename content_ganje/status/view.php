@@ -29,9 +29,9 @@ class view extends \mvc\view
 		}
 	}
 
-	function view_u($o){
-		$this->data->datatable =  $o->api_callback;
-	}
 
+	function view_u($o){
+		$this->data->datatable = $o->api_callback;
+	}
 }
 ?>

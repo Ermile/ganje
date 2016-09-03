@@ -1,10 +1,27 @@
 {%extends display.mvc%}
 {%block body%}
-<style type="text/css">
-	*{
-		padding: 20px;
-	}
-</style>
+<img src="{{id}}">
+<br>
+<form method="post">
+	<input type="text" name="year" value="1395"><br>
+	<select name="month">
+		<option value="1">فروردین</option>
+		<option value="2">اردیبهشت</option>
+		<option value="3">خرداد</option>
+		<option value="4">تیر</option>
+		<option value="5">مرداد</option>
+		<option value="6">شهریور</option>
+		<option value="7">مهر </option>
+		<option value="8">آبان</option>
+		<option value="9">آذر</option>
+		<option value="10">دی</option>
+		<option value="11">بهمن</option>
+		<option value="12">اسفند</option>
+	</select>
+	<br>
+	<input type="submit" value="مشاهده">
+</form>
+
 <table border="1">
 	{%for i, value in datatable%}
 		<tr>

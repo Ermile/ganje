@@ -12,6 +12,7 @@ class controller extends \mvc\controller
 	function _route()
 	{
 		$this->get("u", "u")->ALL();
+		$this->post("u")->ALL();
 	}
 }
 ?>
