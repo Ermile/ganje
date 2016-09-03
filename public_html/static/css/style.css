@@ -156,14 +156,15 @@ body#summary .card:hover .absolute-info { opacity: 1 }
 body#summary .absolute-info { position: absolute; height: 100%; width: 100%; top: 0; left: 0; content: ""; background-color: rgba(241, 241, 241, 0.75); z-index: 999; text-align: center; line-height: 10em; font-weight: bold; opacity: 0; transition: opacity 0.15s ease-in-out }
 body#summary .field { display: inline-block; width: 90% }
 
-.inline-field { padding: 5px; width: 90%; }
 .inline-field label { display: inline-block; font-weight: 700; opacity: 0.9; margin-right: 0.5em; margin-bottom: 0.5em }
 .inline-field select { background: #fff; border: none; padding: 0.4em 0.7em; width: 100%; border-radius: 0.2em }
 .inline-field input[type="number"] { background: #fff; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em }
 .inline-field input[type="submit"] { background: #21ba45; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em; color: #fff; cursor: pointer }
 
+.detail .inline-field { margin-top: 1.5em }
+
 body#admin {}
-.panel { border-radius: 0.2em; margin-top: 5vh }
+.panel { border-radius: 0.2em }
 body#admin table.datatable { background: #fff; border-collapse: collapse; transition: all 0.5s ease }
 body#admin table.datatable tr td { background: #fff }
 body#admin table.datatable tr:hover td { background: #4E5066; color: #fff; border-top: 1px solid #22262e; border-bottom: 1px solid #22262e }
