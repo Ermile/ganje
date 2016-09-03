@@ -148,7 +148,7 @@ body {
 .low-padding { padding-right: 5%; padding-left: 5% }
 
 /*Accountant Page*/
-body#summary, body#status { background: url(../images/pattern/shattered_@2X.png) }
+body#summary, body#status, body#admin { background: url(../images/pattern/shattered_@2X.png) }
 body#summary .row.cards { text-align: center }
 body#summary .card { position: relative; cursor: pointer }
 body#summary .card:last-child { margin: 1em 0.5em }
@@ -161,3 +161,11 @@ body#summary .field { display: inline-block; width: 90% }
 .inline-field select { background: #fff; border: none; padding: 0.4em 0.7em; width: 100%; border-radius: 0.2em }
 .inline-field input[type="number"] { background: #fff; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em }
 .inline-field input[type="submit"] { background: #21ba45; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em; color: #fff; cursor: pointer }
+
+body#admin {}
+.panel { border-radius: 0.2em; margin-top: 5vh }
+table.datatable { background: #fff; border-collapse: collapse; transition: all 0.5s ease }
+table.datatable tr td { background: #fff }
+table.datatable tr:hover td { background: #4E5066; color: #fff; border-top: 1px solid #22262e; border-bottom: 1px solid #22262e }
+table.datatable tr:nth-child(odd) td { background-color: #EBEBEB }
+table.datatable tr:nth-child(odd):hover td { background-color: #4E5066 }
