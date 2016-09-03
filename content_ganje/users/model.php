@@ -1,24 +1,23 @@
 <?php
-namespace content_time\u;
+namespace content_ganje\users;
 use \lib\db;
 use \lib\debug;
-use \lib\utility;
+use \lib\userstility;
 
 class model extends \mvc\model
 {
 
 
 	public function get_u($o){
-		$id = $this->login("id");
+
 
 		$date = date("Y-m-d");
 
 		$report = array();
 
 		//--------- repeat to every query
-		$field = "
-				 users.id,
-				 users.user_displayname as displayname,
+		//--------- repeat to every query
+		$field = "users.id,users.user_displayname as displayname,
 				 SEC_TO_TIME(SUM(hours.hour_total) * 60 ) as 'total',
 				 SEC_TO_TIME(SUM(hours.hour_diff)  * 60 ) as 'diff',
 				 SEC_TO_TIME(SUM(hours.hour_plus)  * 60 ) as 'plus',
@@ -27,15 +26,16 @@ class model extends \mvc\model
 
 		$join =	"FROM hours
 				  INNER JOIN users on hours.user_id = users.id
-				  WHERE hours.user_id = $id ";
+				  WHERE 1 ";
 
 
-		$query =
+		$qry =
 		"SELECT $field,
 			'daily' as type
 			$join
 			AND hours.hour_date = '$date'
 			GROUP BY
+				hours.user_id,
 				hours.hour_date
 
 		UNION
@@ -43,19 +43,19 @@ class model extends \mvc\model
 			'week' as type
 			$join
 			AND WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR(NOW())
+			GROUP BY hours.user_id
 
 		UNION
 		SELECT $field,
 			'month' as type
 			$join
 			AND YEAR(hours.hour_date) = YEAR(NOW()) AND MONTH(hours.hour_date)=MONTH(NOW())
+			GROUP BY hours.user_id
 
 		";
+		$report = db::get($qry);
 
-
-		$check = db::get($query,null, true);
-
-		return $check;
+		return $report;
 
 	}
 

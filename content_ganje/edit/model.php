@@ -1,5 +1,5 @@
 <?php
-namespace content_time\edit;
+namespace content_ganje\edit;
 use \lib\db;
 use \lib\debug;
 use \lib\utility;

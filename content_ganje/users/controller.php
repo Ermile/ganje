@@ -1,5 +1,5 @@
 <?php
-namespace content_time\users;
+namespace content_ganje\users;
 
 class controller extends \mvc\controller
 {

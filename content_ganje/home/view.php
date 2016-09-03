@@ -1,5 +1,5 @@
 <?php
-namespace content_time\home;
+namespace content_ganje\home;
 
 class view extends \mvc\view
 {

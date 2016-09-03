@@ -1,5 +1,5 @@
 <?php
-namespace content_time\report;
+namespace content_ganje\report;
 use \lib\db;
 use \lib\debug;
 

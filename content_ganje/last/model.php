@@ -1,5 +1,5 @@
 <?php
-namespace content_time\last;
+namespace content_ganje\last;
 use \lib\db;
 use \lib\utility;
 use \lib\debug;

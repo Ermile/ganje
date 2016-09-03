@@ -1,5 +1,5 @@
 <?php
-namespace content_time\lists;
+namespace content_ganje\lists;
 use \lib\db;
 use \lib\utility;
 use \lib\debug;

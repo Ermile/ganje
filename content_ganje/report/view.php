@@ -1,5 +1,5 @@
 <?php
-namespace content_time\u;
+namespace content_ganje\report;
 
 class view extends \mvc\view
 {
@@ -12,7 +12,6 @@ class view extends \mvc\view
 			$this->data->bodyclass  = 'unselectable';
 			$this->include->js_main      = false;
 			$this->include->css          = false;
-
 		}
 	}
 
@@ -29,9 +28,8 @@ class view extends \mvc\view
 		}
 	}
 
-	function view_u($o){
-		$this->data->datatable =  $o->api_callback;
+	public function view_report() {
+		$this->data->report =  $this->model()->report();
 	}
-
 }
 ?>

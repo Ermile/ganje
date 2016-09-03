@@ -1,5 +1,5 @@
 <?php
-namespace content_time\report;
+namespace content_ganje\last;
 
 class controller extends \mvc\controller
 {
@@ -11,7 +11,7 @@ class controller extends \mvc\controller
 	// for routing check
 	function _route()
 	{
-		$this->get(false, "report")->ALL();
+		$this->post("last")->ALL();
 	}
 }
 ?>

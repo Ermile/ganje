@@ -1,5 +1,5 @@
 <?php
-namespace content_time\lists;
+namespace content_ganje\lists;
 
 class controller extends \mvc\controller
 {

@@ -12,7 +12,8 @@
 				در تاریخ {{datatable.date|jdate}}
 			</h3>
 
-			<form method="post" class="form inline">
+			<form method="post" class="form inline" action="last">
+			<input type="hidden" name="id" value="{{id}}">
 			<div class="field">
 				<label>وضعیت</label>
 					<select name="type">
@@ -32,7 +33,7 @@
 			</div>
 			<div class="field">
 				<label>ساعت پایان</label>
-				<input type="text" name="end" value="{{datatable.end}}">
+				<input type="text" name="time" value="{{datatable.end}}">
 			</div>
 			<div class="field">
 				<label>جمع ساعات</label>

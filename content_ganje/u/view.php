@@ -1,5 +1,5 @@
 <?php
-namespace content_time\edit;
+namespace content_ganje\u;
 
 class view extends \mvc\view
 {
@@ -29,7 +29,7 @@ class view extends \mvc\view
 		}
 	}
 
-	function view_edit($o){
+	function view_u($o){
 		$this->data->datatable =  $o->api_callback;
 	}
 

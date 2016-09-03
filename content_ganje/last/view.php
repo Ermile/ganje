@@ -1,5 +1,5 @@
 <?php
-namespace content_time\lists;
+namespace content_ganje\last;
 
 class view extends \mvc\view
 {
