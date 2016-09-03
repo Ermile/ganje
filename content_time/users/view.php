@@ -1,5 +1,5 @@
 <?php
-namespace content\report;
+namespace content_time\users;
 
 class view extends \mvc\view
 {
@@ -12,6 +12,7 @@ class view extends \mvc\view
 			$this->data->bodyclass  = 'unselectable';
 			$this->include->js_main      = false;
 			$this->include->css          = false;
+
 		}
 	}
 
@@ -28,8 +29,9 @@ class view extends \mvc\view
 		}
 	}
 
-	public function view_report() {
-		$this->data->report =  $this->model()->report();
+	function view_u($o){
+		$this->data->datatable =  $o->api_callback;
 	}
+
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-namespace content\report;
+namespace content_time\report;
 
 class controller extends \mvc\controller
 {

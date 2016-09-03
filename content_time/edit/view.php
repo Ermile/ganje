@@ -1,5 +1,5 @@
 <?php
-namespace content\edit;
+namespace content_time\edit;
 
 class view extends \mvc\view
 {
@@ -12,7 +12,7 @@ class view extends \mvc\view
 			$this->data->bodyclass  = 'unselectable';
 			$this->include->js_main      = false;
 			$this->include->css          = false;
-			
+
 		}
 	}
 
@@ -27,6 +27,10 @@ class view extends \mvc\view
 		{
 			$this->data->display['mvc']     = "content/home/layout-xhr.html";
 		}
+	}
+
+	function view_edit($o){
+		$this->data->datatable =  $o->api_callback;
 	}
 
 }

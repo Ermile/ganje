@@ -1,0 +1,25 @@
+{%extends display.mvc%}
+{%block body%}
+<style type="text/css">
+	*{
+		padding: 20px;
+	}
+</style>
+<table border="1">
+	{%for i, value in datatable%}
+		<tr>
+		{%if i == 0%}
+			{%for key, data in value%}
+				<th>{{key}}</th>
+			{%endfor%}
+			</tr>
+			<tr>
+		{%endif%}
+		{%for key, data in value%}
+			<td>{{data}}</td>
+		{%endfor%}
+		</tr>
+	{%endfor%}
+</table>
+
+{%endblock%}

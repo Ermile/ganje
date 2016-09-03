@@ -1,5 +1,5 @@
 <?php
-namespace content\lists;
+namespace content_time\lists;
 use \lib\db;
 use \lib\utility;
 use \lib\debug;
@@ -38,7 +38,7 @@ class model extends \mvc\model
 		$lang   = utility::post("lang")	;
 
 		if($lang == "fa") {
-			list($year,$month,$day) = $this->convert_date($year,$month,$day);
+			list($year,$month,$day) = \lib\db\date::convert($year,$month,$day);
 		}
 
 
@@ -84,34 +84,6 @@ class model extends \mvc\model
 		$this->_processor(['force_json'=>true, 'not_redirect'=>true]);
 		return $report;
 
-	}
-
-
-	/**
-	 * [convert_date description]
-	 * @param  [type] $year  [description]
-	 * @param  [type] $month [description]
-	 * @param  [type] $day   [description]
-	 * @return array 		 converted date
-	 */
-	public function convert_date ($year = null, $month = null, $day = null) {
-
-		//----- current jalali year
-		if (!$year) {
-			$year = jdate::date("Y", false, false);
-		}
-
-		if (!$month) {
-			$month = jdate::date("m", false, false);
-		}
-
-		if (!$day) {
-			$day = jdate::date("d", false, false);
-		}
-
-		$current_date = jdate::mktime(0, 0, 0, $month, $day, $year, true);
-
-		return [date("Y",$current_date), date("m", $current_date), date("d", $current_date)];
 	}
 
 

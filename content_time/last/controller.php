@@ -1,5 +1,5 @@
 <?php
-namespace content\edit;
+namespace content_time\last;
 
 class controller extends \mvc\controller
 {
@@ -11,8 +11,7 @@ class controller extends \mvc\controller
 	// for routing check
 	function _route()
 	{
-		$this->post("edit")->ALL();
-		// $this->get(null,"edit")->ALL("/edit\=\d+^/");
+		$this->post("last")->ALL();
 	}
 }
 ?>

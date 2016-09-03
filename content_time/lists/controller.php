@@ -1,5 +1,5 @@
 <?php
-namespace content\lists;
+namespace content_time\lists;
 
 class controller extends \mvc\controller
 {
