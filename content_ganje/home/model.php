@@ -3,6 +3,7 @@ namespace content_ganje\home;
 use \lib\utility;
 use \lib\debug;
 use \lib\db;
+use \lib\telegram\tg as bot;
 
 class model extends \mvc\model
 {
@@ -87,6 +88,7 @@ class model extends \mvc\model
 
 			db::query($insert);
 
+			$tg = self::sendTelegram($this->user_id. ' '. T_('Enter was registered.'));
 			debug::true(T_("Enter was registered."). ' '. T_("Have a good time."));
 			return 'enter';
 
@@ -107,6 +109,7 @@ class model extends \mvc\model
 
 			db::query($update);
 
+			$tg = self::sendTelegram($this->user_id. ' '. T_('Bye Bye;'));
 			debug::true(T_("Bye Bye;)"));
 			return 'exit';
 
@@ -206,5 +209,26 @@ class model extends \mvc\model
 		return $return;
 	}
 
+
+	/**
+	 * send message from telegram to admin
+	 * @param  [type] $text [description]
+	 * @return [type]       [description]
+	 */
+	public static function sendTelegram($_text)
+	{
+			bot::$api_key   = '164997863:AAFC3nUcujDzpGq-9ZgzAbZKbCJpnd0FWFY';
+			bot::$name      = 'saloos_bot';
+
+		$msg =
+		[
+			'method'       => 'sendMessage',
+			'text'         => $_text,
+			'chat_id'      => '46898544',
+
+		];
+		$result = bot::sendResponse($msg);
+		return $result;
+	}
 }
 ?>

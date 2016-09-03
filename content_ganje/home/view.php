@@ -9,7 +9,7 @@ class view extends \mvc\view
 		$this->include->js           = true;
 		if($this->module() === 'home')
 		{
-			$this->data->bodyclass  = 'unselectable';
+			$this->data->bodyclass  = 'unselectable register';
 			// $this->include->js_main      = false;
 			$this->include->css          = true;
 		}
