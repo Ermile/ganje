@@ -7,6 +7,7 @@ class view extends \mvc\view
 	{
 		// $this->include->css_ermile   = false;
 		$this->include->js           = false;
+		$this->include->datatable    = true;
 		if($this->module() === 'home')
 		{
 			$this->data->bodyclass  = 'unselectable';
@@ -14,6 +15,8 @@ class view extends \mvc\view
 			$this->include->css          = false;
 
 		}
+		$this->data->datatable = $this->model()->get_u();
+		$this->data->datatable_col = ['id', 'date', 'start', 'end', 'total', 'diff', 'plus', 'minus', 'accepted'];
 	}
 
 
@@ -27,11 +30,6 @@ class view extends \mvc\view
 		{
 			$this->data->display['mvc']     = "content/home/layout-xhr.html";
 		}
-	}
-
-
-	function view_u($o){
-		$this->data->datatable = $o->api_callback;
 	}
 }
 ?>
