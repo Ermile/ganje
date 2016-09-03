@@ -1,25 +1,12 @@
-{%extends display.mvc%}
-{%block body%}
-<style type="text/css">
-	*{
-		padding: 20px;
-	}
-</style>
-<table border="1">
-	{%for i, value in datatable%}
-		<tr>
-		{%if i == 0%}
-			{%for key, data in value%}
-				<th>{{key}}</th>
-			{%endfor%}
-			</tr>
-			<tr>
-		{%endif%}
-		{%for key, data in value%}
-			<td>{{data}}</td>
-		{%endfor%}
-		</tr>
-	{%endfor%}
-</table>
+{% extends display.mvc %}
 
-{%endblock%}
+{% block body %}
+
+<div class="row auto low-padding">
+	<div class="card present">
+		<img src="http://ganje.dev/static/images/avatar/3.jpg">
+		<div class="absolute-info">Ahmad Karimi</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -145,4 +145,10 @@ body {
 .detail .statistics .total{font-weight: bold;}
 .detail .statistics .total span{font-size: 3em}
 
+.low-padding { padding-right: 5%; padding-left: 5% }
 
+/*Accountant Page*/
+body { background: url(../images/pattern/shattered_@2X.png) }
+body#summary .card { position: relative; cursor: pointer }
+body#summary .card:hover .absolute-info { opacity: 1 }
+body#summary .absolute-info { position: absolute; height: 100%; width: 100%; top: 0; left: 0; content: ""; background-color: rgba(241, 241, 241, 0.75); z-index: 999; text-align: center; line-height: 10em; font-weight: bold; opacity: 0; transition: opacity 0.15s ease-in-out }
