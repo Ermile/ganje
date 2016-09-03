@@ -1,1 +1,97 @@
 {%extends display.mvc%}
+
+
+{%block body%}
+ <content data-id="home" class="page page-current">
+  <div class="row auto">
+   <aside class="span3 sidebar">
+     <h2 id="god">{% trans "In the Name of God" %}</h2>
+     <div class="time"><span class="hour">{{ "now"|date("h") }}</span>:<span class="minute">{{ "now"|date("i") }}</span>:<span class="second">{{ "now"|date("s") }}</span></div>
+     <div id="date">{% if site.currentlang == "fa" %} {{"now"|jdate("l j F Y")}} {% else %} {{"now"|date("l j F Y")}} {% endif %}</div>
+     <header id="logo">
+      <img src="{{url.static}}images/logo.png" alt='{%trans "Ermile"%}'>
+      <h1>{% trans "Ermile" %}</h1>
+     </header>
+{% if site.currentlang == "fa" %}
+     <div id="poem"><span>از دست غیبت تو شکایت نمی‌کنم</span><br /><span>تا نیست غیبتی نبود لذت حضور</span></div>
+{% endif %}
+   </aside>
+
+   <content class="span9 dashboard">
+    <div class="row">
+{% for i, user in datatable.list %}
+
+      <div data-id="{{user.id}}" class="card {% if user.hour_start is not null %}present{%endif%}">
+{%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
+{%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
+{%set name = user.displayname %}
+{%set position = (user.meta | decode('position'))%}
+       <img src="{{avatar | exist(avatar_default)}}">
+       <div class="info">
+        <div class="name">{% trans name %}</div>
+        <div class="position">{%trans position%}</div>
+        <div class="id">{{user.id | persian}}</div>
+       </div>
+      </div>
+     {%endfor%}
+      <div class="clear:both"></div>
+    </div>
+   </content>
+  </div>
+ </content>
+
+{%for key, user in datatable.list %}
+  <content data-id="{{key}}" class="page detail" data-status="{%if user.hour_start is not null %}on{%else%}off{%endif%}">
+   <div class="row auto">
+    <div class="span2"></div>
+    <div class="span3">
+     <div class="card">
+{%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
+{%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
+{%set avatar2 = url.static ~ 'images/avatar/' ~ user.id ~ '-v2.jpg' %}
+{% set name = user.displayname %}
+{%set position = (user.meta | decode('position'))%}
+       <img src="{{avatar2 | exist(avatar | exist(avatar_default))}}">
+      <div class="info">
+       <div class="name">{% trans name %}</div>
+    	<div class="position">{%trans position%}</div>
+   		<span class="week">{{datatable['summary'][user.id]['week']['total']}} {%trans "hours in this week"%}</span><br />
+       	<span>{{datatable['summary'][user.id]['month']['total']}} {%trans "hours in this month"%}</span><br />
+       	<span>{{datatable['summary'][user.id]['month']['plus']}} {%trans "hours remote in this month"%}</span><br />
+       	<span>{{datatable['summary'][user.id]['month']['minus']}} {%trans "hours in idle this month"%}</span>
+        <div class="id">{{key | persian}}</div>
+      </div>
+     </div>
+    </div>
+
+    <div class="span6">
+     <div class="statistics" data-action="/" data-method="post">
+
+      <div class="on">
+       <div class="row">
+        <div class="side enter"><span>{{user.hour_start |date("H:i") }}</span><abbr>{%trans "Enter Time"%}</abbr></div>
+        <div class="diff" data-time=0><span>123</span><abbr title='{%trans "Difference between enter and exit"%}'>{%trans "Operation Time"%}</abbr></div>
+        <div class="side exit time"><span class="hour">17</span>:<span class="minute">23</span><abbr>{%trans "Exit Time"%}</abbr></div>
+       </div>
+       <p class="minus" data-time=0><span>0</span><abbr>{%trans "Minus"%}</abbr></p>
+       <p class="plus" data-time=0><span>0</span><abbr>{%trans "Plus"%}</abbr></p>
+       <p class="total" data-time=0><span>0</span><abbr>{%trans "Total"%}</abbr></p>
+        <p class="msg info">{%trans "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."%}</p>
+      </div>
+
+      <div class="off">
+        <div class="time"><span class="hour">17</span>:<span class="minute">23</span></div>
+        <p class="msg info">{%trans "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."%}</p>
+      </div>
+
+     </div>
+    </div>
+   </div>
+  </content>
+{%endfor%}
+{%endblock%}
+
+
+{%block js%}
+ <script src="{{url.static}}js/script-corridor.js"></script>
+{%endblock%}

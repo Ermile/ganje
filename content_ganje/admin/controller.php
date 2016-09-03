@@ -1,5 +1,5 @@
 <?php
-namespace content_ganje\last;
+namespace content_ganje\admin;
 
 class controller extends \mvc\controller
 {

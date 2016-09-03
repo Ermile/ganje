@@ -1,5 +1,5 @@
 <?php
-namespace content_ganje\users;
+namespace content_ganje\summary;
 
 class controller extends \mvc\controller
 {

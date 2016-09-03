@@ -1,5 +1,5 @@
 <?php
-namespace content_ganje\u;
+namespace content_ganje\summary;
 
 class view extends \mvc\view
 {
