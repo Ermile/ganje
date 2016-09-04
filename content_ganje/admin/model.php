@@ -7,8 +7,52 @@ use \lib\debug;
 class model extends \mvc\model
 {
 
+	public function add($_args){
+
+		$date    = $_args['date'] ? $_args['date'] : date("Y-m-d") ;
+		$start   = $_args['start'] ? $_args['start'] : null;
+		$end     = $_args['end'] ? $_args['end'] : null;
+		$user_id = $_args['user_id'] ? $_args['user_id'] : 0;
+		$minus   = $_args['minus'] ? $_args['minus'] : 0;
+		$plus    = $_args['plus'] ? $_args['plus'] : 0;
+
+		$query = "
+			INSERT INTO
+				hours
+			SET
+				user_id   	  = $user_id,
+				hour_date     = '$date',
+				hour_start    = '$start',
+				hour_end      = '$end',
+				hour_diff     = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
+				hour_plus     = '$plus',
+				hour_minus    = '$minus',
+				hour_total    = (hour_diff + hour_plus - hour_minus),
+				hour_status   = 'raw',
+				hour_accepted = hour_total";
+
+		$result =  \lib\db::query($query);
+
+		if($result){
+			debug::true(T_("Added"));
+		}else{
+			debug::error(T_("Error in insert"));
+		}
+	}
 
 	public function post_last(){
+
+		if(utility::post('add')){
+			$args = [
+						'date'    => utility::post("date"),
+						'start'   => utility::post("start"),
+						'end'     => utility::post("end"),
+						'user_id' => utility::post("user_id"),
+						'minus'   => utility::post("minus"),
+						'plus'    => utility::post("plus")
+					];
+			$this->add($args);
+		}
 
 		$id = utility::post("id");
 
