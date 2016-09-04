@@ -18,6 +18,7 @@ class controller extends \mvc\controller
 		$this->access('ganje', 'summary', 'view', 'block');
 
 		$this->get("u", "u")->ALL();
+		$this->post("export")->ALL();
 	}
 }
 ?>

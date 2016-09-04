@@ -16,34 +16,9 @@ class summary {
 			$month = null;
 		}
 
-		if($lang == "fa") {
-			if($year){
-				$year = date::year($year);
-			}
-
-			if($month){
-				list($year,$month,$day) = date::convert($year,$month,$day);
-			}
-		}
-
-
-		$start  = (isset($_args["start"])) ? $_args["start"] : 0; // start limit
-		$end    = (isset($_args["end"]))   ? $_args["end"]   : 10; // end limit
-
 		$q = array();
+
 		$q['user']  = $user   != null ? "users.id = $user" : null;
-		// $q['day']   = $day    != null ? "DAY(hours.hour_date) = '$day' " : null;
-		$q['week']  = $week   != null ? "WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR('$week')" : null;
-		$q['month'] = $month  != null ? "YEAR(hours.hour_date) = '$year' AND MONTH(hours.hour_date) = '$month' " : null;
-		$q['year']  = $year   != null ? "YEAR(hours.hour_date) = '$year'" : null;
-
-		if($year && $month) {
-			$q['year'] = null;
-		}
-
-		$condition = implode(" AND ", array_filter($q));
-
-		$WHERE = "WHERE";
 
 		if($user){
 			$USER = "";
@@ -51,13 +26,36 @@ class summary {
 			$USER = " GROUP BY	hours.user_id ";
 		}
 
-		if(!$user AND !$day AND !$week AND !$year) $WHERE = null;
+		if($lang == "fa") {
+			if($year && $month){
+				list($start_date, $end_date)  = date::convert_month($year, $month);
+				$q['month'] = " hours.hour_date > '$start_date' AND hours.hour_date < '$end_date' ";
+
+			}elseif($year && !$month){
+				list($start_date, $end_date)  = date::convert_year($year);
+				$q['month'] = " hours.hour_date > '$start_date' AND hours.hour_date < '$end_date' ";
+			}
+		}else{
+			$q['month'] = $month  != null ? "YEAR(hours.hour_date) = '$year' AND MONTH(hours.hour_date) = '$month' " : null;
+			$q['year']  = $year   != null ? "YEAR(hours.hour_date) = '$year' " : null;
+			$q['week']  = $week   != null ? "WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR('$week')" : null;
+		}
+
+		$condition = implode(" AND ", array_filter($q));
+
+		$start  = (isset($_args["start"])) ? $_args["start"] : 0; // start limit
+		$end    = (isset($_args["end"]))   ? $_args["end"]   : 10; // end limit
+
+		$WHERE = "WHERE";
 
 		//--------- repeat to every query
+		$no_position = T_("Undefined");
+
 		$query = "
 				SELECT
 					users.id as id,
 					users.user_displayname as name,
+					TRIM(BOTH '".'"'."' FROM IFNULL(JSON_EXTRACT(users.user_meta,'$.position'), '$no_position')) as meta,
 					SEC_TO_TIME(sum(hours.hour_total) * 60 ) as total,
 					SEC_TO_TIME(sum(hours.hour_diff) * 60 ) as diff,
 					SEC_TO_TIME(sum(hours.hour_plus) * 60 ) as plus,
@@ -74,3 +72,4 @@ class summary {
 	}
 }
 ?>
+

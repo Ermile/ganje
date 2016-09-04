@@ -122,27 +122,9 @@ class model extends \mvc\model
 	* get list of users to show
 	*/
 	public function post_list(){
-		$date = date("Y-m-d");
-		$no_position = T_("Undefined");
-		$query =
-				"SELECT
-					users.id,
-					users.user_displayname as displayname,
-					IFNULL(users.user_meta,'$no_position') as meta,
 
-					hours.hour_start
-				FROM users
-				LEFT JOIN hours
-					ON hours.user_id = users.id
-					AND hours.hour_date = DATE(NOW())
-					AND hours.hour_end is null
-				ORDER BY users.id
-				";
-		$users = db::get($query);
-		$new   = array_column($users, "id");
-		$users = array_combine($new, $users);
+		return array('list' => \lib\db\users::get_all(), 'summary' => $this->summary());
 
-		return array('list' => $users, 'summary' => $this->summary());
 	}
 
 	public function summary() {
