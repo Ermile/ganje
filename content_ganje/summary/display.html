@@ -5,7 +5,7 @@
 <div class="row auto low-padding cards">
     {%for key, value in users%}
     <div class="card present">
-        <img src="http://ganje.dev/static/images/avatar/{{value.id}}.jpg">
+        <img src="{{url.static}}/images/avatar/{{value.id}}.jpg">
         <div class="absolute-info">{{value.displayname}}</div>
     </div>
     {%endfor%}
