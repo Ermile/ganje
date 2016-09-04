@@ -24,11 +24,27 @@ private function transtext()
 	echo T_("2013");                                                                  // Line 8 Seperate
 
 	//---------------------------------------------------content\about\layout-xhr.html
-	echo T_("View your current location and navigate to parent of it");               // Line 9
-
-	//----------------------------------------------------content\edit\layout-xhr.html
+	echo T_("View your current location and navigate to parent of it");               // Line 1
 
 	//-------------------------------------------------------content\home\display.html
+	echo T_("Ganje");                                                                 // Line 44 Seperate
+
+	//----------------------------------------------------content\home\layout-xhr.html
+
+	//---------------------------------------------------content\template\dafault.html
+	echo T_("Some right reserved!");                                                  // Line 28
+
+	//------------------------------------------------content_ganje\admin\display.html
+	echo T_("Actions");                                                               // Line 96
+	echo T_("Data not exist!");                                                       // Line 134
+
+	//---------------------------------------------content_ganje\admin\layout-xhr.html
+
+	//-------------------------------------------------content_ganje\edit\display.html
+
+	//----------------------------------------------content_ganje\edit\layout-xhr.html
+
+	//-------------------------------------------------content_ganje\home\display.html
 	echo T_("In the Name of God");                                                    // Line 8
 	echo T_("hours in this week");                                                    // Line 23 Seperate
 	echo T_("hours in this month");                                                   // Line 24 Seperate
@@ -44,18 +60,21 @@ private function transtext()
 	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 79
 	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 84
 
-	//----------------------------------------------------content\home\layout-xhr.html
+	//----------------------------------------------content_ganje\home\layout-xhr.html
 
-	//------------------------------------------------------content\lists\display.html
-	echo T_("Actions");                                                               // Line 64
-	echo T_("Data not exist!");                                                       // Line 97
+	//--------------------------------------------content_ganje\report\layout-xhr.html
 
-	//---------------------------------------------------content\lists\layout-xhr.html
+	//-----------------------------------------------content_ganje\status\display.html
+	echo T_("Latest entries");                                                        // Line 6
+	echo T_("Month");                                                                 // Line 20
+	echo T_("Year");                                                                  // Line 57
 
-	//--------------------------------------------------content\report\layout-xhr.html
+	//--------------------------------------------content_ganje\status\layout-xhr.html
 
-	//---------------------------------------------------content\template\dafault.html
-	echo T_("Some right reserved!");                                                  // Line 28
+	//----------------------------------------------content_ganje\summary\display.html
+	echo T_("Export");                                                                // Line 70
+
+	//-------------------------------------------content_ganje\summary\layout-xhr.html
 
 	//--------------------------------------------includes\languages\trans_static.html
 	echo T_("Saloos");                                                                // Line 7 Seperate
@@ -84,7 +103,9 @@ private function transtext()
 	echo T_("Graphic Designer");                                                      // Line 38 Seperate
 	echo T_("Shareholder");                                                           // Line 39 Seperate
 	echo T_("Chrikt");                                                                // Line 40 Seperate
-	echo T_(" ");                                                                     // Line 42 Seperate
+	echo T_("summary");                                                               // Line 42 Seperate
+	echo T_("ganje");                                                                 // Line 43 Seperate
+	echo T_(" ");                                                                     // Line 48 Seperate
 
 }
 ?>
