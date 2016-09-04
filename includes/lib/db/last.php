@@ -21,12 +21,12 @@ class last {
 					hours.hour_end 								as 'end',
 					hours.hour_end 								as 'end',
 					users.user_displayname 						as name,
-					SEC_TO_TIME(hours.hour_total 	* 60)	 	as total,
-					SEC_TO_TIME(hours.hour_diff 	* 60) 		as diff,
-					SEC_TO_TIME(hours.hour_plus 	* 60) 		as plus,
-					SEC_TO_TIME(hours.hour_minus 	* 60) 		as minus,
+					hours.hour_total 		 					as total,
+					hours.hour_diff 	 						as diff,
+					hours.hour_plus 	 						as plus,
+					hours.hour_minus 	 						as minus,
 					hours.hour_status							as 'status',
-					SEC_TO_TIME(hours.hour_accepted * 60)	 	as 'accepted'
+					hours.hour_accepted 	 					as 'accepted'
 				FROM
 					hours
 				LEFT JOIN users on hours.user_id = users.id

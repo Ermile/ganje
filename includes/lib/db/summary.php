@@ -56,10 +56,10 @@ class summary {
 					users.id as id,
 					users.user_displayname as name,
 					TRIM(BOTH '".'"'."' FROM IFNULL(JSON_EXTRACT(users.user_meta,'$.position'), '$no_position')) as meta,
-					SEC_TO_TIME(sum(hours.hour_total) * 60 ) as total,
-					SEC_TO_TIME(sum(hours.hour_diff) * 60 ) as diff,
-					SEC_TO_TIME(sum(hours.hour_plus) * 60 ) as plus,
-					SEC_TO_TIME(sum(hours.hour_minus) * 60 ) as minus
+					sum(hours.hour_total) as total,
+					sum(hours.hour_diff) as diff,
+					sum(hours.hour_plus) as plus,
+					sum(hours.hour_minus) as minus
 				FROM hours
 				INNER JOIN users on hours.user_id = users.id
 				$WHERE $condition
