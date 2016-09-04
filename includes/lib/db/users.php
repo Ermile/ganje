@@ -14,11 +14,25 @@ class users {
 
 		$date = date("Y-m-d");
 		$no_position = T_("Undefined");
+		// $query_new =
+		// 		"SELECT
+		// 			users.id,
+		// 			users.user_displayname as displayname,
+		// 			TRIM(BOTH '".'"'."' FROM IFNULL(JSON_EXTRACT(users.user_meta,'$.position'), '$no_position')) as meta,
+		// 			hours.hour_start
+		// 		FROM users
+		// 		LEFT JOIN hours
+		// 			ON hours.user_id = users.id
+		// 			AND hours.hour_date = DATE(NOW())
+		// 			AND hours.hour_end is null
+		// 		$condition
+		// 		";
+
 		$query =
 				"SELECT
 					users.id,
 					users.user_displayname as displayname,
-					TRIM(BOTH '".'"'."' FROM IFNULL(JSON_EXTRACT(users.user_meta,'$.position'), '$no_position')) as meta,
+					IFNULL(users.user_meta,'$no_position') as meta,
 					hours.hour_start
 				FROM users
 				LEFT JOIN hours

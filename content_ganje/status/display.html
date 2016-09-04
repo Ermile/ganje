@@ -1,4 +1,4 @@
-{% extends display.mvc %}
+{% extends display.ganje %}
 
 {% block body %}
 <content class="detail">
@@ -59,58 +59,22 @@
                     <label>{% trans "Year" %}</label>
 
                     {% if site.currentlang == 'fa' %}
-                    <input type="number" name="year" value='{{"now"|jdate("Y", false)}}' min="1395" max="1400">
+                    <input type="number" name="year" value='{{"now"|jdate("Y", false)}}' min="1395" max="{{"now"|jdate("Y", false) +1}}">
                     {% else %}
-                    <input type="number" name="year" value='{{"now"|date("Y")}}' min="2016" max="2020">
+                    <input type="number" name="year" value='{{"now"|date("Y")}}' min="2016" max="{{"now"|date("Y") +1}}">
                     {% endif %}
                 </div>
             </form>
+
+    <div id="langList" data-xhr="langList" class="hint--left float-right" data-hint='{%trans "Work with Ermile in your own language"%}'>
+{%for key, lang in site.langlist if site.langlist|length >1 and site.currentlang != key|slice(0, 2)%}
+     <a href="{{url.path}}?lang={{key}}" data-direct>{{lang}}</a>
+{%endfor%}
+    </div>
+
         </div>
         <div class="span9">
-            {%set dtperm = attribute(perm,module)%}
-             <div class="row">
-              <div class="span12">
-               <div class="panel panel-default display-none">
-                 <div class="panel-body">
-{%block datatable%}
-{%if include.datatable%}
-       <table class="datatable display responsive nowrap" cellspacing="0" width="100%">
-       <thead>
-        <tr>
-        <th class="column_row"></th>
-{%for value in datatable_col%}
-        <th>{{value}}</th>
-{%endfor%}
-        </tr>
-        </thead>
-
-        <tbody>
-{%block tbody%}
-{%for d in datatable%}
-        <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
-         <td class="col_row">{{loop.index}}</td>
-{%for col in datatable_col%}
-{%set myvalue = attribute(d,col)%}
-{% if value.value == 'date' %}
-         <td class="col_{{value.value}}">{{myvalue|jdate}}</td>
-{%else%}
-{%endif%}
-         <td class="col_{{value.value}}">{%trans myvalue%}</td>
-
-{%endfor%}
-        </tr>
-{%endfor%}
-{%endblock%}
-        </tbody>
-       </table>
-{%else%}
-  <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
-{%endif%}
-{%endblock%}
-                 </div>
-               </div>
-              </div>
-             </div>
+{{ block('datatable') }}
         </div>
     </div>
 </content>

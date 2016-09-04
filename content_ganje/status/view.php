@@ -6,7 +6,7 @@ class view extends \mvc\view
 	function config()
 	{
 		// $this->include->css_ermile   = false;
-		$this->include->js           = false;
+		// $this->include->js           = false;
 		$this->include->datatable    = true;
 		if($this->module() === 'home')
 		{
@@ -16,8 +16,8 @@ class view extends \mvc\view
 
 		}
 		$this->data->datatable = $this->model()->get_u();
-		$this->data->datatable_col = ['id', 'date', 'start', 'end', 'total', 'diff', 'plus', 'minus', 'accepted'];
-		$this->include->cp  = true;
+		$this->data->datatable_col = ['date', 'start', 'end', 'total', 'diff', 'plus', 'minus', 'accepted'];
+		// $this->include->cp  = true;
 
 	}
 

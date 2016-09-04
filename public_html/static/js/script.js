@@ -4,6 +4,7 @@ var isAnimation = false;
 $(document).ready(function()
 {
   startTime();
+  datatable_fill();
   // reload page every 7 min to disallow session closing
   setTimeout(function () { location.reload(1); }, 420000);
 });
@@ -49,6 +50,20 @@ $('.statistics .plus').bind('mousewheel', function(e){
 });
 
 
+
+/**
+ * fill datatable with ajax request
+ * @return {[type]} [description]
+ */
+function datatable_fill()
+{
+  $('.datatable').DataTable(
+  {
+    destroy: true,
+    ajax: "/"
+  } );
+  console.log(111);
+}
 
 /**
  * [startTime description]
@@ -142,10 +157,10 @@ function addZero(i)
  */
 function changetime(_value, _class)
 {
+  _new = String(_value);
   // change time to persian if we are in rtl design
   if($('body').hasClass('rtl'))
   {
-    _new = String(_value);
     // convert time to persian
     persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
     for(var i=0; i<=9; i++)

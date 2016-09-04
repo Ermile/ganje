@@ -1,0 +1,32 @@
+{%extends display.mvc%}
+
+
+{%block js%}
+ <script src="{{url.static}}js/script-corridor.js"></script>
+{%endblock%}
+
+
+
+{%block datatable%}
+ <div class="row">
+   <div class="panel">
+     <div class="panel-body">
+{%if include.datatable%}
+       <table class="datatable display responsive nowrap" cellspacing="0" width="100%">
+       <thead>
+        <tr>
+        <th class="column_row">#</th>
+{%for value in datatable_col%}
+        <th>{%trans value%}</th>
+{%endfor%}
+        </tr>
+        </thead>
+
+       </table>
+{%else%}
+  <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
+{%endif%}
+     </div>
+   </div>
+ </div>
+{%endblock%}

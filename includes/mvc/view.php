@@ -7,11 +7,13 @@ class view extends \lib\mvc\view
 	{
 		// define default value for global
 
-		$this->data->site['title']   = T_("Ganje");
-		$this->data->site['desc']    = T_("Free & open source attendance service!");
-		$this->data->site['slogan']  = T_("Enjoy work time");
+		$this->data->site['title']    = T_("Ganje");
+		$this->data->site['desc']     = T_("Free & open source attendance service!");
+		$this->data->site['slogan']   = T_("Enjoy work time");
 
-		$this->data->page['desc']    = $this->data->site['slogan'];
+		$this->data->page['desc']     = $this->data->site['slogan'];
+		$this->data->display['ganje'] = "content_ganje/home/layout.html";
+
 
 		// if(! ($this->url('sub') === 'cp' || $this->url('sub') === 'account') )
 		// 	$this->url->MainStatic       = false;
