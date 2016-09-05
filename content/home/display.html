@@ -2,6 +2,43 @@
 
 
 {%block body%}
-<a href="ganje" class="ganje" data-direct>{%trans "Ganje"%}</a>
+<div id="cover">
+ <h1>{{site.title}}</h1>
+ <h2>{{site.desc}}</h2>
+ <a href="#">{%trans "Find Out More"%}</a>
+ <a href="#">{%trans "Check on Github"%}</a>
+ <div class='chevron'></div>
+</div>
+<article>
+ <div class="container">
+  <p>{%trans "Ganje: this is a tejarak online attendance beginning Web-based which work without any complexities of existing ones."%} {%trans "Integration with services which will soon be public lead no need for small businesses, costly and inconvenience."%}</p>
+ </div>
+</article>
+<footer>
+ <div id="footer-above">
+  <div class='chevron'></div>
+  <div class="container row">
+  <div class="span4">
+      <h3>{%trans "About"%} {{site.title | upper }}</h3>
+      <p>{{site.title}} {%trans " is a free to use, open source PHP framework created by"%} <a href="https://ermile.com" target="_blank">{%trans "Ermile"%}</a>.</p>
+  </div>
+  <div class="span4">
+   <h3>{%trans "Another Languages"%}</h3>
+   <p>
+{%for key, lang in site.langlist if site.langlist|length >1 and site.currentlang != key|slice(0, 2)%}
+    <a href="{{url.root}}{%if site.defaultLang != key|slice(0, 2) %}{{key|slice(0, 2)}}/{%endif%}{{url.path}}" hreflang="{{key|slice(0, 2)}}" data-action>{{lang}}</a>
+{%endfor%}
+   </p>
+  </div>
+  <div class="span4">
+   <h3>{%trans "Location"%}</h3>
+   <p>{%trans "#614, Omranieh, Moallem St"%}<br>{%trans "Qom, IRAN"%}<br>{%trans "+98 25 3773 5183"%}</p>
+  </div>
+  </div>
+ </div>
+ <div id="copyright">
+ {%trans "Copyright"%} &copy; {%trans "Ermile"%} {%trans "2016"%}
+ </div>
+</footer>
 {%endblock%}
 

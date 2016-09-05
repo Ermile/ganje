@@ -5,15 +5,8 @@ class view extends \mvc\view
 {
 	function config()
 	{
-		$this->include->css_ermile   = true;
-		$this->include->js           = true;
-		if($this->module() === 'home')
-		{
-			$this->data->bodyclass  = 'unselectable';
-			// $this->include->js_main      = false;
-			$this->include->css          = true;
-		}
-		//----- list of users
+		$this->data->bodyclass = 'unselectable';
+		$this->include->js     = false;
 	}
 
 

@@ -2,34 +2,24 @@
 private function transtext()
 {
 
-	//------------------------------------------------------content\about\display.html
-	echo T_("Home");                                                                  // Line 17
-	echo T_("Slogan");                                                                // Line 18
-	echo T_("About");                                                                 // Line 103
-	echo T_("Contact");                                                               // Line 20
-	echo T_("Documentation");                                                         // Line 44
-	echo T_("Check on Github");                                                       // Line 78
-	echo T_("Download Latest Version");                                               // Line 77
-	echo T_("Language List");                                                         // Line 29
-	echo T_("Find Out More");                                                         // Line 42
-	echo T_("Secure, Fast and Flexible");                                             // Line 67
-	echo T_("Location");                                                              // Line 91
-	echo T_("#83 Moallem St");                                                        // Line 92
-	echo T_("Qom, IRAN");                                                             // Line 92
-	echo T_("+98 25 3773 5183");                                                      // Line 92
-	echo T_("Another Languages");                                                     // Line 95
-	echo T_(" is a free to use, open source PHP framework created by");               // Line 104
-	echo T_("Ermile");                                                                // Line 13
-	echo T_("Copyright");                                                             // Line 113
-	echo T_("2013");                                                                  // Line 8 Seperate
-
-	//---------------------------------------------------content\about\layout-xhr.html
-	echo T_("View your current location and navigate to parent of it");               // Line 1
-
 	//-------------------------------------------------------content\home\display.html
-	echo T_("Ganje");                                                                 // Line 44 Seperate
+	echo T_("Find Out More");                                                         // Line 8
+	echo T_("Check on Github");                                                       // Line 9
+	echo T_("Ganje: this is a tejarak online attendance beginning Web-based which work without any complexities of existing ones.");// Line 14
+	echo T_("Integration with services which will soon be public lead no need for small businesses, costly and inconvenience.");// Line 14
+	echo T_("About");                                                                 // Line 22
+	echo T_(" is a free to use, open source PHP framework created by");               // Line 23
+	echo T_("Ermile");                                                                // Line 13
+	echo T_("Another Languages");                                                     // Line 26
+	echo T_("Location");                                                              // Line 34
+	echo T_("#614, Omranieh, Moallem St");                                            // Line 35
+	echo T_("Qom, IRAN");                                                             // Line 35
+	echo T_("+98 25 3773 5183");                                                      // Line 35
+	echo T_("Copyright");                                                             // Line 40
+	echo T_("2016");                                                                  // Line 11 Seperate
 
 	//----------------------------------------------------content\home\layout-xhr.html
+	echo T_("View your current location and navigate to parent of it");               // Line 1
 
 	//---------------------------------------------------content\template\dafault.html
 	echo T_("Some right reserved!");                                                  // Line 28
@@ -38,11 +28,7 @@ private function transtext()
 	echo T_("Actions");                                                               // Line 96
 	echo T_("Data not exist!");                                                       // Line 134
 
-	//---------------------------------------------content_ganje\admin\layout-xhr.html
-
 	//-------------------------------------------------content_ganje\edit\display.html
-
-	//----------------------------------------------content_ganje\edit\layout-xhr.html
 
 	//-------------------------------------------------content_ganje\home\display.html
 	echo T_("In the Name of God");                                                    // Line 8
@@ -62,25 +48,23 @@ private function transtext()
 
 	//----------------------------------------------content_ganje\home\layout-xhr.html
 
-	//--------------------------------------------content_ganje\report\layout-xhr.html
+	//--------------------------------------------------content_ganje\home\layout.html
 
 	//-----------------------------------------------content_ganje\status\display.html
-	echo T_("Latest entries");                                                        // Line 6
-	echo T_("Month");                                                                 // Line 20
-	echo T_("Year");                                                                  // Line 57
-
-	//--------------------------------------------content_ganje\status\layout-xhr.html
+	echo T_("Select all months");                                                     // Line 21
+	echo T_("Enter year");                                                            // Line 56
+	echo T_("Work with Ermile in your own language");                                 // Line 60
 
 	//----------------------------------------------content_ganje\summary\display.html
+	echo T_("Month");                                                                 // Line 20
+	echo T_("Year");                                                                  // Line 57
 	echo T_("Export");                                                                // Line 70
-
-	//-------------------------------------------content_ganje\summary\layout-xhr.html
 
 	//--------------------------------------------includes\languages\trans_static.html
 	echo T_("Saloos");                                                                // Line 7 Seperate
+	echo T_("2013");                                                                  // Line 8 Seperate
 	echo T_("2014");                                                                  // Line 9 Seperate
 	echo T_("2015");                                                                  // Line 10 Seperate
-	echo T_("2016");                                                                  // Line 11 Seperate
 	echo T_("2017");                                                                  // Line 12 Seperate
 	echo T_("2018");                                                                  // Line 13 Seperate
 	echo T_("2019");                                                                  // Line 14 Seperate
@@ -105,6 +89,7 @@ private function transtext()
 	echo T_("Chrikt");                                                                // Line 40 Seperate
 	echo T_("summary");                                                               // Line 42 Seperate
 	echo T_("ganje");                                                                 // Line 43 Seperate
+	echo T_("Ganje");                                                                 // Line 44 Seperate
 	echo T_(" ");                                                                     // Line 48 Seperate
 
 }
