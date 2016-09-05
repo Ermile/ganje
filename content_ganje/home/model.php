@@ -139,10 +139,10 @@ class model extends \mvc\model
 
 		//--------- repeat to every query
 		$field = "users.id,users.user_displayname as displayname,
-				 SEC_TO_TIME(SUM(hours.hour_total) * 60 ) as 'total',
-				 SEC_TO_TIME(SUM(hours.hour_diff)  * 60 ) as 'diff',
-				 SEC_TO_TIME(SUM(hours.hour_plus)  * 60 ) as 'plus',
-				 SEC_TO_TIME(SUM(hours.hour_minus) * 60 ) as 'minus'
+				 SUM(hours.hour_total)   as 'total',
+				 SUM(hours.hour_diff) 	 as 'diff',
+				 SUM(hours.hour_plus) 	 as 'plus',
+				 SUM(hours.hour_minus) 	 as 'minus'
 				";
 
 		$join =	"FROM hours
