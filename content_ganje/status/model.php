@@ -39,7 +39,7 @@ class model extends \mvc\model
 	}
 
 	function get_mo($_args){
-		var_dump($_args);
+		// var_dump($_args);
 	}
 
 	public function post_status(){

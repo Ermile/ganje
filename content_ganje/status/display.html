@@ -1,81 +1,72 @@
 {% extends display.ganje %}
 
 {% block body %}
-<content class="detail">
-    <div class="row auto low-padding">
-        <h1>{% trans "Latest entries" %}</h1>
+ <content class="row auto detail inner">
+  <div class="span3">
+   <div class="card">
+ {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
+ {%set avatar = url.static ~ 'images/avatar/' ~ login.id ~ '.jpg' %}
+ {%set name = login.displayname%}
+ {%set position = login.meta.position%}
+    <img src="{{avatar | exist(avatar_default)}}">
+    <div class="info">
+     <div class="name">{%trans name%}</div>
+     <div class="position">{%trans position%}</div>
     </div>
-    <div class="row auto low-padding">
-        <div class="span3">
-            <div class="card">
-{%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
-{%set avatar = url.static ~ 'images/avatar/' ~ login.id ~ '.jpg' %}
-{%set name = login.displayname%}
-{%set position = login.meta.position%}
-                <img src="{{avatar | exist(avatar_default)}}">
-                <div class="info">
-                    <div class="name">{%trans name%}</div>
-                    <div class="position">{%trans position%}</div>
-                </div>
-            </div>
+   </div>
 
-            <form>
-                <div class="inline-field">
-                    <label>{% trans "Month" %}</label>
-                    <select name="month">
-                    {% if site.currentlang == 'fa' %}
-                        <option value="0">تمامی ماه ها</option>
-                        <option value="1">فروردین</option>
-                        <option value="2">اردیبهشت</option>
-                        <option value="3">خرداد</option>
-                        <option value="4">تیر</option>
-                        <option value="5">مرداد</option>
-                        <option value="6">شهریور</option>
-                        <option value="7">مهر </option>
-                        <option value="8">آبان</option>
-                        <option value="9">آذر</option>
-                        <option value="10">دی</option>
-                        <option value="11">بهمن</option>
-                        <option value="12">اسفند</option>
-                    {% else %}
-                        <option value="0">Select All</option>
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                    {% endif %}
-                    </select>
-                </div>
+   <div class="filters">
+    <p>
+     <select name="month" class="month">
+      <option value="0">{%trans "Select all months"%}</option>
+{% if site.currentlang == 'fa' %}
+      <option value="01">فروردین</option>
+      <option value="02">اردیبهشت</option>
+      <option value="03">خرداد</option>
+      <option value="04">تیر</option>
+      <option value="05">مرداد</option>
+      <option value="06">شهریور</option>
+      <option value="07">مهر </option>
+      <option value="08">آبان</option>
+      <option value="09">آذر</option>
+      <option value="10">دی</option>
+      <option value="11">بهمن</option>
+      <option value="12">اسفند</option>
+{% else %}
+      <option value="01">January</option>
+      <option value="02">February</option>
+      <option value="03">March</option>
+      <option value="04">April</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">August</option>
+      <option value="09">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+{% endif %}
+     </select>
+    </p>
 
-                <div class="inline-field">
-                    <label>{% trans "Year" %}</label>
+    <p>
+{% if site.currentlang == 'fa' %}
+     <input type="number" name="year" class="year" value='{{"now"|jdate("Y", false)}}' min="1395" max="{{"now"|jdate("Y", false) +1}}" placeholder='{%trans "Enter year"%}'>
+{% else %}
+     <input type="number" name="year" class="year" value='{{"now"|date("Y")}}' min="2016" max="{{"now"|date("Y") +1}}" placeholder='{%trans "Enter year"%}'>
+{% endif %}
+    </p>
 
-                    {% if site.currentlang == 'fa' %}
-                    <input type="number" name="year" value='{{"now"|jdate("Y", false)}}' min="1395" max="{{"now"|jdate("Y", false) +1}}">
-                    {% else %}
-                    <input type="number" name="year" value='{{"now"|date("Y")}}' min="2016" max="{{"now"|date("Y") +1}}">
-                    {% endif %}
-                </div>
-            </form>
-
-    <div id="langList" data-xhr="langList" class="hint--left float-right" data-hint='{%trans "Work with Ermile in your own language"%}'>
+    <p id="langList" data-xhr="langList" class="hint--right float-right" data-hint='{%trans "Work with Ermile in your own language"%}'>
 {%for key, lang in site.langlist if site.langlist|length >1 and site.currentlang != key|slice(0, 2)%}
      <a href="{{url.path}}?lang={{key}}" data-direct>{{lang}}</a>
 {%endfor%}
-    </div>
+    </p>
+   </div>
+  </div>
 
-        </div>
-        <div class="span9">
+  <div class="span9">
 {{ block('datatable') }}
-        </div>
-    </div>
-</content>
+  </div>
+ </content>
 {% endblock %}

@@ -169,7 +169,14 @@ body#summary .field { display: inline-block; width: 90% }
 .inline-field input[type="number"] { background: #fff; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em }
 .inline-field input[type="submit"] { background: #21ba45; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em; color: #fff; cursor: pointer }
 
-.detail .inline-field { margin-top: 1.5em }
+.detail.inner{margin:1em auto 0;width:90%;}
+
+.filters {margin-top: 2em;}
+.filters p{position: relative;margin-bottom:0.7em;}
+.filters .month{background: #fff; border: none; padding: 0.4em 0.7em; width: 100%; border-radius: 0.2em }
+.filters .year{background: #fff; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em }
+#langList a{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:block;border-radius: 0.2em}
+#langList a:hover{background-color:#eee;}
 
 body#admin {}
 .panel { border-radius: 0.2em }

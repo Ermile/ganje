@@ -7,6 +7,7 @@ $(document).ready(function()
   datatable_fill();
   // reload page every 7 min to disallow session closing
   setTimeout(function () { location.reload(1); }, 420000);
+
 });
 
 // bind keydown and click
@@ -17,6 +18,14 @@ $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(
 
 $(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });
 $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10) });
+
+$("select.month").change(function() {
+
+});
+
+
+
+
 
 // add location to body on start
 $('body').attr('data-location', 'dashboard' );
@@ -57,12 +66,12 @@ $('.statistics .plus').bind('mousewheel', function(e){
  */
 function datatable_fill()
 {
-  $('.datatable').DataTable(
-  {
-    destroy: true,
-    ajax: "/"
-  } );
-  console.log(111);
+  // $('.datatable').DataTable(
+  // {
+  //   destroy: true,
+  //   ajax: "/"
+  // } );
+  // console.log(111);
 }
 
 /**
