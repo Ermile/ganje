@@ -38,6 +38,10 @@ class model extends \mvc\model
 		return \lib\db\last::get(['user' => $id]);
 	}
 
+	function get_mo($_args){
+		var_dump($_args);
+	}
+
 	public function post_status(){
 		$arg = [
 				'lang'    => 'fa',
