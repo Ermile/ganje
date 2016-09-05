@@ -79,7 +79,7 @@ class model extends \mvc\model
 
 
 		$displayname = \lib\db\users::get_one($this->user_id);
-		$displayname = $displayname['displayname'];
+		$displayname = T_($displayname['displayname']);
 
 		if($check_date == null) {
 
