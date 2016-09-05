@@ -51,22 +51,37 @@ class model extends \mvc\model
 
 		";
 		$report = db::get($qry);
-
 		return ['users' => \lib\db\users::get_all(), 'summary' => $report];
 	}
 
 	/**
-	 * export data to csv
+	 *
 	 */
 	public function post_export(){
+
+		$month = utility::post('month');
+		$year  = utility::post('year');
+		$lang  = 'fa';
+
 		$arg = [
-				'lang' => 'fa',
-				'month' => utility::post('month'),
-				'year' => utility::post('year')
+				'lang'  => $lang,
+				'month' => $month,
+				'year'  => $year
 				];
 
 		$data = \lib\db\summary::get($arg);
-		\lib\db\export::csv(['data' => $data]);
+
+		if(utility::post("submit")){
+			if($month == 0) {
+				$month = "all";
+			}
+
+			$name = 'ganje-export-'. $year . '-' . $month;
+			\lib\db\export::csv(['name' => $name ,'data' => $data]);
+
+		}else{
+			return $data;
+		}
 	}
 }
 ?>

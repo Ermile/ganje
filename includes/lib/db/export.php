@@ -2,15 +2,15 @@
 namespace lib\db;
 
 class export {
-    public static function csv($_arg) {
 
-        $title    = isset($_arg['title'])       ? $_arg['title']    :  "Untitled";
-        $filename = isset($_arg['filename'])    ? $_arg['filename'] :  "Untitled";
-        $fieltype = isset($_arg['fieltype'])    ? $_arg['fieltype'] :  "csv";
-        $data     = isset($_arg['data'])        ? $_arg['data']     :  [];
+    public static function csv($_args) {
 
+        $type = isset($_args['type']) ? $_args['type'] : 'csv';
+        $filename = isset($_args['name']) ? $_args['name'] : 'Untitled';
+        $data = $_args['data'];
+
+        // disable caching
         $now = gmdate("D, d M Y H:i:s");
-
         header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
         header("Cache-Control: max-age=0, no-cache, must-revalidate, proxy-revalidate");
         header("Last-Modified: {$now} GMT");
@@ -21,19 +21,29 @@ class export {
         header("Content-Type: application/download");
 
         // disposition / encoding on response body
-        header("Content-Disposition: attachment;filename={$filename}");
+        header("Content-Disposition: attachment;filename={$filename}.{$type}");
         header("Content-Transfer-Encoding: binary");
-        // $file = fopen("a.csv","w");
 
-        // foreach ($data as $line) {
 
-        //     fputcsv($file, $line);
-        // }
+        if (count($data) == 0 || !$data || empty($data)) {
+            echo  null;
+            // die();
+        }
 
-        // fclose($file);
+        ob_start();
 
+        $df = fopen("php://output", 'w');
+
+        fputcsv($df, array_keys(reset($data)));
+
+        foreach ($data as $row) {
+            fputcsv($df, $row);
+        }
+
+        fclose($df);
+        echo ob_get_clean();
+
+        die();
     }
-
 }
-
- ?>
+?>

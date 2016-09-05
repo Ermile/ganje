@@ -59,8 +59,10 @@ class summary {
 					sum(hours.hour_total) as total,
 					sum(hours.hour_diff) as diff,
 					sum(hours.hour_plus) as plus,
-					sum(hours.hour_minus) as minus
-				FROM hours
+					sum(hours.hour_minus) as minus,
+					sum(hours.hour_accepted) as accepted
+				FROM
+					hours
 				INNER JOIN users on hours.user_id = users.id
 				$WHERE $condition
 				$USER

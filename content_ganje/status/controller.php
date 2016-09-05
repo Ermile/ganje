@@ -19,7 +19,7 @@ class controller extends \mvc\controller
 
 
 		$this->get()->ALL();
-		$this->post()->ALL();
+		$this->post("status")->ALL();
 	}
 }
 ?>

@@ -37,5 +37,18 @@ class model extends \mvc\model
 
 		return \lib\db\last::get(['user' => $id]);
 	}
+
+	public function post_status(){
+		$arg = [
+				'lang'    => 'fa',
+				'user' => $this->login("id"),
+				'month'   => utility::post('month'),
+				'year'    => utility::post('year')
+				];
+
+		$data = \lib\db\summary::get($arg);
+
+		return $data;
+	}
 }
 ?>
