@@ -77,6 +77,10 @@ class model extends \mvc\model
 
 		$check_date = db::get($query, null, true);
 
+
+		$displayname = \lib\db\users::get_one($this->user_id);
+		$displayname = $displayname['displayname'];
+
 		if($check_date == null) {
 
 			//----- add firs time in day
@@ -88,7 +92,7 @@ class model extends \mvc\model
 
 			db::query($insert);
 
-			$tg = self::sendTelegram($this->user_id. ' '. T_('Enter was registered.'));
+			$tg = self::sendTelegram($displayname. ' '. T_('Enter was registered.'));
 			debug::true(T_("Enter was registered."). ' '. T_("Have a good time."));
 			return 'enter';
 
@@ -109,7 +113,7 @@ class model extends \mvc\model
 
 			db::query($update);
 
-			$tg = self::sendTelegram($this->user_id. ' '. T_('Bye Bye;'));
+			$tg = self::sendTelegram($displayname. ' '. T_('Bye Bye;'));
 			debug::true(T_("Bye Bye;)"));
 			return 'exit';
 
