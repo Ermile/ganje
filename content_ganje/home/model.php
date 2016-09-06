@@ -92,13 +92,10 @@ class model extends \mvc\model
 
 		if($check_date == null) {
 
-			// $enter_msg = "🚀⚒🔬📊🕗📅🔫 ";
-			$enter_msg = "⚒ ";
-			$enter_msg .= "#" . T_("Enter") . "\n";
+			$enter_msg = "#" . T_("Enter") . "\n";
 			$enter_msg .= "#" . $displayname. "\n";
-			$enter_msg .= "🕗 ". $time . "\n";
-
-			$enter_msg .= "📅 #" .  $telegram_date . "\n";
+			$enter_msg .= T_("Registered"). "\n";
+			$enter_msg .= "#" .  $telegram_date . "\n";
 
 
 			//----- add firs time in day
@@ -116,21 +113,20 @@ class model extends \mvc\model
 
 		}elseif($check_date['hour_end'] == null){
 
-			$exit_msg = "🚀 " ;
-			$exit_msg .= "#" . T_("Exit") . "\n";
+
+			$exit_msg = "#". T_("Exit"). "\n";
 			$exit_msg .= "#". $displayname. "\n";
-			$exit_msg .= "🕓 ". $time . "\n";
-			$exit_msg .= "📅 #" .  $telegram_date . "\n";
+			$exit_msg .= T_("in"). ' '. $time. "\n";
+			$exit_msg .= "#".  $telegram_date. "\n";
 			$exit_msg .= "📊 \n";
-			$exit_msg .= "🕗 " . T_("start") .': ' . $check_date['hour_start'] . "\n" ;
-			$exit_msg .= "🕓" . T_("end") .": " . $time . "\n";
+			$exit_msg .= T_("from"). " ". $check_date['hour_start']. ' '. T_("to"). ' '. $time. "\n" ;
 
 			if($this->minus > 0){
-				$exit_msg .= "😡 " . T_("minus") .": " . $this->minus . "\n";
+				$exit_msg .= "😡 ". T_("minus"). ": ". $this->minus. "\n";
 			}
 
 			if($this->plus > 0 ){
-				$exit_msg .= "😘 " . T_("plus") .": " . $this->plus . "\n";
+				$exit_msg .= "😘 ". T_("plus"). ": ". $this->plus. "\n";
 			}
 
 			//------- add end time
@@ -175,7 +171,7 @@ class model extends \mvc\model
 
 		//--------- repeat to every query
 		$field = "users.id,users.user_displayname as displayname,
-				 (SUM(hours.hour_total) /60)   as 'total',
+				 ROUND(SUM(hours.hour_total) /60)   as 'total',
 				 SUM(hours.hour_diff) 	 as 'diff',
 				 SUM(hours.hour_plus) 	 as 'plus',
 				 SUM(hours.hour_minus) 	 as 'minus'
@@ -194,16 +190,7 @@ class model extends \mvc\model
 			GROUP BY
 				hours.user_id,
 				hours.hour_date
-
-		UNION
-			SELECT $field,
-			'week' as type
-			$join
-			AND WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR(NOW())
-			GROUP BY hours.user_id
 		";
-
-
 
 		if($this->lang == 'fa'){
 
@@ -212,23 +199,39 @@ class model extends \mvc\model
 
 			list($start_date, $end_date) = \lib\db\date::convert_month($jalali_year, $jalali_month);
 
+			$start_week = date("Y-m-d", strtotime("last Saturday", time()));
+			$end_week = date("Y-m-d", strtotime("Saturday", time()));
+
 			$qry .= "
+			UNION
+				SELECT $field,
+				'week' as type
+				$join
+				AND (hours.hour_date >= '$start_week' AND hours.hour_date < '$end_week')
+				GROUP BY hours.user_id
 			UNION
 			SELECT $field,
 			'month' as type
 			$join
-			AND (hours.hour_date > '$start_date' AND hours.hour_date < '$end_date')
+			AND (hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date')
 			GROUP BY hours.user_id";
 
 		}else{
 			$qry .= "
 			UNION
-			SELECT $field,
-			'month' as type
-			$join
-			AND YEAR(hours.hour_date) = YEAR(NOW()) AND MONTH(hours.hour_date)=MONTH(NOW())
-			GROUP BY hours.user_id";
+				SELECT $field,
+				'week' as type
+				$join
+				AND WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR(NOW())
+				GROUP BY hours.user_id
+			UNION
+				SELECT $field,
+				'month' as type
+				$join
+				AND YEAR(hours.hour_date) = YEAR(NOW()) AND MONTH(hours.hour_date)=MONTH(NOW())
+				GROUP BY hours.user_id";
 		}
+
 		$report = db::get($qry);
 
 		$return  = array();
