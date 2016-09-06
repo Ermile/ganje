@@ -5,7 +5,7 @@
 <div id="cover">
  <h1>{{site.title}}</h1>
  <h2>{{site.desc}}</h2>
- <a href="#ganje" data-direct>{%trans "Ganje, first one"%}</a>
+ <a href="#ganje" >{%trans "Ganje, first one"%}</a>
 
  <div class='chevron'></div>
 </div>
@@ -85,7 +85,6 @@
  <script>
   $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
         if (target.length) {
@@ -94,7 +93,6 @@
           }, 500);
           return false;
         }
-      }
     });
   });
  </script>
