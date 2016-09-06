@@ -5,15 +5,19 @@
 
 /* HOMEPAGE Styles*/
 body#home{height:100%}
-#home h1,h2,h3{font-weight:700;color:#131313}
+#home h1,h2,h3{font-weight:700;color:#131313;}
 #home #cover{text-align:center;background-image:url(../images/home/bgO.jpg);width:100%;height:600px;min-height:100%;background-repeat:no-repeat;background-size:cover;background-position:bottom;position:relative}
-#home #cover h1{margin:0;padding:0;font-size:10em;font-weight:700;text-align:center;padding-top:2em;line-height:1.5em;z-index:10}
+#home #cover h1{margin:0;padding:0;font-size:10em;font-weight:700;text-align:center;padding-top:2em;line-height:1.5em;z-index:10;text-shadow:#000 0 0 .1em;}
 #home #cover h2{text-align:center;font-size:2.5em}
-#home #cover a{color:#d2d1d1;background-color:rgba(2,1,1,0.65);font-size:1.8em;padding:8px;transition:.3s}
+#home #cover a{color:#d2d1d1;background-color:rgba(2,1,1,0.65);font-size:1.8em;padding:1em 2em;transition:.3s;display: inline-block;}
 #home #cover a:hover{background-color:rgba(2,1,1,0.82)}
 #home article{background-color:#eee;position:relative;padding:20em 0}
 #home article:before{position:absolute;width:100%;height:60px;top:0;right:0;border-right:60px solid blue;border-bottom:80px solid blue;display:inline-block}
 #home article div p{font-size:1.8em;text-align:justify;padding:10px;line-height:1.8em}
+#home article h2{display: inline-block;font-weight: bold}
+#home article h2 a{font-size:3em;}
+#home .icon{width: 300px;float:left;margin: -5em 5em 0}
+#home.rtl .icon{float:right;}
 #home footer{z-index:2}
 #home footer h3,#home footer p{color:#f7f7f7}
 #home footer h3{font-size:2.7em}
@@ -27,8 +31,8 @@ body#home{height:100%}
 #home #copyright a:hover{color:#fff}
 
 #home .chevron{position:relative;text-align:center;padding:12px;margin-bottom:6px;height:90px;width:100%;z-index:11;top:100%;margin-top:-80px}
-#home .chevron::before{content:'';position:absolute;top:25px;left:0;height:100%;width:50%;background:#ddd;transform:skew(0deg,6deg)}
-#home .chevron::after{content:'';position:absolute;top:25px;right:0;height:100%;width:50%;background:#ddd;transform:skew(0deg,-6deg)}
+#home .chevron::before{content:'';position:absolute;top:25px;left:0;height:100%;width:50%;background:#e8e8e8;transform:skew(0deg,6deg)}
+#home .chevron::after{content:'';position:absolute;top:25px;right:0;height:100%;width:50%;background:#e8e8e8;transform:skew(0deg,-6deg)}
 #home #cover .chevron{position: absolute;}
 #home footer .chevron{height:130px;z-index:0;top:-50px}
 #home footer .chevron::before{background:#2c3e50;transform:skew(0deg,6deg)}

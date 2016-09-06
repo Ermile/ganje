@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ganje - Persian\n"
-"POT-Creation-Date: 2016-09-06 12:33+0430\n"
-"PO-Revision-Date: 2016-09-06 12:34+0430\n"
+"POT-Creation-Date: 2016-09-06 15:35+0430\n"
+"PO-Revision-Date: 2016-09-06 15:40+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.3\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -30,59 +30,47 @@ msgstr "خطا در افزودن رکورد جدید"
 msgid "id not found"
 msgstr "آی‌دی یافت نشد"
 
-#: ganje/content_ganje/home/model.php:60
+#: ganje/content_ganje/home/model.php:61
 msgid "User not found"
 msgstr "کاربر یافت نشد"
 
-#: ganje/content_ganje/home/model.php:95
+#: ganje/content_ganje/home/model.php:101
 msgid "Enter"
 msgstr "ورود"
 
-#: ganje/content_ganje/home/model.php:97
-msgid "Registered"
-msgstr "ثبت شد"
-
-#: ganje/content_ganje/home/model.php:111
+#: ganje/content_ganje/home/model.php:114
 msgid "Enter was registered."
 msgstr "ورود ثبت شد."
 
-#: ganje/content_ganje/home/model.php:111
+#: ganje/content_ganje/home/model.php:114
 msgid "Have a good time."
 msgstr "اوقات خوبی داشته باشید."
 
-#: ganje/content_ganje/home/model.php:117
-msgid "Exit"
-msgstr "خروج"
-
-#: ganje/content_ganje/home/model.php:119
-msgid "in"
-msgstr "در"
-
-#: ganje/content_ganje/home/model.php:122
-msgid "from"
-msgstr "از"
-
-#: ganje/content_ganje/home/model.php:122
+#: ganje/content_ganje/home/model.php:121
 msgid "to"
 msgstr "تا"
 
-#: ganje/content_ganje/home/model.php:125
+#: ganje/content_ganje/home/model.php:122
+msgid "Exit"
+msgstr "خروج"
+
+#: ganje/content_ganje/home/model.php:126
 #: ganje/includes/cls/database/ganje/translation.php:39
 msgid "minus"
 msgstr "هدر رفته"
 
-#: ganje/content_ganje/home/model.php:129
+#: ganje/content_ganje/home/model.php:130
 #: ganje/includes/cls/database/ganje/translation.php:30
 #: ganje/includes/cls/database/ganje/translation.php:40
 msgid "plus"
 msgstr "دور کاری"
 
-#: ganje/content_ganje/home/model.php:149
+#: ganje/content_ganje/home/model.php:150
 msgid "Bye Bye;)"
 msgstr "خدانگهدار ;)"
 
 #: ganje/content_ganje/home/view.php:16
-#: ganje/includes/languages/trans_twig.php:92
+#: ganje/includes/languages/trans_twig.php:7
 msgid "Ganje"
 msgstr "گنجه"
 
@@ -617,7 +605,7 @@ msgid "permission"
 msgstr "سطح دسترسی"
 
 #: ganje/includes/languages/trans_addons.php:6
-#: ganje/includes/languages/trans_twig.php:8
+#: ganje/includes/languages/trans_twig.php:56
 #: saloos/saloos-addons/includes/languages/trans_addons.php:6
 msgid "Work with Ermile in your own language"
 msgstr "با زبان خودتان با ارمایل کار کنید"
@@ -781,7 +769,7 @@ msgid "Add New Record"
 msgstr "افزودن رکورد جدید"
 
 #: ganje/includes/languages/trans_addons.php:52
-#: ganje/includes/languages/trans_twig.php:33
+#: ganje/includes/languages/trans_twig.php:22
 #: saloos/saloos-addons/includes/languages/trans_addons.php:52
 msgid "View your current location and navigate to parent of it"
 msgstr "مکان فعلی خود را دیده و به مکان‌های والد آن منتقل شوید"
@@ -1436,13 +1424,13 @@ msgstr ""
 "کنید."
 
 #: ganje/includes/languages/trans_addons.php:190
-#: ganje/includes/languages/trans_twig.php:39
+#: ganje/includes/languages/trans_twig.php:28
 #: saloos/saloos-addons/includes/languages/trans_addons.php:190
 msgid "Actions"
 msgstr "عملیات"
 
 #: ganje/includes/languages/trans_addons.php:191
-#: ganje/includes/languages/trans_twig.php:13
+#: ganje/includes/languages/trans_twig.php:29
 #: saloos/saloos-addons/includes/languages/trans_addons.php:191
 msgid "Data not exist!"
 msgstr "داده‌ای برای نمایش وجود ندارد!"
@@ -1874,7 +1862,7 @@ msgid "some fields must be change for update!"
 msgstr "برای بروزرسانی باید حداقل یک فیلد را تغییر دهید!"
 
 #: ganje/includes/languages/trans_addons.php:283
-#: ganje/includes/languages/trans_twig.php:17
+#: ganje/includes/languages/trans_twig.php:12
 #: saloos/saloos-addons/content_account/home/view.php:63
 #: saloos/saloos-addons/includes/languages/trans_addons.php:282
 msgid "Ermile"
@@ -3206,7 +3194,7 @@ msgid "We need mobile number!"
 msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: ganje/includes/languages/trans_addons.php:524
-#: ganje/includes/languages/trans_twig.php:93
+#: ganje/includes/languages/trans_twig.php:92
 #: saloos/saloos-addons/includes/languages/trans_addons.php:501
 msgid " "
 msgstr " "
@@ -3217,98 +3205,10 @@ msgid "Select"
 msgstr "انتخاب"
 
 #: ganje/includes/languages/trans_twig.php:6
-msgid "Select all months"
-msgstr "تمام ماه‌ها انتخاب شده"
+msgid "Ganje, first one"
+msgstr "گنجه؛ اولین سرویس"
 
-#: ganje/includes/languages/trans_twig.php:7
-msgid "Enter year"
-msgstr "سال را وارد کنید"
-
-#: ganje/includes/languages/trans_twig.php:16
-msgid "In the Name of God"
-msgstr "به‌نام یگانه برنامه‌نویس هستی"
-
-#: ganje/includes/languages/trans_twig.php:18
-msgid "hours in this week"
-msgstr "ساعت در این هفته"
-
-#: ganje/includes/languages/trans_twig.php:19
-msgid "hours in this month"
-msgstr "ساعت در این ماه"
-
-#: ganje/includes/languages/trans_twig.php:20
-msgid "hours remote in this month"
-msgstr "ساعت ریموت در این ماه"
-
-#: ganje/includes/languages/trans_twig.php:21
-msgid "hours in idle this month"
-msgstr "ساعت هدر داده در این ماه"
-
-#: ganje/includes/languages/trans_twig.php:22
-msgid "Enter Time"
-msgstr "زمان ورود"
-
-#: ganje/includes/languages/trans_twig.php:23
-msgid "Difference between enter and exit"
-msgstr "تفاوت بین زمان ورود و خروج"
-
-#: ganje/includes/languages/trans_twig.php:24
-msgid "Operation Time"
-msgstr "زمان فعالیت"
-
-#: ganje/includes/languages/trans_twig.php:25
-msgid "Exit Time"
-msgstr "زمان خروج"
-
-#: ganje/includes/languages/trans_twig.php:26
-msgid "Minus"
-msgstr "هدر رفت"
-
-#: ganje/includes/languages/trans_twig.php:27
-msgid "Plus"
-msgstr "دور کاری"
-
-#: ganje/includes/languages/trans_twig.php:28
-msgid "Total"
-msgstr "مجموع"
-
-#: ganje/includes/languages/trans_twig.php:29
-msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."
-msgstr ""
-" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت "
-"نمایید."
-
-#: ganje/includes/languages/trans_twig.php:30
-msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."
-msgstr ""
-" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت "
-"نمایید."
-
-#: ganje/includes/languages/trans_twig.php:36
-msgid "Month"
-msgstr "ماه"
-
-#: ganje/includes/languages/trans_twig.php:37
-msgid "Year"
-msgstr "سال"
-
-#: ganje/includes/languages/trans_twig.php:38
-msgid "Export"
-msgstr "خروجی"
-
-#: ganje/includes/languages/trans_twig.php:44
-msgid "Some right reserved!"
-msgstr "برخی از حقوق محفوظ است!"
-
-#: ganje/includes/languages/trans_twig.php:47
-msgid "Find Out More"
-msgstr "بیشتر بدانید"
-
-#: ganje/includes/languages/trans_twig.php:48
-msgid "Check on Github"
-msgstr "گیت‌هاب"
-
-#: ganje/includes/languages/trans_twig.php:49
+#: ganje/includes/languages/trans_twig.php:8
 msgid ""
 "Ganje: this is a tejarak online attendance beginning Web-based which work "
 "without any complexities of existing ones."
@@ -3316,7 +3216,7 @@ msgstr ""
 "گنجه؛ اولین اقدام تجارک به عنوان سرویس حضور و غیاب آنلاین که به‌دور از "
 "پیچیدگی‌های نمونه‌های موجود و مبتنی بر وب است."
 
-#: ganje/includes/languages/trans_twig.php:50
+#: ganje/includes/languages/trans_twig.php:9
 msgid ""
 "Integration with services which will soon be public lead no need for small "
 "businesses, costly and inconvenience."
@@ -3324,41 +3224,125 @@ msgstr ""
 "یکپارچگی آن با سرویس‌هایی که به امید خدا بزودی عمومی‌ خواهند شد، منجر به عدم "
 "نیاز کسب و کارهای کوچک به سرویس‌های پیچیده، هزینه‌بر و سرسام آور خواهد بود!"
 
-#: ganje/includes/languages/trans_twig.php:51
+#: ganje/includes/languages/trans_twig.php:10
 msgid "About"
 msgstr "درباره"
 
-#: ganje/includes/languages/trans_twig.php:52
+#: ganje/includes/languages/trans_twig.php:11
 msgid " is a free to use, open source PHP framework created by"
 msgstr "برای استفاده رایگان است، یک فریم‌ورک پی‌اچ‌پی منبع‌باز ساخته شده توسط"
 
-#: ganje/includes/languages/trans_twig.php:53
+#: ganje/includes/languages/trans_twig.php:13
 msgid "Another Languages"
 msgstr "سایر زبان‌ها"
 
-#: ganje/includes/languages/trans_twig.php:54
+#: ganje/includes/languages/trans_twig.php:14
 msgid "Location"
-msgstr "مکان"
+msgstr "آدرس"
 
-#: ganje/includes/languages/trans_twig.php:55
+#: ganje/includes/languages/trans_twig.php:15
 msgid "#614, Omranieh, Moallem St"
 msgstr "خیابان معلم، مجتمع عمرانیه، واحد ۶۱۴"
 
-#: ganje/includes/languages/trans_twig.php:56
+#: ganje/includes/languages/trans_twig.php:16
 msgid "Qom, IRAN"
 msgstr "ایران، قم"
 
-#: ganje/includes/languages/trans_twig.php:57
+#: ganje/includes/languages/trans_twig.php:17
 msgid "+98 25 3773 5183"
 msgstr "۰۲۵-۳۷۷۳-۵۱۸۳"
 
-#: ganje/includes/languages/trans_twig.php:58
+#: ganje/includes/languages/trans_twig.php:18
 msgid "Copyright"
 msgstr "کپی‌رایت"
 
-#: ganje/includes/languages/trans_twig.php:59
+#: ganje/includes/languages/trans_twig.php:19
 msgid "2016"
 msgstr "۱۳۹۵"
+
+#: ganje/includes/languages/trans_twig.php:25
+msgid "Some right reserved!"
+msgstr "برخی از حقوق محفوظ است!"
+
+#: ganje/includes/languages/trans_twig.php:34
+msgid "In the Name of God"
+msgstr "به‌نام یگانه برنامه‌نویس هستی"
+
+#: ganje/includes/languages/trans_twig.php:35
+msgid "hours in this week"
+msgstr "ساعت در این هفته"
+
+#: ganje/includes/languages/trans_twig.php:36
+msgid "hours in this month"
+msgstr "ساعت در این ماه"
+
+#: ganje/includes/languages/trans_twig.php:37
+msgid "hours remote in this month"
+msgstr "ساعت ریموت در این ماه"
+
+#: ganje/includes/languages/trans_twig.php:38
+msgid "hours in idle this month"
+msgstr "ساعت هدر داده در این ماه"
+
+#: ganje/includes/languages/trans_twig.php:39
+msgid "Enter Time"
+msgstr "زمان ورود"
+
+#: ganje/includes/languages/trans_twig.php:40
+msgid "Difference between enter and exit"
+msgstr "تفاوت بین زمان ورود و خروج"
+
+#: ganje/includes/languages/trans_twig.php:41
+msgid "Operation Time"
+msgstr "زمان فعالیت"
+
+#: ganje/includes/languages/trans_twig.php:42
+msgid "Exit Time"
+msgstr "زمان خروج"
+
+#: ganje/includes/languages/trans_twig.php:43
+msgid "Minus"
+msgstr "هدر رفت"
+
+#: ganje/includes/languages/trans_twig.php:44
+msgid "Plus"
+msgstr "دور کاری"
+
+#: ganje/includes/languages/trans_twig.php:45
+msgid "Total"
+msgstr "مجموع"
+
+#: ganje/includes/languages/trans_twig.php:46
+msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."
+msgstr ""
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت "
+"نمایید."
+
+#: ganje/includes/languages/trans_twig.php:47
+msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."
+msgstr ""
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت "
+"نمایید."
+
+#: ganje/includes/languages/trans_twig.php:54
+msgid "Select all months"
+msgstr "تمام ماه‌ها انتخاب شده"
+
+#: ganje/includes/languages/trans_twig.php:55
+msgid "Enter year"
+msgstr "سال را وارد کنید"
+
+#: ganje/includes/languages/trans_twig.php:59
+msgid "Month"
+msgstr "ماه"
+
+#: ganje/includes/languages/trans_twig.php:60
+msgid "Year"
+msgstr "سال"
+
+#: ganje/includes/languages/trans_twig.php:61
+msgid "Export"
+msgstr "خروجی"
 
 #: ganje/includes/languages/trans_twig.php:65
 msgid "2013"
@@ -3742,6 +3726,21 @@ msgstr "بازگشت"
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:142
 msgid "Please only use below keyboard."
 msgstr "لطفا تنها از منوی زیر استفاده کنید"
+
+#~ msgid "Registered"
+#~ msgstr "ثبت شد"
+
+#~ msgid "in"
+#~ msgstr "در"
+
+#~ msgid "from"
+#~ msgstr "از"
+
+#~ msgid "Find Out More"
+#~ msgstr "بیشتر بدانید"
+
+#~ msgid "Check on Github"
+#~ msgstr "گیت‌هاب"
 
 #~ msgid "Bye Bye;"
 #~ msgstr "خدانگهدار ;)"
