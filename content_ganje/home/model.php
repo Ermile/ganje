@@ -81,7 +81,14 @@ class model extends \mvc\model
 		$displayname = \lib\db\users::get_one($this->user_id);
 		$displayname = T_($displayname['displayname']);
 
+
+
 		if($check_date == null) {
+
+			$enter_msg = $displayname. ' ';
+			$enter_msg .= T_('Enter was registered.') . ' ';
+			$enter_msg .= '#' . T_("start") .' : ' . $time . ' ';
+			$enter_msg .= '#' . T_("date") .' : ' . $date . ' (' .  \lib\utility\jdate::date("Y-m-d") .') ';
 
 			//----- add firs time in day
 			$insert = "INSERT INTO hours
@@ -92,11 +99,19 @@ class model extends \mvc\model
 
 			db::query($insert);
 
-			$tg = self::sendTelegram($displayname. ' '. T_('Enter was registered.'));
+			$tg = self::sendTelegram($enter_msg);
 			debug::true(T_("Enter was registered."). ' '. T_("Have a good time."));
 			return 'enter';
 
 		}elseif($check_date['hour_end'] == null){
+
+			$exit_msg = $displayname. ' ';
+			$exit_msg .=  T_('Bye Bye;') . ' ';
+			$exit_msg .= '#' . T_("start") .' : ' . $check_date['hour_start'] . ' ' ;
+			$exit_msg .= '#' . T_("end") .' : ' . $time . ' ';
+			$exit_msg .= '#' . T_("date") .' : ' . $date . ' (' .  \lib\utility\jdate::date("Y-m-d") .') ';
+			$exit_msg .= '#' . T_("minus") .' : ' . $this->minus . ' ';
+			$exit_msg .= '#' . T_("plus") .' : ' . $this->plus . ' ';
 
 			//------- add end time
 			$update = "UPDATE hours
@@ -113,7 +128,7 @@ class model extends \mvc\model
 
 			db::query($update);
 
-			$tg = self::sendTelegram($displayname. ' '. T_('Bye Bye;'));
+			$tg = self::sendTelegram($exit_msg);
 			debug::true(T_("Bye Bye;)"));
 			return 'exit';
 
@@ -139,7 +154,7 @@ class model extends \mvc\model
 
 		//--------- repeat to every query
 		$field = "users.id,users.user_displayname as displayname,
-				 SUM(hours.hour_total)   as 'total',
+				 (SUM(hours.hour_total) /60)   as 'total',
 				 SUM(hours.hour_diff) 	 as 'diff',
 				 SUM(hours.hour_plus) 	 as 'plus',
 				 SUM(hours.hour_minus) 	 as 'minus'
@@ -165,15 +180,34 @@ class model extends \mvc\model
 			$join
 			AND WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR(NOW())
 			GROUP BY hours.user_id
+		";
 
-		UNION
-		SELECT $field,
+		$lang = 'fa';
+
+		if($lang == 'fa'){
+
+			$jalali_month = \lib\utility\jdate::date("m",false, false);
+			$jalali_year = \lib\utility\jdate::date("Y",false, false);
+
+			list($start_date, $end_date) = \lib\db\date::convert_month($jalali_year, $jalali_month);
+
+			$qry .= "
+			UNION
+			SELECT $field,
+			'month' as type
+			$join
+			AND (hours.hour_date > '$start_date' AND hours.hour_date < '$end_date')
+			GROUP BY hours.user_id";
+
+		}else{
+			$qry .= "
+			UNION
+			SELECT $field,
 			'month' as type
 			$join
 			AND YEAR(hours.hour_date) = YEAR(NOW()) AND MONTH(hours.hour_date)=MONTH(NOW())
-			GROUP BY hours.user_id
-
-		";
+			GROUP BY hours.user_id";
+		}
 		$report = db::get($qry);
 
 		$return  = array();
