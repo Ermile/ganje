@@ -271,7 +271,7 @@ class model extends \mvc\model
 		{
 			case 'enter':
 				// if this person is first one in this day send current date
-				if(\lib\db\users::check_first())
+				if(\lib\db\users::live() >= 1)
 				{
 					$tg = self::send_telegram($date_now);
 				}
@@ -282,7 +282,6 @@ class model extends \mvc\model
 			case 'exit':
 				$msg        = "💤 $name\n";
 				$total      = floor(abs(strtotime('now') - $this->start) / 60);
-				var_dump($total);
 				if($total < 1)
 				{
 					// exit from switch and show message

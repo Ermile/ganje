@@ -55,23 +55,20 @@ class users {
 	}
 
 
-	public static function check_first(){
+	public static function live(){
 		$date = date("Y-m-d");
 		$query = "
 			SELECT
-				id
+				count(id) as total
 			FROM
 				hours
 			WHERE
 				hour_date = '$date'
-			LIMIT 1;
-			";
-		$get = \lib\db::get($query, "id", true);
-		if(empty($get)){
-			return true;
-		}else{
-			return false;
-		}
+			LIMIT 1
+			;";
+		$total = \lib\db::get($query, "total", true);
+		// return result as number of live users
+		return $total;
 	}
 }
 
