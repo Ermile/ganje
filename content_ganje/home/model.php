@@ -11,6 +11,7 @@ class model extends \mvc\model
 	public $user_id;
 	public $plus;
 	public $minus;
+	public $lang = 'fa';
 
 	public function post_hours(){
 
@@ -66,6 +67,8 @@ class model extends \mvc\model
 	public function set_time(){
 
 		$date = date("Y-m-d");
+
+
 		$time = date("H:i:s");
 
 		$query = "SELECT * FROM hours
@@ -79,16 +82,24 @@ class model extends \mvc\model
 
 
 		$displayname = \lib\db\users::get_one($this->user_id);
-		$displayname = T_($displayname['displayname']);
+		$displayname = preg_replace("/\s/", "_", T_($displayname['displayname']));
 
+		$telegram_date = date("Y_m_d");
+		if($this->lang == 'fa'){
+			$telegram_date =  \lib\utility\jdate::date("Y_m_d");
+		}
 
 
 		if($check_date == null) {
 
-			$enter_msg = $displayname. '\n';
-			$enter_msg .= T_('Enter was registered.') . '\n';
-			$enter_msg .= '#' . T_("start") .' : ' . $time . '\n';
-			$enter_msg .= '#' . T_("date") .' : ' .  \lib\utility\jdate::date("Y-m-d") . '\n';
+			// $enter_msg = "🚀⚒🔬📊🕗📅🔫 ";
+			$enter_msg = "⚒ ";
+			$enter_msg .= "#" . T_("Enter") . "\n";
+			$enter_msg .= "#" . $displayname. "\n";
+			$enter_msg .= "🕗 ". $time . "\n";
+
+			$enter_msg .= "📅 #" .  $telegram_date . "\n";
+
 
 			//----- add firs time in day
 			$insert = "INSERT INTO hours
@@ -99,19 +110,28 @@ class model extends \mvc\model
 
 			db::query($insert);
 
-			$tg = self::sendTelegram($enter_msg);
+			$tg = self::send_telegram($enter_msg);
 			debug::true(T_("Enter was registered."). ' '. T_("Have a good time."));
 			return 'enter';
 
 		}elseif($check_date['hour_end'] == null){
 
-			$exit_msg = $displayname. '\n';
-			$exit_msg .=  T_('Bye Bye;') . '\n';
-			$exit_msg .= '#' . T_("start") .' : ' . $check_date['hour_start'] . '\n' ;
-			$exit_msg .= '#' . T_("end") .' : ' . $time . '\n';
-			$exit_msg .= '#' . T_("date") .' : ' . \lib\utility\jdate::date("Y-m-d") .'\n';
-			$exit_msg .= '#' . T_("minus") .' : ' . $this->minus . '\n';
-			$exit_msg .= '#' . T_("plus") .' : ' . $this->plus . '\n';
+			$exit_msg = "🚀 " ;
+			$exit_msg .= "#" . T_("Exit") . "\n";
+			$exit_msg .= "#". $displayname. "\n";
+			$exit_msg .= "🕓 ". $time . "\n";
+			$exit_msg .= "📅 #" .  $telegram_date . "\n";
+			$exit_msg .= "📊 \n";
+			$exit_msg .= "🕗 " . T_("start") .': ' . $check_date['hour_start'] . "\n" ;
+			$exit_msg .= "🕓" . T_("end") .": " . $time . "\n";
+
+			if($this->minus > 0){
+				$exit_msg .= "😡 " . T_("minus") .": " . $this->minus . "\n";
+			}
+
+			if($this->plus > 0 ){
+				$exit_msg .= "😘 " . T_("plus") .": " . $this->plus . "\n";
+			}
 
 			//------- add end time
 			$update = "UPDATE hours
@@ -128,7 +148,8 @@ class model extends \mvc\model
 
 			db::query($update);
 
-			$tg = self::sendTelegram($exit_msg);
+			$tg = self::send_telegram($exit_msg);
+			self::list_online();
 			debug::true(T_("Bye Bye;)"));
 			return 'exit';
 
@@ -182,9 +203,9 @@ class model extends \mvc\model
 			GROUP BY hours.user_id
 		";
 
-		$lang = 'fa';
 
-		if($lang == 'fa'){
+
+		if($this->lang == 'fa'){
 
 			$jalali_month = \lib\utility\jdate::date("m",false, false);
 			$jalali_year = \lib\utility\jdate::date("Y",false, false);
@@ -235,7 +256,7 @@ class model extends \mvc\model
 	 * @param  [type] $text [description]
 	 * @return [type]       [description]
 	 */
-	public static function sendTelegram($_text)
+	public static function send_telegram($_text)
 	{
 			bot::$api_key   = '164997863:AAFC3nUcujDzpGq-9ZgzAbZKbCJpnd0FWFY';
 			bot::$name      = 'saloos_bot';
@@ -249,6 +270,19 @@ class model extends \mvc\model
 		];
 		$result = bot::sendResponse($msg);
 		return $result;
+	}
+
+	public static function list_online(){
+		$list = \lib\db\users::get_all();
+		$msg = "🔬 \n";
+		foreach ($list as $key => $value) {
+		 	if($value['hour_start'] == null) {
+		 		$msg .= "😴 " . T_($value['displayname']) . "\n";
+		 	}else{
+		 		$msg .= "❤ " . T_($value['displayname']) . "\n";
+		 	}
+		}
+		self::send_telegram($msg);
 	}
 }
 ?>
