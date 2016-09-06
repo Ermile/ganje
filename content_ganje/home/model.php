@@ -85,10 +85,10 @@ class model extends \mvc\model
 
 		if($check_date == null) {
 
-			$enter_msg = $displayname. ' ';
-			$enter_msg .= T_('Enter was registered.') . ' ';
-			$enter_msg .= '#' . T_("start") .' : ' . $time . ' ';
-			$enter_msg .= '#' . T_("date") .' : ' . $date . ' (' .  \lib\utility\jdate::date("Y-m-d") .') ';
+			$enter_msg = $displayname. '\n';
+			$enter_msg .= T_('Enter was registered.') . '\n';
+			$enter_msg .= '#' . T_("start") .' : ' . $time . '\n';
+			$enter_msg .= '#' . T_("date") .' : ' .  \lib\utility\jdate::date("Y-m-d") . '\n';
 
 			//----- add firs time in day
 			$insert = "INSERT INTO hours
@@ -105,13 +105,13 @@ class model extends \mvc\model
 
 		}elseif($check_date['hour_end'] == null){
 
-			$exit_msg = $displayname. ' ';
-			$exit_msg .=  T_('Bye Bye;') . ' ';
-			$exit_msg .= '#' . T_("start") .' : ' . $check_date['hour_start'] . ' ' ;
-			$exit_msg .= '#' . T_("end") .' : ' . $time . ' ';
-			$exit_msg .= '#' . T_("date") .' : ' . $date . ' (' .  \lib\utility\jdate::date("Y-m-d") .') ';
-			$exit_msg .= '#' . T_("minus") .' : ' . $this->minus . ' ';
-			$exit_msg .= '#' . T_("plus") .' : ' . $this->plus . ' ';
+			$exit_msg = $displayname. '\n';
+			$exit_msg .=  T_('Bye Bye;') . '\n';
+			$exit_msg .= '#' . T_("start") .' : ' . $check_date['hour_start'] . '\n' ;
+			$exit_msg .= '#' . T_("end") .' : ' . $time . '\n';
+			$exit_msg .= '#' . T_("date") .' : ' . \lib\utility\jdate::date("Y-m-d") .'\n';
+			$exit_msg .= '#' . T_("minus") .' : ' . $this->minus . '\n';
+			$exit_msg .= '#' . T_("plus") .' : ' . $this->plus . '\n';
 
 			//------- add end time
 			$update = "UPDATE hours
