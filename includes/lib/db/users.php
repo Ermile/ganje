@@ -53,6 +53,26 @@ class users {
 		$resutl = self::get_all(['user_id' => $_user_id]);
 		return $resutl[$_user_id];
 	}
+
+
+	public static function check_first(){
+		$date = date("Y-m-d");
+		$query = "
+			SELECT
+				id
+			FROM
+				hours
+			WHERE
+				hour_date = '$date'
+			LIMIT 1;
+			";
+		$get = \lib\db::get($query, "id", true);
+		if(empty($get)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
 
 ?>
