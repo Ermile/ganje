@@ -10,6 +10,7 @@ class model extends \mvc\model
 {
 
 	public $user_id;
+	public $user_name;
 	public $start;
 	public $plus;
 	public $minus;
@@ -99,9 +100,11 @@ class model extends \mvc\model
 
 			// send message from telegram
 			self::generate_telegram_text('enter');
-			debug::true(T_("Enter was registered."). ' '. T_("Have a good time."));
+			$name  = $this->user_name;
+			$msg_notify = T_("Dear $name"). ' '. T_("Have a good time.");
+			// debug::true(T_("Enter was registered."). ' '. T_("Have a good time."));
+			debug::true($msg_notify);
 			return 'enter';
-
 		}
 		elseif($check_date['hour_end'] == null)
 		{
@@ -261,11 +264,13 @@ class model extends \mvc\model
 	 */
 	public function generate_telegram_text($_type)
 	{
-		$msg      = '';
-		$date_now = \lib\utility::date("l j F Y", false, 'default');
-		$time_now = \lib\utility::date("H:i", false, 'default');
-		$name     = \lib\db\users::get_one($this->user_id);
-		$name     = "*". T_($name['displayname']). "*";
+		$msg             = '';
+		$date_now        = \lib\utility::date("l j F Y", false, 'default');
+		$time_now        = \lib\utility::date("H:i", false, 'default');
+		$name            = \lib\db\users::get_one($this->user_id);
+		$name            = T_($name['displayname']);
+		$this->user_name = $name;
+		$name            = "*$name*";
 
 		switch ($_type)
 		{
@@ -300,8 +305,8 @@ class model extends \mvc\model
 				{
 					$msg .= "\n➖ ". $this->minus;
 				}
-				$total = floor($total / 60). ':'. floor($total % 60);
-				$msg .= "\n🕗 ". $total;
+				$total = utility\human::time($total, 'persian');
+				$msg .= " 🕗 ". $total."\n‌";
 				break;
 
 
