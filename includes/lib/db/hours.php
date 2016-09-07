@@ -165,7 +165,7 @@ class hours {
 
 		//--------- repeat to every query
 		$field = "users.id,users.user_displayname as displayname,
-				 ROUND(SUM(hours.hour_total) /60)   as 'total',
+				 SUM(hours.hour_total)   as 'total',
 				 SUM(hours.hour_diff) 	 as 'diff',
 				 SUM(hours.hour_plus) 	 as 'plus',
 				 SUM(hours.hour_minus) 	 as 'minus'

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ganje - Persian\n"
-"POT-Creation-Date: 2016-09-07 15:00+0430\n"
-"PO-Revision-Date: 2016-09-07 15:01+0430\n"
+"POT-Creation-Date: 2016-09-07 16:02+0430\n"
+"PO-Revision-Date: 2016-09-07 16:02+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;T_\n"
 "X-Poedit-SearchPath-0: ganje\n"
 "X-Poedit-SearchPath-1: saloos/saloos-addons\n"
+"X-Poedit-SearchPath-2: saloos/lib\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: ganje/content_ganje/admin/model.php:27
@@ -46,7 +47,7 @@ msgstr "اوقات خوبی داشته باشید."
 msgid "Bye Bye :name ;)"
 msgstr "خدانگهدار :name جون;)"
 
-#: ganje/content_ganje/home/model.php:130
+#: ganje/content_ganje/home/model.php:131
 msgid "to"
 msgstr "تا"
 
@@ -225,7 +226,8 @@ msgid "hours"
 msgstr "ساعات"
 
 #: ganje/includes/cls/database/ganje/translation.php:27
-#: ganje/includes/languages/trans_addons.php:265
+#: ganje/includes/languages/trans_addons.php:265 saloos/lib/utility.php:182
+#: saloos/lib/utility/human.php:41
 #: saloos/saloos-addons/includes/languages/trans_addons.php:264
 msgid "hour"
 msgstr "ساعت"
@@ -1487,23 +1489,23 @@ msgstr "مشاهده آمار ثبت‌نام سرویس"
 msgid "Change period of chart"
 msgstr "تغییر بازه‌ی زمانی نمودار"
 
-#: ganje/includes/languages/trans_addons.php:208
+#: ganje/includes/languages/trans_addons.php:208 saloos/lib/utility.php:181
 #: saloos/saloos-addons/includes/languages/trans_addons.php:202
 msgid "day"
 msgstr "روز"
 
-#: ganje/includes/languages/trans_addons.php:209
+#: ganje/includes/languages/trans_addons.php:209 saloos/lib/utility.php:180
 #: saloos/saloos-addons/content_cp/home/view.php:80
 #: saloos/saloos-addons/includes/languages/trans_addons.php:203
 msgid "week"
 msgstr "هفته"
 
-#: ganje/includes/languages/trans_addons.php:210
+#: ganje/includes/languages/trans_addons.php:210 saloos/lib/utility.php:179
 #: saloos/saloos-addons/includes/languages/trans_addons.php:204
 msgid "month"
 msgstr "ماه"
 
-#: ganje/includes/languages/trans_addons.php:211
+#: ganje/includes/languages/trans_addons.php:211 saloos/lib/utility.php:178
 #: saloos/saloos-addons/includes/languages/trans_addons.php:205
 msgid "year"
 msgstr "سال"
@@ -1763,17 +1765,18 @@ msgstr "خطای در تراکنش"
 msgid "Transaction Error"
 msgstr "خطا در تراکنش"
 
-#: ganje/includes/languages/trans_addons.php:266
+#: ganje/includes/languages/trans_addons.php:266 saloos/lib/utility.php:183
+#: saloos/lib/utility/human.php:49
 #: saloos/saloos-addons/includes/languages/trans_addons.php:265
 msgid "minute"
 msgstr "دقیقه"
 
-#: ganje/includes/languages/trans_addons.php:267
+#: ganje/includes/languages/trans_addons.php:267 saloos/lib/utility.php:184
 #: saloos/saloos-addons/includes/languages/trans_addons.php:266
 msgid "second"
 msgstr "ثانیه"
 
-#: ganje/includes/languages/trans_addons.php:268
+#: ganje/includes/languages/trans_addons.php:268 saloos/lib/utility.php:199
 #: saloos/saloos-addons/includes/languages/trans_addons.php:267
 msgid "ago"
 msgstr "قبل"
@@ -1786,17 +1789,18 @@ msgstr " و "
 msgid ","
 msgstr "و"
 
-#: ganje/includes/languages/trans_addons.php:271
+#: ganje/includes/languages/trans_addons.php:271 saloos/lib/utility.php:199
 #: saloos/saloos-addons/includes/languages/trans_addons.php:268
 msgid "s "
 msgstr " "
 
-#: ganje/includes/languages/trans_addons.php:272
+#: ganje/includes/languages/trans_addons.php:272 saloos/lib/utility.php:187
 #: saloos/saloos-addons/includes/languages/trans_addons.php:269
 msgid "A few seconds ago"
 msgstr "چندثانیه پیش"
 
 #: ganje/includes/languages/trans_addons.php:273
+#: saloos/lib/utility/upload.php:152
 #: saloos/saloos-addons/includes/languages/trans_addons.php:270
 msgid "item"
 msgstr "آیتم"
@@ -1807,36 +1811,43 @@ msgid "empty"
 msgstr "خالی"
 
 #: ganje/includes/languages/trans_addons.php:275
+#: saloos/lib/utility/upload.php:156
 #: saloos/saloos-addons/includes/languages/trans_addons.php:272
 msgid "NaN"
 msgstr "-"
 
 #: ganje/includes/languages/trans_addons.php:276
+#: saloos/lib/utility/upload.php:134
 #: saloos/saloos-addons/includes/languages/trans_addons.php:273
 msgid "Byte"
 msgstr "بایت"
 
 #: ganje/includes/languages/trans_addons.php:277
+#: saloos/lib/utility/upload.php:134
 #: saloos/saloos-addons/includes/languages/trans_addons.php:274
 msgid "KB"
 msgstr "کیلوبایت"
 
 #: ganje/includes/languages/trans_addons.php:278
+#: saloos/lib/utility/upload.php:134
 #: saloos/saloos-addons/includes/languages/trans_addons.php:275
 msgid "MB"
 msgstr "مگابایت"
 
 #: ganje/includes/languages/trans_addons.php:279
+#: saloos/lib/utility/upload.php:134
 #: saloos/saloos-addons/includes/languages/trans_addons.php:276
 msgid "GB"
 msgstr "گیگابایت"
 
 #: ganje/includes/languages/trans_addons.php:280
+#: saloos/lib/utility/upload.php:134
 #: saloos/saloos-addons/includes/languages/trans_addons.php:277
 msgid "TB"
 msgstr "ترابایت"
 
 #: ganje/includes/languages/trans_addons.php:281
+#: saloos/lib/utility/upload.php:134
 #: saloos/saloos-addons/includes/languages/trans_addons.php:278
 msgid "PB"
 msgstr "پترابایت"
@@ -1896,17 +1907,18 @@ msgstr "قم"
 msgid "qom"
 msgstr "قم"
 
-#: ganje/includes/languages/trans_addons.php:292
+#: ganje/includes/languages/trans_addons.php:292 saloos/lib/form.php:74
+#: saloos/lib/view/optimize.php:29 saloos/lib/view/optimize.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:289
 msgid "submit"
 msgstr "تایید"
 
-#: ganje/includes/languages/trans_addons.php:293
+#: ganje/includes/languages/trans_addons.php:293 saloos/lib/view/optimize.php:37
 #: saloos/saloos-addons/includes/languages/trans_addons.php:290
 msgid "save"
 msgstr "ذخیره"
 
-#: ganje/includes/languages/trans_addons.php:294
+#: ganje/includes/languages/trans_addons.php:294 saloos/lib/controller.php:548
 #: saloos/saloos-addons/includes/languages/trans_addons.php:291
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:46
 msgid "add new"
@@ -1938,6 +1950,7 @@ msgid "home"
 msgstr "خانه"
 
 #: ganje/includes/languages/trans_addons.php:300
+#: saloos/lib/view/twigAddons.php:213
 #: saloos/saloos-addons/includes/languages/trans_addons.php:297
 msgid "Home"
 msgstr "صفحه نخست"
@@ -2283,7 +2296,7 @@ msgstr "رسید دریافت پیامک"
 msgid "SMS Callback"
 msgstr "پیامک‌های دریافتی"
 
-#: ganje/includes/languages/trans_addons.php:365
+#: ganje/includes/languages/trans_addons.php:365 saloos/lib/controller.php:551
 #: saloos/saloos-addons/includes/languages/trans_addons.php:361
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:49
 msgid "edit"
@@ -2339,33 +2352,39 @@ msgstr "تکراری - فایل وجود دارد"
 msgid "Fail on tranfering file"
 msgstr "خطا در انتقال فایل"
 
-#: ganje/includes/languages/trans_addons.php:375
+#: ganje/includes/languages/trans_addons.php:375 saloos/lib/dbconnection.php:184
+#: saloos/lib/dbconnection.php:196
 #: saloos/saloos-addons/content_cp/posts/model.php:694
 #: saloos/saloos-addons/includes/languages/trans_addons.php:371
 msgid "Error"
 msgstr "خطا"
 
 #: ganje/includes/languages/trans_addons.php:376
+#: saloos/lib/utility/upload.php:35
 #: saloos/saloos-addons/includes/languages/trans_addons.php:372
 msgid "Invalid parameters"
 msgstr "پارامتر اشتباه"
 
 #: ganje/includes/languages/trans_addons.php:377
+#: saloos/lib/utility/upload.php:45
 #: saloos/saloos-addons/includes/languages/trans_addons.php:373
 msgid "No file sent"
 msgstr "فایلی ارسال نشده"
 
 #: ganje/includes/languages/trans_addons.php:378
+#: saloos/lib/utility/upload.php:49 saloos/lib/utility/upload.php:72
 #: saloos/saloos-addons/includes/languages/trans_addons.php:374
 msgid "Exceeded filesize limit"
 msgstr "ظرفیت فایل بیش از حد مجاز"
 
 #: ganje/includes/languages/trans_addons.php:379
+#: saloos/lib/utility/upload.php:52
 #: saloos/saloos-addons/includes/languages/trans_addons.php:375
 msgid "Unknown errors"
 msgstr "خطای نامشخص"
 
 #: ganje/includes/languages/trans_addons.php:380
+#: saloos/lib/utility/upload.php:95
 #: saloos/saloos-addons/includes/languages/trans_addons.php:376
 msgid "We don't support this type of file"
 msgstr "ما این نوع فایل را پشتیبانی نمیکنیم"
@@ -2463,6 +2482,7 @@ msgid "You can't view this part of system"
 msgstr "شما نمی‌توانید این بخش از سیستم را مشاهده کنید"
 
 #: ganje/includes/languages/trans_addons.php:399
+#: saloos/lib/utility/permission.php:135
 #: saloos/saloos-addons/includes/languages/trans_addons.php:395
 msgid "You can't add new"
 msgstr "شما نمی‌توانید اضافه کنید"
@@ -2473,6 +2493,7 @@ msgid "you can't edit"
 msgstr "شما نمی‌توانید ویرایش کنید"
 
 #: ganje/includes/languages/trans_addons.php:401
+#: saloos/lib/utility/permission.php:143
 #: saloos/saloos-addons/includes/languages/trans_addons.php:397
 msgid "You can't delete"
 msgstr "شما نمی‌توانید حذف کنید"
@@ -2483,11 +2504,13 @@ msgid "You can't access to this part of system"
 msgstr "شما نمی‌توانید به این بخش از سیستم دسترسی داشته باشید"
 
 #: ganje/includes/languages/trans_addons.php:403
+#: saloos/lib/utility/permission.php:150
 #: saloos/saloos-addons/includes/languages/trans_addons.php:399
 msgid "Because of your permission"
 msgstr "به‌دلیل سطح‌دسترسی‌ شما"
 
 #: ganje/includes/languages/trans_addons.php:404
+#: saloos/lib/utility/permission.php:157
 #: saloos/saloos-addons/includes/languages/trans_addons.php:400
 msgid "You can't access to this page!"
 msgstr "شما نمی‌توانید به این صفحه دسترسی داشته باشید!"
@@ -2758,7 +2781,7 @@ msgstr "پاصفحه پیامک"
 msgid "Force one message"
 msgstr "اجبار به یک پیامک"
 
-#: ganje/includes/languages/trans_addons.php:449
+#: ganje/includes/languages/trans_addons.php:449 saloos/lib/utility/sms.php:34
 #: saloos/saloos-addons/includes/languages/trans_addons.php:445
 msgid "We can't give service to this number"
 msgstr "متاسفانه توانایی ارائه خدمات به این شماره را نداریم"
@@ -2769,7 +2792,7 @@ msgstr "متاسفانه توانایی ارائه خدمات به این شما
 msgid "Simulate SMS (Debugging)"
 msgstr "شبیه‌سازی پیامک (خطایابی)"
 
-#: ganje/includes/languages/trans_addons.php:451
+#: ganje/includes/languages/trans_addons.php:451 saloos/lib/utility/sms.php:209
 #: saloos/saloos-addons/includes/languages/trans_addons.php:447
 msgid "Please set apikey and linenumber"
 msgstr "لطفا کلید رابط برنامه و شماره خط را تنظیم کنید"
@@ -2779,7 +2802,7 @@ msgstr "لطفا کلید رابط برنامه و شماره خط را تنظی
 msgid "send"
 msgstr "ارسال"
 
-#: ganje/includes/languages/trans_addons.php:453
+#: ganje/includes/languages/trans_addons.php:453 saloos/lib/utility/sms.php:203
 #: saloos/saloos-addons/includes/languages/trans_addons.php:449
 msgid " to "
 msgstr " به "
@@ -3058,17 +3081,17 @@ msgstr "ما کد اعتبارسنجی را برای شما ارسال خواه�
 msgid "We send a verification code to this number"
 msgstr "کد اعتبارسنجی به این شماره ارسال خواهد شد"
 
-#: ganje/includes/languages/trans_addons.php:500
+#: ganje/includes/languages/trans_addons.php:500 saloos/lib/utility/sms.php:146
 #: saloos/saloos-addons/includes/languages/trans_addons.php:496
 msgid "You account is verified successfully"
 msgstr "اعتبارسنجی اکانت شما با موفقیت به انجام رسید"
 
-#: ganje/includes/languages/trans_addons.php:501
+#: ganje/includes/languages/trans_addons.php:501 saloos/lib/utility/sms.php:138
 #: saloos/saloos-addons/includes/languages/trans_addons.php:497
 msgid "Your verification code is"
 msgstr "کد اعتبارسنجی شما"
 
-#: ganje/includes/languages/trans_addons.php:502
+#: ganje/includes/languages/trans_addons.php:502 saloos/lib/utility/sms.php:150
 #: saloos/saloos-addons/includes/languages/trans_addons.php:498
 msgid "Your password is changed successfully"
 msgstr "گذرواژه شما با موفقیت تغییر یافت"
@@ -3479,6 +3502,75 @@ msgid "Tejarak was born to serve small and beautiful service for e-business"
 msgstr ""
 "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
 
+#: saloos/lib/controller.php:554
+#: saloos/saloos-addons/lib/mvc/controllers/url.php:52
+msgid "delete"
+msgstr "حذف"
+
+#: saloos/lib/db.php:119
+msgid "We can't connect to correct database!"
+msgstr "ما نمی‌توانیم به دیتابیس صحیح متصل شویم!"
+
+#: saloos/lib/db.php:120 saloos/lib/dbconnection.php:64
+msgid "Please contact administrator!"
+msgstr "لطفا با مدیر سیستم تماس بگیرید!"
+
+#: saloos/lib/dbconnection.php:49
+msgid "we can't find database service!"
+msgstr "ما نمی‌توانیم سرویس دیتابیس را بیابیم!"
+
+#: saloos/lib/dbconnection.php:50
+msgid "please contact administrator!"
+msgstr "لطفا با مدیر سیستم تماس بگیرید!"
+
+#: saloos/lib/dbconnection.php:63
+msgid "We can't connect to database service!"
+msgstr "ما نمی‌توانیم به سرویس دیتابیس متصل شویم!"
+
+#: saloos/lib/utility/human.php:44
+msgid ", :min minute"
+msgstr " و :min دقیقه"
+
+#: saloos/lib/utility/kavenegarApi.php:107
+msgid "Error on Sms system"
+msgstr "خطا در سیستم پیامک"
+
+#: saloos/lib/utility/permission.php:139
+msgid "You can't edit"
+msgstr "شما اجازه ویرایش ندارید"
+
+#: saloos/lib/utility/sms.php:35
+msgid "now we only support Iran!"
+msgstr "در حال حاضر ما فقط به شماره های ایران سرویس می‌دهیم!"
+
+#: saloos/lib/utility/sms.php:43
+msgid "This sms service is unavailable"
+msgstr "سرویس پیامک قابل دسترس نیست"
+
+#: saloos/lib/utility/sms.php:142
+msgid "Your recovery code is"
+msgstr "کد بازیابی کلمه عبور شما"
+
+#: saloos/lib/utility/upload.php:81
+msgid "Exceeded file name limit"
+msgstr "نام فایل غیرمجاز"
+
+#: saloos/lib/utility/upload.php:86
+msgid "Exceeded file extension limit"
+msgstr "نوع فایل غیرمجاز"
+
+#: saloos/lib/validator.php:93 saloos/lib/validator/maker.php:49
+msgid "error in field"
+msgstr "خطا در فیلد"
+
+#: saloos/lib/view/optimize.php:41
+msgid "sing in"
+msgstr "ورود"
+
+#: saloos/lib/view/optimize.php:45
+msgid "create an account"
+msgstr "اکانت بسازید"
+
 #: saloos/saloos-addons/content_account/changepass/model.php:43
 msgid "Password is incorrect"
 msgstr "کلمه عبور اشتباه است"
@@ -3712,10 +3804,6 @@ msgstr "تغییر بازه زمانی ثبت‌نام"
 #: saloos/saloos-addons/lib/mvc/models/terms.php:102
 msgid "Does not exist!"
 msgstr "هیچ داده ای موجود نیست!"
-
-#: saloos/saloos-addons/lib/mvc/controllers/url.php:52
-msgid "delete"
-msgstr "حذف"
 
 #: saloos/saloos-addons/lib/mvc/models/account.php:165
 msgid "logout successfully"
