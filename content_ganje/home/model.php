@@ -271,7 +271,7 @@ class model extends \mvc\model
 		{
 			case 'enter':
 				// if this person is first one in this day send current date
-				if(\lib\db\users::live() >= 1)
+				if(\lib\db\users::live() <= 1)
 				{
 					$tg = self::send_telegram($date_now);
 				}
@@ -289,7 +289,6 @@ class model extends \mvc\model
 					break;
 				}
 				$time_start = \lib\utility::date('H:i', $this->start, 'default');
-
 				$msg        .= $time_start. ' '. T_('to'). ' '. $time_now;
 
 				// add minus and plus if exist
