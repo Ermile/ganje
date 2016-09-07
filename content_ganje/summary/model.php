@@ -8,7 +8,7 @@ class model extends \mvc\model
 {
 
 
-	public function get_u()
+	public function get_summary()
 	{
 
 		$report = \lib\db\hours::summary();

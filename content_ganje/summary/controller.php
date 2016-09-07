@@ -17,7 +17,7 @@ class controller extends \mvc\controller
 		// allow to do it, else show related message in notify center
 		$this->access('ganje', 'summary', 'view', 'block');
 
-		$this->get("u", "u")->ALL();
+		$this->get("summary", "summary")->ALL();
 		$this->post("export")->ALL();
 	}
 }

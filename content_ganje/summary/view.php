@@ -31,7 +31,7 @@ class view extends \mvc\view
 		}
 	}
 
-	function view_u($o){
+	function view_summary($o){
 
 		$this->data->users =  $o->api_callback['users'];
 		$this->data->datatable =  $o->api_callback['summary'];
