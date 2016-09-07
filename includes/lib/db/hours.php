@@ -25,8 +25,9 @@ class hours {
 				hour_plus     = '$plus',
 				hour_minus    = '$minus',
 				hour_total    = (hour_diff + hour_plus - hour_minus),
-				hour_status   = 'raw',
-				hour_accepted = hour_total";
+				hour_accepted = hour_total,
+				hour_status = IF (hour_total < 5, 'disable', 'raw')
+				";
 		return \lib\db::query($query);
 	}
 
@@ -41,7 +42,7 @@ class hours {
 	 */
 	public static function last($_args = []) {
 		if(isset($_args['user'])){
-			$user = " WHERE users.id = '" . $_args['user'] . "' ";
+			$user = " users.id = '" . $_args['user'] . "' ";
 		}else{
 			$user = "";
 		}
@@ -64,6 +65,8 @@ class hours {
 				FROM
 					hours
 				LEFT JOIN users on hours.user_id = users.id
+				WHERE
+					hour_status != 'disable'
 				$user
 				ORDER BY
 					hours.id DESC
@@ -125,8 +128,6 @@ class hours {
 		$start  = (isset($_args["start"])) ? $_args["start"] : 0; // start limit
 		$end    = (isset($_args["end"]))   ? $_args["end"]   : 10; // end limit
 
-		$WHERE = "WHERE";
-
 		//--------- repeat to every query
 		$no_position = T_("Undefined");
 
@@ -143,7 +144,9 @@ class hours {
 				FROM
 					hours
 				INNER JOIN users on hours.user_id = users.id
-				$WHERE $condition
+				WHERE
+					hours.hour_status != 'disable'
+				$condition
 				$USER
 				LIMIT $start,$end
 				";
@@ -173,7 +176,8 @@ class hours {
 
 		$join =	"FROM hours
 				  INNER JOIN users on hours.user_id = users.id
-				  WHERE 1 ";
+				  WHERE
+				  hours.hour_status != 'disable' ";
 
 		$qry = "SELECT $field,
 			'daily' as type

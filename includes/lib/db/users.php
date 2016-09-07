@@ -9,11 +9,12 @@ class users {
 		if(!isset($_args['user_id'])){
 			$condition = " ORDER BY users.id ";
 		}else{
-			$condition = " WHERE users.id = " . $_args['user_id'];
+			$condition = " AND users.id = " . $_args['user_id'];
 		}
 
 		$date = date("Y-m-d");
 		$no_position = T_("Undefined");
+
 		// $query_new =
 		// 		"SELECT
 		// 			users.id,
@@ -39,6 +40,8 @@ class users {
 					ON hours.user_id = users.id
 					AND hours.hour_date = DATE(NOW())
 					AND hours.hour_end is null
+				WHERE
+					users.user_status = 'active'
 				$condition
 				";
 		$users = db::get($query);
