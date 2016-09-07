@@ -7,39 +7,9 @@ use \lib\debug;
 class model extends \mvc\model
 {
 
-	public function add($_args){
-
-		$date    = $_args['date'] ? $_args['date'] : date("Y-m-d") ;
-		$start   = $_args['start'] ? $_args['start'] : null;
-		$end     = $_args['end'] ? $_args['end'] : null;
-		$user_id = $_args['user_id'] ? $_args['user_id'] : 0;
-		$minus   = $_args['minus'] ? $_args['minus'] : 0;
-		$plus    = $_args['plus'] ? $_args['plus'] : 0;
-
-		$query = "
-			INSERT INTO
-				hours
-			SET
-				user_id   	  = $user_id,
-				hour_date     = '$date',
-				hour_start    = '$start',
-				hour_end      = '$end',
-				hour_diff     = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-				hour_plus     = '$plus',
-				hour_minus    = '$minus',
-				hour_total    = (hour_diff + hour_plus - hour_minus),
-				hour_status   = 'raw',
-				hour_accepted = hour_total";
-
-		$result =  \lib\db::query($query);
-
-		if($result){
-			debug::true(T_("Added"));
-		}else{
-			debug::error(T_("Error in insert"));
-		}
-	}
-
+	/**
+	 * insert or update record
+	 */
 	public function post_last(){
 
 		if(utility::post('add')){
@@ -51,90 +21,37 @@ class model extends \mvc\model
 						'minus'   => utility::post("minus"),
 						'plus'    => utility::post("plus")
 					];
-			$this->add($args);
-		}
+			$result = \lib\db\hours::insert($args);
 
-		$id = utility::post("id");
-
-		$type = utility::post("type");
-
-		$time = utility::post("time");
-
-		$edit = false;
-		$status = "";
-
-		switch ($type) {
-			case 'edit':
-				$edit = true;
-				break;
-
-			case 'minus':
-				$status = ", hour_status = 'plus', hour_accepted = hour_diff + hour_plus";
-				break;
-
-			case 'plus':
-				$status = ", hour_status = 'minus', hour_accepted = hour_diff - hour_minus";
-				break;
-
-			case 'all':
-			case 'disable':
-			case 'enable':
-				$status = ", hour_status = '$type', hour_accepted = hour_diff + hour_plus - hour_minus";
-				break;
-
-			default:
-				$status = "";
-				break;
-		}
-
-
-		$check = db::get("SELECT * FROM hours WHERE id = $id LIMIT 1 ",null, true);
-
-		if(!$check) {
-			debug::error(T_("id not found"));
+			if($result){
+				debug::true(T_("Added"));
+			}else{
+				debug::error(T_("Error in insert"));
+			}
 		}else{
 
-			//------- time unchange when updating status
+			$arg = [
+					'id'   => utility::post("id"),
+					'type' => utility::post("type"),
+					'time' => utility::post("time")
+					];
 
-			//-------- update time when time posted
-			if($edit) {
+			$result = \lib\db\hours::update($arg);
 
-				$saved_time = $check['hour_start'];
-
-				if($saved_time > $time){
-					$temp = $time;
-					$time = "'$saved_time'";
-					$saved_time = "'$temp'";
-				}
-
+			if($update){
+					debug::true("Saved");
 			}else{
-				$saved_time = "hour_start";
-				$time       = "hour_end";
+					debug::fatal("Can not save change");
 			}
-
-
-			$update = "UPDATE hours
-						SET
-							hour_start = $saved_time,
-							hour_end = $time,
-							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-							hour_total = (hour_diff + hour_plus - hour_minus)
-							$status
-						WHERE
-							id = $id ";
-
-			$query = db::query($update);
-
-			if($query){
-				debug::true("Saved");
-			}else{
-				debug::fatal("Can not save change");
-			}
-
 		}
 	}
 
 
+	/**
+	 * get list of data to shwo
+	 *
+	 * @return     array  The datatable.
+	 */
 	public function get_datatable() {
 		// creat data for datatable
 		$result =  [
@@ -151,7 +68,7 @@ class model extends \mvc\model
 					'status'  => ['label' => "وضعیت", 'value' => "status"],
 					'accepted'  => ['label' => "ساعات تایید شده", 'value' => "accepted"]
 				],
-			'data'   => \lib\db\last::get(),
+			'data'   => \lib\db\hours::last(),
 			'total'  => 98,
 			'filter' => 4
 		];

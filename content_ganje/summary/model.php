@@ -69,16 +69,14 @@ class model extends \mvc\model
 				'year'  => $year
 				];
 
-		$data = \lib\db\summary::get($arg);
+		$data = \lib\db\hours::sum($arg);
 
 		if(utility::post("submit")){
 			if($month == 0) {
 				$month = "all";
 			}
-
 			$name = 'ganje-export-'. $year . '-' . $month;
-			\lib\db\export::csv(['name' => $name ,'data' => $data]);
-
+			\lib\utility\export::csv(['name' => $name ,'data' => $data]);
 		}else{
 			return $data;
 		}

@@ -70,6 +70,93 @@ class users {
 		// return result as number of live users
 		return $total;
 	}
-}
 
+
+	/*
+	* check users status
+	*/
+	public static function check($_user_id)
+	{
+		$query = "SELECT
+					user_status
+				FROM users
+				WHERE id = $_user_id
+				LIMIT 1";
+
+		$check_user = db::get($query, "user_status", true);
+
+		if($check_user != "active"){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+
+
+	/**
+	 * set time of enter or exit
+	 */
+	public static function set_time($_args)
+	{
+
+		$user_id = $_args['user_id'];
+		$minus   = $_args['minus'];
+		$plus    = $_args['plus'];
+
+		// check status of users
+		// if users status is not enable return false and make debug error
+		if(!self::check($user_id)){
+			return false;
+		}
+
+		$today = date("Y-m-d");
+		$time  = date("H:i");
+
+		$query = "SELECT * FROM hours
+					WHERE
+						user_id   = $user_id AND
+						hour_date = '$today' AND
+						hour_end IS NULL
+					LIMIT 1";
+
+		$check_date = db::get($query, null, true);
+
+		if($check_date == null)
+		{
+			//----- add firs time in day
+			$insert = "INSERT INTO hours
+						SET user_id = $user_id,
+							hour_date = '$today',
+							hour_start = '$time'
+							";
+
+			db::query($insert);
+			return 'enter';
+
+		}
+		elseif($check_date['hour_end'] == null)
+		{
+			// set start time
+			// $this->start = strtotime("$today ". $check_date['hour_start']);
+			//------- add end time
+			$update = "UPDATE hours
+						SET hour_end = '$time',
+							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
+							hour_plus = $plus,
+							hour_minus = $minus,
+							hour_total = (hour_diff + hour_plus - hour_minus),
+							hour_status = 'raw',
+							hour_accepted = hour_total
+
+						WHERE
+							id = {$check_date['id']} ";
+
+			db::query($update);
+			return 'exit';
+		}
+	}
+
+}
 ?>

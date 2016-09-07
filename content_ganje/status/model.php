@@ -20,12 +20,12 @@ class model extends \mvc\model
 					'week'   => utility::post("week") ,
 					'month'  => utility::post("month"),
 					'year'   => utility::post("year") ,
-					'lang'   => 'fa',
+					'lang'   => substr(\lib\router::get_storage('language'), 0, 2),
 					'start'  => utility::post("start"),
 					'end'    => utility::post("end")
 					];
 
-		$result =  \lib\db\summary::get($args);
+		$result =  \lib\db\hours::summary($args);
 		return $result;
 
 	}
@@ -35,7 +35,7 @@ class model extends \mvc\model
 
 		$id = $this->login("id");
 
-		return \lib\db\last::get(['user' => $id]);
+		return \lib\db\hours::last(['user' => $id]);
 	}
 
 	function get_mo($_args){
@@ -50,7 +50,7 @@ class model extends \mvc\model
 				'year'    => utility::post('year')
 				];
 
-		$data = \lib\db\summary::get($arg);
+		$data = \lib\db\hours::summary($arg);
 
 		return $data;
 	}
