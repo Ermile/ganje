@@ -8,43 +8,40 @@ class model extends \mvc\model
 {
 
 
-	public function post_u($o){
+	public function post_u($o)
+	{
 
-		if(empty(utility::post())){
+		if(empty(utility::post()))
+		{
 			return $this->get_u();
 		}
-
-			$args = [
-					'user'   => $this->login("id") ,
-					'day'    => utility::post("day")  ,
-					'week'   => utility::post("week") ,
-					'month'  => utility::post("month"),
-					'year'   => utility::post("year") ,
-					'lang'   => substr(\lib\router::get_storage('language'), 0, 2),
-					'start'  => utility::post("start"),
-					'end'    => utility::post("end")
-					];
+		$args = [
+				'user'   => $this->login("id") ,
+				'day'    => utility::post("day")  ,
+				'week'   => utility::post("week") ,
+				'month'  => utility::post("month"),
+				'year'   => utility::post("year") ,
+				'lang'   => substr(\lib\router::get_storage('language'), 0, 2),
+				'start'  => utility::post("start"),
+				'end'    => utility::post("end")
+				];
 
 		$result =  \lib\db\hours::summary($args);
 		return $result;
-
 	}
 
 
-	public function get_u(){
-
+	public function get_u()
+	{
 		$id = $this->login("id");
-
 		return \lib\db\hours::last(['user' => $id]);
 	}
 
-	function get_mo($_args){
-		// var_dump($_args);
-	}
 
-	public function post_status(){
+	public function post_status()
+	{
 		$arg = [
-				'lang'    => 'fa',
+				'lang'    => substr(\lib\router::get_storage('language'), 0, 2),
 				'user' => $this->login("id"),
 				'month'   => utility::post('month'),
 				'year'    => utility::post('year')

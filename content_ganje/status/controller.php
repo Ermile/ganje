@@ -19,11 +19,11 @@ class controller extends \mvc\controller
 
 
 		$this->get('mo', false)->ALL([
-			'property' => [
-			"page" => ["/^\d+$/", true, 'page'],
-			"q" => ["/^(.*)$/", true, 'search'],
-			'date' => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date']
-			]
+				'property' => [
+				"page" => ["/^\d+$/", true, 'page'],
+				"q" => ["/^(.*)$/", true, 'search'],
+				'date' => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date']
+				]
 			]);
 	}
 }

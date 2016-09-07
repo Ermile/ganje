@@ -157,10 +157,14 @@ class model extends \mvc\model
 	{
 		$list = \lib\db\users::get_all();
 		$msg  = "";
-		foreach ($list as $key => $value) {
-		 	if($value['hour_start'] == null) {
+		foreach ($list as $key => $value)
+		{
+		 	if($value['hour_start'] == null)
+		 	{
 		 		$msg .= "💤 " . T_($value['displayname']) . "\n";
-		 	}else{
+		 	}
+		 	else
+		 	{
 		 		$msg .= "❤ " . T_($value['displayname']) . "\n";
 		 	}
 		}

@@ -4,14 +4,23 @@ use \lib\db;
 
 class hours {
 
-	public static function insert($_args){
 
-		$date    = $_args['date'] ? $_args['date'] : date("Y-m-d") ;
-		$start   = $_args['start'] ? $_args['start'] : null;
-		$end     = $_args['end'] ? $_args['end'] : null;
+	/**
+	 * insert new record in hours table
+	 *
+	 * @param      <type>  $_args  The arguments
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
+	public static function insert($_args)
+	{
+
+		$date    = $_args['date'] 	 ? $_args['date'] 	 : date("Y-m-d") ;
+		$start   = $_args['start'] 	 ? $_args['start'] 	 : null;
+		$end     = $_args['end'] 	 ? $_args['end'] 	 : null;
 		$user_id = $_args['user_id'] ? $_args['user_id'] : 0;
-		$minus   = $_args['minus'] ? $_args['minus'] : 0;
-		$plus    = $_args['plus'] ? $_args['plus'] : 0;
+		$minus   = $_args['minus'] 	 ? $_args['minus'] 	 : 0;
+		$plus    = $_args['plus'] 	 ? $_args['plus'] 	 : 0;
 
 		$query = "
 			INSERT INTO
@@ -40,10 +49,14 @@ class hours {
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function last($_args = []) {
-		if(isset($_args['user'])){
+	public static function last($_args = [])
+	{
+		if(isset($_args['user']))
+		{
 			$user = " users.id = '" . $_args['user'] . "' ";
-		}else{
+		}
+		else
+		{
 			$user = "";
 		}
 
@@ -86,7 +99,8 @@ class hours {
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function sum($_args){
+	public static function sum($_args)
+	{
 		$user  = isset($_args['user'])  ? $_args['user']  : null;
 		$day   = isset($_args['day'])   ? $_args['day']   : null;
 		$week  = isset($_args['week'])  ? $_args['week']  : null;
@@ -94,7 +108,8 @@ class hours {
 		$year  = isset($_args['year'])  ? $_args['year']  : null;
 		$lang  = isset($_args['lang'])  ? $_args['lang']  : null;
 
-		if($month == '0') {
+		if($month == '0')
+		{
 			$month = null;
 		}
 
@@ -102,22 +117,31 @@ class hours {
 
 		$q['user']  = $user   != null ? "users.id = $user" : null;
 
-		if($user){
+		if($user)
+		{
 			$USER = "";
-		}else{
+		}
+		else
+		{
 			$USER = " GROUP BY	hours.user_id ";
 		}
 
-		if($lang == "fa") {
-			if($year && $month){
+		if($lang == "fa")
+		{
+			if($year && $month)
+			{
 				list($start_date, $end_date)  = \lib\utility\jdate::jalali_month($year, $month);
 				$q['month'] = " hours.hour_date > '$start_date' AND hours.hour_date < '$end_date' ";
 
-			}elseif($year && !$month){
+			}
+			elseif($year && !$month)
+			{
 				list($start_date, $end_date)  = \lib\utility\jdate::jalali_year($year);
 				$q['month'] = " hours.hour_date > '$start_date' AND hours.hour_date < '$end_date' ";
 			}
-		}else{
+		}
+		else
+		{
 			$q['month'] = $month  != null ? "YEAR(hours.hour_date) = '$year' AND MONTH(hours.hour_date) = '$month' " : null;
 			$q['year']  = $year   != null ? "YEAR(hours.hour_date) = '$year' " : null;
 			$q['week']  = $week   != null ? "WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR('$week')" : null;
@@ -251,7 +275,8 @@ class hours {
 	}
 
 
-	public static function update($_args){
+	public static function update($_args)
+	{
 
 			$id   = $_args['id'];
 			$type = $_args['type'];
@@ -260,7 +285,8 @@ class hours {
 			$edit = false;
 			$status = "";
 
-			switch ($type) {
+			switch ($type)
+			{
 				case 'edit':
 					$edit = true;
 					break;
@@ -287,29 +313,30 @@ class hours {
 
 			$check = db::get("SELECT * FROM hours WHERE id = $id LIMIT 1 ",null, true);
 
-			if(!$check) {
+			if(!$check)
+			{
 				return false;
-			}else{
+			}
+			else
+			{
 
 				//------- time unchange when updating status
-
 				//-------- update time when time posted
-				if($edit) {
-
+				if($edit)
+				{
 					$saved_time = $check['hour_start'];
-
-					if($saved_time > $time){
+					if($saved_time > $time)
+					{
 						$temp = $time;
 						$time = "'$saved_time'";
 						$saved_time = "'$temp'";
 					}
-
-				}else{
-
+				}
+				else
+				{
 					$saved_time = "hour_start";
 					$time       = "hour_end";
 				}
-
 				$update = "UPDATE hours
 							SET
 								hour_start = $saved_time,
@@ -319,9 +346,7 @@ class hours {
 								$status
 							WHERE
 								id = $id ";
-
-				return db::query($update);
-
+			return db::query($update);
 		}
 	}
 }

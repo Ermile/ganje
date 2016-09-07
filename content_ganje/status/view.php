@@ -13,12 +13,10 @@ class view extends \mvc\view
 			$this->data->bodyclass  = 'unselectable';
 			$this->include->js_main      = false;
 			$this->include->css          = false;
-
 		}
+
 		$this->data->datatable = $this->model()->get_u();
 		$this->data->datatable_col = ['date', 'start', 'end', 'total', 'diff', 'plus', 'minus', 'accepted'];
-		// $this->include->cp  = true;
-
 	}
 
 

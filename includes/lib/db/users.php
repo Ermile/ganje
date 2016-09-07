@@ -4,11 +4,23 @@ use \lib\db;
 
 class users {
 
-	public static function get_all($_args = []){
 
-		if(!isset($_args['user_id'])){
+	/**
+	 * get all avtive users white today tome
+	 *
+	 * @param      array   $_args  The arguments
+	 *
+	 * @return     <type>  The all.
+	 */
+	public static function get_all($_args = [])
+	{
+
+		if(!isset($_args['user_id']))
+		{
 			$condition = " ORDER BY users.id ";
-		}else{
+		}
+		else
+		{
 			$condition = " AND users.id = " . $_args['user_id'];
 		}
 
@@ -47,12 +59,19 @@ class users {
 		$users = db::get($query);
 		$new   = array_column($users, "id");
 		$users = array_combine($new, $users);
-
 		return $users;
 	}
 
 
-	public static function get_one($_user_id) {
+	/**
+	 * get one users times today
+	 *
+	 * @param      <type>  $_user_id  The user id
+	 *
+	 * @return     <type>  The one.
+	 */
+	public static function get_one($_user_id)
+	{
 		$resutl = self::get_all(['user_id' => $_user_id]);
 		return $resutl[$_user_id];
 	}
@@ -63,7 +82,8 @@ class users {
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function get_start($_user_id){
+	public static function get_start($_user_id)
+	{
 		$date = date("Y-m-d");
 		$query = "
 			SELECT
@@ -85,7 +105,8 @@ class users {
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function live(){
+	public static function live()
+	{
 		$date = date("Y-m-d");
 		$query = "
 			SELECT
@@ -102,9 +123,13 @@ class users {
 	}
 
 
-	/*
-	* check users status
-	*/
+	/**
+	 * check users status
+	 *
+	 * @param      <type>   $_user_id  The user identifier
+	 *
+	 * @return     boolean  ( description_of_the_return_value )
+	 */
 	public static function check($_user_id)
 	{
 		$query = "SELECT
@@ -115,18 +140,23 @@ class users {
 
 		$check_user = db::get($query, "user_status", true);
 
-		if($check_user != "active"){
+		if($check_user != "active")
+		{
 			return false;
-		}else{
+		}
+		else
+		{
 			return true;
 		}
 	}
 
 
-
-
 	/**
-	 * set time of enter or exit
+	 * set enter or exit time of users
+	 *
+	 * @param      <type>          $_args  The arguments
+	 *
+	 * @return     boolean|string  ( description_of_the_return_value )
 	 */
 	public static function set_time($_args)
 	{
@@ -137,7 +167,8 @@ class users {
 
 		// check status of users
 		// if users status is not enable return false and make debug error
-		if(!self::check($user_id)){
+		if(!self::check($user_id))
+		{
 			return false;
 		}
 
@@ -186,6 +217,5 @@ class users {
 			return 'exit';
 		}
 	}
-
 }
 ?>
