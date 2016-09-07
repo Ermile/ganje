@@ -3,12 +3,10 @@ namespace content_ganje\home;
 use \lib\utility;
 use \lib\debug;
 use \lib\db;
-use \lib\utility\jdate;
 use \lib\telegram\tg as bot;
 
 class model extends \mvc\model
 {
-
 	public $user_id;
 	public $user_name;
 	public $start;
@@ -18,12 +16,11 @@ class model extends \mvc\model
 
 	public function post_hours()
 	{
-
-		$result = null;
-
+		$result        = null;
 		$this->user_id = utility::post('userId');
 		//----------- get value
-		$arg = [
+		$arg =
+		[
 			'user_id' => utility::post('userId'),
 			'plus'    => intval(utility::post('plus')),
 			'minus'   => intval(utility::post('minus'))
@@ -31,7 +28,8 @@ class model extends \mvc\model
 
 		$result = \lib\db\users::set_time($arg);
 
-		switch ($result) {
+		switch ($result)
+		{
 			case false:
 				debug::error(T_("User not found"));
 				break;
@@ -39,19 +37,18 @@ class model extends \mvc\model
 			case 'enter':
 				// send message from telegram
 				self::generate_telegram_text('enter');
-				$name  = $this->user_name;
-				$msg_notify = T_("Dear $name"). ' '. T_("Have a good time.");
-				// debug::true(T_("Enter was registered."). ' '. T_("Have a good time."));
+				$msg_notify = T_("Dear :name;", ['name'=> $this->user_name])."<br />". T_('Your enter was registered.').' '. T_("Have a good time.");
 				debug::true($msg_notify);
 				break;
 
 			case 'exit':
 				self::generate_telegram_text('exit');
-				debug::warn(T_("Bye Bye;)"));
+				$msg_notify = T_("Bye Bye :name ;)", ['name'=> $this->user_name]);
+				debug::warn($msg_notify);
 				break;
 
 			default:
-				# code...
+				debug::warn(':|');
 				break;
 		}
 		// send class name for absent on present
@@ -59,17 +56,16 @@ class model extends \mvc\model
 	}
 
 
-
-
 	/*
 	* get list of users to show
 	*/
 	public function post_list()
 	{
-		return [
-				'list' => \lib\db\users::get_all(),
-				'summary' => \lib\db\hours::summary()
-				];
+		return
+		[
+			'list' => \lib\db\users::get_all(),
+			'summary' => \lib\db\hours::summary()
+		];
 	}
 
 
@@ -88,7 +84,6 @@ class model extends \mvc\model
 			'method'       => 'sendMessage',
 			'text'         => $_text,
 			'chat_id'      => '46898544',
-
 		];
 		$result = bot::sendResponse($msg);
 

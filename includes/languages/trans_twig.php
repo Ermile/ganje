@@ -28,14 +28,12 @@ private function transtext()
 	echo T_("Actions");                                                               // Line 96
 	echo T_("Data not exist!");                                                       // Line 134
 
-	//-------------------------------------------------content_ganje\edit\display.html
-
 	//-------------------------------------------------content_ganje\home\display.html
 	echo T_("In the Name of God");                                                    // Line 8
-	echo T_("hours in this week");                                                    // Line 23 Seperate
-	echo T_("hours in this month");                                                   // Line 24 Seperate
-	echo T_("hours remote in this month");                                            // Line 25 Seperate
-	echo T_("hours in idle this month");                                              // Line 26 Seperate
+	echo T_("in this week");                                                          // Line 58
+	echo T_("in this month");                                                         // Line 59
+	echo T_("remote in this month");                                                  // Line 60
+	echo T_("in idle this month");                                                    // Line 61
 	echo T_("Enter Time");                                                            // Line 72
 	echo T_("Difference between enter and exit");                                     // Line 73
 	echo T_("Operation Time");                                                        // Line 73
@@ -74,6 +72,10 @@ private function transtext()
 	echo T_("Ali Kharidar");                                                          // Line 19 Seperate
 	echo T_("MohamadAli Salehi");                                                     // Line 20 Seperate
 	echo T_("Sara Torkamani");                                                        // Line 21 Seperate
+	echo T_("hours in this week");                                                    // Line 23 Seperate
+	echo T_("hours in this month");                                                   // Line 24 Seperate
+	echo T_("hours remote in this month");                                            // Line 25 Seperate
+	echo T_("hours in idle this month");                                              // Line 26 Seperate
 	echo T_("Founder & CEO");                                                         // Line 28 Seperate
 	echo T_("Founder and CEO");                                                       // Line 29 Seperate
 	echo T_("CEO & Solution Designer");                                               // Line 30 Seperate
