@@ -147,9 +147,8 @@ class users {
 							hour_plus = $plus,
 							hour_minus = $minus,
 							hour_total = (hour_diff + hour_plus - hour_minus),
-							hour_status = 'raw',
-							hour_accepted = hour_total
-
+							hour_accepted = hour_total,
+							hour_status = IF (hour_diff < 5, 'disable', 'raw')
 						WHERE
 							id = {$check_date['id']} ";
 
