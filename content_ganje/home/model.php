@@ -120,14 +120,14 @@ class model extends \mvc\model
 
 			case 'exit':
 				$msg        = "💤 $name\n";
-				$total      = floor(abs(strtotime('now') - $this->start) / 60);
+				$total      = floor(abs(strtotime('now') - \lib\db\users::get_start($this->user_id)) / 60);
 				if($total < 1)
 				{
 					// exit from switch and show message
 					$msg .= "🚷 /:";
 					break;
 				}
-				$time_start = \lib\utility::date('H:i', $this->start, 'default');
+				$time_start = \lib\utility::date('H:i', \lib\db\users::get_start($this->user_id) , 'default');
 				$msg        .= $time_start. ' '. T_('to'). ' '. $time_now;
 
 				// add minus and plus if exist

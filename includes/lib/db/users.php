@@ -55,6 +55,33 @@ class users {
 	}
 
 
+	/**
+	 * get start time in today of one users
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
+	public static function get_start($_user_id){
+		$date = date("Y-m-d");
+		$query = "
+			SELECT
+				hour_start as 'start'
+			FROM
+				hours
+			WHERE
+				hour_date = '$date' AND
+				user_id   = $_user_id
+			LIMIT 1
+			;";
+		$start = \lib\db::get($query, "start", true);
+		return $start;
+	}
+
+
+	/**
+	 * get count on online users
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
 	public static function live(){
 		$date = date("Y-m-d");
 		$query = "
@@ -148,7 +175,7 @@ class users {
 							hour_minus = $minus,
 							hour_total = (hour_diff + hour_plus - hour_minus),
 							hour_accepted = hour_total,
-							hour_status = IF (hour_diff < 5, 'disable', 'raw')
+							hour_status = IF (hour_total < 5, 'disable', 'raw')
 						WHERE
 							id = {$check_date['id']} ";
 
