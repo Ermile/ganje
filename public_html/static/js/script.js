@@ -19,9 +19,50 @@ $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(
 $(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });
 $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10) });
 
-$("select.month").change(function() {
 
-});
+$(".filters .year").change(function() {generateTimeFilter();});
+$(".filters .month").change(function() {generateTimeFilter();});
+$(".filters .day").change(function() {generateTimeFilter();});
+
+
+/**
+ * generate time from filter and navigate to new address to get data
+ * @return {[type]} [description]
+ */
+function generateTimeFilter()
+{
+  var year  = $(".filters .year").val();
+  var month = $(".filters .month").val();
+  var day   = $(".filters .day").val();
+  var date  = (year? year: '0000') + '-' + (month? month: '00') + '-' + (day? day: '00');
+
+  $('.filters').attr('data-time', date);
+
+  // get current path
+  var CURRENTPATH = (location.pathname).replace(/^\/+/, '');
+  var newLocation = CURRENTPATH;
+  // if url has / remove it from end of url
+  if (CURRENTPATH.substr(-1) == '/')
+  {
+    newLocation = newLocation.substr(0, newLocation.length - 2);
+  }
+  // splite url with slash into array
+  newLocation = newLocation.split('/');
+  // get only 2 slash of url
+  newLocation = '/' + newLocation[0] + '/' + newLocation[1];
+
+  navigate(newLocation + '/date='+date);
+}
+
+/**
+ * navigate to specefic url with pushstate
+ * @param  {[type]} _path [description]
+ * @return {[type]}       [description]
+ */
+function navigate(_path)
+{
+  Navigate({ url: _path });
+}
 
 
 
