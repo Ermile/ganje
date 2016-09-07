@@ -171,8 +171,9 @@ body#home{height:100%}
 .card .info .position {font-size: 1.5em;color: #aaa;margin: 0.2em 0 0.5em;}
 .card .info .id {font-size: 1em;color: rgba(0,0,0,.4);width:15%;text-align:center;background-color:#f7f5f5;background-color: #dedede;color:#333;position: absolute;bottom: 10%;right: 0;}
 .rtl .card .info .id {right: unset;left: 0;}
-.card .info .week {font-weight: 700;}
-.card .info span {font-size: 1.2em;}
+.card .info .month {font-weight: 700;}
+.detail .card .info img{width:2.5em;display:inline-block;vertical-align:middle;margin:0 0.5em;cursor: default;}
+.detail .card .info p {font-size: 1.2em;margin:0.5em 0;}
 
 .dashboard .card .position {font-size: 0.8em;}
 .dashboard .card .id {background-color: transparent;}
