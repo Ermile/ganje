@@ -35,16 +35,16 @@ class model extends \mvc\model
 				break;
 
 			case 'enter':
-				// send message from telegram
-				self::generate_telegram_text('enter');
 				$msg_notify = T_("Dear :name;", ['name'=> $this->user_name])."<br />". T_('Your enter was registered.').' '. T_("Have a good time.");
 				debug::true($msg_notify);
+				// send message from telegram
+				self::generate_telegram_text('enter');
 				break;
 
 			case 'exit':
-				self::generate_telegram_text('exit');
 				$msg_notify = T_("Bye Bye :name ;)", ['name'=> $this->user_name]);
 				debug::warn($msg_notify);
+				self::generate_telegram_text('exit');
 				break;
 
 			default:
