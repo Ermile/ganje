@@ -51,5 +51,9 @@ class model extends \mvc\model
 
 		return $data;
 	}
+
+	public function get_mo(){
+
+	}
 }
 ?>

@@ -53,7 +53,7 @@ class hours {
 	{
 		if(isset($_args['user']))
 		{
-			$user = " users.id = '" . $_args['user'] . "' ";
+			$user = " AND users.id = '" . $_args['user'] . "' ";
 		}
 		else
 		{
