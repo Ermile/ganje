@@ -14,6 +14,7 @@ $(document).ready(function()
 $(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
 $(document).on("click", ".card", function(e) { event_corridor(e, e.currentTarget, 'click'); });
 $(document).on("dblclick", ".card", function(e) { event_corridor(e, e.currentTarget, 'dblclick'); });
+$(document).on("dblclick", "#poem", function(e) { location.reload(); });
 $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(e, e.currentTarget, 'rightclick'); });
 
 $(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });

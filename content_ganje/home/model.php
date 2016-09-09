@@ -7,25 +7,25 @@ use \lib\telegram\tg as bot;
 
 class model extends \mvc\model
 {
-	public $user_id;
 	public $user_name;
-	public $start;
-	public $plus;
-	public $minus;
 
 
+	/**
+	 * [post_hours description]
+	 * @return [type] [description]
+	 */
 	public function post_hours()
 	{
 		$result        = null;
-		$this->user_id = utility::post('userId');
-		//----------- get value
+		//----------- get values from post
 		$arg =
 		[
-			'user_id' => utility::post('userId'),
+			'user_id' => intval(utility::post('userId')),
 			'plus'    => intval(utility::post('plus')),
 			'minus'   => intval(utility::post('minus'))
 		];
-
+		// set name of user
+		$this->setName($arg['user_id']);
 		$result = \lib\db\users::set_time($arg);
 
 		switch ($result)
@@ -38,13 +38,13 @@ class model extends \mvc\model
 				$msg_notify = T_("Dear :name;", ['name'=> $this->user_name])."<br />". T_('Your enter was registered.').' '. T_("Have a good time.");
 				debug::true($msg_notify);
 				// send message from telegram
-				self::generate_telegram_text('enter');
+				self::generate_telegram_text('enter', $arg);
 				break;
 
 			case 'exit':
 				$msg_notify = T_("Bye Bye :name ;)", ['name'=> $this->user_name]);
 				debug::warn($msg_notify);
-				self::generate_telegram_text('exit');
+				self::generate_telegram_text('exit', $arg);
 				break;
 
 			default:
@@ -76,8 +76,8 @@ class model extends \mvc\model
 	 */
 	public static function send_telegram($_text)
 	{
-			bot::$api_key   = '164997863:AAFC3nUcujDzpGq-9ZgzAbZKbCJpnd0FWFY';
-			bot::$name      = 'saloos_bot';
+			bot::$api_key   = '215239661:AAHyVstYPXKJyfhDK94A-XfYukDMiy3PLKY';
+			bot::$name      = 'ermile_bot';
 
 		$msg =
 		[
@@ -96,15 +96,12 @@ class model extends \mvc\model
 	 * @param  [type] $_type [description]
 	 * @return [type]        [description]
 	 */
-	public function generate_telegram_text($_type)
+	public function generate_telegram_text($_type, $_args = null)
 	{
 		$msg             = '';
 		$date_now        = \lib\utility::date("l j F Y", false, 'default');
 		$time_now        = \lib\utility::date("H:i", false, 'default');
-		$name            = \lib\db\users::get_one($this->user_id);
-		$name            = T_($name['displayname']);
-		$this->user_name = $name;
-		$name            = "*$name*";
+		$name            = "*". $this->user_name. "*";
 
 		switch ($_type)
 		{
@@ -119,28 +116,31 @@ class model extends \mvc\model
 
 
 			case 'exit':
-				$msg        = "💤 $name\n";
-				$total      = floor(abs(strtotime('now') - \lib\db\users::get_start($this->user_id)) / 60);
+				$msg   = "💤 $name\n";
+				$start = \lib\db\users::get_start($_args['user_id']);
+				$start = strtotime( date('Y/m/d'). ' '. $start);
+				$total = floor(abs(strtotime('now') - $start) / 60);
+
 				if($total < 1)
 				{
 					// exit from switch and show message
-					$msg .= "🚷 /:";
+					$msg = "🚷 $msg";
 					break;
 				}
-				$time_start = \lib\utility::date('H:i', \lib\db\users::get_start($this->user_id) , 'default');
+				$total      = utility\human::time($total, 'persian');
+				$time_start = \lib\utility::date('H:i', $start , 'default');
+				$msg .= $total . "\n🕗 ";
 				$msg        .= $time_start. ' '. T_('to'). ' '. $time_now;
 
 				// add minus and plus if exist
-				if($this->plus > 0 )
+				if(isset($_args['plus']) && $_args['plus'] > 0 )
 				{
-					$msg .= "\n➕ ". $this->plus;
+					$msg .= "\n➕ ". $_args['plus'];
 				}
-				if($this->minus > 0)
+				if(isset($_args['minus']) && $_args['minus'] > 0)
 				{
-					$msg .= "\n➖ ". $this->minus;
+					$msg .= "\n➖ ". $_args['minus'];
 				}
-				$total = utility\human::time($total, 'persian');
-				$msg .= " 🕗 ". $total."\n‌";
 				break;
 
 
@@ -153,6 +153,23 @@ class model extends \mvc\model
 	}
 
 
+	/**
+	 * [setName description]
+	 * @param [type] $_id [description]
+	 */
+	private function setName($_id)
+	{
+		$this->user_name = \lib\db\users::get_one($_id);
+		$this->user_name = T_($this->user_name['displayname']);
+
+		return $this->user_name;
+	}
+
+
+	/**
+	 * [list_online description]
+	 * @return [type] [description]
+	 */
 	private static function list_online()
 	{
 		$list = \lib\db\users::get_all();
