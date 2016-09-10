@@ -50,7 +50,7 @@ class users {
 				FROM users
 				LEFT JOIN hours
 					ON hours.user_id = users.id
-					AND hours.hour_date = DATE(NOW())
+					AND hours.hour_date = '$date'
 					AND hours.hour_end is null
 				WHERE
 					users.user_status = 'active'
