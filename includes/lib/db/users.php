@@ -93,6 +93,7 @@ class users {
 			WHERE
 				hour_date = '$date' AND
 				user_id   = $_user_id
+			ORDER BY id DESC
 			LIMIT 1
 			;";
 		$start = \lib\db::get($query, "start", true);
