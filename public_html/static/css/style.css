@@ -235,3 +235,15 @@ body#admin table.datatable tr:nth-child(odd) td { background-color: #EBEBEB }
 body#admin table.datatable tr:nth-child(odd):hover td { background-color: #4E5066 }
 
 .margin-top { margin-top: 3em }
+
+
+.elist li li{display: inline-block;min-width10%;width:8em; }
+
+
+
+
+
+
+
+
+

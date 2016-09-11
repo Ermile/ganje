@@ -111,7 +111,8 @@ class model extends \mvc\model
 				{
 					$tg = self::send_telegram($date_now);
 				}
-				$msg = "✅ $name $time_now";
+				$msg = "✅ $name";
+				// $msg .= " $time_now";
 				break;
 
 

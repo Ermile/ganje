@@ -9,20 +9,33 @@
 
 {%block datatable%}
  <div class="row">
-   <div class="panel">
-     <div class="panel-body">
-{%if include.datatable%}
-       <table class="datatable display responsive nowrap" cellspacing="0" width="100%">
-       <thead>
-        <tr>
-        <th class="column_row">#</th>
-{%for value in datatable_col%}
-        <th>{%trans value%}</th>
+  <div class="panel">
+   <div class="panel-body">
+{%if datatable%}
+    <ul class="elist">
+     <li>
+      <ul>
+{%for key, column in datatable_col%}
+       <li class='col_{{column}}'>{%trans column%}</li>
 {%endfor%}
-        </tr>
-        </thead>
+      </ul>
+     </li>
 
-       </table>
+{%for row, value in datatable%}
+     <li>
+      <ul>
+{%for key, column in datatable_col%}
+       <li class='val_{{column}}'> {{ attribute(value, column) }}</li>
+{%endfor%}
+     </li>
+    </ul>
+{%endfor%}
+
+
+    </ul>
+
+
+
 {%else%}
   <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
 {%endif%}
