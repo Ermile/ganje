@@ -14,9 +14,23 @@ class view extends \mvc\view
 			$this->include->js_main      = false;
 			$this->include->css          = false;
 		}
+	}
 
-		$this->data->datatable = $this->model()->get_u();
-		$this->data->datatable_col = ['date', 'start', 'end', 'total', 'diff', 'plus', 'minus', 'accepted'];
+
+	function view_url($_arg)
+	{
+		if(isset($_arg->api_callback))
+		{
+			if(isset($_arg->match->date))
+			{
+				$this->data->datatable_col = ['date', 'start', 'end', 'total', 'diff', 'plus', 'minus', 'accepted'];
+			}
+			else
+			{
+				$this->data->datatable_col = ['date', 'total', 'diff', 'plus', 'minus', 'accepted'];
+			}
+			$this->data->datatable     = $_arg->api_callback;
+		}
 	}
 
 

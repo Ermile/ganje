@@ -18,10 +18,10 @@ class controller extends \mvc\controller
 		$this->access('ganje', null, null, 'block');
 
 
-		$this->get('mo', false)->ALL([
+		$this->get('url', 'url')->ALL([
 				'property' => [
 				"page" => ["/^\d+$/", true, 'page'],
-				"q" => ["/^(.*)$/", true, 'search'],
+				"q"    => ["/^(.*)$/", true, 'search'],
 				'date' => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date']
 				]
 			]);

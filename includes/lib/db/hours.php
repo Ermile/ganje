@@ -113,9 +113,8 @@ class hours {
 			$month = null;
 		}
 
-		$q = array();
-
-		$q['user']  = $user   != null ? "users.id = $user" : null;
+		$q         = [];
+		$q['user'] = $user != null ? "users.id = $user" : null;
 
 		if($user)
 		{
@@ -147,7 +146,7 @@ class hours {
 			$q['week']  = $week   != null ? "WEEKOFYEAR(hours.hour_date)=WEEKOFYEAR('$week')" : null;
 		}
 
-		$condition = implode(" AND ", array_filter($q));
+		$condition = ' AND '. implode(" AND ", array_filter($q));
 
 		$start  = (isset($_args["start"])) ? $_args["start"] : 0; // start limit
 		$end    = (isset($_args["end"]))   ? $_args["end"]   : 10; // end limit
@@ -159,7 +158,7 @@ class hours {
 				SELECT
 					users.id as id,
 					users.user_displayname as name,
-					TRIM(BOTH '".'"'."' FROM IFNULL(JSON_EXTRACT(users.user_meta,'$.position'), '$no_position')) as meta,
+					TRIM(BOTH '".'"'."' FROM IFNULL(users.user_meta, '$no_position')) as meta,
 					sum(hours.hour_total) as total,
 					sum(hours.hour_diff) as diff,
 					sum(hours.hour_plus) as plus,
@@ -174,7 +173,6 @@ class hours {
 				$USER
 				LIMIT $start,$end
 				";
-
 		$report = db::get($query);
 		return $report;
 	}
