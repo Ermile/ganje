@@ -8,38 +8,29 @@
 
 
 {%block datatable%}
- <div class="row">
-  <div class="panel">
-   <div class="panel-body">
+ <content class="row">
 {%if datatable%}
-    <ul class="elist">
-     <li>
-      <ul>
+  <table class="et" cellpadding=0 cellspacing=0>
+   <thead>
+    <tr>
 {%for key, column in datatable_col%}
-       <li class='col_{{column}}'>{%trans column%}</li>
+     <th class='col_{{column}}'>{%trans column%}</th>
 {%endfor%}
-      </ul>
-     </li>
+    </tr>
+   </thead>
 
+   <tbody>
 {%for row, value in datatable%}
-     <li>
-      <ul>
+    <tr>
 {%for key, column in datatable_col%}
-       <li class='val_{{column}}'> {{ attribute(value, column) }}</li>
+     <td class='val_{{column}}'> {{ attribute(value, column) }}</td>
 {%endfor%}
-     </li>
-    </ul>
+    </tr>
 {%endfor%}
-
-
-    </ul>
-
-
-
+   </tbody>
+  </table>
 {%else%}
   <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
 {%endif%}
-     </div>
-   </div>
- </div>
+ </content>
 {%endblock%}
