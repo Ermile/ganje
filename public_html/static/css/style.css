@@ -140,13 +140,13 @@ body#home{height:100%}
 
 /*Accountant Page*/
 body{ background: url(../images/pattern/shattered_@2X.png) }
-.cardList { text-align: center }
-.cardList .card{position:relative;cursor:pointer;overflow:visible;}
+.cardList {text-align:center;padding-bottom:2em;}
+.cardList .card{position:relative;cursor:pointer;overflow:visible;margin:0;font-size:0.8em;}
 .cardList .card:hover .absolute-info{opacity:1}
 .cardList .absolute-info{position: absolute;width: 100%; top: 100%; left: 0;background-color: rgba(241, 241, 241, 0.75); z-index: 2; text-align: center;font-weight: bold; opacity: 0; transition: opacity 0.2s ease-in-out;}
 .cardList .field{display:inline-block;width:90%}
 
-.detail.inner{margin:1% auto 0;width:90%;}
+.row.inner{margin:1% auto 0;width:96%;}
 
 .filters {margin-top: 2em;font-size: 1.5em;text-align: center}
 .filters *{position: relative;margin-bottom:0.7em;display: block;width: 100%;}

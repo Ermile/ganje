@@ -1,5 +1,33 @@
 {% extends display.ganje %}
 
 {% block body %}
+ <content class="row auto inner">
+  <div class="span3 detail">
+{{block ('card')}}
+
+   <div class="filters">
+{{block ('filter_remove')}}
+{{block ('filter_month')}}
+{{block ('filter_year')}}
+   </div>
+{{block ('langList')}}
+  </div>
+
+  <div class="span9">
+   <section class="row auto cardList">
+{%for key, user in users%}
+{%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
+{%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
+{%set name = user.displayname%}
+    <div class="card present">
+     <img src="{{avatar | exist(avatar_default)}}">
+     <div class="absolute-info">{%trans name%}</div>
+    </div>
+{%endfor%}
+   </section>
+
+
 {% embed display.ganje_et %}{% endembed %}
+  </div>
+ </content>
 {% endblock %}
