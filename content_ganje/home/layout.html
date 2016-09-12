@@ -19,3 +19,66 @@
     </div>
    </div>
 {%endblock%}
+
+
+
+{%block filter_remove%}
+<a class="removeFilter" href="{{url.base}}status">{%trans "Remove Filters"%}</a>
+{%endblock%}
+
+
+
+{%block filter_month%}
+     <select name="month" class="month">
+      <option value="00">{%trans "Select all months"%}</option>
+{% if site.currentlang == 'fa' %}
+      <option value="01">فروردین</option>
+      <option value="02">اردیبهشت</option>
+      <option value="03">خرداد</option>
+      <option value="04">تیر</option>
+      <option value="05">مرداد</option>
+      <option value="06">شهریور</option>
+      <option value="07">مهر </option>
+      <option value="08">آبان</option>
+      <option value="09">آذر</option>
+      <option value="10">دی</option>
+      <option value="11">بهمن</option>
+      <option value="12">اسفند</option>
+{% else %}
+      <option value="01">January</option>
+      <option value="02">February</option>
+      <option value="03">March</option>
+      <option value="04">April</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">August</option>
+      <option value="09">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+{% endif %}
+     </select>
+{%endblock%}
+
+
+
+{%block filter_year%}
+{% if site.currentlang == 'fa' %}
+     <input type="number" name="year" class="year" value='{{"now"|jdate("Y", false)}}' min="1395" max="{{"now"|jdate("Y", false) +1}}" placeholder='{%trans "Enter year"%}'>
+{% else %}
+     <input type="number" name="year" class="year" value='{{"now"|date("Y")}}' min="2016" max="{{"now"|date("Y") +1}}" placeholder='{%trans "Enter year"%}'>
+{% endif %}
+{%endblock%}
+
+
+
+{%block langList%}
+    <nav id="langList" data-xhr="langList" class="hint--right float-right" data-hint='{%trans "Work with Ermile in your own language"%}'>
+{%for key, lang in site.langlist if site.langlist|length >1 and site.currentlang != key|slice(0, 2)%}
+     <a href="{{url.path}}?lang={{key}}" data-direct>{{lang}}</a>
+{%endfor%}
+    </nav>
+{%endblock%}
+
+
