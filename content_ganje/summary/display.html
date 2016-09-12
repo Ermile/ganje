@@ -2,140 +2,32 @@
 
 {% block body %}
 
-<div class="row auto low-padding cards">
-    {%for key, value in users%}
-    <div class="card present">
-        <img src="{{url.static}}/images/avatar/{{value.id}}.jpg">
-        <div class="absolute-info">{{value.displayname}}</div>
-    </div>
-    {%endfor%}
-</div>
-
-<div class="container">
-    <form method="post" data-action>
-        <div class="row auto">
-            <div class="span3"></div>
-            <div class="span2">
-                <div class="inline-field">
-                    <label>{% trans "Month" %}</label>
-                    <select name="month">
-                    {% if site.currentlang == 'fa' %}
-                        <option value="0">تمامی ماه ها</option>
-                        <option value="1">فروردین</option>
-                        <option value="2">اردیبهشت</option>
-                        <option value="3">خرداد</option>
-                        <option value="4">تیر</option>
-                        <option value="5">مرداد</option>
-                        <option value="6">شهریور</option>
-                        <option value="7">مهر </option>
-                        <option value="8">آبان</option>
-                        <option value="9">آذر</option>
-                        <option value="10">دی</option>
-                        <option value="11">بهمن</option>
-                        <option value="12">اسفند</option>
-                    {% else %}
-                        <option value="0">Select All</option>
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                    {% endif %}
-                    </select>
-                </div>
-            </div>
-
-            <div class="span2">
-                <div class="inline-field">
-                    <label>{% trans "Year" %}</label>
-
-                    {% if site.currentlang == 'fa' %}
-                    <input type="number" name="year" value='{{"now"|jdate("Y", false)}}' min="1395" max="1400">
-                    {% else %}
-                    <input type="number" name="year" value='{{"now"|date("Y")}}' min="2016" max="2020">
-                    {% endif %}
-                </div>
-            </div>
-
-            <div class="span2">
-                <div class="inline-field">
-                    <label>&nbsp;</label>
-                    <input type="submit" name="submit" value='{% trans "Export" %}'>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-
-<div class="row low-padding margin-top">
-<div class="panel">
-
-{%block datatable%}
-{%if include.datatable%}
-       <table class="{%if datatable.total <1000 %}datatable{%else%}hidden{%endif%} display responsive nowrap" cellspacing="0" width="100%" {%if datatable.total >100 %}data-tablesrc='{{module}}/list' {%endif%}>
-{%-if datatable.total >1000-%}
-        <tbody>
-          <tr>
-           <td>{%set datatable = datatable|merge({"recordsFiltered": datatable.filter, "recordsTotal": datatable.total})%}{{-datatable|json_encode()|raw-}}</td>
-          </tr>
-        </tbody>
-{%else%}
-        <thead>
-        <tr>
-        <th class="column_row"></th>
-{%for value in datatable.columns%}
-        <th>{{value.label}}</th>
+ <section class="row auto low-padding cardList">
+{%for key, value in users%}
+ {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
+ {%set avatar = url.static ~ 'images/avatar/' ~ value.id ~ '.jpg' %}
+ {%set name = value.displayname%}
+  <div class="card present">
+   <img src="{{avatar | exist(avatar_default)}}">
+   <div class="absolute-info">{%trans name%}</div>
+  </div>
 {%endfor%}
-        <th class="column_actions">{%trans "Actions"%}</th>
-        </tr>
-        </thead>
+ </section>
 
-        <tbody>
-{%block tbody%}
-{%for d in datatable.data%}
-        <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
-         <td class="col_row">{{loop.index}}</td>
-{%for col,value in datatable.columns%}
-{%set myvalue = attribute(d,col)%}
-{% if value.value == 'date' %}
-         <td class="col_{{value.value}}">{{myvalue|jdate}}</td>
-{%else%}
-         <td class="col_{{value.value}}">{%trans myvalue%}</td>
-{%endif%}
+ <div class="filters inline">
+{{block ('filter_remove')}}
+{{block ('filter_month')}}
+{{block ('filter_year')}}
+ <form method="post" data-action>
+  <input type="submit" name="submit" value='{% trans "Export" %}'>
+ </form>
+ </div>
 
-{%endfor%}
-
-         <td class="col_actions">
-
-          <span class="fa-stack">
-            <a class="fa fa-pencil fa-stack-1x label-default" href="{{url.base}}edit/id={{d.id}}" ></a>
-          </span>
+{% embed display.ganje_et %}{% endembed %}
 
 
-          <span class="fa-stack">
-            <a class="fa fa-times fa-stack-1x label-danger" href="{{url.base}}{{module}}/delete={{d.id}}" data-data='{"id": {{d.id}}}' data-method="post" data-modal="delete-confirm"></a>
-          </span>
+ <footer>
+{{block ('langList')}}
+ </footer>
 
-         </td>
-        </tr>
-{%endfor%}
-{%endblock%}
-        </tbody>
-{%endif%}
-       </table>
-{%else%}
-  <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
-{%endif%}
-{%endblock%}
-
-
-</div>
-</div>
 {% endblock %}

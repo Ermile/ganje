@@ -52,5 +52,12 @@ class model extends \mvc\model
 			return $data;
 		}
 	}
+
+
+
+	function get_url()
+	{
+
+	}
 }
 ?>

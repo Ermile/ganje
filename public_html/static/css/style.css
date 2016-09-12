@@ -93,7 +93,6 @@ body#home{height:100%}
 
 /* card ui */
 .card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:1em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;overflow: hidden; background: linear-gradient(150deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);transition: all 0.3s ease-in-out;}
-.card:last-child {margin-bottom: 0;clear: both}
 .card.selected {opacity: 0.5;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .card.present, .detail .card {opacity: 1;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
 .card.present.selected{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
@@ -141,26 +140,22 @@ body#home{height:100%}
 
 /*Accountant Page*/
 body{ background: url(../images/pattern/shattered_@2X.png) }
-body#summary .row.cards { text-align: center }
-body#summary .card { position: relative; cursor: pointer }
-body#summary .card:last-child { margin: 1em 0.5em }
-body#summary .card:hover .absolute-info { opacity: 1 }
-body#summary .absolute-info { position: absolute; height: 100%; width: 100%; top: 0; left: 0; content: ""; background-color: rgba(241, 241, 241, 0.75); z-index: 999; text-align: center; line-height: 10em; font-weight: bold; opacity: 0; transition: opacity 0.15s ease-in-out }
-body#summary .field { display: inline-block; width: 90% }
-
-.inline-field label { display: inline-block; font-weight: 700; opacity: 0.9; margin-right: 0.5em; margin-bottom: 0.5em }
-.inline-field select { background: #fff; border: none; padding: 0.4em 0.7em; width: 100%; border-radius: 0.2em }
-.inline-field input[type="number"] { background: #fff; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em }
-.inline-field input[type="submit"] { background: #21ba45; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em; color: #fff; cursor: pointer }
+.cardList { text-align: center }
+.cardList .card{position:relative;cursor:pointer;overflow:visible;}
+.cardList .card:hover .absolute-info{opacity:1}
+.cardList .absolute-info{position: absolute;width: 100%; top: 100%; left: 0;background-color: rgba(241, 241, 241, 0.75); z-index: 2; text-align: center;font-weight: bold; opacity: 0; transition: opacity 0.2s ease-in-out;}
+.cardList .field{display:inline-block;width:90%}
 
 .detail.inner{margin:1% auto 0;width:90%;}
 
-.filters {margin-top: 2em;font-size: 1.5em;}
-.filters *{position: relative;margin-bottom:0.7em;}
-.filters .month{background: #fff; border: none; padding: 0.4em 0.7em; width: 100%; border-radius: 0.2em }
-.filters .year{background: #fff; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em }
-.filters .removeFilter{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:block;border-radius: 0.2em}
+.filters {margin-top: 2em;font-size: 1.5em;text-align: center}
+.filters *{position: relative;margin-bottom:0.7em;display: block;width: 100%;}
+.filters.inline *{display: inline-block;width: auto;}
+.filters .month{background: #fff; border: none; padding: 0.4em 0.7em;border-radius: 0.2em }
+.filters .year{background: #fff; border: none; padding: 0.5em 0.7em;border-radius: 0.2em }
+.filters .removeFilter{padding: 0.3em 1em; background-color:#fff;transition:0.3s;border-radius: 0.2em}
 .filters .removeFilter:hover{color:#c30d0d;}
+.filters [type="submit"] { background: #21ba45; border: none; padding: 0.5em 2em; width: 100%; border-radius: 0.2em; color: #fff; cursor: pointer }
 #langList a{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:block;border-radius: 0.2em;font-size: 1em}
 #langList a:hover{background-color:#eee;}
 

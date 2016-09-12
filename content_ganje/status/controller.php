@@ -13,7 +13,8 @@ class controller extends \mvc\controller
 		$this->access('ganje', null, null, 'block');
 
 
-		$this->get('url', 'url')->ALL([
+		$this->get('url', 'url')->ALL(
+			[
 				'property' => [
 				"page" => ["/^\d+$/", true, 'page'],
 				"q"    => ["/^(.*)$/", true, 'search'],
