@@ -1,19 +1,19 @@
 
-{%block datatable%}
-{%if datatable%}
+{%block et%}
+{%if et%}
   <table class="et" data-xhr='et' cellpadding=0 cellspacing=0>
    <thead>
     <tr>
-{%for key, column in datatable_col%}
+{%for key, column in et_col%}
      <th class='col_{{column}}'>{%trans column%}</th>
 {%endfor%}
     </tr>
    </thead>
 
    <tbody>
-{%for row, value in datatable%}
+{%for row, value in et%}
     <tr>
-{%for key, column in datatable_col%}
+{%for key, column in et_col%}
      <td class='val_{{column}}'> {{ attribute(value, column) }}</td>
 {%endfor%}
     </tr>

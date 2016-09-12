@@ -54,26 +54,23 @@ class model extends \mvc\model
 	 */
 	public function get_datatable() {
 		// creat data for datatable
-		$result =  [
-			'columns' => [
-					'id'    => ['label' => "شماره", 'value' => "id"],
-					'name'  => ['label' => "نام", 'value' => "name"],
-					'date'  => ['label' => "تاریخ", 'value' => "date"],
-					'start' => ['label' => "ساعت ورود", 'value' => "start"],
-					'end'   => ['label' => "ساعت خروج", 'value' => "end"],
-					'total' => ['label' => "جمع ساعات", 'value' => "total"],
-					'plus'  => ['label' => "دور کاری", 'value' => "plus"],
-					'minus' => ['label' => "هدر رفته", 'value' => "minus"],
-					'diff'  => ['label' => "جمع نهایی", 'value' => "diff"],
-					'status'  => ['label' => "وضعیت", 'value' => "status"],
-					'accepted'  => ['label' => "ساعات تایید شده", 'value' => "accepted"]
-				],
-			'data'   => \lib\db\hours::last(),
-			'total'  => 98,
-			'filter' => 4
+		$result =
+		[
+			'columns' => ['id','name','date','start','end','total','plus','minus','diff','status','accepted'],
+			'data'    => \lib\db\hours::last(),
+			'total'   => 98,
+			'filter'  => 4
 		];
 		return $result;
 	}
 
+
+
+
+
+	public function get_url($_args)
+	{
+
+	}
 }
 ?>

@@ -26,5 +26,17 @@ class view extends \mvc\view
 		$this->data->list =  $this->model()->list();
 	}
 
+
+
+
+
+	function view_url($_arg)
+	{
+		$this->data->et     = $_arg->api_callback;
+		$this->data->et     = $this->model()->get_datatable();
+
+		$this->data->et_col = $this->data->et['columns'];
+		$this->data->et     = $this->data->et['data'];
+	}
 }
 ?>
