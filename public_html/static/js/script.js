@@ -20,11 +20,60 @@ $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(
 $(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });
 $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10) });
 
+$(document).on("click", ".cardList .card.present",  function(e) { generateUserFilter(this) });
+$(document).on("click", ".filters .removeFilter", function(e) { removeFilter(); });
 
-$(".filters .year").change(function() {generateTimeFilter();});
-$(".filters .month").change(function() {generateTimeFilter();});
-$(".filters .day").change(function() {generateTimeFilter();});
 
+$(".filters .year").change(function() {generateFilter();});
+$(".filters .month").change(function() {generateFilter();});
+$(".filters .day").change(function() {generateFilter();});
+
+
+function removeFilter()
+{
+  console.log('removeFilters');
+  $('.detail .card').attr('data-user-id', null);
+}
+
+function generateUserFilter(_this)
+{
+  var id = $(_this).attr('data-user-id');
+  console.log(_this);
+  $('.detail .card').html($(_this).children().clone());
+  $('.detail .card').attr('data-user-id', id);
+  generateFilter();
+}
+
+function generateFilter()
+{
+  // get current path
+  var CURRENTPATH = (location.pathname).replace(/^\/+/, '');
+  var newLocation = CURRENTPATH;
+  // if url has / remove it from end of url
+  if (CURRENTPATH.substr(-1) == '/')
+  {
+    newLocation = newLocation.substr(0, newLocation.length - 2);
+  }
+  // splite url with slash into array
+  newLocation = newLocation.split('/');
+  // get only 2 slash of url
+  newLocation = '/' + newLocation[0] + '/' + newLocation[1];
+  // get date filter and add
+  var date = generateTimeFilter();
+  if(date)
+  {
+    newLocation += date;
+  }
+
+  // generate user filter and add
+  var user = $('.detail .card').attr('data-user-id');
+  if(user)
+  {
+    newLocation += '/user=' + user;
+  }
+
+  navigate(newLocation);
+}
 
 /**
  * generate time from filter and navigate to new address to get data
@@ -38,21 +87,13 @@ function generateTimeFilter()
   var date  = (year? year: '0000') + '-' + (month? month: '00') + '-' + (day? day: '00');
 
   $('.filters').attr('data-time', date);
-
-  // get current path
-  var CURRENTPATH = (location.pathname).replace(/^\/+/, '');
-  var newLocation = CURRENTPATH;
-  // if url has / remove it from end of url
-  if (CURRENTPATH.substr(-1) == '/')
+  if(date)
   {
-    newLocation = newLocation.substr(0, newLocation.length - 2);
+    date = '/date='+date;
+    return date;
   }
-  // splite url with slash into array
-  newLocation = newLocation.split('/');
-  // get only 2 slash of url
-  newLocation = '/' + newLocation[0] + '/' + newLocation[1];
 
-  navigate(newLocation + '/date='+date);
+  return null;
 }
 
 /**

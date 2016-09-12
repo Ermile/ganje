@@ -16,7 +16,7 @@ function event_corridor(e, _self, _key)
   var alt    = e.altKey   ? 'alt'   : '';
   var mytxt  = String(_key) + ctrl + alt + shift;
   var keyp   = String.fromCharCode(_key);
-  console.log(mytxt);
+  // console.log(mytxt);
 
 
   if(!cid)

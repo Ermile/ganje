@@ -19,8 +19,13 @@
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
 {%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
 {%set name = user.displayname%}
-    <div class="card present">
+{%set position = user.meta.position%}
+    <div class="card present" data-user-id="{{user.id}}">
      <img src="{{avatar | exist(avatar_default)}}">
+     <div class="info">
+      <div class="name">{%trans name%}</div>
+      <div class="position">{%trans position%}</div>
+     </div>
      <div class="absolute-info">{%trans name%}</div>
     </div>
 {%endfor%}

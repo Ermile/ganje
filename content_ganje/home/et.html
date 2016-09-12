@@ -1,7 +1,8 @@
 
 {%block et%}
+ <content class="et" data-xhr='et'>
 {%if et%}
-  <table class="et" data-xhr='et' cellpadding=0 cellspacing=0>
+  <table cellpadding=0 cellspacing=0>
    <thead>
     <tr>
 {%for key, column in et_col%}
@@ -23,4 +24,5 @@
 {%else%}
   <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
 {%endif%}
+ </content>
 {%endblock%}
