@@ -16,10 +16,10 @@ class view extends \mvc\view
 	 */
 	function pushState()
 	{
-		if($this->module() !== 'home')
-		{
-			$this->data->display['mvc']     = "content/home/layout-xhr.html";
-		}
+		// if($this->module() !== 'home')
+		// {
+		// 	$this->data->display['mvc']     = "content/home/layout-xhr.html";
+		// }
 	}
 }
 ?>

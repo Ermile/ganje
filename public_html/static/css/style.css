@@ -159,6 +159,8 @@ body#summary .field { display: inline-block; width: 90% }
 .filters p{position: relative;margin-bottom:0.7em;}
 .filters .month{background: #fff; border: none; padding: 0.4em 0.7em; width: 100%; border-radius: 0.2em }
 .filters .year{background: #fff; border: none; padding: 0.5em 0.7em; width: 100%; border-radius: 0.2em }
+.filters .removeFilter{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:block;border-radius: 0.2em}
+.filters .removeFilter:hover{color:#c30d0d;}
 #langList a{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:block;border-radius: 0.2em}
 #langList a:hover{background-color:#eee;}
 
@@ -173,18 +175,19 @@ body#admin table.datatable tr:nth-child(odd):hover td { background-color: #4E506
 .margin-top { margin-top: 3em }
 
 /* Ermile Table */
-.et{width:100%;max-height:90vh;text-align:left;border-radius:0.2em;overflow:hidden;}
-.et thead{background-color:#1F2739;color: #A7A1AE;}
-.et thead th{padding:20px 15px;font-weight:500;font-size:12px;text-transform:uppercase}
-.et tbody{height:300px;overflow-x:auto;margin-top:0;border:1px solid rgba(255,255,255,0.3)}
+.et{width:100%;max-height:90vh;text-align:left;border-radius:0.2em;overflow:hidden;font-size: 1.1em}
+.et thead{background-color:#1F2739;color: #A7A1AE;font-weight:700;font-size:1.3em;}
+.et thead th{padding:1.5em 0.5em;text-transform:uppercase;}
+.et tbody{height:300px;overflow-x:auto;margin-top:0;border:1px solid rgba(255,255,255,0.3);}
+.et tbody tr{transition:0.2s;}
 .et tbody tr:nth-child(odd) {background-color: #323C50;}
 .et tbody tr:nth-child(even) {background-color: #2C3446;}
-.et tbody tr:hover{background-color: #464A52;box-shadow: 0 6px 6px -6px #0E1119;}
-.et tbody td{padding:15px;vertical-align:middle;font-weight:300;font-size:12px;color:#ddd;border-bottom:solid 1px rgba(255,255,255,0.1)}
+.et tbody tr:hover{background-color: #464A52;}
+.et tbody td{padding:1em;vertical-align:middle;font-weight:300;color:#ddd;border-bottom:solid 1px rgba(255,255,255,0.1);}
 .et tbody td:first-child{color: #eee;}
-.et ::-webkit-scrollbar{width:6px}
-.et ::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3)}
-.et ::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3)}
+.et ::-webkit-scrollbar{width:0.4em;}
+.et ::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);}
+.et ::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);}
 
 
 .et{text-align: center;}

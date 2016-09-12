@@ -19,18 +19,6 @@ class view extends \mvc\view
 	}
 
 
-	/**
-	 * [pushState description]
-	 * @return [type] [description]
-	 */
-	function pushState()
-	{
-		if($this->module() !== 'home')
-		{
-			$this->data->display['mvc']     = "content/home/layout-xhr.html";
-		}
-	}
-
 	function view_summary($o){
 
 		$this->data->users =  $o->api_callback['users'];

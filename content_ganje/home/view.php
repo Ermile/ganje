@@ -17,18 +17,5 @@ class view extends \mvc\view
 		$this->data->site['desc']     = T_("Free & open source attendance service!");
 		$this->data->site['slogan']   = T_("Enjoy work time");
 	}
-
-
-	/**
-	 * [pushState description]
-	 * @return [type] [description]
-	 */
-	function pushState()
-	{
-		if($this->module() !== 'home')
-		{
-			$this->data->display['mvc']     = "content/home/layout-xhr.html";
-		}
-	}
 }
 ?>

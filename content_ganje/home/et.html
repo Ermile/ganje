@@ -1,0 +1,26 @@
+
+{%block datatable%}
+{%if datatable%}
+  <table class="et" data-xhr='et' cellpadding=0 cellspacing=0>
+   <thead>
+    <tr>
+{%for key, column in datatable_col%}
+     <th class='col_{{column}}'>{%trans column%}</th>
+{%endfor%}
+    </tr>
+   </thead>
+
+   <tbody>
+{%for row, value in datatable%}
+    <tr>
+{%for key, column in datatable_col%}
+     <td class='val_{{column}}'> {{ attribute(value, column) }}</td>
+{%endfor%}
+    </tr>
+{%endfor%}
+   </tbody>
+  </table>
+{%else%}
+  <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
+{%endif%}
+{%endblock%}

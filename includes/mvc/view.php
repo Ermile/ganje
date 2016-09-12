@@ -7,12 +7,13 @@ class view extends \lib\mvc\view
 	{
 		// define default value for global
 
-		$this->data->site['title']    = T_("Tejarak");
-		$this->data->site['desc']     = T_("Tejarak was born to serve small and beautiful service for e-business");
-		$this->data->site['slogan']   = T_("Enjoy work time");
+		$this->data->site['title']       = T_("Tejarak");
+		$this->data->site['desc']        = T_("Tejarak was born to serve small and beautiful service for e-business");
+		$this->data->site['slogan']      = T_("Enjoy work time");
 
-		$this->data->page['desc']     = $this->data->site['slogan'];
-		$this->data->display['ganje'] = "content_ganje/home/layout.html";
+		$this->data->page['desc']        = $this->data->site['slogan'];
+		$this->data->display['ganje']    = "content_ganje/home/layout.html";
+		$this->data->display['ganje_et'] = "content_ganje/home/et.html";
 
 
 		// if(! ($this->url('sub') === 'cp' || $this->url('sub') === 'account') )
@@ -31,8 +32,22 @@ class view extends \lib\mvc\view
 		$this->data->bodyclass      = null;
 		*/
 
-		if(method_exists($this, 'options')){
+		if(method_exists($this, 'options'))
+		{
 			$this->options();
+		}
+	}
+
+
+	/**
+	 * [pushState description]
+	 * @return [type] [description]
+	 */
+	function pushState()
+	{
+		if($this->url('sub') === 'ganje')
+		{
+			$this->data->display['ganje']     = "content_ganje/home/layout-xhr.html";
 		}
 	}
 }

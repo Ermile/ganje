@@ -6,31 +6,16 @@
 {%endblock%}
 
 
-
-{%block datatable%}
- <content class="row">
-{%if datatable%}
-  <table class="et" cellpadding=0 cellspacing=0>
-   <thead>
-    <tr>
-{%for key, column in datatable_col%}
-     <th class='col_{{column}}'>{%trans column%}</th>
-{%endfor%}
-    </tr>
-   </thead>
-
-   <tbody>
-{%for row, value in datatable%}
-    <tr>
-{%for key, column in datatable_col%}
-     <td class='val_{{column}}'> {{ attribute(value, column) }}</td>
-{%endfor%}
-    </tr>
-{%endfor%}
-   </tbody>
-  </table>
-{%else%}
-  <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
-{%endif%}
- </content>
+{%block card%}
+   <div class="card">
+ {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
+ {%set avatar = url.static ~ 'images/avatar/' ~ login.id ~ '.jpg' %}
+ {%set name = login.displayname%}
+ {%set position = login.meta.position%}
+    <img src="{{avatar | exist(avatar_default)}}">
+    <div class="info">
+     <div class="name">{%trans name%}</div>
+     <div class="position">{%trans position%}</div>
+    </div>
+   </div>
 {%endblock%}
