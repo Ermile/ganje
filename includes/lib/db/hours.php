@@ -178,11 +178,144 @@ class hours {
 	}
 
 
+	public static function status($_args)
+	{
+		$year    = $_args['year'];
+		$month   = $_args['month'];
+		$day     = $_args['day'];
+		$user_id = $_args['user_id'];
+		$lang    = $_args['lang'];
+
+		if($user_id == null)
+		{
+			$user_id = "";
+		}
+		else
+		{
+			$user_id = " AND user_id = $user_id ";
+		}
+
+		if($year == '0000')
+		{
+			$year = false;
+		}
+
+		if($month == '00')
+		{
+			$month = false;
+		}
+
+		if($day == '00')
+		{
+			$day = false;
+		}
+
+		if(!$year && $month && $day)
+		{
+			$year = date("Y");
+		}
+
+		if(!$year && !$month && $day)
+		{
+			$year = date("Y");
+			$month = date("m");
+		}
+
+		if(!$year && $month && !$day)
+		{
+			$year = date("Y");
+		}
+
+		if($year && !$month && $day)
+		{
+			$month = date("m");
+		}
+
+		// check year month and day
+		if($year && $month && $day)
+		{
+			// get enter and exit on one day
+			if($lang == 'fa')
+			{
+				$date = self::convert_date($year, $month, $day);
+			}
+			else
+			{
+				$date = "$year-$month-$day";
+			}
+			$where = " hours.hour_date = '$date' ";
+			$group = "";
+		}
+
+		if($year && $month && !$day)
+		{
+			// get daily count of hours
+			if($lang == 'fa')
+			{
+
+				list($start_date, $end_date) = \lib\utility\jdate::jalali_month($year, $month);
+				$where = " hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date' ";
+				$group = " GROUP BY hours.hour_date, hours.user_id";
+			}
+			else
+			{
+				$where = " hours.hour_date LIKE '$year-$month%'	";
+				$group = " GROUP BY hours.hour_date, hours.user_id";
+			}
+		}
+
+		if($year && !$month && !$day)
+		{
+			if($lang == 'fa')
+			{
+				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
+				$where = " hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date' ";
+				$group = " GROUP BY hours.hour_date, hours.user_id";
+			}
+			else
+			{
+				$where = " hours.hour_date LIKE '$year%'	";
+				$group = " GROUP BY hours.hour_date, hours.user_id";
+			}
+		}
+
+		$query =
+		"
+			SELECT
+			 	users.id,users.user_displayname as displayname,
+			 	hours.hour_date,
+				hours.hour_total   as 'total',
+				hours.hour_diff 	 as 'diff',
+				hours.hour_plus 	 as 'plus',
+				hours.hour_minus 	 as 'minus'
+			FROM
+				hours
+			INNER JOIN users on hours.user_id = users.id
+			WHERE
+				$where
+				$user_id
+				$group
+
+		";
+		return \lib\db::get($query);
+
+	}
+
+	public static function convert_date($year = false, $month = null, $day = null)
+	{
+		$time = \lib\utility\jdate::mktime(0,0,0,$month,$day,$year,true);
+		$day =  date("d", $time);
+		$month = date("m", $time);
+		$year = date("Y", $time);
+		return "$year-$month-$day";
+	}
+
+
 	/**
 	 * [summary description]
 	 * @return [type] [description]
 	 */
-	public static function summary()
+	public static function summary($_args)
 	{
 
 		$today  = date("Y-m-d");
