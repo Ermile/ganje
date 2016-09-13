@@ -22,6 +22,7 @@ $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10)
 
 $(document).on("click", ".cardList .card.present",  function(e) { generateUserFilter(this) });
 $(document).on("click", ".filters .removeFilter", function(e) { removeFilter(); });
+$(document).on("click", ".back", function(e) { transfer(null, 'home'); });
 
 
 $(".filters .year").change(function() {generateFilter();});

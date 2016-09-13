@@ -175,6 +175,7 @@ function event_corridor(e, _self, _key)
     case '110':             // .
     case '190':             // .
       setExtra(false);
+      changePerson(0);
       break;
 
     case '112':             // f1
@@ -198,7 +199,16 @@ function event_corridor(e, _self, _key)
     // ---------------------------------------------------------------------- mouse
     case 'click':           // click
       _id = _self.attr('data-id');
-      changePerson(_id);
+      // if user is selected enter to it
+      if(cid == _id)
+      {
+        transfer('home', cid);
+      }
+      // else select this user
+      else
+      {
+        changePerson(_id);
+      }
       break;
 
     case 'dblclick':        // Double click

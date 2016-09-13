@@ -42,6 +42,7 @@
 
 {%for key, user in datatable.list %}
   <content data-id="{{key}}" class="page detail" data-status="{%if user.hour_start is not null %}on{%else%}off{%endif%}">
+   <div class="back"></div>
    <div class="row auto">
     <div class="span2"></div>
     <div class="span3">
