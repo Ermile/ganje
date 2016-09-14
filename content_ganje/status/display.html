@@ -4,6 +4,30 @@
  <content class="row auto detail inner">
   <div class="span3">
 {{block ('card')}}
+	<div class="info">
+
+       <p class="month" title='{%trans "in this month"%}'>
+        <img src="{{url.static}}images/month.svg" alt='{%trans "in this month"%}'>
+        <span>{{datatable['summary'][user.id]['month']['total'] | humantime('fa')}}</span>
+       </p>
+       <p>
+        <img src="{{url.static}}images/week.svg" alt='{%trans "in this week"%}'>
+        <span>{{datatable['summary'][user.id]['week']['total'] | humantime('fa')}}</span>
+       </p>
+{%if datatable['summary'][user.id]['month']['plus']%}
+       <p>
+        <img src="{{url.static}}images/plus.svg" alt='{%trans "remote in this month"%}'>
+        <span>{{datatable['summary'][user.id]['month']['plus'] | humantime('fa')}}</span>
+       </p>
+{%endif%}
+{%if datatable['summary'][user.id]['month']['minus']%}
+       <p>
+        <img src="{{url.static}}images/minus.svg" alt='{%trans "remote in this month"%}'>
+        <span>{{datatable['summary'][user.id]['month']['minus'] | humantime('fa')}}</span>
+       </p>
+{%endif%}
+	</div>
+
 
    <div class="filters">
 {{block ('filter_remove')}}
