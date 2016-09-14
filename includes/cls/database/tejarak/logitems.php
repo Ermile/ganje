@@ -1,5 +1,5 @@
 <?php
-namespace database\ganje;
+namespace database\tejarak;
 class logitems
 {
 	public $id               = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'id'              ,'type'=>'smallint@5'];

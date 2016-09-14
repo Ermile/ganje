@@ -1,5 +1,5 @@
 <?php
-namespace database\ganje;
+namespace database\tejarak;
 class terms
 {
 	public $id            = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'id'              ,'type'=>'int@10'];

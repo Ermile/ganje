@@ -1,5 +1,5 @@
 <?php
-namespace database\ganje;
+namespace database\tejarak;
 class options
 {
 	public $id            = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'id'              ,'type'=>'bigint@20'];

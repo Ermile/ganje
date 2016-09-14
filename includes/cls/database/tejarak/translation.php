@@ -25,22 +25,25 @@ private function transtext()
 	// ------------------------------------------------------------ Table hours
 	echo T_("hours");               // Table hours
 	echo T_("hour");                // hour
-	echo T_("raw");                 // Enum raw
-	echo T_("mines");               // Enum mines
-	echo T_("plus");                // Enum plus
+	echo T_("nothing");             // Enum nothing
+	echo T_("base");                // Enum base
+	echo T_("wplus");               // Enum wplus
+	echo T_("wminus");              // Enum wminus
 	echo T_("all");                 // Enum all
-	echo T_("disable");             // Enum disable
-	echo T_("enable");              // Enum enable
-	echo T_("expire");              // Enum expire
+	echo T_("active");              // Enum active
+	echo T_("awaiting");            // Enum awaiting
+	echo T_("deactive");            // Enum deactive
+	echo T_("removed");             // Enum removed
+	echo T_("filter");              // Enum filter
 	echo T_("date");                // hour_date
 	echo T_("start");               // hour_start
 	echo T_("end");                 // hour_end
 	echo T_("diff");                // hour_diff
 	echo T_("minus");               // hour_minus
 	echo T_("plus");                // hour_plus
-	echo T_("total");               // hour_total
-	echo T_("status");              // hour_status
+	echo T_("type");                // hour_type
 	echo T_("accepted");            // hour_accepted
+	echo T_("status");              // hour_status
 
 	// ------------------------------------------------------------ Table logitems
 	echo T_("logitems");            // Table logitems
@@ -57,6 +60,9 @@ private function transtext()
 	// ------------------------------------------------------------ Table logs
 	echo T_("logs");                // Table logs
 	echo T_("log");                 // log
+	echo T_("enable");              // Enum enable
+	echo T_("disable");             // Enum disable
+	echo T_("expire");              // Enum expire
 	echo T_("deliver");             // Enum deliver
 	echo T_("logitem");             // logitem_id
 	echo T_("data");                // log_data
@@ -135,11 +141,6 @@ private function transtext()
 	// ------------------------------------------------------------ Table users
 	echo T_("users");               // Table users
 	echo T_("user");                // user
-	echo T_("active");              // Enum active
-	echo T_("awaiting");            // Enum awaiting
-	echo T_("deactive");            // Enum deactive
-	echo T_("removed");             // Enum removed
-	echo T_("filter");              // Enum filter
 	echo T_("mobile");              // user_mobile
 	echo T_("email");               // user_email
 	echo T_("pass");                // user_pass

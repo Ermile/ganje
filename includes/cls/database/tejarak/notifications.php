@@ -1,5 +1,5 @@
 <?php
-namespace database\ganje;
+namespace database\tejarak;
 class notifications
 {
 	public $id                   = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'id'              ,'type'=>'bigint@20'];
