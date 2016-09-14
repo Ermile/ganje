@@ -192,10 +192,9 @@ class hours {
 		$page        = isset($_args['page']) ? $_args['page'] : 1;
 		$lenght      = isset($_args['lenght']) ? $_args['lenght'] : 10;
 
-		$limit_start = (($page -1) * $lenght) +1;
-		$limit_end   = $limit_start + $lenght + 1;
+		$limit_start = ($page -1) * $lenght;
 
-		$limit       = "LIMIT $limit_start , $limit_end ";
+		$limit       = "LIMIT $limit_start , $lenght ";
 
 		// check user id . if users id is set get add data by this users id and if users id is not set get all users
 		if($user_id == null)
