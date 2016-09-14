@@ -207,9 +207,7 @@ class users {
 						SET hour_end = '$time',
 							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
 							hour_plus = IF($plus = 0, NULL, $plus),
-							hour_minus = IF($minus = 0, NULL, $minus),
-							hour_accepted = (hour_diff + IFNULL(hour_plus,0) - IFNULL(hour_minus,0)),
-							hour_status = IF (hour_accepted < 5, 'deactive', 'awaiting')
+							hour_minus = IF($minus = 0, NULL, $minus)
 						WHERE
 							id = {$check_date['id']} ";
 

@@ -31,10 +31,8 @@ class hours {
 				hour_start    = '$start',
 				hour_end      = '$end',
 				hour_diff     = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-				hour_plus     = IF('$plus' = 0, NULL, '$plus')
+				hour_plus     = IF('$plus' = 0, NULL, '$plus'),
 				hour_minus     = IF('$minus' = 0, NULL, '$minus')
-				hour_accepted = (hour_diff + IFNULL(hour_plus,0) - IFNULL(hour_minus,0)),
-				hour_status = IF (hour_accepted < 5, 'deactive', 'awaiting')
 				";
 		return \lib\db::query($query);
 	}
@@ -77,7 +75,7 @@ class hours {
 					hours
 				LEFT JOIN users on hours.user_id = users.id
 				WHERE
-					hour_status != 'disable'
+					  (hours.hour_status = 'filter' OR hours.hour_status = 'active')
 				$user
 				ORDER BY
 					hours.id DESC
@@ -165,7 +163,7 @@ class hours {
 					hours
 				INNER JOIN users on hours.user_id = users.id
 				WHERE
-					hours.hour_status != 'disable'
+					  (hours.hour_status = 'filter' OR hours.hour_status = 'active')
 				$condition
 				$USER
 				LIMIT $start,$end
@@ -436,7 +434,7 @@ class hours {
 		$join =	"FROM hours
 				  INNER JOIN users on hours.user_id = users.id
 				  WHERE
-				  hours.hour_status != 'disable' ";
+				  (hours.hour_status = 'filter' OR hours.hour_status = 'active') ";
 
 		$qry = "SELECT $field,
 			'daily' as type
@@ -504,7 +502,7 @@ class hours {
 			$return[$id][$value['type']]['diff']  = $value['diff'];
 			$return[$id][$value['type']]['plus']  = $value['plus'];
 			$return[$id][$value['type']]['minus'] = $value['minus'];
-			$return[$id][$value['type']]['accepted'] = $value['accepted'];
+			$return[$id][$value['type']]['total'] = $value['accepted'];
 		}
 		return $return;
 	}
