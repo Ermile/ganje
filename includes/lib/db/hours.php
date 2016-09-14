@@ -329,7 +329,9 @@ class hours {
 		$query =
 		"
 			SELECT
-			 	users.id,users.user_displayname as displayname,
+			 	users.id,
+			 	count(hours.id) 		as 'count',
+			 	users.user_displayname  as 'name',
 			 	hours.hour_start		as 'start',
 			 	hours.hour_end			as 'end',
 			 	hours.hour_date			as 'date',
@@ -343,7 +345,6 @@ class hours {
 				$group
 
 		";
-
 		return \lib\db::get($query);
 	}
 
