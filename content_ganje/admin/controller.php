@@ -8,9 +8,14 @@ class controller extends \mvc\controller
 	{
 		// check login and if not loggined, redirect to login page
 		$this->check_login();
+
 		// Check permission and if user can do this operation
 		// allow to do it, else show related message in notify center
-		$this->access('ganje', 'admin', 'view', 'block');
+		if(!$this->access('ganje', 'home', 'view'))
+		{
+			$this->redirector()->set_domain()->set_url('ganje/status')->redirect();
+		}
+
 
 		// $this->post("last")->ALL();
 

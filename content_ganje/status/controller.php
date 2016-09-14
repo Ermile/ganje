@@ -8,9 +8,6 @@ class controller extends \mvc\controller
 	{
 		// check login and if not loggined, redirect to login page
 		$this->check_login();
-		// Check permission and if user can do this operation
-		// allow to do it, else show related message in notify center
-		$this->access('ganje', null, null, 'block');
 
 
 		$this->get('url', 'url')->ALL(
