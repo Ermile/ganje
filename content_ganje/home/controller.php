@@ -16,7 +16,7 @@ class controller extends \mvc\controller
 			$this->redirector()->set_domain()->set_url('ganje/status')->redirect();
 		}
 
-		$this->post("hours")->ALL();
+		$this->post("save")->ALL();
 	}
 }
 ?>

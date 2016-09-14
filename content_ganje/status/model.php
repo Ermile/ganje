@@ -21,16 +21,17 @@ class model extends \mvc\model
 			$date_week  = null;
 			$lang       = substr(\lib\router::get_storage('language'), 0, 2);
 
-			$args = [
-					'user_id'   => $id,
-					'day'    => $date_day,
-					'week'   => $date_week,
-					'month'  => $date_month,
-					'year'   => $date_year,
-					'lang'   => $lang,
-					// 'start'  => utility::post("start"),
-					// 'end'    => utility::post("end"),
-					];
+			$args =
+			[
+				'user_id'   => $id,
+				'day'    => $date_day,
+				'week'   => $date_week,
+				'month'  => $date_month,
+				'year'   => $date_year,
+				'lang'   => $lang,
+				// 'start'  => utility::post("start"),
+				// 'end'    => utility::post("end"),
+			];
 
 			$result =  \lib\db\hours::status($args);
 		}

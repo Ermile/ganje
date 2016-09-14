@@ -10,7 +10,7 @@ class view extends \mvc\view
 			$this->data->bodyclass  = 'unselectable register';
 		}
 		//----- list of users
-		$this->data->datatable = $this->model()->post_list();
+		$this->data->datatable = $this->model()->get_list_of_users();
 
 
 		$this->data->site['title']    = T_("Ganje");

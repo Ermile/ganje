@@ -12,6 +12,7 @@ class model extends \mvc\model
 	 */
 	public function post_last()
 	{
+		$this->access('ganje', 'admin', 'edit', 'block');
 
 		if(utility::post('add'))
 		{
@@ -62,22 +63,36 @@ class model extends \mvc\model
 	 *
 	 * @return     array  The datatable.
 	 */
-	public function get_datatable($_args)
+	public function get_url($_args)
 	{
-
+		$result =
+		[
+			'columns' => null,
+			'data'    => null,
+			'total'   => null
+		];
+		// if date is not set show last records of user enter exit
 		if(!isset($_args->match->date) && !isset($_args->match->user))
 		{
-			// creat data for datatable
+			$result['columns'] = ['id','name','date','start','end','total','plus','minus','diff','status','accepted'];
+
 			$data = \lib\db\hours::last();
 		}
 		else
 		{
+			$result['columns'] = ['id','name','date','start','end','total','plus','minus','diff','status','accepted'];
+
 			// if date isset then filter result
 			if(isset($_args->match->date) && count($_args->match->date) > 3)
 			{
 				if(isset($_args->match->user[0]))
 				{
 					$user_id = $_args->match->user[0];
+					// remove user from columns if user is selected
+					if(($key = array_search('name', $result['columns'])) !== false)
+					{
+						unset($result['columns'][$key]);
+					}
 				}
 				else
 				{
@@ -100,36 +115,33 @@ class model extends \mvc\model
 				$date_week  = null;
 				$lang       = substr(\lib\router::get_storage('language'), 0, 2);
 
-				$args = [
-						'user_id'   => $user_id,
-						'day'    => $date_day,
-						'week'   => $date_week,
-						'month'  => $date_month,
-						'year'   => $date_year,
-						'lang'   => $lang,
-						'page'	 => $page,
-						'lenght' => 7,
-						// 'start'  => utility::post("start"),
-						// 'end'    => utility::post("end"),
-						];
+
+				if($date_year)
+				{
+
+				}
+
+				$args =
+				[
+					'user_id'  => $user_id,
+					'day'      => $date_day,
+					'week'     => $date_week,
+					'month'    => $date_month,
+					'year'     => $date_year,
+					'lang'     => $lang,
+					'page'     => $page,
+					'lenght'   => 7,
+					// 'start' => utility::post("start"),
+					// 'end'   => utility::post("end"),
+				];
 
 				$data =  \lib\db\hours::status($args);
 			}
 		}
 
-		$result =
-		[
-			'columns' => ['id','name','date','start','end','total','plus','minus','diff','status','accepted'],
-			'data'    => $data,
-			'total'   => count($data)
-		];
+		$result['data']  = $data;
+		$result['total'] = count($result['data']);
 		return $result;
-	}
-
-
-	public function get_url($_args)
-	{
-
 	}
 }
 ?>

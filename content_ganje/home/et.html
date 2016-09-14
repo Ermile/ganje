@@ -15,7 +15,12 @@
 {%for row, value in et%}
     <tr>
 {%for key, column in et_col%}
-     <td class='val_{{column}}'> {{ attribute(value, column) }}</td>
+{%set val = attribute(value, column)%}
+{%if column == 'accepted'%}
+     <td class='val_{{column}}'> {{ val | humantime() }}</td>
+{%else%}
+     <td class='val_{{column}}'> {{ val}}</td>
+{%endif%}
 {%endfor%}
     </tr>
 {%endfor%}

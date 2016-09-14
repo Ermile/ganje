@@ -14,8 +14,10 @@ class model extends \mvc\model
 	 * [post_hours description]
 	 * @return [type] [description]
 	 */
-	public function post_hours()
+	public function post_save()
 	{
+		$this->access('ganje', 'home', 'edit', 'block');
+
 		$result        = null;
 		//----------- get values from post
 		$arg =
@@ -59,8 +61,10 @@ class model extends \mvc\model
 	/*
 	* get list of users to show
 	*/
-	public function post_list()
+	public function get_list_of_users()
 	{
+		$this->access('ganje', 'home', 'view', 'block');
+
 		return
 		[
 			'list' => \lib\db\users::get_all(),
@@ -70,24 +74,15 @@ class model extends \mvc\model
 
 
 	/**
-	 * send message from telegram to admin
-	 * @param  [type] $text [description]
-	 * @return [type]       [description]
+	 * [setName description]
+	 * @param [type] $_id [description]
 	 */
-	public static function send_telegram($_text)
+	private function setName($_id)
 	{
-			bot::$api_key   = '215239661:AAHyVstYPXKJyfhDK94A-XfYukDMiy3PLKY';
-			bot::$name      = 'ermile_bot';
+		$this->user_name = \lib\db\users::get_one($_id);
+		$this->user_name = T_($this->user_name['displayname']);
 
-		$msg =
-		[
-			'method'       => 'sendMessage',
-			'text'         => $_text,
-			'chat_id'      => '46898544',
-		];
-		$result = bot::sendResponse($msg);
-
-		return $result;
+		return $this->user_name;
 	}
 
 
@@ -155,39 +150,24 @@ class model extends \mvc\model
 
 
 	/**
-	 * [setName description]
-	 * @param [type] $_id [description]
+	 * send message from telegram to admin
+	 * @param  [type] $text [description]
+	 * @return [type]       [description]
 	 */
-	private function setName($_id)
+	public static function send_telegram($_text)
 	{
-		$this->user_name = \lib\db\users::get_one($_id);
-		$this->user_name = T_($this->user_name['displayname']);
+		bot::$api_key   = '215239661:AAHyVstYPXKJyfhDK94A-XfYukDMiy3PLKY';
+		bot::$name      = 'ermile_bot';
 
-		return $this->user_name;
-	}
+		$msg =
+		[
+			'method'       => 'sendMessage',
+			'text'         => $_text,
+			'chat_id'      => '46898544',
+		];
+		$result = bot::sendResponse($msg);
 
-
-	/**
-	 * [list_online description]
-	 * @return [type] [description]
-	 */
-	private static function list_online()
-	{
-		$list = \lib\db\users::get_all();
-		$msg  = "";
-		foreach ($list as $key => $value)
-		{
-		 	if($value['hour_start'] == null)
-		 	{
-		 		$msg .= "💤 " . T_($value['displayname']) . "\n";
-		 	}
-		 	else
-		 	{
-		 		$msg .= "❤ " . T_($value['displayname']) . "\n";
-		 	}
-		}
-		$msg .= "‌";
-		self::send_telegram($msg);
+		return $result;
 	}
 }
 ?>
