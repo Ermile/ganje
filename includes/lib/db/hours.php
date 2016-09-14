@@ -178,6 +178,13 @@ class hours {
 	}
 
 
+	/**
+	 * status of users
+	 *
+	 * @param      <type>  $_args  The arguments
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
 	public static function status($_args)
 	{
 		$year    = $_args['year'];
@@ -186,6 +193,7 @@ class hours {
 		$user_id = $_args['user_id'];
 		$lang    = $_args['lang'];
 
+		// check user id . if users id is set get add data by this users id and if users id is not set get all users
 		if($user_id == null)
 		{
 			$user_id = "";
@@ -195,6 +203,7 @@ class hours {
 			$user_id = " AND user_id = $user_id ";
 		}
 
+		// set year = false to use in IF syntax
 		if($year == '0000')
 		{
 			$year = false;
@@ -210,6 +219,7 @@ class hours {
 			$day = false;
 		}
 
+		// other mode that need to change to new mode
 		if(!$year && $month && $day)
 		{
 			$year = date("Y");
@@ -217,7 +227,7 @@ class hours {
 
 		if(!$year && !$month && $day)
 		{
-			$year = date("Y");
+			$year  = date("Y");
 			$month = date("m");
 		}
 
@@ -231,9 +241,45 @@ class hours {
 			$month = date("m");
 		}
 
+		if(!$year && !$month && !$day)
+		{
+			if($lang == 'fa')
+			{
+				$year  = \lib\utility\jdate::date("Y", time(),false);
+				$month = \lib\utility\jdate::date("m", time(),false);
+				$day   = \lib\utility\jdate::date("d", time(),false);
+			}
+			else
+			{
+				$year  = date("Y");
+				$month = date("m");
+				$day   = date("d");
+			}
+		}
+
+		// fields of table whit sum function
+		$field =
+		"
+		    SUM(hours.hour_total)  		as 'total',
+			SUM(hours.hour_diff) 	 	as 'diff',
+			SUM(hours.hour_plus)	 	as 'plus',
+			SUM(hours.hour_minus)	 	as 'minus',
+			SUM(hours.hour_accepted) 	as 'accepted'
+		";
+
 		// check year month and day
 		if($year && $month && $day)
 		{
+			// in one day we not use sum function in mysql to show all record of this day
+			$field =
+			"
+				hours.hour_total   		as 'total',
+				hours.hour_diff 	 	as 'diff',
+				hours.hour_plus		 	as 'plus',
+				hours.hour_minus	 	as 'minus',
+				hours.hour_accepted 	as 'accepted'
+			";
+
 			// get enter and exit on one day
 			if($lang == 'fa')
 			{
@@ -243,6 +289,7 @@ class hours {
 			{
 				$date = "$year-$month-$day";
 			}
+
 			$where = " hours.hour_date = '$date' ";
 			$group = "";
 		}
@@ -255,12 +302,12 @@ class hours {
 
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_month($year, $month);
 				$where = " hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date' ";
-				$group = " GROUP BY hours.hour_date, hours.user_id";
+				$group = " GROUP BY DAY(hours.hour_date), hours.user_id";
 			}
 			else
 			{
 				$where = " hours.hour_date LIKE '$year-$month%'	";
-				$group = " GROUP BY hours.hour_date, hours.user_id";
+				$group = " GROUP BY DAY(hours.hour_date), hours.user_id";
 			}
 		}
 
@@ -270,12 +317,12 @@ class hours {
 			{
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
 				$where = " hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date' ";
-				$group = " GROUP BY hours.hour_date, hours.user_id";
+				$group = " GROUP BY MONTH(hours.hour_date), hours.user_id";
 			}
 			else
 			{
 				$where = " hours.hour_date LIKE '$year%'	";
-				$group = " GROUP BY hours.hour_date, hours.user_id";
+				$group = " GROUP BY MONTH(hours.hour_date), hours.user_id";
 			}
 		}
 
@@ -283,11 +330,10 @@ class hours {
 		"
 			SELECT
 			 	users.id,users.user_displayname as displayname,
-			 	hours.hour_date,
-				hours.hour_total   as 'total',
-				hours.hour_diff 	 as 'diff',
-				hours.hour_plus 	 as 'plus',
-				hours.hour_minus 	 as 'minus'
+			 	hours.hour_start		as 'start',
+			 	hours.hour_end			as 'end',
+			 	hours.hour_date			as 'date',
+				$field
 			FROM
 				hours
 			INNER JOIN users on hours.user_id = users.id
@@ -297,17 +343,24 @@ class hours {
 				$group
 
 		";
-		return \lib\db::get($query);
 
+		return \lib\db::get($query);
 	}
 
-	public static function convert_date($year = false, $month = null, $day = null)
+
+	/**
+	 * get jalali date and return milady date
+	 *
+	 * @param      boolean  $year   The year
+	 * @param      <type>   $month  The month
+	 * @param      <type>   $day    The day
+	 *
+	 * @return     <type>   ( description_of_the_return_value )
+	 */
+	public static function convert_date($_year = false, $_month = null, $_day = null, $_format = "Y-m-d")
 	{
-		$time = \lib\utility\jdate::mktime(0,0,0,$month,$day,$year,true);
-		$day =  date("d", $time);
-		$month = date("m", $time);
-		$year = date("Y", $time);
-		return "$year-$month-$day";
+		$time  = \lib\utility\jdate::mktime(0,0,0,$_month,$_day,$_year,true);
+		return date($_format, $time);
 	}
 
 
@@ -315,7 +368,7 @@ class hours {
 	 * [summary description]
 	 * @return [type] [description]
 	 */
-	public static function summary($_args)
+	public static function summary()
 	{
 
 		$today  = date("Y-m-d");

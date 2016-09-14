@@ -22,7 +22,7 @@ class model extends \mvc\model
 			$lang       = substr(\lib\router::get_storage('language'), 0, 2);
 
 			$args = [
-					'user'   => $id,
+					'user_id'   => $id,
 					'day'    => $date_day,
 					'week'   => $date_week,
 					'month'  => $date_month,
@@ -32,7 +32,7 @@ class model extends \mvc\model
 					// 'end'    => utility::post("end"),
 					];
 
-			$result =  \lib\db\hours::sum($args);
+			$result =  \lib\db\hours::status($args);
 		}
 		// else show all record of this user
 		else
