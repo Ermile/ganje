@@ -271,14 +271,7 @@ class hours {
 		if($year && $month && $day)
 		{
 			// in one day we not use sum function in mysql to show all record of this day
-			$field =
-			"
-				hours.hour_total   		as 'total',
-				hours.hour_diff 	 	as 'diff',
-				hours.hour_plus		 	as 'plus',
-				hours.hour_minus	 	as 'minus',
-				hours.hour_accepted 	as 'accepted'
-			";
+
 
 			// get enter and exit on one day
 			if($lang == 'fa')
@@ -315,9 +308,64 @@ class hours {
 		{
 			if($lang == 'fa')
 			{
+
+				//SELECT
+				// 	users.id,
+				// 	count(hours.id) 		as 'count',
+				// 	users.user_displayname  as 'name',
+				// 	hours.hour_start		as 'start',
+				// 	hours.hour_end			as 'end',
+				// 	hours.hour_date			as 'date',
+				// 	SUM(hours.hour_total)	   		as 'total',
+				// 	SUM(hours.hour_diff)	 	 	as 'diff',
+				// 	SUM(hours.hour_plus)		 	as 'plus',
+				// 	SUM(hours.hour_minus)		 	as 'minus',
+				// 	SUM(hours.hour_accepted)	 	as 'accepted',
+				// CASE hours.hour_date
+				// 	WHEN hours.hour_date < '2016-03-20' AND hours.hour_date > '2016-04-19' THEN 'فروردین'
+				// 	WHEN hours.hour_date < '2016-04-20' AND hours.hour_date > '2016-05-20' THEN 'اردیبهشت'
+				// 	WHEN hours.hour_date < '2016-05-21' AND hours.hour_date > '2016-06-20' THEN 'خرداد'
+				// 	WHEN hours.hour_date < '2016-06-21' AND hours.hour_date > '2016-07-21' THEN 'تیر'
+				// 	WHEN hours.hour_date < '2016-07-22' AND hours.hour_date > '2016-08-21' THEN 'مرداد'
+				// 	WHEN hours.hour_date < '2016-08-22' AND hours.hour_date > '2016-09-21' THEN 'شهریور'
+				// 	WHEN hours.hour_date < '2016-09-22' AND hours.hour_date > '2016-10-21' THEN 'مهر'
+				// 	WHEN hours.hour_date < '2016-10-22' AND hours.hour_date > '2016-11-20' THEN 'آبان'
+				// 	WHEN hours.hour_date < '2016-11-21' AND hours.hour_date > '2016-12-20' THEN 'آذر'
+				// 	WHEN hours.hour_date < '2016-12-21' AND hours.hour_date > '2017-01-19' THEN 'دی'
+				// 	WHEN hours.hour_date < '2017-01-20' AND hours.hour_date > '2017-02-18' THEN 'بهمن'
+				// 	WHEN hours.hour_date < '2017-02-19' AND hours.hour_date > '2017-03-19' THEN 'اسفند'
+				// END AS 'month'
+
+				// FROM
+				// hours
+				// INNER JOIN users on hours.user_id = users.id
+				// WHERE
+				// ...
+				$month_query = "CASE hours.hour_date ";
+				for ($i=1; $i <= 12 ; $i++) {
+					if($i < 10){
+						$i = "0". $i;
+					}
+
+					$jdate = \lib\utility\jdate::jalali_month($year, $i);
+					$month_name = \lib\utility\jdate::date("F", $jdate[0]);
+					$month_query .=	"WHEN hours.hour_date < '{$jdate[0]}' AND hours.hour_date > '{$jdate[1]}' THEN '$month_name' \n";
+
+				}
+
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
+				$field =
+				"
+					SUM(hours.hour_total)	   		as 'total',
+					SUM(hours.hour_diff)	 	 	as 'diff',
+					SUM(hours.hour_plus)		 	as 'plus',
+					SUM(hours.hour_minus)		 	as 'minus',
+					SUM(hours.hour_accepted)	 	as 'accepted',
+					$month_query  END AS 'month'
+
+				";
 				$where = " hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date' ";
-				$group = " GROUP BY MONTH(hours.hour_date), hours.user_id";
+				$group = " GROUP BY month, hours.user_id";
 			}
 			else
 			{
