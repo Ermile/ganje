@@ -206,11 +206,10 @@ class users {
 			$update = "UPDATE hours
 						SET hour_end = '$time',
 							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-							hour_plus = $plus,
-							hour_minus = $minus,
-							hour_total = (hour_diff + hour_plus - hour_minus),
-							hour_accepted = hour_total,
-							hour_status = IF (hour_total < 5, 'disable', 'raw')
+							hour_plus = IF($plus = 0, NULL, $plus),
+							hour_minus = IF($minus = 0, NULL, $minus),
+							hour_accepted = (hour_diff + IFNULL(hour_plus,0) - IFNULL(hour_minus,0)),
+							hour_status = IF (hour_accepted < 5, 'deactive', 'awaiting')
 						WHERE
 							id = {$check_date['id']} ";
 

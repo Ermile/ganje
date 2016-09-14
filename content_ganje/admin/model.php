@@ -83,6 +83,16 @@ class model extends \mvc\model
 				{
 					$user_id = null;
 				}
+
+				if(isset($_args->match->page[0]))
+				{
+					$page = $_args->match->page[0];
+				}
+				else
+				{
+					$page = null;
+				}
+
 				$date       = $_args->match->date;
 				$date_year  = $date[1];
 				$date_month = $date[2];
@@ -97,6 +107,8 @@ class model extends \mvc\model
 						'month'  => $date_month,
 						'year'   => $date_year,
 						'lang'   => $lang,
+						'page'	 => $page,
+						'lenght' => 7,
 						// 'start'  => utility::post("start"),
 						// 'end'    => utility::post("end"),
 						];

@@ -31,11 +31,10 @@ class hours {
 				hour_start    = '$start',
 				hour_end      = '$end',
 				hour_diff     = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-				hour_plus     = '$plus',
-				hour_minus    = '$minus',
-				hour_total    = (hour_diff + hour_plus - hour_minus),
-				hour_accepted = hour_total,
-				hour_status = IF (hour_total < 5, 'disable', 'raw')
+				hour_plus     = IF('$plus' = 0, NULL, '$plus')
+				hour_minus     = IF('$minus' = 0, NULL, '$minus')
+				hour_accepted = (hour_diff + IFNULL(hour_plus,0) - IFNULL(hour_minus,0)),
+				hour_status = IF (hour_accepted < 5, 'deactive', 'awaiting')
 				";
 		return \lib\db::query($query);
 	}
@@ -69,7 +68,6 @@ class hours {
 					hours.hour_end 			as 'end',
 					hours.hour_end 			as 'end',
 					users.user_displayname 	as 'name',
-					hours.hour_total 		as 'total',
 					hours.hour_diff 	 	as 'diff',
 					hours.hour_plus 	 	as 'plus',
 					hours.hour_minus 	 	as 'minus',
@@ -159,7 +157,6 @@ class hours {
 					users.id as id,
 					users.user_displayname as name,
 					TRIM(BOTH '".'"'."' FROM IFNULL(users.user_meta, '$no_position')) as meta,
-					sum(hours.hour_total) as total,
 					sum(hours.hour_diff) as diff,
 					sum(hours.hour_plus) as plus,
 					sum(hours.hour_minus) as minus,
@@ -192,6 +189,15 @@ class hours {
 		$day     = $_args['day'];
 		$user_id = $_args['user_id'];
 		$lang    = $_args['lang'];
+
+		// limit and page
+		$page        = isset($_args['page']) ? $_args['page'] : 1;
+		$lenght      = isset($_args['lenght']) ? $_args['lenght'] : 10;
+
+		$limit_start = (($page -1) * $lenght) +1;
+		$limit_end   = $limit_start + $lenght + 1;
+
+		$limit       = "LIMIT $limit_start , $limit_end ";
 
 		// check user id . if users id is set get add data by this users id and if users id is not set get all users
 		if($user_id == null)
@@ -260,7 +266,6 @@ class hours {
 		// fields of table whit sum function
 		$field =
 		"
-		    SUM(hours.hour_total)  		as 'total',
 			SUM(hours.hour_diff) 	 	as 'diff',
 			SUM(hours.hour_plus)	 	as 'plus',
 			SUM(hours.hour_minus)	 	as 'minus',
@@ -316,7 +321,6 @@ class hours {
 				// 	hours.hour_start		as 'start',
 				// 	hours.hour_end			as 'end',
 				// 	hours.hour_date			as 'date',
-				// 	SUM(hours.hour_total)	   		as 'total',
 				// 	SUM(hours.hour_diff)	 	 	as 'diff',
 				// 	SUM(hours.hour_plus)		 	as 'plus',
 				// 	SUM(hours.hour_minus)		 	as 'minus',
@@ -346,26 +350,22 @@ class hours {
 					if($i < 10){
 						$i = "0". $i;
 					}
-
 					$jdate = \lib\utility\jdate::jalali_month($year, $i);
 					$month_name = \lib\utility\jdate::date("F", $jdate[0]);
 					$month_query .=	"WHEN hours.hour_date < '{$jdate[0]}' AND hours.hour_date > '{$jdate[1]}' THEN '$month_name' \n";
-
 				}
-
-				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
 				$field =
 				"
-					SUM(hours.hour_total)	   		as 'total',
 					SUM(hours.hour_diff)	 	 	as 'diff',
 					SUM(hours.hour_plus)		 	as 'plus',
 					SUM(hours.hour_minus)		 	as 'minus',
 					SUM(hours.hour_accepted)	 	as 'accepted',
-					$month_query  END AS 'month'
+					$month_query  END AS 'jalalimonth'
 
 				";
+				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
 				$where = " hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date' ";
-				$group = " GROUP BY month, hours.user_id";
+				$group = " GROUP BY jalalimonth, hours.user_id";
 			}
 			else
 			{
@@ -391,9 +391,11 @@ class hours {
 				$where
 				$user_id
 				$group
+				$limit
 
 		";
-		return \lib\db::get($query);
+		$result = \lib\db::get($query);
+		return $result;
 	}
 
 
@@ -425,7 +427,7 @@ class hours {
 
 		//--------- repeat to every query
 		$field = "users.id,users.user_displayname as displayname,
-				 SUM(hours.hour_total)   as 'total',
+				 SUM(hours.hour_accepted)   as 'accepted',
 				 SUM(hours.hour_diff) 	 as 'diff',
 				 SUM(hours.hour_plus) 	 as 'plus',
 				 SUM(hours.hour_minus) 	 as 'minus'
@@ -502,7 +504,7 @@ class hours {
 			$return[$id][$value['type']]['diff']  = $value['diff'];
 			$return[$id][$value['type']]['plus']  = $value['plus'];
 			$return[$id][$value['type']]['minus'] = $value['minus'];
-			$return[$id][$value['type']]['total'] = $value['total'];
+			$return[$id][$value['type']]['accepted'] = $value['accepted'];
 		}
 		return $return;
 	}
@@ -575,7 +577,6 @@ class hours {
 								hour_start = $saved_time,
 								hour_end = $time,
 								hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-								hour_total = (hour_diff + hour_plus - hour_minus)
 								$status
 							WHERE
 								id = $id ";
