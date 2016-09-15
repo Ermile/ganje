@@ -72,58 +72,28 @@ class model extends \mvc\model
 			'data'    => null,
 			'total'   => null
 		];
-		// if date is not set show last records of user enter exit
-		if(!isset($_args->match->date) && !isset($_args->match->user))
-		{
-			$data = \lib\db\hours::get_last_time();
-		}
-		else
-		{
-			// if date isset then filter result
-			if(isset($_args->match->date) && count($_args->match->date) > 3)
-			{
-				if(isset($_args->match->user[0]))
-				{
-					$user_id = $_args->match->user[0];
-				}
-				else
-				{
-					$user_id = null;
-				}
 
-				if(isset($_args->match->page[0]))
-				{
-					$page = $_args->match->page[0];
-				}
-				else
-				{
-					$page = null;
-				}
+		$date_year  = $_args->get_date(1);
+		$date_month = $_args->get_date(2);
+		$date_day   = $_args->get_date(3);
+		$lang       = substr(\lib\router::get_storage('language'), 0, 2);
 
-				$date       = $_args->match->date;
-				$date_year  = $date[1];
-				$date_month = $date[2];
-				$date_day   = $date[3];
-				$date_week  = null;
-				$lang       = substr(\lib\router::get_storage('language'), 0, 2);
+		$args =
+		[
+			'user_id'  => $_args->get_user(0),
+			'day'      => $date_day,
+			'month'    => $date_month,
+			'year'     => $date_year,
+			'lang'     => $lang
+		];
 
-				$args =
-				[
-					'user_id'  => $user_id,
-					'day'      => $date_day,
-					'week'     => $date_week,
-					'month'    => $date_month,
-					'year'     => $date_year,
-					'lang'     => $lang
-				];
-				$data =  \lib\db\hours::get($args);
-			}
-		}
+		$data =  \lib\db\hours::get($args);
 
 		if(!empty($data) && count($data) > 0)
 		{
 			$result['columns'] = array_keys($data[0]);
 		}
+
 		$result['data']  = $data;
 		$result['total'] = count($result['data']);
 		return $result;

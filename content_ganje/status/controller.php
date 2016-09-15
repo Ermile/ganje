@@ -10,7 +10,7 @@ class controller extends \mvc\controller
 		$this->check_login();
 
 
-		$this->get('url', 'url')->ALL(
+		$this->get('status', 'status')->ALL(
 			[
 				'property' => [
 				"page" => ["/^\d+$/", true, 'page'],

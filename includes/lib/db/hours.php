@@ -46,43 +46,58 @@ class hours {
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function get_last_time($_args = [])
+	private static function get_last_time($_args = [])
 	{
-		if(isset($_args['user']))
+		if(isset($_args['user_id']))
 		{
-			$user = " AND users.id = '" . $_args['user'] . "' ";
+			$user = " AND users.id = '" . $_args['user_id'] . "' ";
+			$user_displayname = "";
 		}
 		else
 		{
 			$user = "";
+			$user_displayname = "users.user_displayname 	as 'name',";
 		}
+
+		// pagenation
+		$count_record =
+		"
+			SELECT
+				COUNT(id) AS 'count'
+			FROM
+				hours
+			WHERE
+				(hours.hour_status = 'filter' OR hours.hour_status = 'active')
+		";
+
+		list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
+		$limit = " LIMIT $limit_start, $length ";
+
 
 		//--------- repeat to every query
 		$query = "
 				SELECT
-					hours.id 				as 'id',
-					hours.hour_date 		as 'date',
-					hours.hour_start 		as 'start',
-					hours.hour_end 			as 'end',
-					hours.hour_end 			as 'end',
-					users.user_displayname 	as 'name',
-					hours.hour_diff 	 	as 'diff',
-					hours.hour_plus 	 	as 'plus',
-					hours.hour_minus 	 	as 'minus',
-					hours.hour_status		as 'status',
-					hours.hour_accepted 	as 'accepted'
+					hours.id 						AS 'id',
+					hours.hour_date 				AS 'date',
+					hours.hour_start 				AS 'start',
+					hours.hour_end 					AS 'end',
+					hours.hour_end 					AS 'end',
+					$user_displayname
+					IFNULL(hours.hour_diff,0) 	 	AS 'diff',
+					IFNULL(hours.hour_plus,0) 	 	AS 'plus',
+					IFNULL(hours.hour_minus,0) 	 	AS 'minus',
+					hours.hour_status				AS 'status',
+					IFNULL(hours.hour_accepted,0) 	AS 'accepted'
 				FROM
 					hours
 				LEFT JOIN users on hours.user_id = users.id
-				WHERE
-					  (hours.hour_status = 'filter' OR hours.hour_status = 'active')
+
 				$user
 				ORDER BY
 					hours.id DESC
+				$limit
 				";
-
 		$report = db::get($query);
-
 		return $report;
 	}
 
@@ -188,16 +203,6 @@ class hours {
 		$user_id = $_args['user_id'];
 		$lang    = $_args['lang'];
 
-		// pagenation
-		// $limit_start = \lib\main::$controller->pagenation_get('current');
-		// $lenght = \lib\main::$controller->pagenation_get('lenght');
-		// \lib\main::$controller->pagenation_make($count_record, 10);
-
-		// $limit_start = ($page -1) * $lenght;
-
-		$limit       = "";
-		// $limit       = "LIMIT $limit_start , $lenght ";
-
 		// check user id . if users id is set get add data by this users id and if users id is not set get all users
 		if($user_id == null)
 		{
@@ -248,18 +253,7 @@ class hours {
 
 		if(!$year && !$month && !$day && !$user_id)
 		{
-			if($lang == 'fa')
-			{
-				$year  = \lib\utility\jdate::date("Y", time(),false);
-				$month = \lib\utility\jdate::date("m", time(),false);
-				$day   = \lib\utility\jdate::date("d", time(),false);
-			}
-			else
-			{
-				$year  = date("Y");
-				$month = date("m");
-				$day   = date("d");
-			}
+			return self::get_last_time();
 		}
 
 		if(!$year && !$month && !$day && $user_id)
@@ -333,7 +327,7 @@ class hours {
 				$group = " GROUP BY day , users.user_displayname";
 				$field =
 				"
-			 		COUNT(hours.id)			AS 'count',
+			 		COUNT(hours.hour_date)	AS 'count',
 			 		$day_query END) 		AS 'day',
 					$sum_fields
 				";
@@ -395,6 +389,10 @@ class hours {
 				$group .= ", users.user_displayname ";
 			}
 		}
+		// pagenation
+		$count_record = "SELECT COUNT(id) AS 'count' FROM hours WHERE $where ";
+		list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
+		$limit = " LIMIT $limit_start, $length ";
 
 		$query =
 		"	SELECT
@@ -511,38 +509,29 @@ class hours {
 	public static function update($_args)
 	{
 
-			$id   = $_args['id'];
-			$type = $_args['type'];
-			$time = $_args['time'];
+		if(!isset($_args['id']))
+		{
+			\lib\debug::error(T_("record id not found"));
+			$id = 0;
+		}
+		else
+		{
+			$id = $_args['id'];
+		}
 
-			$edit = false;
+
+		if(isset($_args['status']))
+		{
+			$status = " hours.hour_status = '" . $_args['status'] . "' ";
+		}
+		else
+		{
 			$status = "";
+		}
 
-			switch ($type)
-			{
-				case 'edit':
-					$edit = true;
-					break;
 
-				case 'minus':
-					$status = ", hour_status = 'plus', hour_accepted = hour_diff + hour_plus";
-					break;
-
-				case 'plus':
-					$status = ", hour_status = 'minus', hour_accepted = hour_diff - hour_minus";
-					break;
-
-				case 'all':
-				case 'disable':
-				case 'enable':
-					$status = ", hour_status = '$type', hour_accepted = hour_diff + hour_plus - hour_minus";
-					break;
-
-				default:
-					$status = "";
-					break;
-			}
-
+		if(isset($_args['time']))
+		{
 
 			$check = db::get("SELECT * FROM hours WHERE id = $id LIMIT 1 ",null, true);
 
@@ -552,34 +541,34 @@ class hours {
 			}
 			else
 			{
-
-				//------- time unchange when updating status
-				//-------- update time when time posted
-				if($edit)
+				$time = $_args['time'];
+				$saved_time = $check['hour_start'];
+				if($saved_time > $time)
 				{
-					$saved_time = $check['hour_start'];
-					if($saved_time > $time)
-					{
-						$temp = $time;
-						$time = "'$saved_time'";
-						$saved_time = "'$temp'";
-					}
+					$temp = $time;
+					$time = "'$saved_time'";
+					$saved_time = "'$temp'";
 				}
 				else
 				{
 					$saved_time = "hour_start";
 					$time       = "hour_end";
 				}
-				$update = "UPDATE hours
-							SET
-								hour_start = $saved_time,
-								hour_end = $time,
-								hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-								$status
-							WHERE
-								id = $id ";
-			return db::query($update);
+			}
 		}
+
+		$update =
+		"
+			UPDATE
+				hours
+			SET
+				hour_start = $saved_time,
+				hour_end   = $time,
+				$status
+			WHERE
+				id = $id
+		";
+		return db::query($update);
 	}
 }
 ?>

@@ -4,47 +4,12 @@ use \lib\db;
 use \lib\debug;
 use \lib\utility;
 
-class model extends \mvc\model
+class model extends \content_ganje\admin\model
 {
-	public function get_url($_args)
+	public function get_status($_args)
 	{
-		$result = [];
-		$id     = $this->login("id");
-
-		// if date isset then filter result
-		if(isset($_args->match->date) && count($_args->match->date) > 3)
-		{
-			$date       = $_args->match->date;
-			$date_year  = $date[1];
-			$date_month = $date[2];
-			$date_day   = $date[3];
-			$date_week  = null;
-			$lang       = substr(\lib\router::get_storage('language'), 0, 2);
-
-			$args =
-			[
-				'user_id'   => $id,
-				'day'    => $date_day,
-				'week'   => $date_week,
-				'month'  => $date_month,
-				'year'   => $date_year,
-				'lang'   => $lang
-			];
-
-			$data =  \lib\db\hours::get($args);
-		}
-		// else show all record of this user
-		else
-		{
-			$data = \lib\db\hours::get_last_time(['user' => $id]);
-		}
-
-		if(!empty($data) && count($data) > 0)
-		{
-			$result['columns'] = array_keys($data[0]);
-		}
-		$result['data'] = $data;
-		return $result;
+		$_args->match->user = [0 => $this->login('id')];
+		return $this->get_url($_args);
 	}
 }
 ?>
