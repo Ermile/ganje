@@ -9,6 +9,10 @@ class view extends \mvc\view
 		{
 			$this->data->bodyclass  = 'unselectable register';
 		}
+		else
+		{
+			$this->data->bodyclass  = 'unselectable';
+		}
 		//----- list of users
 		$this->data->datatable = $this->model()->get_list_of_users();
 

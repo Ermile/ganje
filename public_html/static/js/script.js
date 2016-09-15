@@ -10,6 +10,117 @@ $(document).ready(function()
 
 });
 
+
+route('*', function()
+{
+  calcTotalRow();
+
+
+});
+
+/**
+ * this function calculate total row of ermile tables
+ * @return {[type]} [description]
+ */
+function calcTotalRow()
+{
+  $('.et tfoot td').each(function()
+  {
+    var func    = $(this).attr('data-func');
+    var col     = $(this).attr('class').substr(6);
+    var counter = 0;
+    var result  = 0;
+
+    // foreach item in this row do function
+    $('.et tbody .val_' + col).each( function()
+    {
+      var val = parseInt($(this).attr('data-val'));
+
+      switch (func)
+      {
+        case 'avg':
+        case 'avg-hour':
+          counter += 1;
+        case 'sum':
+        case 'sum-hour':
+        case 'total':
+          result += val;
+          break;
+
+        case 'count':
+        case 'count-hour':
+          result += 1;
+          break;
+
+        default:
+          result = '-';
+          break;
+      }
+    });
+    // calc average time
+    if(func === 'avg' || func === 'avg-hour')
+    {
+      result = Math.round(result / counter);
+    }
+    // show times in hour
+    if(func === 'sum-hour' || func === 'avg-hour')
+    {
+      result = Math.floor(result/60) + ':' + Math.round(result%60);
+    }
+
+
+    // fill footer column with calculated value
+    $(this).html(result);
+  });
+}
+
+function changeTotalRow()
+{
+  $('.et tfoot td').each(function()
+  {
+    var func    = $(this).attr('data-func');
+    var newFunc = func;
+    switch (func)
+    {
+      // change class of hours
+      case 'count-hour':
+        newFunc = 'sum-hour';
+        break;
+
+      case 'sum-hour':
+        newFunc = 'avg-hour';
+        break;
+
+      case 'avg-hour':
+        newFunc = 'count-hour';
+        break;
+
+      // change func
+      case 'count':
+        newFunc = 'sum';
+        break;
+
+      case 'sum':
+        newFunc = 'avg';
+        break;
+
+      case 'avg':
+        newFunc = 'count';
+        break;
+
+      default:
+        newFunc = 'count';
+        break;
+    }
+    $(this).attr('data-func', newFunc);
+  });
+  calcTotalRow();
+}
+
+
+
+
+
 // bind keydown and click
 $(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
 $(document).on("click", ".card", function(e) { event_corridor(e, e.currentTarget, 'click'); });
@@ -23,6 +134,7 @@ $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10)
 $(document).on("click", ".cardList .card.present",  function(e) { generateUserFilter(this) });
 $(document).on("click", ".filters .removeFilter", function(e) { removeFilter(); });
 $(document).on("click", ".back", function(e) { transfer(null, 'home'); });
+$(document).on("click", ".et .xigma", function() { changeTotalRow(); });
 
 
 $(".filters .year").change(function() {generateFilter();});

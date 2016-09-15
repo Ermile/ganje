@@ -18,6 +18,7 @@ class view extends \mvc\view
 
 		$this->data->et_col = $this->data->et['columns'];
 		$this->data->et     = $this->data->et['data'];
+		$this->data->et_footer = ['count', 'sum', 'sum-hour', 'sum', 'sum', 'sum-hour'];
 
 		// get list of users
 		$this->data->users  = \lib\db\users::get_all();
