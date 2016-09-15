@@ -81,11 +81,12 @@ class model extends \mvc\model
 
 		$args =
 		[
-			'user_id'  => $_args->get_user(0),
-			'day'      => $date_day,
-			'month'    => $date_month,
-			'year'     => $date_year,
-			'lang'     => $lang
+			'user_id' => $_args->get_user(0),
+			'day'     => $date_day,
+			'month'   => $date_month,
+			'year'    => $date_year,
+			'lang'    => $lang,
+			'export'  => $_args->get_export()
 		];
 
 		$data =  \lib\db\hours::get($args);
@@ -97,7 +98,16 @@ class model extends \mvc\model
 
 		$result['data']  = $data;
 		$result['total'] = count($result['data']);
-		return $result;
+
+		if($_args->get_export())
+		{
+			$name = 'tejarak-export';
+			\lib\utility\export::csv(['name' => $name ,'data' => $data]);
+		}
+		else
+		{
+			return $result;
+		}
 	}
 }
 ?>

@@ -175,8 +175,15 @@ class hours {
 				(hours.hour_status = 'filter' OR hours.hour_status = 'active')
 		";
 
-		list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
-		$limit = " LIMIT $limit_start, $length ";
+		if(isset($_args['export']) && $_args['export'])
+		{
+			$limit = "";
+		}
+		else
+		{
+			list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
+			$limit = " LIMIT $limit_start, $length ";
+		}
 
 		if($date || $user)
 		{
@@ -321,6 +328,7 @@ class hours {
 		$day     = $_args['day'];
 		$user_id = $_args['user_id'];
 		$lang    = $_args['lang'];
+		$export  = $_args['export'];
 
 		// check user id . if users id is set get add data by this users id and if users id is not set get all users
 		if($user_id == null)
@@ -372,12 +380,12 @@ class hours {
 
 		if(!$year && !$month && !$day && !$user_id)
 		{
-			return self::get_last_time();
+			return self::get_last_time(['export' => $export]);
 		}
 
 		if(!$year && !$month && !$day && $user_id)
 		{
-			return self::get_last_time(['user_id' => $user_id]);
+			return self::get_last_time(['user_id' => $user_id, 'export' => $export]);
 		}
 
 		if($year && $month && $day)
@@ -395,11 +403,11 @@ class hours {
 
 			if($user_id)
 			{
-				return self::get_last_time(['user_id' => $user_id, 'date' => $date]);
+				return self::get_last_time(['user_id' => $user_id, 'date' => $date, 'export' => $export]);
 			}
 			else
 			{
-				return self::get_last_time(['date' => $date]);
+				return self::get_last_time(['date' => $date, 'export' => $export]);
 			}
 		}
 
@@ -498,10 +506,17 @@ class hours {
 				$group .= ", users.user_displayname ";
 			}
 		}
-		// pagenation
-		$count_record = "SELECT COUNT(id) AS 'count' FROM hours WHERE $where ";
-		list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
-		$limit = " LIMIT $limit_start, $length ";
+		if(!$export)
+		{
+			// pagenation
+			$count_record = "SELECT COUNT(id) AS 'count' FROM hours WHERE $where ";
+			list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
+			$limit = " LIMIT $limit_start, $length ";
+		}
+		else
+		{
+			$limit = "";
+		}
 
 		$query =
 		"	SELECT

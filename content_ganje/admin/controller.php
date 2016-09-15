@@ -21,10 +21,11 @@ class controller extends \mvc\controller
 		[
 			'property' =>
 			[
-				"user" => ["/^\d+$/", true, 'user'],
-				"page" => ["/^\d+$/", true, 'page'],
-				"q"    => ["/^(.*)$/", true, 'search'],
-				'date' => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date']
+				"user"   => ["/^\d+$/", true, 'user'],
+				"page"   => ["/^\d+$/", true, 'page'],
+				"export" => ["/^(.*)$/", true, 'export'],
+				"q"      => ["/^(.*)$/", true, 'search'],
+				'date'   => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date']
 			]
 		]);
 
