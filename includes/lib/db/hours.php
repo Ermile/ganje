@@ -259,7 +259,7 @@ class hours {
 		}
 		else
 		{
-			$USER = " GROUP BY	hours.user_id ";
+			$USER = " GROUP BY hours.user_id ";
 		}
 
 		if($lang == "fa")
@@ -441,22 +441,22 @@ class hours {
 				}
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_month($year, $month);
 				$where = " hours.hour_date >= '$start_date' AND hours.hour_date <= '$end_date' ";
-				$group = " GROUP BY day , users.user_displayname";
+				$group = " GROUP BY users.user_displayname, day";
 				$field =
 				"
-			 		COUNT(hours.hour_date)	AS 'count',
 			 		$day_query END) 		AS 'day',
+			 		COUNT(hours.hour_date)	AS 'count',
 					$sum_fields
 				";
 			}
 			else
 			{
 				$where = " hours.hour_date LIKE '$year-$month%'	";
-				$group = " GROUP BY DAY(hours.hour_date), hours.user_id";
+				$group = " GROUP BY hours.user_id, DAY(hours.hour_date)";
 				$field =
 				"
-			 		COUNT(hours.id)			AS 'count',
 					DAY(hours.hour_date)	AS 'day',
+			 		COUNT(hours.id)			AS 'count',
 					$sum_fields
 				";
 			}
@@ -483,12 +483,12 @@ class hours {
 				}
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
 				$where = " hours.hour_date >= '$start_date' AND hours.hour_date <= '$end_date' ";
-				$group = " GROUP BY month, hours.user_id ";
+				$group = " GROUP BY hours.user_id, month ";
 			}
 			else
 			{
 				$where = " hours.hour_date LIKE '$year%' ";
-				$group = " GROUP BY MONTH(hours.hour_date), hours.user_id";
+				$group = " GROUP BY hours.user_id, MONTH(hours.hour_date)";
 			}
 
 			$field =

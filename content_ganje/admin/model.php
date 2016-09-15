@@ -17,14 +17,15 @@ class model extends \mvc\model
 
 		if($_args->get_type() == 'add')
 		{
-			$args = [
-						'date'    => $_args->get_date(),
-						'start'   => $_args->get_time(),
-						'end'     => $_args->get_time_end(),
-						'user_id' => $_args->get_user_id(),
-						'minus'   => $_args->get_minus(),
-						'plus'    => $_args->get_plus()
-					];
+			$args =
+			[
+				'date'    => $_args->get_date(),
+				'start'   => $_args->get_time(),
+				'end'     => $_args->get_time_end(),
+				'user_id' => $_args->get_user_id(),
+				'minus'   => $_args->get_minus(),
+				'plus'    => $_args->get_plus()
+			];
 			$result = \lib\db\hours::insert($args);
 
 			if($result)
@@ -39,21 +40,22 @@ class model extends \mvc\model
 		elseif($_args->get_type() == 'edit')
 		{
 
-			$arg = [
-					'id'     => $_args->get_id(),
-					'status' => $_args->get_status(),
-					'time'   => $_args->get_time()
-					];
+			$arg =
+			[
+				'id'     => $_args->get_id(),
+				'status' => $_args->get_status(),
+				'time'   => $_args->get_time()
+			];
 
 			$result = \lib\db\hours::update($arg);
 
 			if($result)
 			{
-					debug::true(T_("Saved"));
+				debug::true(T_("Saved"));
 			}
 			else
 			{
-					debug::error(T_("Can not save change"));
+				debug::error(T_("Can not save change"));
 			}
 		}
 	}
@@ -89,12 +91,46 @@ class model extends \mvc\model
 			'export'  => $_args->get_export()
 		];
 
-		$data =  \lib\db\hours::get($args);
+		$data = \lib\db\hours::get($args);
 
 		if(!empty($data) && count($data) > 0)
 		{
-			$result['columns'] = array_keys($data[0]);
+			$result['columns']  = array_keys($data[0]);
+			$result['columns']  = array_fill_keys($result['columns'], null);
+			$result['totalrow'] = $result['columns'];
 		}
+
+		// fill array keys for totalrow of table, on all fields
+		if(isset($result['totalrow']))
+		{
+			foreach ($result['totalrow'] as $col => $attr)
+			{
+				switch ($col)
+				{
+					case 'diff':
+					case 'plus':
+					case 'minus':
+					case 'accepted':
+					case 'count':
+						$result['totalrow'][$col] = 'sum';
+						break;
+
+					case 'date':
+					case 'day':
+						$result['totalrow'][$col] = 'count';
+						break;
+
+					default:
+						$result['totalrow'][$col] = '';
+						break;
+				}
+			}
+		}
+
+		unset($result['columns']['id']);
+		unset($result['columns']['status']);
+
+		// remove user name from table if user is selected
 
 		$result['data']  = $data;
 		$result['total'] = count($result['data']);

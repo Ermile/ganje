@@ -4,7 +4,7 @@ private function transtext()
 
 	//-------------------------------------------------------content\home\display.html
 	echo T_("Ganje, first one");                                                      // Line 8
-	echo T_("Ganje");                                                                 // Line 44 Seperate
+	echo T_("Ganje");                                                                 // Line 45 Seperate
 	echo T_("Ganje: this is a tejarak online attendance beginning Web-based which work without any complexities of existing ones.");// Line 47
 	echo T_("Integration with services which will soon be public lead no need for small businesses, costly and inconvenience.");// Line 47
 	echo T_("About");                                                                 // Line 56
@@ -37,7 +37,7 @@ private function transtext()
 	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 81
 
 	//------------------------------------------------------content_ganje\home\et.html
-	echo T_("Data not exist!");                                                       // Line 46
+	echo T_("Data not exist!");                                                       // Line 49
 
 	//--------------------------------------------------content_ganje\home\layout.html
 	echo T_("Remove Filters");                                                        // Line 26
@@ -85,9 +85,10 @@ private function transtext()
 	echo T_("Graphic Designer");                                                      // Line 38 Seperate
 	echo T_("Shareholder");                                                           // Line 39 Seperate
 	echo T_("Chrikt");                                                                // Line 40 Seperate
-	echo T_("summary");                                                               // Line 42 Seperate
-	echo T_("ganje");                                                                 // Line 43 Seperate
-	echo T_(" ");                                                                     // Line 48 Seperate
+	echo T_("name");                                                                  // Line 42 Seperate
+	echo T_("summary");                                                               // Line 43 Seperate
+	echo T_("ganje");                                                                 // Line 44 Seperate
+	echo T_(" ");                                                                     // Line 49 Seperate
 
 }
 ?>

@@ -4,8 +4,8 @@ class hours
 {
 	public $id            = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'id'              ,'type'=>'int@10'];
 	public $user_id       = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'user'            ,'type'=>'int@10'                          ,'foreign'=>'users@id!user_displayname'];
-	public $hour_date     = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'date'            ,'type'=>'date@!0000-00-00'];
-	public $hour_start    = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'start'           ,'type'=>'time@!00:00:00'];
+	public $hour_date     = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'date'            ,'type'=>'date@'];
+	public $hour_start    = ['null'=>'NO'  ,'show'=>'YES'     ,'label'=>'start'           ,'type'=>'time@'];
 	public $hour_end      = ['null'=>'YES' ,'show'=>'YES'     ,'label'=>'end'             ,'type'=>'time@'];
 	public $hour_diff     = ['null'=>'YES' ,'show'=>'YES'     ,'label'=>'diff'            ,'type'=>'smallint@5'];
 	public $hour_minus    = ['null'=>'YES' ,'show'=>'YES'     ,'label'=>'minus'           ,'type'=>'smallint@5'];

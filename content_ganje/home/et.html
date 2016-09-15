@@ -3,24 +3,28 @@
  <content class="et" data-xhr='et'>
 {%if et%}
   <table cellpadding=0 cellspacing=0>
-{%if et_col%}
+{%if et.columns%}
    <thead>
     <tr>
-{%for key, column in et_col%}
+{%for column, type in et.columns%}
      <th class='col_{{column}}'>{%trans column%}</th>
 {%endfor%}
     </tr>
    </thead>
 {%endif%}
 
-{%if et_footer%}
+{%if et.totalrow%}
    <tfoot>
     <tr>
-{%for key, column in et_col%}
-{%if et_footer[key]%}
-     <td class='total_{{column}}' data-func='{{et_footer[key]}}'>00</td>
+{%for column, type in et.columns%}
+{%if et.totalrow[column]%}
+{%if column == 'diff' or column == 'plus' or column == 'minus' or column == 'accepted'%}
+     <td class='total_{{column}}' data-func='{{et.totalrow[column]}}' data-type='time'>0</td>
 {%else%}
-     <td class='total_{{column}}'></td>
+     <td class='total_{{column}}' data-func='{{et.totalrow[column]}}'>0</td>
+{%endif%}
+{%else%}
+     <td class='total_{{column}}'>-</td>
 {%endif%}
 {%endfor%}
     </tr>
@@ -28,10 +32,10 @@
 {%endif%}
 
    <tbody>
-{%for row, value in et%}
+{%for row, value in et.data%}
 
-    <tr {%if value.id%}data-id='{{value.id}}'{%endif%}>
-{%for key, column in et_col%}
+    <tr {%if value.id%}data-id='{{value.id}}'{%endif%} {%if value.status%}data-status='{{value.status}}'{%endif%} {%if value.type%}data-type='{{value.type}}'{%endif%}>
+{%for column, type in et.columns%}
 {%set val = attribute(value, column)%}
 {%if column == 'accepted' or column == 'diff'%}
      <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
@@ -45,6 +49,7 @@
 {%endfor%}
    </tbody>
   </table>
+{%include 'content_cp/templates/inc_pagenation.html'%}
 {%else%}
   <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
 {%endif%}

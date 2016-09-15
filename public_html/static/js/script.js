@@ -34,6 +34,7 @@ function calcTotalRow()
   $('.et tfoot td').each(function()
   {
     var func     = $(this).attr('data-func');
+    var type     = $(this).attr('data-type');
     var col      = $(this).attr('class').substr(6);
     var counter  = 0;
     var result   = 0;
@@ -78,8 +79,11 @@ function calcTotalRow()
       result = Math.round(result / counter);
       funcName = 'Average';
     }
+    // console.log(func);
+    // console.log(type);
+
     // show times in hour
-    if(func === 'sum-hour' || func === 'avg-hour')
+    if(func === 'sum-hour' || func === 'avg-hour' || type === 'time')
     {
       result = Math.floor(result/60) + ':' + Math.round(result%60);
     }
@@ -88,7 +92,7 @@ function calcTotalRow()
     if($(this).html() != result && result)
     {
       $(this).html(result);
-      $(this).attr('title', funcName + ':' + result);
+      $(this).attr('title', funcName + ': ' + result);
     }
   });
 }
