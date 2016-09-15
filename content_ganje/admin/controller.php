@@ -16,10 +16,7 @@ class controller extends \mvc\controller
 			$this->redirector()->set_domain()->set_url('ganje/status')->redirect();
 		}
 
-
 		// $this->post("last")->ALL();
-
-
 		$this->get('url', 'url')->ALL(
 		[
 			'property' =>
@@ -28,6 +25,21 @@ class controller extends \mvc\controller
 				"page" => ["/^\d+$/", true, 'page'],
 				"q"    => ["/^(.*)$/", true, 'search'],
 				'date' => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date']
+			]
+		]);
+
+		$this->post('admin')->ALL(
+		[
+			'property' =>
+			[
+				"type"     => ["/^(add|edit)$/", true, 'type'],
+				"id"       => ["/^\d+$/", true, 'id'],
+				"status"   => ["/^(active|awaiting|deactive|removed|filter)$/", true, 'status'],
+				"user_id"  => ["/^\d+$/", true, 'user_id'],
+				'time'     => ["/^(\d{2})\:(\d{2})\:(\d{2})$/", true, 'time'],
+				'time_end' => ["/^(\d{2})\:(\d{2})\:(\d{2})$/", true, 'time_end'],
+				"minus"    => ["/^\d+$/", true, 'minus'],
+				"plus"     => ["/^\d+$/", true, 'plus']
 			]
 		]);
 	}

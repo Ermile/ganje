@@ -22,6 +22,11 @@ class hours {
 		$minus   = $_args['minus'] 	 ? $_args['minus'] 	 : 0;
 		$plus    = $_args['plus'] 	 ? $_args['plus'] 	 : 0;
 
+		if(!$user_id || !$start || !$end)
+		{
+			\lib\debug::error(T_("user id, start time and end time is require"));
+		}
+
 		$query = "
 			INSERT INTO
 				hours
@@ -32,9 +37,100 @@ class hours {
 				hour_end      = '$end',
 				hour_diff     = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
 				hour_plus     = IF('$plus' = 0, NULL, '$plus'),
-				hour_minus     = IF('$minus' = 0, NULL, '$minus')
+				hour_minus    = IF('$minus' = 0, NULL, '$minus')
 				";
 		return \lib\db::query($query);
+	}
+
+
+	/**
+	 * update hours record by id
+	 * get record id and status and end time
+	 *
+	 * @param      <type>   $_args  The arguments
+	 *
+	 * @return     boolean  ( description_of_the_return_value )
+	 */
+	public static function update($_args)
+	{
+
+		if(!isset($_args['id']))
+		{
+			\lib\debug::error(T_("record id not found"));
+			$id = 0;
+		}
+		else
+		{
+			$id = $_args['id'];
+		}
+
+
+		if(isset($_args['status']))
+		{
+			$status = " hours.hour_status = '" . $_args['status'] . "' ";
+		}
+		else
+		{
+			$status = "";
+		}
+
+		if(isset($_args['time']))
+		{
+
+			$check = db::get("SELECT id FROM hours WHERE id = $id LIMIT 1 ",null, true);
+
+			if(!$check)
+			{
+				return false;
+			}
+			else
+			{
+				$time = $_args['time'];
+				$saved_time = $check['hour_start'];
+				if($saved_time > $time)
+				{
+					$temp       = $time;
+					$time       = "'$saved_time'";
+					$saved_time = "'$temp'";
+				}
+				else
+				{
+					$saved_time = "hour_start";
+					$time       = "hour_end";
+				}
+				$time_query =
+				"
+						hour_start = $saved_time,
+						hour_end   = $time
+				";
+			}
+		}
+		else
+		{
+			$time_query = "";
+		}
+
+		if($status && $time_query)
+		{
+			$time_query = $time_query . ",";
+		}
+
+		if(!$status && !$time_query)
+		{
+			return false;
+		}
+
+		$query =
+		"
+			UPDATE
+				hours
+			SET
+				$time_query
+				$status
+			WHERE
+				id = $id
+		";
+		return db::query($query);
 	}
 
 
@@ -50,13 +146,22 @@ class hours {
 	{
 		if(isset($_args['user_id']))
 		{
-			$user = " AND users.id = '" . $_args['user_id'] . "' ";
+			$user = " users.id = '" . $_args['user_id'] . "' ";
 			$user_displayname = "";
 		}
 		else
 		{
 			$user = "";
 			$user_displayname = "users.user_displayname 	as 'name',";
+		}
+
+		if(isset($_args['date']))
+		{
+			$date = " hours.hour_date = '". $_args['date']. "'";
+		}
+		else
+		{
+			$date = "";
 		}
 
 		// pagenation
@@ -73,16 +178,29 @@ class hours {
 		list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
 		$limit = " LIMIT $limit_start, $length ";
 
+		if($date || $user)
+		{
+			$where = " WHERE ";
+		}
+		else
+		{
+			$where = "";
+		}
+
+		if($date && $user)
+		{
+			$user = " AND " . $user;
+		}
 
 		//--------- repeat to every query
 		$query = "
 				SELECT
 					hours.id 						AS 'id',
 					hours.hour_date 				AS 'date',
+					$user_displayname
 					hours.hour_start 				AS 'start',
 					hours.hour_end 					AS 'end',
 					hours.hour_end 					AS 'end',
-					$user_displayname
 					IFNULL(hours.hour_diff,0) 	 	AS 'diff',
 					IFNULL(hours.hour_plus,0) 	 	AS 'plus',
 					IFNULL(hours.hour_minus,0) 	 	AS 'minus',
@@ -91,7 +209,8 @@ class hours {
 				FROM
 					hours
 				LEFT JOIN users on hours.user_id = users.id
-
+				$where
+				$date
 				$user
 				ORDER BY
 					hours.id DESC
@@ -261,6 +380,29 @@ class hours {
 			return self::get_last_time(['user_id' => $user_id]);
 		}
 
+		if($year && $month && $day)
+		{
+			if($lang == 'fa')
+			{
+				$jdate = \lib\utility\jdate::toGregorian($year,$month, $day);
+				$jdate = join($jdate, "-");
+				$date = $jdate;
+			}
+			else
+			{
+				$date = "$year-$month-$day";
+			}
+
+			if($user_id)
+			{
+				return self::get_last_time(['user_id' => $user_id, 'date' => $date]);
+			}
+			else
+			{
+				return self::get_last_time(['date' => $date]);
+			}
+		}
+
 		// fields of table whit sum function
 		$sum_fields =
 		"
@@ -274,39 +416,6 @@ class hours {
 			count(hours.hour_date) 				as 'count',
 			$sum_fields
 		";
-
-		// check year month and day
-		if($year && $month && $day)
-		{
-			// in one day we not use sum function in mysql to show all record of this day
-			// get enter and exit on one day
-			if($lang == 'fa')
-			{
-				$date = \lib\utility\jdate::toGregorian($year, $month, $day);
-				$date = join($date, "-");
-			}
-			else
-			{
-				$date = "$year-$month-$day";
-			}
-			// get fields whitout SUM function
-			$field =
-			"
-				IFNULL(hours.hour_diff,0)		AS 'diff',
-				IFNULL(hours.hour_plus,0)		AS 'plus',
-				IFNULL(hours.hour_minus,0)		AS 'minus',
-				IFNULL(hours.hour_accepted,0)	AS 'accepted'
-			";
-
-			$where = " hours.hour_date = '$date' ";
-			// this query need to order not group by
-			$group = " ORDER BY hours.id DESC ";
-
-			if(!$user_id)
-			{
-				$field = "users.user_displayname as 'name', " . $field;
-			}
-		}
 
 		if($year && $month && !$day)
 		{
@@ -503,72 +612,6 @@ class hours {
 			$return[$id][$value['type']]['total'] = $value['accepted'];
 		}
 		return $return;
-	}
-
-
-	public static function update($_args)
-	{
-
-		if(!isset($_args['id']))
-		{
-			\lib\debug::error(T_("record id not found"));
-			$id = 0;
-		}
-		else
-		{
-			$id = $_args['id'];
-		}
-
-
-		if(isset($_args['status']))
-		{
-			$status = " hours.hour_status = '" . $_args['status'] . "' ";
-		}
-		else
-		{
-			$status = "";
-		}
-
-
-		if(isset($_args['time']))
-		{
-
-			$check = db::get("SELECT * FROM hours WHERE id = $id LIMIT 1 ",null, true);
-
-			if(!$check)
-			{
-				return false;
-			}
-			else
-			{
-				$time = $_args['time'];
-				$saved_time = $check['hour_start'];
-				if($saved_time > $time)
-				{
-					$temp = $time;
-					$time = "'$saved_time'";
-					$saved_time = "'$temp'";
-				}
-				else
-				{
-					$saved_time = "hour_start";
-					$time       = "hour_end";
-				}
-			}
-		}
-
-		$update =
-		"
-			UPDATE
-				hours
-			SET
-				hour_start = $saved_time,
-				hour_end   = $time,
-				$status
-			WHERE
-				id = $id
-		";
-		return db::query($update);
 	}
 }
 ?>

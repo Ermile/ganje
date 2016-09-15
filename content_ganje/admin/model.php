@@ -10,19 +10,20 @@ class model extends \mvc\model
 	/**
 	 * insert or update record
 	 */
-	public function post_last()
+	public function post_admin($_args)
 	{
+
 		$this->access('ganje', 'admin', 'edit', 'block');
 
-		if(utility::post('add'))
+		if($_args->get_type() == 'add')
 		{
 			$args = [
-						'date'    => utility::post("date"),
-						'start'   => utility::post("start"),
-						'end'     => utility::post("end"),
-						'user_id' => utility::post("user_id"),
-						'minus'   => utility::post("minus"),
-						'plus'    => utility::post("plus")
+						'date'    => $_args->get_date(),
+						'start'   => $_args->get_time(),
+						'end'     => $_args->get_time_end(),
+						'user_id' => $_args->get_user_id(),
+						'minus'   => $_args->get_minus(),
+						'plus'    => $_args->get_plus()
 					];
 			$result = \lib\db\hours::insert($args);
 
@@ -35,24 +36,24 @@ class model extends \mvc\model
 				debug::error(T_("Error in insert"));
 			}
 		}
-		else
+		elseif($_args->get_type() == 'edit')
 		{
 
 			$arg = [
-					'id'   => utility::post("id"),
-					'type' => utility::post("type"),
-					'time' => utility::post("time")
+					'id'     => $_args->get_id(),
+					'status' => $_args->get_status(),
+					'time'   => $_args->get_time()
 					];
 
 			$result = \lib\db\hours::update($arg);
 
-			if($update)
+			if($result)
 			{
-					debug::true("Saved");
+					debug::true(T_("Saved"));
 			}
 			else
 			{
-					debug::fatal("Can not save change");
+					debug::error(T_("Can not save change"));
 			}
 		}
 	}
