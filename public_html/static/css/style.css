@@ -162,7 +162,7 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 .filters .year{background: #fff; border: none; padding: 0.5em 0.7em;border-radius: 0.2em }
 .filters .removeFilter{padding: 0.3em 1em; background-color:#fff;transition:0.3s;border-radius: 0.2em}
 .filters .removeFilter:hover{color:#c30d0d;}
-.filters [type="submit"] { background: #21ba45; border: none; padding: 0.5em 2em; width: 100%; border-radius: 0.2em; color: #fff; cursor: pointer }
+.filters .export { background: #21ba45; border: none; padding: 0.5em 2em; width: 100%; border-radius: 0.2em; color: #fff; cursor: pointer }
 #langList a{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:block;border-radius: 0.2em;font-size: 1em}
 #langList a:hover{background-color:#eee;}
 

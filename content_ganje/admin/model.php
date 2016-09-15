@@ -101,7 +101,8 @@ class model extends \mvc\model
 
 		if($_args->get_export())
 		{
-			$name = 'tejarak-export';
+
+			$name = 'ganje-u'. $_args->get_user(0).'['. $date_year. $date_month. $date_day.']';
 			\lib\utility\export::csv(['name' => $name ,'data' => $data]);
 		}
 		else
