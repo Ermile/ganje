@@ -30,6 +30,7 @@
 
 {%block filter_month%}
      <select name="month" class="month">
+      <option value="00" disabled selected>-</option>
       <option value="00">{%trans "Select all months"%}</option>
 {% if site.currentlang == 'fa' %}
       <option value="01">فروردین</option>

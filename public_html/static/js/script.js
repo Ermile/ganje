@@ -183,6 +183,7 @@ $(document).on("click", ".back", function(e) { transfer(null, 'home'); });
 
 $(".filters .year").change(function() {generateFilter();});
 $(".filters .month").change(function() {generateFilter();});
+$(".filters .month").select(function() {generateFilter();});
 $(".filters .day").change(function() {generateFilter();});
 
 

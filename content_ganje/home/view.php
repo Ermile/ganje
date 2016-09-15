@@ -21,6 +21,9 @@ class view extends \mvc\view
 		$this->data->site['desc']     = T_("Free & open source attendance service!");
 		$this->data->site['slogan']   = T_("Enjoy work time");
 		$this->data->module           = $this->module();
+
+		// var_dump(($this->data->site['currentLang']));
+		// // $this->data->default_year     = ;
 	}
 }
 ?>
