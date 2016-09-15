@@ -65,6 +65,7 @@ class model extends \mvc\model
 	 */
 	public function get_url($_args)
 	{
+		$data = null;
 		$result =
 		[
 			'columns' => null,
@@ -74,25 +75,16 @@ class model extends \mvc\model
 		// if date is not set show last records of user enter exit
 		if(!isset($_args->match->date) && !isset($_args->match->user))
 		{
-			$result['columns'] = ['id','name','date','start','end','total','plus','minus','diff','status','accepted'];
-
-			$data = \lib\db\hours::last();
+			$data = \lib\db\hours::get_last_time();
 		}
 		else
 		{
-			$result['columns'] = ['id','name','date','start','end','total','plus','minus','diff','status','accepted'];
-
 			// if date isset then filter result
 			if(isset($_args->match->date) && count($_args->match->date) > 3)
 			{
 				if(isset($_args->match->user[0]))
 				{
 					$user_id = $_args->match->user[0];
-					// remove user from columns if user is selected
-					if(($key = array_search('name', $result['columns'])) !== false)
-					{
-						unset($result['columns'][$key]);
-					}
 				}
 				else
 				{
@@ -115,12 +107,6 @@ class model extends \mvc\model
 				$date_week  = null;
 				$lang       = substr(\lib\router::get_storage('language'), 0, 2);
 
-
-				if($date_year)
-				{
-
-				}
-
 				$args =
 				[
 					'user_id'  => $user_id,
@@ -128,17 +114,16 @@ class model extends \mvc\model
 					'week'     => $date_week,
 					'month'    => $date_month,
 					'year'     => $date_year,
-					'lang'     => $lang,
-					'page'     => $page,
-					'lenght'   => 7,
-					// 'start' => utility::post("start"),
-					// 'end'   => utility::post("end"),
+					'lang'     => $lang
 				];
-
-				$data =  \lib\db\hours::status($args);
+				$data =  \lib\db\hours::get($args);
 			}
 		}
 
+		if(!empty($data) && count($data) > 0)
+		{
+			$result['columns'] = array_keys($data[0]);
+		}
 		$result['data']  = $data;
 		$result['total'] = count($result['data']);
 		return $result;

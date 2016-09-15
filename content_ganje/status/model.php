@@ -8,7 +8,7 @@ class model extends \mvc\model
 {
 	public function get_url($_args)
 	{
-		$result = null;
+		$result = [];
 		$id     = $this->login("id");
 
 		// if date isset then filter result
@@ -28,20 +28,22 @@ class model extends \mvc\model
 				'week'   => $date_week,
 				'month'  => $date_month,
 				'year'   => $date_year,
-				'lang'   => $lang,
-				// 'start'  => utility::post("start"),
-				// 'end'    => utility::post("end"),
+				'lang'   => $lang
 			];
 
-			$result =  \lib\db\hours::status($args);
+			$data =  \lib\db\hours::get($args);
 		}
 		// else show all record of this user
 		else
 		{
-			$result = \lib\db\hours::last(['user' => $id]);
+			$data = \lib\db\hours::get_last_time(['user' => $id]);
 		}
 
-
+		if(!empty($data) && count($data) > 0)
+		{
+			$result['columns'] = array_keys($data[0]);
+		}
+		$result['data'] = $data;
 		return $result;
 	}
 }

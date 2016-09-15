@@ -46,7 +46,7 @@ class hours {
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function last($_args = [])
+	public static function get_last_time($_args = [])
 	{
 		if(isset($_args['user']))
 		{
@@ -180,7 +180,7 @@ class hours {
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function status($_args)
+	public static function get($_args)
 	{
 		$year    = $_args['year'];
 		$month   = $_args['month'];
@@ -188,22 +188,24 @@ class hours {
 		$user_id = $_args['user_id'];
 		$lang    = $_args['lang'];
 
-		// limit and page
-		$page        = isset($_args['page']) ? $_args['page'] : 1;
-		$lenght      = isset($_args['lenght']) ? $_args['lenght'] : 10;
+		// pagenation
+		// $limit_start = \lib\main::$controller->pagenation_get('current');
+		// $lenght = \lib\main::$controller->pagenation_get('lenght');
+		// \lib\main::$controller->pagenation_make($count_record, 10);
 
-		$limit_start = ($page -1) * $lenght;
+		// $limit_start = ($page -1) * $lenght;
 
-		$limit       = "LIMIT $limit_start , $lenght ";
+		$limit       = "";
+		// $limit       = "LIMIT $limit_start , $lenght ";
 
 		// check user id . if users id is set get add data by this users id and if users id is not set get all users
 		if($user_id == null)
 		{
-			$user_id = "";
+			$user_id_query = "";
 		}
 		else
 		{
-			$user_id = " AND user_id = $user_id ";
+			$user_id_query = " AND user_id = $user_id ";
 		}
 
 		// set year = false to use in IF syntax
@@ -244,7 +246,7 @@ class hours {
 			$month = date("m");
 		}
 
-		if(!$year && !$month && !$day)
+		if(!$year && !$month && !$day && !$user_id)
 		{
 			if($lang == 'fa')
 			{
@@ -260,33 +262,56 @@ class hours {
 			}
 		}
 
+		if(!$year && !$month && !$day && $user_id)
+		{
+			return self::get_last_time(['user_id' => $user_id]);
+		}
+
 		// fields of table whit sum function
+		$sum_fields =
+		"
+			SUM(IFNULL(hours.hour_diff,0))		AS 'diff',
+			SUM(IFNULL(hours.hour_plus,0))		AS 'plus',
+			SUM(IFNULL(hours.hour_minus,0))		AS 'minus',
+			SUM(IFNULL(hours.hour_accepted,0))	AS 'accepted'
+		";
 		$field =
 		"
-			SUM(hours.hour_diff) 	 	as 'diff',
-			SUM(hours.hour_plus)	 	as 'plus',
-			SUM(hours.hour_minus)	 	as 'minus',
-			SUM(hours.hour_accepted) 	as 'accepted'
+			count(hours.hour_date) 				as 'count',
+			$sum_fields
 		";
 
 		// check year month and day
 		if($year && $month && $day)
 		{
 			// in one day we not use sum function in mysql to show all record of this day
-
-
 			// get enter and exit on one day
 			if($lang == 'fa')
 			{
-				$date = self::convert_date($year, $month, $day);
+				$date = \lib\utility\jdate::toGregorian($year, $month, $day);
+				$date = join($date, "-");
 			}
 			else
 			{
 				$date = "$year-$month-$day";
 			}
+			// get fields whitout SUM function
+			$field =
+			"
+				IFNULL(hours.hour_diff,0)		AS 'diff',
+				IFNULL(hours.hour_plus,0)		AS 'plus',
+				IFNULL(hours.hour_minus,0)		AS 'minus',
+				IFNULL(hours.hour_accepted,0)	AS 'accepted'
+			";
 
 			$where = " hours.hour_date = '$date' ";
-			$group = "";
+			// this query need to order not group by
+			$group = " ORDER BY hours.id DESC ";
+
+			if(!$user_id)
+			{
+				$field = "users.user_displayname as 'name', " . $field;
+			}
 		}
 
 		if($year && $month && !$day)
@@ -294,15 +319,41 @@ class hours {
 			// get daily count of hours
 			if($lang == 'fa')
 			{
-
+				$day_query = "(CASE ";
+				for ($i=1; $i <= 31 ; $i++) {
+					if($i < 10){
+						$i = "0". $i;
+					}
+					$jdate = \lib\utility\jdate::toGregorian($year,$month, $i);
+					$jdate = join($jdate, "-");
+					$day_query .=	" WHEN hours.hour_date = '{$jdate}' THEN '$i' \n";
+				}
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_month($year, $month);
-				$where = " hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date' ";
-				$group = " GROUP BY DAY(hours.hour_date), hours.user_id";
+				$where = " hours.hour_date >= '$start_date' AND hours.hour_date <= '$end_date' ";
+				$group = " GROUP BY day , users.user_displayname";
+				$field =
+				"
+			 		COUNT(hours.id)			AS 'count',
+			 		$day_query END) 		AS 'day',
+					$sum_fields
+				";
 			}
 			else
 			{
 				$where = " hours.hour_date LIKE '$year-$month%'	";
 				$group = " GROUP BY DAY(hours.hour_date), hours.user_id";
+				$field =
+				"
+			 		COUNT(hours.id)			AS 'count',
+					DAY(hours.hour_date)	AS 'day',
+					$sum_fields
+				";
+			}
+
+			if(!$user_id)
+			{
+				$field =" users.user_displayname	AS 'name', " . $field;
+				$group .= ", users.user_displayname ";
 			}
 		}
 
@@ -310,105 +361,55 @@ class hours {
 		{
 			if($lang == 'fa')
 			{
-
-				//SELECT
-				// 	users.id,
-				// 	count(hours.id) 		as 'count',
-				// 	users.user_displayname  as 'name',
-				// 	hours.hour_start		as 'start',
-				// 	hours.hour_end			as 'end',
-				// 	hours.hour_date			as 'date',
-				// 	SUM(hours.hour_diff)	 	 	as 'diff',
-				// 	SUM(hours.hour_plus)		 	as 'plus',
-				// 	SUM(hours.hour_minus)		 	as 'minus',
-				// 	SUM(hours.hour_accepted)	 	as 'accepted',
-				// CASE hours.hour_date
-				// 	WHEN hours.hour_date < '2016-03-20' AND hours.hour_date > '2016-04-19' THEN 'فروردین'
-				// 	WHEN hours.hour_date < '2016-04-20' AND hours.hour_date > '2016-05-20' THEN 'اردیبهشت'
-				// 	WHEN hours.hour_date < '2016-05-21' AND hours.hour_date > '2016-06-20' THEN 'خرداد'
-				// 	WHEN hours.hour_date < '2016-06-21' AND hours.hour_date > '2016-07-21' THEN 'تیر'
-				// 	WHEN hours.hour_date < '2016-07-22' AND hours.hour_date > '2016-08-21' THEN 'مرداد'
-				// 	WHEN hours.hour_date < '2016-08-22' AND hours.hour_date > '2016-09-21' THEN 'شهریور'
-				// 	WHEN hours.hour_date < '2016-09-22' AND hours.hour_date > '2016-10-21' THEN 'مهر'
-				// 	WHEN hours.hour_date < '2016-10-22' AND hours.hour_date > '2016-11-20' THEN 'آبان'
-				// 	WHEN hours.hour_date < '2016-11-21' AND hours.hour_date > '2016-12-20' THEN 'آذر'
-				// 	WHEN hours.hour_date < '2016-12-21' AND hours.hour_date > '2017-01-19' THEN 'دی'
-				// 	WHEN hours.hour_date < '2017-01-20' AND hours.hour_date > '2017-02-18' THEN 'بهمن'
-				// 	WHEN hours.hour_date < '2017-02-19' AND hours.hour_date > '2017-03-19' THEN 'اسفند'
-				// END AS 'month'
-
-				// FROM
-				// hours
-				// INNER JOIN users on hours.user_id = users.id
-				// WHERE
-				// ...
-				$month_query = "CASE hours.hour_date ";
+				$month_query = "(CASE ";
 				for ($i=1; $i <= 12 ; $i++) {
 					if($i < 10){
 						$i = "0". $i;
 					}
 					$jdate = \lib\utility\jdate::jalali_month($year, $i);
 					$month_name = \lib\utility\jdate::date("F", $jdate[0]);
-					$month_query .=	"WHEN hours.hour_date < '{$jdate[0]}' AND hours.hour_date > '{$jdate[1]}' THEN '$month_name' \n";
+					$month_query .=	" WHEN hours.hour_date >= '{$jdate[0]}' AND hours.hour_date <= '{$jdate[1]}' THEN '$month_name' \n";
 				}
-				$field =
-				"
-					SUM(hours.hour_diff)	 	 	as 'diff',
-					SUM(hours.hour_plus)		 	as 'plus',
-					SUM(hours.hour_minus)		 	as 'minus',
-					SUM(hours.hour_accepted)	 	as 'accepted',
-					$month_query  END AS 'jalalimonth'
-
-				";
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
-				$where = " hours.hour_date >= '$start_date' AND hours.hour_date < '$end_date' ";
-				$group = " GROUP BY jalalimonth, hours.user_id";
+				$where = " hours.hour_date >= '$start_date' AND hours.hour_date <= '$end_date' ";
+				$group = " GROUP BY month, hours.user_id ";
 			}
 			else
 			{
-				$where = " hours.hour_date LIKE '$year%'	";
+				$where = " hours.hour_date LIKE '$year%' ";
 				$group = " GROUP BY MONTH(hours.hour_date), hours.user_id";
+			}
+
+			$field =
+			"
+				$month_query  END) 					AS 'month',
+		 		COUNT(DATE(hours.hour_date)) 		AS 'count',
+				SUM(hours.hour_diff)	 			AS 'diff',
+				SUM(IFNULL(hours.hour_plus,0))		AS 'plus',
+				SUM(IFNULL(hours.hour_minus,0))		AS 'minus',
+				SUM(hours.hour_accepted)	 		AS 'accepted'
+			";
+			if(!$user_id)
+			{
+				$field =" users.user_displayname	AS 'name', " . $field;
+				$group .= ", users.user_displayname ";
 			}
 		}
 
 		$query =
-		"
-			SELECT
-			 	users.id,
-			 	count(hours.id) 		as 'count',
-			 	users.user_displayname  as 'name',
-			 	hours.hour_start		as 'start',
-			 	hours.hour_end			as 'end',
-			 	hours.hour_date			as 'date',
+		"	SELECT
 				$field
 			FROM
 				hours
 			INNER JOIN users on hours.user_id = users.id
 			WHERE
 				$where
-				$user_id
+				$user_id_query
 				$group
 				$limit
-
 		";
 		$result = \lib\db::get($query);
 		return $result;
-	}
-
-
-	/**
-	 * get jalali date and return milady date
-	 *
-	 * @param      boolean  $year   The year
-	 * @param      <type>   $month  The month
-	 * @param      <type>   $day    The day
-	 *
-	 * @return     <type>   ( description_of_the_return_value )
-	 */
-	public static function convert_date($_year = false, $_month = null, $_day = null, $_format = "Y-m-d")
-	{
-		$time  = \lib\utility\jdate::mktime(0,0,0,$_month,$_day,$_year,true);
-		return date($_format, $time);
 	}
 
 
@@ -424,10 +425,10 @@ class hours {
 
 		//--------- repeat to every query
 		$field = "users.id,users.user_displayname as displayname,
-				 SUM(hours.hour_accepted)   as 'accepted',
-				 SUM(hours.hour_diff) 	 as 'diff',
-				 SUM(hours.hour_plus) 	 as 'plus',
-				 SUM(hours.hour_minus) 	 as 'minus'
+				 SUM(IFNULL(hours.hour_accepted,0))   	as 'accepted',
+				 SUM(IFNULL(hours.hour_diff,0)) 		as 'diff',
+				 SUM(IFNULL(hours.hour_plus,0)) 	 	as 'plus',
+				 SUM(IFNULL(hours.hour_minus,0)) 	 	as 'minus'
 				";
 
 		$join =	"FROM hours
