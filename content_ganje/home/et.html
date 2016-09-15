@@ -29,13 +29,16 @@
 
    <tbody>
 {%for row, value in et%}
-    <tr>
+
+    <tr {%if value.id%}data-id='{{value.id}}'{%endif%}>
 {%for key, column in et_col%}
 {%set val = attribute(value, column)%}
 {%if column == 'accepted' or column == 'diff'%}
-     <td class='val_{{column}}' data-val='{{val}}'> {{ val | humantime() }}</td>
+     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+{%elseif column == 'name'%}
+     <td class='val_{{column}}' data-val='{{val}}'>{%trans val%}</td>
 {%else%}
-     <td class='val_{{column}}' data-val='{{val}}'> {{ val}}</td>
+     <td class='val_{{column}}' data-val='{{val}}'>{{val | persian}}</td>
 {%endif%}
 {%endfor%}
     </tr>

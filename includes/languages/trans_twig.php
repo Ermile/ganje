@@ -2,7 +2,7 @@
 private function transtext()
 {
 
-	//-----------------------a\xampp\htdocs\projects\tejarak\content\home\display.html
+	//-------------------------------------------------------content\home\display.html
 	echo T_("Ganje, first one");                                                      // Line 8
 	echo T_("Ganje");                                                                 // Line 44 Seperate
 	echo T_("Ganje: this is a tejarak online attendance beginning Web-based which work without any complexities of existing ones.");// Line 47
@@ -18,47 +18,43 @@ private function transtext()
 	echo T_("Copyright");                                                             // Line 74
 	echo T_("2016");                                                                  // Line 11 Seperate
 
-	//--------------------a\xampp\htdocs\projects\tejarak\content\home\layout-xhr.html
-	echo T_("View your current location and navigate to parent of it");               // Line 1
-
-	//-------------------a\xampp\htdocs\projects\tejarak\content\template\dafault.html
+	//---------------------------------------------------content\template\dafault.html
+	echo T_("View your current location and navigate to parent of it");               // Line 9
 	echo T_("Some right reserved!");                                                  // Line 28
 
-	//--------------------------------------------------------------admin\display.html
-	echo T_("Actions");                                                               // Line 96
-	echo T_("Data not exist!");                                                       // Line 134
+	//------------------------------------------------content_ganje\admin\display.html
 
-	//---------------------------------------------------------------home\display.html
+	//-------------------------------------------------content_ganje\home\display.html
 	echo T_("In the Name of God");                                                    // Line 8
-	echo T_("in this month");                                                         // Line 59
-	echo T_("in this week");                                                          // Line 63
-	echo T_("remote in this month");                                                  // Line 74
-	echo T_("Enter Time");                                                            // Line 88
-	echo T_("Difference between enter and exit");                                     // Line 89
-	echo T_("Operation Time");                                                        // Line 89
-	echo T_("Exit Time");                                                             // Line 90
-	echo T_("Minus");                                                                 // Line 92
-	echo T_("Plus");                                                                  // Line 93
-	echo T_("Total");                                                                 // Line 94
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 95
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 100
+	echo T_("Enter Time");                                                            // Line 69
+	echo T_("Difference between enter and exit");                                     // Line 70
+	echo T_("Operation Time");                                                        // Line 70
+	echo T_("Exit Time");                                                             // Line 71
+	echo T_("Minus");                                                                 // Line 73
+	echo T_("Plus");                                                                  // Line 74
+	echo T_("Total");                                                                 // Line 75
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 76
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 81
 
-	//------------------------------------------------------------home\layout-xhr.html
+	//------------------------------------------------------content_ganje\home\et.html
+	echo T_("Data not exist!");                                                       // Line 46
 
-	//----------------------------------------------------------------home\layout.html
+	//--------------------------------------------------content_ganje\home\layout.html
+	echo T_("Remove Filters");                                                        // Line 26
+	echo T_("Select all months");                                                     // Line 33
+	echo T_("Enter year");                                                            // Line 70
+	echo T_("Work with Ermile in your own language");                                 // Line 77
+	echo T_("Export to CSV");                                                         // Line 86
 
-	//-------------------------------------------------------------status\display.html
-	echo T_("Remove Filters");                                                        // Line 19
-	echo T_("Select all months");                                                     // Line 22
-	echo T_("Enter year");                                                            // Line 57
-	echo T_("Work with Ermile in your own language");                                 // Line 61
+	//-----------------------------------------------content_ganje\status\display.html
+	echo T_("in this month");                                                         // Line 10
+	echo T_("in this week");                                                          // Line 14
+	echo T_("remote in this month");                                                  // Line 25
 
-	//------------------------------------------------------------summary\display.html
-	echo T_("Month");                                                                 // Line 20
-	echo T_("Year");                                                                  // Line 57
-	echo T_("Export");                                                                // Line 70
+	//----------------------------------------------content_ganje\summary\display.html
+	echo T_("Export");                                                                // Line 22
 
-	//------------a\xampp\htdocs\projects\tejarak\includes\languages\trans_static.html
+	//--------------------------------------------includes\languages\trans_static.html
 	echo T_("Saloos");                                                                // Line 7 Seperate
 	echo T_("2013");                                                                  // Line 8 Seperate
 	echo T_("2014");                                                                  // Line 9 Seperate
