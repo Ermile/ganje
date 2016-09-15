@@ -14,6 +14,7 @@ class view extends \lib\mvc\view
 		$this->data->page['desc']        = $this->data->site['slogan'];
 		$this->data->display['ganje']    = "content_ganje/home/layout.html";
 		$this->data->display['ganje_et'] = "content_ganje/home/et.html";
+		$this->data->bodyclass  = 'unselectable';
 
 
 		// if(! ($this->url('sub') === 'cp' || $this->url('sub') === 'account') )

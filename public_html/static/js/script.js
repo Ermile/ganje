@@ -14,6 +14,13 @@ $(document).ready(function()
 route('*', function()
 {
   calcTotalRow();
+  // up and down func of ermile table with with scrool
+  $('.et tfoot td').bind('mousewheel', function(e)
+  {
+    var newFunc = calcNextFunc( $(this).attr('data-func') );
+    $(this).attr('data-func', newFunc);
+    calcTotalRow();
+  });
 
 
 });
@@ -26,15 +33,20 @@ function calcTotalRow()
 {
   $('.et tfoot td').each(function()
   {
-    var func    = $(this).attr('data-func');
-    var col     = $(this).attr('class').substr(6);
-    var counter = 0;
-    var result  = 0;
+    var func     = $(this).attr('data-func');
+    var col      = $(this).attr('class').substr(6);
+    var counter  = 0;
+    var result   = 0;
+    var funcName = '';
 
     // foreach item in this row do function
     $('.et tbody .val_' + col).each( function()
     {
       var val = parseInt($(this).attr('data-val'));
+      if(!val)
+      {
+        val = 0;
+      }
 
       switch (func)
       {
@@ -45,15 +57,18 @@ function calcTotalRow()
         case 'sum-hour':
         case 'total':
           result += val;
+          funcName = 'Sum'
           break;
 
         case 'count':
         case 'count-hour':
           result += 1;
+          funcName = 'Count'
           break;
 
         default:
           result = '-';
+          funcName = '';
           break;
       }
     });
@@ -61,6 +76,7 @@ function calcTotalRow()
     if(func === 'avg' || func === 'avg-hour')
     {
       result = Math.round(result / counter);
+      funcName = 'Average';
     }
     // show times in hour
     if(func === 'sum-hour' || func === 'avg-hour')
@@ -68,54 +84,78 @@ function calcTotalRow()
       result = Math.floor(result/60) + ':' + Math.round(result%60);
     }
 
-
     // fill footer column with calculated value
-    $(this).html(result);
+    if($(this).html() != result && result)
+    {
+      $(this).html(result);
+      $(this).attr('title', funcName + ':' + result);
+    }
   });
 }
 
+
+/**
+ * [changeTotalRow description]
+ * @return {[type]} [description]
+ */
 function changeTotalRow()
 {
   $('.et tfoot td').each(function()
   {
     var func    = $(this).attr('data-func');
-    var newFunc = func;
-    switch (func)
-    {
-      // change class of hours
-      case 'count-hour':
-        newFunc = 'sum-hour';
-        break;
+    var newFunc = calcNextFunc(func);
 
-      case 'sum-hour':
-        newFunc = 'avg-hour';
-        break;
-
-      case 'avg-hour':
-        newFunc = 'count-hour';
-        break;
-
-      // change func
-      case 'count':
-        newFunc = 'sum';
-        break;
-
-      case 'sum':
-        newFunc = 'avg';
-        break;
-
-      case 'avg':
-        newFunc = 'count';
-        break;
-
-      default:
-        newFunc = 'count';
-        break;
-    }
     $(this).attr('data-func', newFunc);
   });
   calcTotalRow();
 }
+
+
+/**
+ * [calcNextFunc description]
+ * @param  {[type]} _func [description]
+ * @return {[type]}       [description]
+ */
+function calcNextFunc(_func)
+{
+  var newFunc = _func;
+  switch (_func)
+  {
+    // change class of hours
+    case 'count-hour':
+      newFunc = 'sum-hour';
+      break;
+
+    case 'sum-hour':
+      newFunc = 'avg-hour';
+      break;
+
+    case 'avg-hour':
+      newFunc = 'count-hour';
+      break;
+
+    // change func
+    case 'count':
+      newFunc = 'sum';
+      break;
+
+    case 'sum':
+      newFunc = 'avg';
+      break;
+
+    case 'avg':
+      newFunc = 'count';
+      break;
+
+    default:
+      newFunc = 'count';
+      break;
+  }
+  return newFunc;
+}
+
+
+
 
 
 
@@ -134,7 +174,7 @@ $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10)
 $(document).on("click", ".cardList .card.present",  function(e) { generateUserFilter(this) });
 $(document).on("click", ".filters .removeFilter", function(e) { removeFilter(); });
 $(document).on("click", ".back", function(e) { transfer(null, 'home'); });
-$(document).on("click", ".et .xigma", function() { changeTotalRow(); });
+
 
 
 $(".filters .year").change(function() {generateFilter();});

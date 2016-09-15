@@ -172,13 +172,13 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 /* Ermile Table */
 .et {max-height:90vh;text-align:left;border-radius:0.2em;overflow-y:auto;display:block;position:relative;}
 .rtl .et{text-align: right;}
-.et svg{width:auto;height:50px;position:absolute;bottom:0;right:0;padding:10px 0.5em;cursor: pointer;}
-.rtl .et svg{left:0;right:initial}
 .et table{width:100%;}
-.et thead{background-color:#1F2739;color: #A7A1AE;font-weight:700;font-size:1.1em;}
+.et thead{background-color:#1F2739;color: #A7A1AE;font-weight:700;font-size:1.1em;transition:0.2s;}
+.et thead:hover{color:#ccc}
 .et thead th{padding:1.5em 1em;text-transform:uppercase;}
-.et tfoot{background-color:#1F2739;color: #A7A1AE;font-weight:700;font-size:1.1em;}
-.et tfoot td{padding:1.5em 1em;}
+.et tfoot{background-color:#1F2739;color: #A7A1AE;font-weight:700;font-size:1.1em;transition:0.2s;}
+.et tfoot:hover{color:#ccc}
+.et tfoot td{padding:2em 1em;cursor:help;}
 .et tbody{height:300px;overflow-x:auto;margin-top:0;border:1px solid rgba(255,255,255,0.3);}
 .et tbody tr{transition:0.2s;}
 .et tbody tr:nth-child(odd) {background-color: #323C50;}
