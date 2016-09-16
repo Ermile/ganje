@@ -188,7 +188,20 @@ $(".filters .day").change(function() {generateFilter();});
 
 
 // up and down minus with scrool
+$(document).on("click", ".filters .datepicker span", function(e) { changeTimeValue.call(this, true) });
 $('.filters .datepicker span').bind('mousewheel', function(e)
+{
+  if(e.originalEvent.wheelDelta / 120 < 0)
+  {
+    changeTimeValue.call(this, false);
+  }
+  else
+  {
+    changeTimeValue.call(this, true);
+  }
+});
+
+function changeTimeValue(_inc)
 {
   var val         = parseInt($(this).html());
   var val_min     = parseInt($(this).attr('data-min'));
@@ -211,7 +224,7 @@ $('.filters .datepicker span').bind('mousewheel', function(e)
   }
 
   // on scroll up or down, increase or decrease number
-  if(e.originalEvent.wheelDelta / 120 > 0)
+  if(_inc)
   {
     val_new += 1;
   }
@@ -251,7 +264,7 @@ $('.filters .datepicker span').bind('mousewheel', function(e)
     }
   }
   generateFilter();
-});
+}
 
 
 
