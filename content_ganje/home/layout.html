@@ -105,9 +105,9 @@
 
 {%block filter_date%}
   <content class="datepicker">
-   <span data-char='2' data-min='1' class='day' data-max='31'>25</span>
-   <span data-char='2' data-min='1' class='month' data-max='12'>04</span>
-   <span data-char='4' data-min='2000' class='year' data-max='2016'>2016</span>
+   <span data-char='2' class='day' data-min='1' data-max='31' data-value='{{default_day.val}}'>{{default_day.val}}</span>
+   <span data-char='2' class='month' data-min='1' data-max='12' data-value='{{default_month.val}}'>{{default_month.val}}</span>
+   <span data-char='4' class='year' data-min='{{default_year.min}}' data-max='{{default_year.max}}' data-value='{{default_year.val}}'>{{default_year.val}}</span>
   </content>
 {%endblock%}
 
