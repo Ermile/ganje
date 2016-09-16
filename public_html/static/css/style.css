@@ -176,7 +176,10 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 .filters .export {width: 100%;display: block;}
 #langList a{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:block;border-radius: 0.2em;font-size: 1em}
 #langList a:hover{background-color:#eee;}
-
+/* for status page */
+.detail .span3 .filters {text-align: center;}
+.detail .span3 .filters .func{position: relative;}
+.detail .span3 .filters .func a{width: 3em;display: inline-block;}
 
 .margin-top { margin-top: 3em }
 
