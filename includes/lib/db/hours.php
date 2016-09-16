@@ -173,26 +173,6 @@ class hours {
 			$date = "";
 		}
 
-		// pagenation
-		$count_record =
-		"
-			SELECT
-				COUNT(id) AS 'count'
-			FROM
-				hours
-			WHERE
-				(hours.hour_status = 'filter' OR hours.hour_status = 'active')
-		";
-
-		if(isset($_args['export']) && $_args['export'])
-		{
-			$limit = "";
-		}
-		else
-		{
-			list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
-			$limit = " LIMIT $limit_start, $length ";
-		}
 
 		if($date || $user)
 		{
@@ -207,21 +187,48 @@ class hours {
 		{
 			$user = " AND " . $user;
 		}
+		$field =
+		"
+			hours.id 						AS 'id',
+			hours.hour_date 				AS 'date',
+			$user_displayname
+			hours.hour_start 				AS 'start',
+			hours.hour_end 					AS 'end',
+			hours.hour_end 					AS 'end',
+			IFNULL(hours.hour_diff,0) 	 	AS 'diff',
+			IFNULL(hours.hour_plus,0) 	 	AS 'plus',
+			IFNULL(hours.hour_minus,0) 	 	AS 'minus',
+			hours.hour_status				AS 'status',
+			IFNULL(hours.hour_accepted,0) 	AS 'accepted'
+		";
+		// pagenation
+		$count_record =
+		"
+			SELECT
+				$field
+			FROM
+				hours
+				LEFT JOIN users on hours.user_id = users.id
+
+				$where
+				$date
+				$user
+		";
+
+		if(isset($_args['export']) && $_args['export'])
+		{
+			$limit = "";
+		}
+		else
+		{
+			list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
+			$limit = " LIMIT $limit_start, $length ";
+		}
 
 		//--------- repeat to every query
 		$query = "
 				SELECT
-					hours.id 						AS 'id',
-					hours.hour_date 				AS 'date',
-					$user_displayname
-					hours.hour_start 				AS 'start',
-					hours.hour_end 					AS 'end',
-					hours.hour_end 					AS 'end',
-					IFNULL(hours.hour_diff,0) 	 	AS 'diff',
-					IFNULL(hours.hour_plus,0) 	 	AS 'plus',
-					IFNULL(hours.hour_minus,0) 	 	AS 'minus',
-					hours.hour_status				AS 'status',
-					IFNULL(hours.hour_accepted,0) 	AS 'accepted'
+					$field
 				FROM
 					hours
 				LEFT JOIN users on hours.user_id = users.id
@@ -518,7 +525,23 @@ class hours {
 		if(!$export)
 		{
 			// pagenation
-			$count_record = "SELECT COUNT(id) AS 'count' FROM hours WHERE $where ";
+			$count_record =
+			"
+				SELECT
+					SQL_CALC_FOUND_ROWS
+					$field
+				FROM
+					hours
+				INNER JOIN users on hours.user_id = users.id
+				WHERE
+				$where
+				$user_id_query
+				$group
+
+			";
+			// MYSQL GET TOTAL RECORD WHITOUT LIMIT
+			// SELECT SQL_CALC_FOUND_ROWS * FROM TABLE WHERE GROUP ORDER LIMIT
+			// SELECT FOUND_ROWS();
 			list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
 			$limit = " LIMIT $limit_start, $length ";
 		}
