@@ -261,7 +261,10 @@ $('.filters .datepicker span').bind('mousewheel', function(e)
 function removeFilter()
 {
   console.log('removeFilters');
-  $('.detail .card').attr('data-user-id', null);
+  $('.cardList .card').removeClass('present');
+  $('.cardList').attr('data-selected-id', null);
+  $(".filters .datepicker span").attr('data-value', null);
+
 }
 
 function generateUserFilter(_this)
