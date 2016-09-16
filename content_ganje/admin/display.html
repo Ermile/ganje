@@ -1,20 +1,8 @@
 {% extends display.ganje %}
 
 {% block body %}
- <content class="row auto inner">
-  <div class="span3 detail">
-
-   <div class="filters">
-{{block ('filter_remove')}}
-{{block ('filter_month')}}
-{{block ('filter_year')}}
-{{block ('filter_export')}}
-   </div>
-{{block ('langList')}}
-  </div>
-
-  <div class="span9">
-   <section class="row auto cardList">
+ <section class="row auto inner">
+   <div class="span9 cardList">
 {%for key, user in users%}
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
 {%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
@@ -29,10 +17,17 @@
      <div class="absolute-info">{%trans name%}</div>
     </div>
 {%endfor%}
-   </section>
-
-
-{% embed display.ganje_et %}{% endembed %}
+   </div>
+  <div class="span3 detail">
+   <div class="filters">
+{{block ('filter_date')}}
+   <span class='func'>
+{{block ('filter_remove')}}
+{{block ('filter_export')}}
+   </span>
+   </div>
   </div>
- </content>
+
+ </section>
+{% embed display.ganje_et %}{% endembed %}
 {% endblock %}

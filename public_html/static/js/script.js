@@ -187,6 +187,77 @@ $(".filters .month").select(function() {generateFilter();});
 $(".filters .day").change(function() {generateFilter();});
 
 
+// up and down minus with scrool
+$('.filters .datepicker span').bind('mousewheel', function(e)
+{
+  var val         = parseInt($(this).html());
+  var val_min     = parseInt($(this).attr('data-min'));
+  var val_max     = parseInt($(this).attr('data-max'));
+  var val_changed = parseInt($(this).attr('data-value'));
+  var val_char    = parseInt($(this).attr('data-char'));
+  var val_new     = val;
+
+  // set val if is not exist use changed value if not exist use min value
+  if(!val_new)
+  {
+    if(val_changed)
+    {
+      val_new = val_changed;
+    }
+    else
+    {
+      val_new = val_min -1;
+    }
+  }
+
+  // on scroll up or down, increase or decrease number
+  if(e.originalEvent.wheelDelta / 120 > 0)
+  {
+    val_new += 1;
+  }
+  else{
+    val_new -= 1;
+  }
+
+  // scroll from max to min
+  if(val_new > val_max && isNaN(val))
+  {
+    val_new = val_min;
+  }
+  // scroll from min to max
+  if(val_new < val_min && isNaN(val))
+  {
+    val_new = val_max;
+  }
+
+  // change value if is valid
+  if(val_new >= val_min && val_new <= val_max)
+  {
+    $(this).html(addZero(val_new));
+    $(this).attr('data-value', addZero(val_new));
+  }
+  // set dash for zero value
+  else if(val_new < val_min || val_new > val_max)
+  {
+    if(val_char == 4)
+    {
+      $(this).html('----');
+      $(this).attr('data-value', '0000');
+    }
+    else
+    {
+      $(this).html('--');
+      $(this).attr('data-value', '00');
+    }
+  }
+  generateFilter();
+});
+
+
+
+
+
+
 function removeFilter()
 {
   console.log('removeFilters');
@@ -237,7 +308,6 @@ function generateFilter()
   {
     newLocation += '/user=' + user;
   }
-
   navigate(newLocation);
 }
 
@@ -247,9 +317,15 @@ function generateFilter()
  */
 function generateTimeFilter()
 {
-  var year  = $(".filters .year").val();
-  var month = $(".filters .month").val();
-  var day   = $(".filters .day").val();
+  var year  = $(".filters .datepicker .year").attr('data-value');
+  var month = $(".filters .datepicker .month").attr('data-value');
+  var day   = $(".filters .datepicker .day").attr('data-value');
+
+  if(!year)
+  {
+    return null;
+  }
+  // create date
   var date  = (year? year: '0000') + '-' + (month? month: '00') + '-' + (day? day: '00');
 
   $('.filters').attr('data-time', date);

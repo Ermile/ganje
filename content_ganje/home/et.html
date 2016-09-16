@@ -49,9 +49,12 @@
 {%endfor%}
    </tbody>
   </table>
-{%include 'content_cp/templates/inc_pagination.html'%}
 {%else%}
   <p class="alert alert-block alert-info">{%trans "Data not exist!"%}</p>
 {%endif%}
  </content>
+{%if et%}
+{%include 'content_cp/templates/inc_pagination.html'%}
+{%endif%}
+
 {%endblock%}
