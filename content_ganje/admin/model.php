@@ -12,19 +12,18 @@ class model extends \mvc\model
 	 */
 	public function post_admin($_args)
 	{
-
 		$this->access('ganje', 'admin', 'edit', 'block');
 
-		if($_args->get_type() == 'add')
+		if(utility::post('type') == 'add')
 		{
 			$args =
 			[
-				'date'    => $_args->get_date(),
-				'start'   => $_args->get_time(),
-				'end'     => $_args->get_time_end(),
-				'user_id' => $_args->get_user_id(),
-				'minus'   => $_args->get_minus(),
-				'plus'    => $_args->get_plus()
+				'date'    => utility::post('date'),
+				'start'   => utility::post('time'),
+				'end'     => utility::post('time_end'),
+				'user_id' => utility::post('user_id'),
+				'minus'   => utility::post('minus'),
+				'plus'    => utility::post('plus')
 			];
 			$result = \lib\db\hours::insert($args);
 
@@ -37,14 +36,14 @@ class model extends \mvc\model
 				debug::error(T_("Error in insert"));
 			}
 		}
-		elseif($_args->get_type() == 'edit')
+		elseif(utility::post('type') == 'edit')
 		{
 
 			$arg =
 			[
-				'id'     => $_args->get_id(),
-				'status' => $_args->get_status(),
-				'time'   => $_args->get_time()
+				'id'     => utility::post('id'),
+				'status' => utility::post('status'),
+				'time'   => utility::post('time')
 			];
 
 			$result = \lib\db\hours::update($arg);

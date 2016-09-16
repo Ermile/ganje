@@ -77,8 +77,17 @@ class hours {
 		if(isset($_args['time']))
 		{
 
-			$check = db::get("SELECT id FROM hours WHERE id = $id LIMIT 1 ",null, true);
-
+			$qry =
+			"	SELECT
+					hour_start,
+					hour_end,
+					hour_status
+				FROM
+					hours
+				WHERE id = $id
+				LIMIT 1
+			";
+			$check = db::get($qry,null, true);
 			if(!$check)
 			{
 				return false;
@@ -470,6 +479,14 @@ class hours {
 
 		if($year && !$month && !$day)
 		{
+			$field =
+			"
+		 		COUNT(DATE(hours.hour_date)) 		AS 'count',
+				SUM(hours.hour_diff)	 			AS 'diff',
+				SUM(IFNULL(hours.hour_plus,0))		AS 'plus',
+				SUM(IFNULL(hours.hour_minus,0))		AS 'minus',
+				SUM(hours.hour_accepted)	 		AS 'accepted'
+			";
 			if($lang == 'fa')
 			{
 				$month_query = "(CASE ";
@@ -484,6 +501,7 @@ class hours {
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
 				$where = " hours.hour_date >= '$start_date' AND hours.hour_date <= '$end_date' ";
 				$group = " GROUP BY hours.user_id, month ";
+				$field = "	$month_query  END) 					AS 'month'," . $field;
 			}
 			else
 			{
@@ -491,15 +509,6 @@ class hours {
 				$group = " GROUP BY hours.user_id, MONTH(hours.hour_date)";
 			}
 
-			$field =
-			"
-				$month_query  END) 					AS 'month',
-		 		COUNT(DATE(hours.hour_date)) 		AS 'count',
-				SUM(hours.hour_diff)	 			AS 'diff',
-				SUM(IFNULL(hours.hour_plus,0))		AS 'plus',
-				SUM(IFNULL(hours.hour_minus,0))		AS 'minus',
-				SUM(hours.hour_accepted)	 		AS 'accepted'
-			";
 			if(!$user_id)
 			{
 				$field =" users.user_displayname	AS 'name', " . $field;
