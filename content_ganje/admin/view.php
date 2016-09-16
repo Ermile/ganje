@@ -11,12 +11,14 @@ class view extends \mvc\view
 
 
 
-	function view_url($_arg)
+	function view_url($_args)
 	{
-		$this->data->et     = $_arg->api_callback;
+		$this->data->et     = $_args->api_callback;
 
 		// get list of users
 		$this->data->users  = \lib\db\users::get_all();
+
+		$this->data->default_user = $_args->get_user(0);
 	}
 }
 ?>

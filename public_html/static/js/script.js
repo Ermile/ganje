@@ -175,7 +175,7 @@ $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(
 $(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });
 $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10) });
 
-$(document).on("click", ".cardList .card.present",  function(e) { generateUserFilter(this) });
+$(document).on("click", ".cardList .card",  function(e) { generateUserFilter(this) });
 $(document).on("click", ".filters .removeFilter", function(e) { removeFilter(); });
 $(document).on("click", ".back", function(e) { transfer(null, 'home'); });
 
@@ -196,9 +196,17 @@ function removeFilter()
 function generateUserFilter(_this)
 {
   var id = $(_this).attr('data-user-id');
-  console.log(_this);
-  $('.detail .card').html($(_this).children().clone());
-  $('.detail .card').attr('data-user-id', id);
+  $('.cardList .card').not('[data-user-id='+id+']').removeClass('present');
+  $(_this).toggleClass('present');
+
+  if($(_this).hasClass('present'))
+  {
+    $('.cardList').attr('data-selected-id', id);
+  }
+  else
+  {
+    $('.cardList').attr('data-selected-id', null);
+  }
   generateFilter();
 }
 
@@ -224,7 +232,7 @@ function generateFilter()
   }
 
   // generate user filter and add
-  var user = $('.detail .card').attr('data-user-id');
+  var user = $('.cardList').attr('data-selected-id');
   if(user)
   {
     newLocation += '/user=' + user;

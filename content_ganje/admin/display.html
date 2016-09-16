@@ -3,7 +3,6 @@
 {% block body %}
  <content class="row auto inner">
   <div class="span3 detail">
-{{block ('card')}}
 
    <div class="filters">
 {{block ('filter_remove')}}
@@ -21,7 +20,7 @@
 {%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
 {%set name = user.displayname%}
 {%set position = user.meta.position%}
-    <div class="card present" data-user-id="{{user.id}}">
+    <div class="card {%if default_user == key%}present{%endif%}" data-user-id="{{user.id}}">
      <img src="{{avatar | exist(avatar_default)}}">
      <div class="info">
       <div class="name">{%trans name%}</div>
