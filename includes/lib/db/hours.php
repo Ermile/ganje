@@ -201,7 +201,7 @@ class hours {
 			hours.hour_status				AS 'status',
 			IFNULL(hours.hour_accepted,0) 	AS 'accepted'
 		";
-		// pagenation
+		// pagnation
 		$count_record =
 		"
 			SELECT
@@ -221,7 +221,7 @@ class hours {
 		}
 		else
 		{
-			list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
+			list($limit_start, $length) = \lib\db::pagnation($count_record, 10);
 			$limit = " LIMIT $limit_start, $length ";
 		}
 
@@ -524,7 +524,7 @@ class hours {
 		}
 		if(!$export)
 		{
-			// pagenation
+			// pagnation
 			$count_record =
 			"
 				SELECT
@@ -542,7 +542,7 @@ class hours {
 			// MYSQL GET TOTAL RECORD WHITOUT LIMIT
 			// SELECT SQL_CALC_FOUND_ROWS * FROM TABLE WHERE GROUP ORDER LIMIT
 			// SELECT FOUND_ROWS();
-			list($limit_start, $length) = \lib\db::pagenation($count_record, 10);
+			list($limit_start, $length) = \lib\db::pagnation($count_record, 10);
 			$limit = " LIMIT $limit_start, $length ";
 		}
 		else
