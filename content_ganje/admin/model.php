@@ -13,15 +13,15 @@ class model extends \mvc\model
 	public function post_admin($_args)
 	{
 		$this->access('ganje', 'admin', 'edit', 'block');
-
+var_dump(utility::post());exit();
 		if(utility::post('type') == 'add')
 		{
 			$args =
 			[
+				'user_id' => utility::post('user_id'),
 				'date'    => utility::post('date'),
 				'start'   => utility::post('time'),
 				'end'     => utility::post('time_end'),
-				'user_id' => utility::post('user_id'),
 				'minus'   => utility::post('minus'),
 				'plus'    => utility::post('plus')
 			];

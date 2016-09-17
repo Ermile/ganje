@@ -18,6 +18,11 @@ function event_corridor(e, _self, _key)
   var keyp   = String.fromCharCode(_key);
   // console.log(mytxt);
 
+  if($('body').hasClass('editingTable'))
+  {
+    // editing ermile table
+    return false;
+  }
 
   if(!cid)
   {

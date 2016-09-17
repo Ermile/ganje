@@ -22,8 +22,33 @@ route('*', function()
     calcTotalRow();
   });
 
+  $(document).on("dblclick", ".et .val_end", function(e) {
+    addEndTime(this);
+  });
+
 
 });
+
+
+function addEndTime(_this)
+{
+  // if data is not set, then updateit
+  if($(_this).text())
+  {
+    return false;
+  }
+  console.log($(_this).text());
+  $(".et .val_end").removeClass('edit');
+  $(_this).addClass('edit');
+  $('body').addClass('editingTable');
+
+  // $('#edit-data').copyData(this, ['modal']);
+
+
+  console.log(_this);
+}
+
+
 
 /**
  * this function calculate total row of ermile tables
@@ -170,6 +195,7 @@ $(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .ca
 $(document).on("click", ".card", function(e) { event_corridor(e, e.currentTarget, 'click'); });
 $(document).on("dblclick", ".card", function(e) { event_corridor(e, e.currentTarget, 'dblclick'); });
 $(document).on("dblclick", "#poem", function(e) { location.reload(); });
+$(document).on("dblclick", ".deadline", function(e) { location.reload(); });
 $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(e, e.currentTarget, 'rightclick'); });
 
 $(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });

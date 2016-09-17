@@ -197,7 +197,7 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 .et thead th{padding:1.5em 1em;text-transform:uppercase;}
 .et tfoot{background-color:#1F2739;color: #A7A1AE;font-weight:700;font-size:1.1em;transition:0.2s;}
 .et tfoot:hover{color:#ccc}
-.et tfoot td{padding:2em 1em;cursor:help;}
+.et tfoot td{padding:2em 1em;cursor:help;transition:0.3s;}
 .et tbody{height:300px;overflow-x:auto;margin-top:0;border:1px solid rgba(255,255,255,0.3);}
 .et tbody tr{transition:0.2s;}
 .et tbody tr:nth-child(odd) {background-color: #323C50;}
@@ -205,10 +205,29 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 .et tbody tr:hover{background-color: #464A52;}
 .et tbody td{padding:1em;vertical-align:middle;font-weight:300;color:#ddd;border-bottom:solid 1px rgba(255,255,255,0.1);}
 .et tbody td:first-child{color: #eee;}
+.et tbody tr td.edit{box-shadow: inset 0 0 4em 0px rgba(0,0,0,0.5);}
+.et tbody tr td.val_end[data-modal]:hover{cursor: pointer;box-shadow: inset 0 0 4em 0px rgba(0,0,0,0.5);}
 
 .et::-webkit-scrollbar{width:0.4em;}
 .et::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);}
 .et::-webkit-scrollbar-thumb{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);}
+
+
+.modal input, .modal select{border:none;background-color: #eee;transition:0.3s;padding: 0.5em 1em;margin: 0.1em;min-width: 180px;width: 180px;text-align: center;}
+.modal input:hover, .modal select:hover{background-color: #ddd;}
+.addNewRecord{position:absolute;bottom:0.5em;left:1em;width:3em;height:auto;cursor:pointer;}
+.modal[data-type='edit'] input{
+display: none;
+}
+
+
+.buttons{display:inline-block;vertical-align:middle;margin:0 .25em 0 0}
+.buttons > .button:hover,.buttons > .active.button{position:relative}
+.buttons:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.buttons .button:first-child{border-left:none}
+.buttons .button{margin:0;float:left;border-radius:0;margin:0 0 0 0}
+.buttons .button:first-child{margin-left:0;border-top-left-radius:.2857rem;border-bottom-left-radius:.2857rem}
+.buttons .button:last-child{border-top-right-radius:.2857rem;border-bottom-right-radius:.2857rem}
 
 
 nav.pagination{margin: 1em;text-align: center;overflow: hidden;}

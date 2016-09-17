@@ -41,6 +41,8 @@
      <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
 {%elseif column == 'name'%}
      <td class='val_{{column}}' data-val='{{val}}'>{%trans val%}</td>
+{%elseif column == 'end' and not val and true%}
+     <td class='val_{{column}}' data-modal='hour-edit' data-id='{{value.id}}'></td>
 {%else%}
      <td class='val_{{column}}' data-val='{{val}}'>{{val | persian}}</td>
 {%endif%}

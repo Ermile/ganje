@@ -30,4 +30,56 @@
 
  </section>
 {% embed display.ganje_et %}{% endembed %}
+
+
+  <svg version="1.1"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve" class="addNewRecord" data-modal="hour-add">
+    <circle style="fill:#6AAC4B;" cx="148.5" cy="148.5" r="148.5"/>
+    <path style="fill:#508733;" d="M296.994,148.006l-73.68-73.676L74.359,223.308l73.686,73.686c0.152,0,0.302,0.006,0.454,0.006 c82.014,0,148.5-66.486,148.5-148.5C297,148.335,296.994,148.171,296.994,148.006z"/>
+    <path style="fill:#345F41;" d="M93.334,66h110.333C218.762,66,231,78.238,231,93.334v110.333C231,218.762,218.762,231,203.667,231 H93.334C78.238,231,66,218.762,66,203.667V93.334C66,78.238,78.238,66,93.334,66z"/>
+    <polygon style="fill:#ECF0F1;" points="201,134.5 162.5,134.5 162.5,96 134.5,96 134.5,134.5 96,134.5 96,162.5 134.5,162.5 134.5,201 162.5,201 162.5,162.5 201,162.5  "/>
+  </svg>
+
+
+{%block modal%}
+ <div class='modal' id='hour-add' data-method="post">
+  <div class='modal-dialog'>
+   <h3 class='modal-title'>{%trans%}Add new record{%endtrans%}</h3>
+   <p class='modal-body'>
+     <select name="user_id">
+       <option value="" disabled selected>-</option>
+{%for key, user in users%}
+{%set name = user.displayname%}
+       <option value="{{key}}">{%trans name%}</option>
+{%endfor%}
+     </select><br/>
+
+     <input type="date" name="date" value="{{ 'now'|date('Y-m-d') }}" placeholder='{%trans "Date"%}'> <br/>
+     <input type="time" name="time" value="" placeholder='{%trans "Start time"%}'>
+     <input type="time" name="time_end" value="" placeholder='{%trans "End time"%}'><br/>
+     <input type="number" name="minus" min='0' max='500'  placeholder='{%trans "Minus"%} {%trans "(min)"%}'><br/>
+     <input type="number" name="plus" min='0' max='500'  placeholder='{%trans "Plus"%} {%trans "(min)"%}'><br/>
+   </p>
+   <div class='modal-footer buttons'>
+    <a class='button' data-cancel>{%trans "Cancel"%}</a>
+    <div class='or' data-text='{%trans "or"%}'></div>
+    <a class='button positive' data-ajaxify data-ok>{%trans "Insert"%}</a>
+   </div>
+  </div>
+ </div>
+
+ <div class='modal' id='hour-edit' data-method="post" data-data='{id=123}'>
+  <div class='modal-dialog'>
+   <h3 class='modal-title'>{%trans%}Edit record{%endtrans%}</h3>
+   <p class='modal-body'><input type="time" name="time_end" value="" placeholder='{%trans "End time"%}'><br/></p>
+   <div class='modal-footer buttons'>
+    <a class='button' data-cancel>{%trans "Cancel"%}</a>
+    <div class='or' data-text='{%trans "or"%}'></div>
+    <a class='button positive' data-ajaxify data-ok>{%trans "Insert"%}</a>
+   </div>
+  </div>
+ </div>
+
+{%endblock%}
+
+
 {% endblock %}
