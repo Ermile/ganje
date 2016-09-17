@@ -71,11 +71,16 @@ body#home{height:100%}
 .register .sidebar .time .hour {font-weight: 500;}
 .register .sidebar .time .minute, .sidebar .time .second {font-weight: 200;}
 .register .rtl .sidebar .time .second{min-width: 1.3em}
-.register .sidebar #date {text-align: center;margin-bottom: 10vh;margin-top: -10px;}
+.register .sidebar #date {text-align: center;margin-bottom: 7vh;margin-top: -10px;}
 .register .sidebar #logo{text-align: center;}
 .register .sidebar #logo img{height: 200px;}
 .register .sidebar #logo h1 {font-weight: bold;line-height: 2em;text-shadow: 0 0 1px #000;}
-.register .sidebar #poem {position: absolute;bottom: 1em;width: 100%;font-size: 0.8em;font-weight: 500;text-align: center;}
+.register .sidebar #poem {position: absolute;bottom: 1em;width: 100%;font-size: 0.8em;font-weight: 500;text-align: center;display:none;}
+.countdown{text-align: center;width: 50%;display: block;overflow: hidden;border-radius: 0.5em;margin: 1em auto;font-size: 0.8em;color:#fff;position:absolute;border-bottom:0;right:0;left:0;bottom:0;}
+.countdown .title{display: block;background-color:#0fa1a6;font-size: 1.3em;padding:0.1em 0.5em;font-weight: 100;}
+.countdown .info{display: block;background-color:#1a8083}
+.countdown .info time{display: block;font-size: 5em;font-weight:700;line-height:1;padding-top:0.2em;}
+
 @media screen and (max-height: 700px) { .register .sidebar #poem {display: none;}}
 @media screen and (max-height: 600px) { .register .sidebar #god, .sidebar #logo h1 {display: none;}}
 

@@ -12,6 +12,15 @@
       <img src="{{url.static}}images/logo.png" alt='{%trans "Ermile"%}'>
       <h1>{% trans "Ermile" %}</h1>
      </header>
+
+     <div class='countdown' title='{{deadline.date | jdate("d/m/Y")}}'>
+      <span class='title'>{{deadline.title}}</span>
+      <div class="info">
+       <time datetime="P{{deadline.value}}D">{{deadline.value | persian}}</time>
+       <span>{%trans "days left"%}</span>
+      </div>
+     </div>
+
 {% if site.currentlang == "fa" %}
      <div id="poem"><span>از دست غیبت تو شکایت نمی‌کنم</span><br /><span>تا نیست غیبتی نبود لذت حضور</span></div>
 {% endif %}

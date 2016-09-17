@@ -26,30 +26,26 @@ private function transtext()
 
 	//-------------------------------------------------content_ganje\home\display.html
 	echo T_("In the Name of God");                                                    // Line 8
-	echo T_("Enter Time");                                                            // Line 69
-	echo T_("Difference between enter and exit");                                     // Line 70
-	echo T_("Operation Time");                                                        // Line 70
-	echo T_("Exit Time");                                                             // Line 71
-	echo T_("Minus");                                                                 // Line 73
-	echo T_("Plus");                                                                  // Line 74
-	echo T_("Total");                                                                 // Line 75
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 76
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 81
+	echo T_("days left");                                                             // Line 20
+	echo T_("Enter Time");                                                            // Line 77
+	echo T_("Difference between enter and exit");                                     // Line 78
+	echo T_("Operation Time");                                                        // Line 78
+	echo T_("Exit Time");                                                             // Line 79
+	echo T_("Minus");                                                                 // Line 81
+	echo T_("Plus");                                                                  // Line 82
+	echo T_("Total");                                                                 // Line 83
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 84
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 89
 
 	//------------------------------------------------------content_ganje\home\et.html
-	echo T_("Data not exist!");                                                       // Line 49
+	echo T_("Data not exist!");                                                       // Line 53
 
 	//--------------------------------------------------content_ganje\home\layout.html
-	echo T_("Remove Filters");                                                        // Line 26
-	echo T_("Select all months");                                                     // Line 33
-	echo T_("Enter year");                                                            // Line 70
-	echo T_("Work with Ermile in your own language");                                 // Line 77
-	echo T_("Export to CSV");                                                         // Line 86
-
-	//-----------------------------------------------content_ganje\status\display.html
-	echo T_("in this month");                                                         // Line 10
-	echo T_("in this week");                                                          // Line 14
-	echo T_("remote in this month");                                                  // Line 25
+	echo T_("Select all months");                                                     // Line 53
+	echo T_("Enter year");                                                            // Line 90
+	echo T_("all");                                                                   // Line 98
+	echo T_("Work with Ermile in your own language");                                 // Line 117
+	echo T_("Export to CSV");                                                         // Line 126
 
 	//----------------------------------------------content_ganje\summary\display.html
 	echo T_("Export");                                                                // Line 22
