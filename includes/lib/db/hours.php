@@ -199,6 +199,7 @@ class hours {
 			IFNULL(hours.hour_plus,0) 	 	AS 'plus',
 			IFNULL(hours.hour_minus,0) 	 	AS 'minus',
 			hours.hour_status				AS 'status',
+			hours.hour_type					AS 'type',
 			IFNULL(hours.hour_accepted,0) 	AS 'accepted'
 		";
 		// pagnation

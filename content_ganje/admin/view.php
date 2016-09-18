@@ -46,6 +46,9 @@ class view extends \mvc\view
 		$this->data->default_day   = ['val' => $month_default];
 		$this->data->default_month = ['val' => $day_default];
 		$this->data->default_year  = ['min' => $year_min, 'max' => $year_current, 'val' => $year_default];
+
+		$this->data->bodyclass     .= ' manage';
+
 	}
 }
 ?>

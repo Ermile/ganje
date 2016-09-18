@@ -6,7 +6,7 @@
 {%if et.columns%}
    <thead>
     <tr>
-{%for column, type in et.columns%}
+{%for column, type in et.columns if column != 'type'%}
      <th class='col_{{column}}'>{%trans column%}</th>
 {%endfor%}
     </tr>
@@ -16,7 +16,7 @@
 {%if et.totalrow%}
    <tfoot>
     <tr>
-{%for column, type in et.columns%}
+{%for column, type in et.columns if column != 'type'%}
 {%if et.totalrow[column]%}
 {%if column == 'diff' or column == 'plus' or column == 'minus' or column == 'accepted'%}
      <td class='total_{{column}}' data-func='{{et.totalrow[column]}}' data-type='time'>0</td>
@@ -34,11 +34,21 @@
    <tbody>
 {%for row, value in et.data%}
 
-    <tr {%if value.id%}data-id='{{value.id}}'{%endif%} {%if value.status%}data-status='{{value.status}}'{%endif%} {%if value.type%}data-type='{{value.type}}'{%endif%}>
-{%for column, type in et.columns%}
+    <tr {%if value.id%}data-id='{{value.id}}'{%endif%} {%if value.status%}data-status='{{value.status}}'{%endif%} {%if value.type%}data-type='{{value.type}}'{%endif%} data-type='{{value.type}}'>
+{%for column, type in et.columns if column != 'type'%}
 {%set val = attribute(value, column)%}
-{%if column == 'accepted' or column == 'diff'%}
+{%if column == 'accepted'%}
      <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+
+{%elseif column == 'diff' %}
+     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+
+{%elseif column == 'plus'%}
+     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+
+{%elseif column == 'minus'%}
+     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+
 {%elseif column == 'name'%}
      <td class='val_{{column}}' data-val='{{val}}'>{%trans val%}</td>
 {%elseif column == 'end' and not val and true%}
