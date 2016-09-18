@@ -36,7 +36,7 @@ class view extends \mvc\view
 
 		if($year_min == $year_current && $year_default != '0000')
 		{
-			$year_default = $year_current;
+			$year_default = '0000';
 		}
 
 		$month_default = $_args->get_date(2)? $_args->get_date(2): '00';
