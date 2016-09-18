@@ -13,7 +13,6 @@ class model extends \mvc\model
 	public function post_admin($_args)
 	{
 		$this->access('ganje', 'admin', 'edit', 'block');
-var_dump(utility::post());exit();
 		if(utility::post('type') == 'add')
 		{
 			$args =
@@ -56,6 +55,10 @@ var_dump(utility::post());exit();
 			{
 				debug::error(T_("Can not save change"));
 			}
+		}
+		else
+		{
+			debug::error(T_("How are you!"));
 		}
 	}
 
