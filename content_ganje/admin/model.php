@@ -13,7 +13,8 @@ class model extends \mvc\model
 	public function post_admin($_args)
 	{
 		$this->access('ganje', 'admin', 'edit', 'block');
-		if(utility::post('type') == 'add')
+		$type = utility::post('type');
+		if($type == 'add')
 		{
 			$args =
 			[
@@ -35,7 +36,7 @@ class model extends \mvc\model
 				debug::error(T_("Error in insert"));
 			}
 		}
-		elseif(utility::post('type') == 'edit')
+		elseif($type == 'edit')
 		{
 
 			$arg =
@@ -55,6 +56,18 @@ class model extends \mvc\model
 			{
 				debug::error(T_("Can not save change"));
 			}
+		}
+		elseif($type == 'change')
+		{
+			// reza you must run query to give data and return new status
+			$arg =
+			[
+				'id'     => utility::post('recordId'),
+				'type' => utility::post('field'),
+			];
+
+			debug::true(T_("Saved"));
+			debug::property('result', 'all testing...');
 		}
 		else
 		{

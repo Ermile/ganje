@@ -22,12 +22,46 @@ route('*', function()
     calcTotalRow();
   });
 
-  $(document).on("dblclick", ".et .val_end", function(e) {
-    addEndTime(this);
-  });
+  $(document).on("dblclick", ".et .val_end", function(e) {addEndTime(this);});
+  $(document).on("dblclick", ".et .val_diff", function(e) {changeTypeOfRecod(this, 'diff');});
+  $(document).on("dblclick", ".et .val_plus", function(e) {changeTypeOfRecod(this, 'plus');});
+  $(document).on("dblclick", ".et .val_minus", function(e) {changeTypeOfRecod(this, 'minus');});
 
 
 });
+
+
+
+function changeTypeOfRecod(_this, _field)
+{
+  var row      = $(_this).parents('tr');
+  var recordId = row.attr('data-id');
+ // send ajax and do best work on respnse
+  $('.et').ajaxify({
+    ajax:
+    {
+      data:
+      {
+        recordId: recordId,
+        field: _field,
+        type: 'change'
+      },
+      abort: false,
+      success: function(e, data, x)
+      {
+        var myResult   = x.responseJSON.result;
+        if(myResult == undefined)
+        {
+          return false;
+        }
+        else
+        {
+          row.attr('data-type', myResult);
+        }
+      }
+    }
+  });
+}
 
 
 function addEndTime(_this)
