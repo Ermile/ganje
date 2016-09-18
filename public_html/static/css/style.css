@@ -240,6 +240,14 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 /* wminus */
 .et tbody tr[data-type='wminus'] td.val_plus::before{content: "❌";color: #b52828}
 
+.et tbody tr[data-status='active'] td:last-child:after{float:left;content:"❤";color:#71b528;}
+.et tbody tr[data-status='filter'] td:last-child:after{float:left;content:"💔";color: #acc334;}
+.et tbody tr[data-status='deactive'] td:last-child:after{float:left;content:"🚷";color:#b52828;}
+.et tbody tr[data-status='remove'] td:last-child:after{float:left;content:"🚫";}
+.et tbody tr[data-status='awaiting'] td:last-child:after{float:left;content:"📌";}
+
+
+
 /* style manage for admin*/
 .manage .et tbody tr td.edit{box-shadow: inset 0 0 4em 0px rgba(0,0,0,0.5);}
 .manage .et tbody tr td.val_end[data-modal]:hover{cursor: pointer;box-shadow: inset 0 0 4em 0px rgba(0,0,0,0.5);}
