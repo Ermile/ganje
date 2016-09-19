@@ -62,12 +62,20 @@ class model extends \mvc\model
 			// reza you must run query to give data and return new status
 			$arg =
 			[
-				'id'     => utility::post('recordId'),
+				'id'   => utility::post('recordId'),
 				'type' => utility::post('field'),
 			];
 
-			debug::true(T_("Saved"));
-			debug::property('result', 'all testing...');
+			$result = \lib\db\hours::change_hours_status($arg);
+			if($result)
+			{
+				debug::property('result', $result);
+				debug::true(T_("Saved"));
+			}
+			else
+			{
+				debug::error(T_("Can not save change"));
+			}
 		}
 		else
 		{

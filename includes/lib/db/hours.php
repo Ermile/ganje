@@ -144,6 +144,149 @@ class hours {
 
 
 	/**
+	 * get hours.id and hours.hour_status and update hours status
+	 *
+	 * @param      <type>  $_args  The arguments
+	 */
+	public static function change_hours_status($_args)
+	{
+		if(isset($_args['id']))
+		{
+			$id = $_args['id'];
+		}
+		else
+		{
+			$id = 0;
+		}
+
+		if(isset($_args['type']))
+		{
+			$type = $_args['type'];
+		}
+		else
+		{
+			$type = "";
+		}
+
+		$saved_type =
+		"
+			SELECT
+				hours.hour_type AS 'type'
+			FROM
+				hours
+			WHERE
+				hours.id = $id
+			LIMIT 1
+		";
+		$saved_type = \lib\db::get($saved_type, 'type', true);
+
+		$new_type = "";
+
+		switch ($type)
+		{
+			case 'diff':
+				switch ($saved_type)
+				{
+					case 'all':
+					case 'wplus':
+					case 'wminus':
+					case 'base':
+						$new_type = "nothing";
+						break;
+
+					case 'nothing':
+						$new_type = "base";
+						break;
+
+					default:
+						$new_type = "base";
+						break;
+				}
+				break;
+
+			case 'minus':
+				switch ($saved_type)
+				{
+					case 'all':
+						$new_type = "wplus";
+						break;
+
+					case 'nothing':
+					case 'base':
+						$new_type = "wminus";
+						break;
+
+					case 'wplus':
+						$new_type = "all";
+						break;
+
+					case 'wminus':
+						$new_type = "nothing";
+						break;
+
+					default:
+						$new_type = "nothing";
+						break;
+				}
+				break;
+
+			case 'plus':
+				switch ($saved_type)
+				{
+					case 'all':
+						$new_type = "wminus";
+						break;
+
+					case 'nothing':
+					case 'base':
+						$new_type = "wplus";
+						break;
+
+					case 'wplus':
+						$new_type = "base";
+						break;
+
+					case 'wminus':
+						$new_type = "all";
+						break;
+
+					default:
+						$new_type = "nothing";
+						break;
+				}
+				break;
+			case 'accept':
+				$new_type = "all";
+				break;
+			default:
+				$new_type = "hour_type";
+				break;
+		}
+
+		$update_type =
+		"
+			UPDATE
+				hours
+			SET
+				hours.hour_type = '$new_type'
+			WHERE
+				hours.id = $id
+		";
+
+		$result = \lib\db::query($update_type);
+
+		if($result)
+		{
+			return $new_type;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+
+	/**
 	 * return last record of hours table
 	 * if none param send to this function get last record of all users
 	 * you can send ['user' => \d+] to get last record of this users

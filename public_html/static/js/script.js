@@ -26,6 +26,7 @@ route('*', function()
   $(document).on("dblclick", ".et .val_diff", function(e) {changeTypeOfRecod(this, 'diff');});
   $(document).on("dblclick", ".et .val_plus", function(e) {changeTypeOfRecod(this, 'plus');});
   $(document).on("dblclick", ".et .val_minus", function(e) {changeTypeOfRecod(this, 'minus');});
+  $(document).on("dblclick", ".et .val_accepted", function(e) {changeTypeOfRecod(this, 'accept');});
 
 
 });
