@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2016-09-18 20:53+0430\n"
-"PO-Revision-Date: 2016-09-18 20:54+0430\n"
+"POT-Creation-Date: 2016-09-19 12:34+0430\n"
+"PO-Revision-Date: 2016-09-19 12:35+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -2061,7 +2061,7 @@ msgid "Powered by"
 msgstr "قدرت گرفته از"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:72
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:39
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:35
 #: tejarak/includes/languages/trans_addons.php:72
 #: tejarak/includes/languages/trans_twig.php:65
 msgid "Saloos"
@@ -2801,13 +2801,13 @@ msgid "Reza Mohiti"
 msgstr "رضا محیطی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:254
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:40
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:36
 #: tejarak/includes/languages/trans_addons.php:258
 msgid "Another Project with Saloos"
 msgstr "یک پروژه دیگر با سالوس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:255
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:41
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:37
 #: tejarak/includes/languages/trans_addons.php:259
 msgid "Saloos is an artichokes for PHP programming!!"
 msgstr "سالوس یک کنگر برای برنامه نویسی با پی اچ پی!"
@@ -3499,27 +3499,27 @@ msgstr "نمی‌توان تغییرات را ذخیره کرد"
 msgid "How are you!"
 msgstr "حالت خوبه؟"
 
-#: tejarak/content_ganje/home/model.php:36
+#: tejarak/content_ganje/home/model.php:37
 msgid "User not found"
 msgstr "کاربر یافت نشد"
 
-#: tejarak/content_ganje/home/model.php:40
+#: tejarak/content_ganje/home/model.php:41
 msgid "Dear :name;"
 msgstr ":name عزیز؛"
 
-#: tejarak/content_ganje/home/model.php:40
+#: tejarak/content_ganje/home/model.php:41
 msgid "Your enter was registered."
 msgstr "ورود شما ثبت شد."
 
-#: tejarak/content_ganje/home/model.php:40
+#: tejarak/content_ganje/home/model.php:41
 msgid "Have a good time."
 msgstr "اوقات خوبی داشته باشید."
 
-#: tejarak/content_ganje/home/model.php:47
+#: tejarak/content_ganje/home/model.php:48
 msgid "Bye Bye :name ;)"
 msgstr "خدانگهدار :name جون;)"
 
-#: tejarak/content_ganje/home/model.php:129
+#: tejarak/content_ganje/home/model.php:130
 msgid "to"
 msgstr "تا"
 
@@ -3537,8 +3537,8 @@ msgid "Enjoy work time"
 msgstr "از زمان کاری خود لذت ببرید"
 
 #: tejarak/content_ganje/home/view.php:26
-msgid "Demo"
-msgstr "نسخه‌ی نمایشی"
+msgid "Sarshomar Demo"
+msgstr "نسخه‌ی نمایشی سرشمار"
 
 #: tejarak/content_ganje/manifest.php:4
 msgid "Register enter and exit"
@@ -3913,6 +3913,9 @@ msgstr "تجارک"
 msgid "Tejarak was born to serve small and beautiful service for e-business"
 msgstr ""
 "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+
+#~ msgid "Demo"
+#~ msgstr "نسخه‌ی نمایشی"
 
 #~ msgid "Remove Filters"
 #~ msgstr "حذف فیلترها"

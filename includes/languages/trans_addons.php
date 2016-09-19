@@ -186,10 +186,6 @@ private function transtext()
 	echo T_("If you think of your site like a book, the categories are like the Table of Contents and the tags are like the terms in the index.");// Line 15
 	echo T_("You can nest category under other category by making one the “Parent” of the other.");// Line 46
 
-	//--------------------------saloos-addons\content_cp\templates\inc_pagination.html
-	echo T_("First page");                                                            // Line 11
-	echo T_("Last page");                                                             // Line 22
-
 	//--------------------------saloos-addons\content_cp\templates\module_display.html
 	echo T_("Actions");                                                               // Line 86 Seperate
 	echo T_("Data not exist!");                                                       // Line 164 Seperate

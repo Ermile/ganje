@@ -23,7 +23,7 @@ class view extends \mvc\view
 
 		// add deadline of projects
 		$deadline                      = strtotime("2016/10/22");
-		$this->data->deadline          = ['title' => T_('Demo'), 'value' => '', 'date' => $deadline];
+		$this->data->deadline          = ['title' => T_('Sarshomar Demo'), 'value' => '', 'date' => $deadline];
 		$this->data->deadline['value'] = floor(abs(time() - $deadline) / (60 * 60 * 24));
 	}
 

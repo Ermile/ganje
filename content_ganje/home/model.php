@@ -16,7 +16,6 @@ class model extends \mvc\model
 	 */
 	public function post_save()
 	{
-		sleep(2);
 		$this->access('ganje', 'home', 'edit', 'block');
 
 		$result        = null;
