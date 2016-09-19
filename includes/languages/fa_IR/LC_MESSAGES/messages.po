@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2016-09-17 14:42+0430\n"
-"PO-Revision-Date: 2016-09-17 14:45+0430\n"
+"POT-Creation-Date: 2016-09-18 20:53+0430\n"
+"PO-Revision-Date: 2016-09-18 20:54+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -725,7 +725,8 @@ msgstr "حذف با موفقیت انجام شد"
 #: saloos/saloos-addons/content_cp/permissions/view.php:9
 #: saloos/saloos-addons/includes/languages/trans_addons.php:497
 #: tejarak/includes/languages/trans_addons.php:501
-msgid "Define or edit user permissions to allow or block access to special pages"
+msgid ""
+"Define or edit user permissions to allow or block access to special pages"
 msgstr "تعریف یا ویرایش سطوح‌دسترسی برای اجازه یا ممنوع کردن دسترسی به صفحات خاص"
 
 #: saloos/saloos-addons/content_cp/permissions/view.php:15
@@ -1327,8 +1328,8 @@ msgstr "عنوان سایت"
 #: tejarak/includes/languages/trans_addons.php:412
 msgid "For multilanguage sites enter title in English and translate it"
 msgstr ""
-"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم آن "
-"را به سایر زبان‌ها ترجمه کنید"
+"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم "
+"آن را به سایر زبان‌ها ترجمه کنید"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:385
@@ -1822,7 +1823,7 @@ msgstr "بین ۵ تا ۴۰ کاراکتر."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:6
 #: tejarak/includes/languages/trans_addons.php:6
-#: tejarak/includes/languages/trans_twig.php:47
+#: tejarak/includes/languages/trans_twig.php:58
 msgid "Work with Ermile in your own language"
 msgstr "با زبان خودتان با ارمایل کار کنید"
 
@@ -2046,7 +2047,8 @@ msgstr "خروج از سیستم"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:69
 #: tejarak/includes/languages/trans_addons.php:69
 msgid "We glad to working for you and hope you enjoy using our system"
-msgstr "ما از کار برای شما خوشحال بوده و امیدواریم شما نیز از سیستم ما لذت ببرید"
+msgstr ""
+"ما از کار برای شما خوشحال بوده و امیدواریم شما نیز از سیستم ما لذت ببرید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:70
 #: tejarak/includes/languages/trans_addons.php:70
@@ -2061,7 +2063,7 @@ msgstr "قدرت گرفته از"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:72
 #: saloos/saloos-addons/lib/mvc/viewes/constructor.php:39
 #: tejarak/includes/languages/trans_addons.php:72
-#: tejarak/includes/languages/trans_twig.php:54
+#: tejarak/includes/languages/trans_twig.php:65
 msgid "Saloos"
 msgstr "سالوس"
 
@@ -2184,11 +2186,13 @@ msgstr "مطمئنید؟ بعد از حذف امکان  بازگشت وجود ن
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:107
 #: tejarak/includes/languages/trans_addons.php:107
+#: tejarak/includes/languages/trans_twig.php:33
 msgid "Cancel"
 msgstr "انصراف"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:108
 #: tejarak/includes/languages/trans_addons.php:108
+#: tejarak/includes/languages/trans_twig.php:34
 msgid "or"
 msgstr "یا"
 
@@ -2209,7 +2213,8 @@ msgstr "ویرایش دسترسی به"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:114
 #: tejarak/includes/languages/trans_addons.php:114
-msgid "Allow or disallow user to access all part of service with full permission!"
+msgid ""
+"Allow or disallow user to access all part of service with full permission!"
 msgstr "اجازه یا عدم اجازه به کاربر برای دسترسی کامل به تمام بخش‌های سرویس!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:115
@@ -2281,7 +2286,8 @@ msgstr "عنوان مطلب خود را در اینجا وارد کنید"
 #: tejarak/includes/languages/trans_addons.php:131
 msgid "Url of your content appear here, click on it to view"
 msgstr ""
-"آدرس مطلب شما در این بخش نمایش داده می‌شود که با کلیک می‌توانید آن را مشاهده کنید"
+"آدرس مطلب شما در این بخش نمایش داده می‌شود که با کلیک می‌توانید آن را مشاهده "
+"کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:132
 #: tejarak/includes/languages/trans_addons.php:132
@@ -2306,17 +2312,20 @@ msgstr "چکیده"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:136
 #: tejarak/includes/languages/trans_addons.php:136
 msgid "If excerpt is empty we get it automatically from content"
-msgstr "اگر چکیده را خالی بگذارید ما آن را به صورت خودکار از روی نوشته پر میکنیم"
+msgstr ""
+"اگر چکیده را خالی بگذارید ما آن را به صورت خودکار از روی نوشته پر میکنیم"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:137
 #: tejarak/includes/languages/trans_addons.php:137
 msgid "Summaries of your content that can be used as page description."
-msgstr "خلاصه ای از نوشته شما که برای نمایش به عنوان توضیح نوشته استفاده می شود."
+msgstr ""
+"خلاصه ای از نوشته شما که برای نمایش به عنوان توضیح نوشته استفاده می شود."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:138
 #: tejarak/includes/languages/trans_addons.php:138
 msgid "Write your tag and press enter to add new keyword to content"
-msgstr "کلیدواژه‌ی مورد نظر خود را نوشته و با فشردن انتر آن را به مطلب اضافه کنید"
+msgstr ""
+"کلیدواژه‌ی مورد نظر خود را نوشته و با فشردن انتر آن را به مطلب اضافه کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:139
 #: tejarak/includes/languages/trans_addons.php:139
@@ -2331,13 +2340,13 @@ msgstr "تگ را وارد کنید"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:141
 #: tejarak/includes/languages/trans_addons.php:141
 msgid ""
-"Normally, tags are ad-hoc keywords that identify important information in your "
-"post (names, subjects, etc) that may or may not recur in other posts, while "
-"categories are pre-determined sections."
+"Normally, tags are ad-hoc keywords that identify important information in "
+"your post (names, subjects, etc) that may or may not recur in other posts, "
+"while categories are pre-determined sections."
 msgstr ""
-"به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در نوشته "
-"شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها مشخص "
-"نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
+"به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در "
+"نوشته شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها "
+"مشخص نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:142
 #: tejarak/includes/languages/trans_addons.php:142
@@ -2407,8 +2416,8 @@ msgstr "وضعیت"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:154
 #: tejarak/includes/languages/trans_addons.php:154
 msgid ""
-"All of content set as draft in default, for showing it to visitors you must set "
-"it to publish"
+"All of content set as draft in default, for showing it to visitors you must "
+"set it to publish"
 msgstr ""
 "تمام مطالب به صورت پیش فرض در حالت پیش نویس قرار می‌گیرند که شما برای انتشار و "
 "نمایش آن به بازدیدکنندگان باید وضعیت آن را به منتشرشده تغییر دهید"
@@ -2499,10 +2508,11 @@ msgstr "تنظیم تصویر شاخص"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:171
 #: tejarak/includes/languages/trans_addons.php:171
-msgid "You can see type of your file and click on image to direct access to file"
+msgid ""
+"You can see type of your file and click on image to direct access to file"
 msgstr ""
-"شما می‌توانید نوع فایل را دیده و با کلیک روی عکس آن، مستقیما به آن دسترسی داشته "
-"باشید"
+"شما می‌توانید نوع فایل را دیده و با کلیک روی عکس آن، مستقیما به آن دسترسی "
+"داشته باشید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:172
 #: tejarak/includes/languages/trans_addons.php:172
@@ -2559,7 +2569,8 @@ msgid ""
 "You can nest category under other category by making one the “Parent” of the "
 "other."
 msgstr ""
-"شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت کنید."
+"شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت "
+"کنید."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:190
 #: tejarak/includes/languages/trans_addons.php:194
@@ -2568,7 +2579,7 @@ msgstr "عملیات"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:191
 #: tejarak/includes/languages/trans_addons.php:195
-#: tejarak/includes/languages/trans_twig.php:41
+#: tejarak/includes/languages/trans_twig.php:52
 msgid "Data not exist!"
 msgstr "داده‌ای برای نمایش وجود ندارد!"
 
@@ -2645,12 +2656,12 @@ msgstr "تفاوت بین نوشته و برگه در چیست؟"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:220
 #: tejarak/includes/languages/trans_addons.php:224
 msgid ""
-"Pages are similar to Posts in that they have a title, body text, and associated "
-"metadata, but they are different in that they are not part of the chronological "
-"blog stream, kind of like permanent posts."
+"Pages are similar to Posts in that they have a title, body text, and "
+"associated metadata, but they are different in that they are not part of the "
+"chronological blog stream, kind of like permanent posts."
 msgstr ""
-"برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی آن "
-"ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در "
+"برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی "
+"آن ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در "
 "حقیقت شبیه به یک پست دائمی هستند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:221
@@ -3155,6 +3166,7 @@ msgstr "عنوان"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:387
 #: tejarak/includes/languages/trans_addons.php:391
+#: tejarak/includes/languages/trans_twig.php:27
 msgid "Date"
 msgstr "تاریخ"
 
@@ -3429,7 +3441,7 @@ msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:527
 #: tejarak/includes/languages/trans_addons.php:531
-#: tejarak/includes/languages/trans_twig.php:87
+#: tejarak/includes/languages/trans_twig.php:98
 msgid " "
 msgstr " "
 
@@ -3475,12 +3487,17 @@ msgid "Error in insert"
 msgstr "خطا در افزودن رکورد جدید"
 
 #: tejarak/content_ganje/admin/model.php:53
+#: tejarak/content_ganje/admin/model.php:69
 msgid "Saved"
 msgstr "ذخیره شد"
 
 #: tejarak/content_ganje/admin/model.php:57
 msgid "Can not save change"
 msgstr "نمی‌توان تغییرات را ذخیره کرد"
+
+#: tejarak/content_ganje/admin/model.php:74
+msgid "How are you!"
+msgstr "حالت خوبه؟"
 
 #: tejarak/content_ganje/home/model.php:36
 msgid "User not found"
@@ -3506,20 +3523,20 @@ msgstr "خدانگهدار :name جون;)"
 msgid "to"
 msgstr "تا"
 
-#: tejarak/content_ganje/home/view.php:20
+#: tejarak/content_ganje/home/view.php:19
 #: tejarak/includes/languages/trans_twig.php:7
 msgid "Ganje"
 msgstr "گنجه"
 
-#: tejarak/content_ganje/home/view.php:21
+#: tejarak/content_ganje/home/view.php:20
 msgid "Free & open source attendance service!"
 msgstr "سرویس حضور و غیاب رایگان و منبع‌باز"
 
-#: tejarak/content_ganje/home/view.php:22 tejarak/includes/mvc/view.php:12
+#: tejarak/content_ganje/home/view.php:21 tejarak/includes/mvc/view.php:12
 msgid "Enjoy work time"
 msgstr "از زمان کاری خود لذت ببرید"
 
-#: tejarak/content_ganje/home/view.php:28
+#: tejarak/content_ganje/home/view.php:26
 msgid "Demo"
 msgstr "نسخه‌ی نمایشی"
 
@@ -3552,7 +3569,7 @@ msgid "wminus"
 msgstr "همراه با هدررفت"
 
 #: tejarak/includes/cls/database/tejarak/translation.php:32
-#: tejarak/includes/languages/trans_twig.php:46
+#: tejarak/includes/languages/trans_twig.php:57
 msgid "all"
 msgstr "همه"
 
@@ -3609,8 +3626,8 @@ msgid ""
 "Integration with services which will soon be public lead no need for small "
 "businesses, costly and inconvenience."
 msgstr ""
-"یکپارچگی آن با سرویس‌هایی که به امید خدا بزودی عمومی‌ خواهند شد، منجر به عدم نیاز "
-"کسب و کارهای کوچک به سرویس‌های پیچیده، هزینه‌بر و سرسام آور خواهد بود!"
+"یکپارچگی آن با سرویس‌هایی که به امید خدا بزودی عمومی‌ خواهند شد، منجر به عدم "
+"نیاز کسب و کارهای کوچک به سرویس‌های پیچیده، هزینه‌بر و سرسام آور خواهد بود!"
 
 #: tejarak/includes/languages/trans_twig.php:10
 msgid "About"
@@ -3652,193 +3669,227 @@ msgstr "۱۳۹۵"
 msgid "Some right reserved!"
 msgstr "برخی از حقوق محفوظ است!"
 
+#: tejarak/includes/languages/trans_twig.php:26
+msgid "Add new record"
+msgstr "افزودن رکورد جدید"
+
 #: tejarak/includes/languages/trans_twig.php:28
-msgid "In the Name of God"
-msgstr "به‌نام یگانه برنامه‌نویس هستی"
+msgid "Start time"
+msgstr "ساعت شروع"
 
 #: tejarak/includes/languages/trans_twig.php:29
-msgid "days left"
-msgstr "روز مانده"
+msgid "End time"
+msgstr "ساعت پایان"
 
 #: tejarak/includes/languages/trans_twig.php:30
-msgid "Enter Time"
-msgstr "زمان ورود"
-
-#: tejarak/includes/languages/trans_twig.php:31
-msgid "Difference between enter and exit"
-msgstr "تفاوت بین زمان ورود و خروج"
-
-#: tejarak/includes/languages/trans_twig.php:32
-msgid "Operation Time"
-msgstr "زمان فعالیت"
-
-#: tejarak/includes/languages/trans_twig.php:33
-msgid "Exit Time"
-msgstr "زمان خروج"
-
-#: tejarak/includes/languages/trans_twig.php:34
 msgid "Minus"
 msgstr "هدر رفت"
 
-#: tejarak/includes/languages/trans_twig.php:35
+#: tejarak/includes/languages/trans_twig.php:31
+msgid "(min)"
+msgstr "(دقیقه)"
+
+#: tejarak/includes/languages/trans_twig.php:32
 msgid "Plus"
 msgstr "دور کاری"
 
+#: tejarak/includes/languages/trans_twig.php:35
+msgid "Insert"
+msgstr "افزودن"
+
 #: tejarak/includes/languages/trans_twig.php:36
+msgid "Edit record"
+msgstr "ویرایش رکورد"
+
+#: tejarak/includes/languages/trans_twig.php:39
+msgid "In the Name of God"
+msgstr "به‌نام یگانه برنامه‌نویس هستی"
+
+#: tejarak/includes/languages/trans_twig.php:40
+msgid "days left"
+msgstr "روز مانده"
+
+#: tejarak/includes/languages/trans_twig.php:41
+msgid "Enter"
+msgstr "ورود"
+
+#: tejarak/includes/languages/trans_twig.php:42
+msgid "Exit"
+msgstr "خروج"
+
+#: tejarak/includes/languages/trans_twig.php:43
+msgid "Enter Time"
+msgstr "زمان ورود"
+
+#: tejarak/includes/languages/trans_twig.php:44
+msgid "Difference between enter and exit"
+msgstr "تفاوت بین زمان ورود و خروج"
+
+#: tejarak/includes/languages/trans_twig.php:45
+msgid "Operation Time"
+msgstr "زمان فعالیت"
+
+#: tejarak/includes/languages/trans_twig.php:46
+msgid "Exit Time"
+msgstr "زمان خروج"
+
+#: tejarak/includes/languages/trans_twig.php:47
 msgid "Total"
 msgstr "مجموع"
 
-#: tejarak/includes/languages/trans_twig.php:37
+#: tejarak/includes/languages/trans_twig.php:48
 msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."
 msgstr ""
-" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت نمایید."
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت "
+"نمایید."
 
-#: tejarak/includes/languages/trans_twig.php:38
+#: tejarak/includes/languages/trans_twig.php:49
 msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."
 msgstr ""
-" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت نمایید."
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت "
+"نمایید."
 
-#: tejarak/includes/languages/trans_twig.php:44
+#: tejarak/includes/languages/trans_twig.php:55
 msgid "Select all months"
 msgstr "تمام ماه‌ها انتخاب شده"
 
-#: tejarak/includes/languages/trans_twig.php:45
+#: tejarak/includes/languages/trans_twig.php:56
 msgid "Enter year"
 msgstr "سال را وارد کنید"
 
-#: tejarak/includes/languages/trans_twig.php:48
+#: tejarak/includes/languages/trans_twig.php:59
 msgid "Export to CSV"
 msgstr "خروجی به سی‌اس‌وی"
 
-#: tejarak/includes/languages/trans_twig.php:51
+#: tejarak/includes/languages/trans_twig.php:62
 msgid "Export"
 msgstr "خروجی"
 
-#: tejarak/includes/languages/trans_twig.php:55
+#: tejarak/includes/languages/trans_twig.php:66
 msgid "2013"
 msgstr "۱۳۹۲"
 
-#: tejarak/includes/languages/trans_twig.php:56
+#: tejarak/includes/languages/trans_twig.php:67
 msgid "2014"
 msgstr "۱۳۹۳"
 
-#: tejarak/includes/languages/trans_twig.php:57
+#: tejarak/includes/languages/trans_twig.php:68
 msgid "2015"
 msgstr "۱۳۹۴"
 
-#: tejarak/includes/languages/trans_twig.php:58
+#: tejarak/includes/languages/trans_twig.php:69
 msgid "2017"
 msgstr "۱۳۹۶"
 
-#: tejarak/includes/languages/trans_twig.php:59
+#: tejarak/includes/languages/trans_twig.php:70
 msgid "2018"
 msgstr "۱۳۹۷"
 
-#: tejarak/includes/languages/trans_twig.php:60
+#: tejarak/includes/languages/trans_twig.php:71
 msgid "2019"
 msgstr "۱۳۹۸"
 
-#: tejarak/includes/languages/trans_twig.php:61
+#: tejarak/includes/languages/trans_twig.php:72
 msgid "Sadegh Salehi"
 msgstr "صادق صالحی"
 
-#: tejarak/includes/languages/trans_twig.php:62
+#: tejarak/includes/languages/trans_twig.php:73
 msgid "Ali Modabber"
 msgstr "علی مدبر"
 
-#: tejarak/includes/languages/trans_twig.php:63
+#: tejarak/includes/languages/trans_twig.php:74
 msgid "SeyedMahdi Hoseini"
 msgstr "سیدمهدی حسینی"
 
-#: tejarak/includes/languages/trans_twig.php:64
+#: tejarak/includes/languages/trans_twig.php:75
 msgid "Ali Kharidar"
 msgstr "علی خریدار"
 
-#: tejarak/includes/languages/trans_twig.php:65
+#: tejarak/includes/languages/trans_twig.php:76
 msgid "MohamadAli Salehi"
 msgstr "محمدعلی صالحی"
 
-#: tejarak/includes/languages/trans_twig.php:66
+#: tejarak/includes/languages/trans_twig.php:77
 msgid "Sara Torkamani"
 msgstr "سارا ترکمنی"
 
-#: tejarak/includes/languages/trans_twig.php:67
+#: tejarak/includes/languages/trans_twig.php:78
 msgid "hours in this week"
 msgstr "ساعت در این هفته"
 
-#: tejarak/includes/languages/trans_twig.php:68
+#: tejarak/includes/languages/trans_twig.php:79
 msgid "hours in this month"
 msgstr "ساعت در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:69
+#: tejarak/includes/languages/trans_twig.php:80
 msgid "hours remote in this month"
 msgstr "ساعت ریموت در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:70
+#: tejarak/includes/languages/trans_twig.php:81
 msgid "hours in idle this month"
 msgstr "ساعت هدر داده در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:71
+#: tejarak/includes/languages/trans_twig.php:82
 msgid "Founder & CEO"
 msgstr "موسس و مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:72
+#: tejarak/includes/languages/trans_twig.php:83
 msgid "Founder and CEO"
 msgstr "موسس و مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:73
+#: tejarak/includes/languages/trans_twig.php:84
 msgid "CEO & Solution Designer"
 msgstr "مدیرعامل و طراح راه‌کار"
 
-#: tejarak/includes/languages/trans_twig.php:74
+#: tejarak/includes/languages/trans_twig.php:85
 msgid "CEO and Solution Designer"
 msgstr "مدیرعامل و طراح راه‌کار"
 
-#: tejarak/includes/languages/trans_twig.php:75
+#: tejarak/includes/languages/trans_twig.php:86
 msgid "CEO"
 msgstr "مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:76
+#: tejarak/includes/languages/trans_twig.php:87
 msgid "Solution Designer"
 msgstr "طراح راهکار"
 
-#: tejarak/includes/languages/trans_twig.php:77
+#: tejarak/includes/languages/trans_twig.php:88
 msgid "Full Stack Developer"
 msgstr "برنامه‌نویس تمام‌عیار"
 
-#: tejarak/includes/languages/trans_twig.php:78
+#: tejarak/includes/languages/trans_twig.php:89
 msgid "Backend Developer"
 msgstr "برنامه‌نویس سمت سرور"
 
-#: tejarak/includes/languages/trans_twig.php:79
+#: tejarak/includes/languages/trans_twig.php:90
 msgid "Frontend Developer"
 msgstr "برنامه‌نویس سمت کاربر"
 
-#: tejarak/includes/languages/trans_twig.php:80
+#: tejarak/includes/languages/trans_twig.php:91
 msgid "UI Designer"
 msgstr "طراح رابط کاربری"
 
-#: tejarak/includes/languages/trans_twig.php:81
+#: tejarak/includes/languages/trans_twig.php:92
 msgid "Graphic Designer"
 msgstr "طراح گرافیک"
 
-#: tejarak/includes/languages/trans_twig.php:82
+#: tejarak/includes/languages/trans_twig.php:93
 msgid "Shareholder"
 msgstr "سهام‌دار"
 
-#: tejarak/includes/languages/trans_twig.php:83
+#: tejarak/includes/languages/trans_twig.php:94
 msgid "Chrikt"
 msgstr "چریکت"
 
-#: tejarak/includes/languages/trans_twig.php:84
+#: tejarak/includes/languages/trans_twig.php:95
 msgid "name"
 msgstr "نام"
 
-#: tejarak/includes/languages/trans_twig.php:85
+#: tejarak/includes/languages/trans_twig.php:96
 msgid "summary"
 msgstr "خلاصه"
 
-#: tejarak/includes/languages/trans_twig.php:86
+#: tejarak/includes/languages/trans_twig.php:97
 msgid "ganje"
 msgstr "گنجه"
 
@@ -3850,7 +3901,7 @@ msgstr "کد کاربر، تاریخ شروع و پایان الزامی است"
 msgid "record id not found"
 msgstr "رکورد یافت نشد"
 
-#: tejarak/includes/lib/db/hours.php:308 tejarak/includes/lib/db/users.php:28
+#: tejarak/includes/lib/db/hours.php:309 tejarak/includes/lib/db/users.php:28
 msgid "Undefined"
 msgstr "تعریف‌نشده"
 
@@ -3860,7 +3911,8 @@ msgstr "تجارک"
 
 #: tejarak/includes/mvc/view.php:11
 msgid "Tejarak was born to serve small and beautiful service for e-business"
-msgstr "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+msgstr ""
+"تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
 
 #~ msgid "Remove Filters"
 #~ msgstr "حذف فیلترها"
@@ -3924,12 +3976,6 @@ msgstr "تجارک برای ارائه سرویس‌های کوچک و زیبا 
 
 #~ msgid "Enter was registered."
 #~ msgstr "ورود ثبت شد."
-
-#~ msgid "Enter"
-#~ msgstr "ورود"
-
-#~ msgid "Exit"
-#~ msgstr "خروج"
 
 #~ msgid "Registered"
 #~ msgstr "ثبت شد"

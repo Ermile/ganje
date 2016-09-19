@@ -23,22 +23,33 @@ private function transtext()
 	echo T_("Some right reserved!");                                                  // Line 28
 
 	//------------------------------------------------content_ganje\admin\display.html
+	echo T_("Add new record");                                                        // Line 46 Seperate
+	echo T_("Date");                                                                  // Line 57
+	echo T_("Start time");                                                            // Line 58
+	echo T_("End time");                                                              // Line 74
+	echo T_("Minus");                                                                 // Line 82
+	echo T_("(min)");                                                                 // Line 61
+	echo T_("Plus");                                                                  // Line 83
+	echo T_("Cancel");                                                                // Line 76
+	echo T_("or");                                                                    // Line 77
+	echo T_("Insert");                                                                // Line 78
+	echo T_("Edit record");                                                           // Line 73 Seperate
 
 	//-------------------------------------------------content_ganje\home\display.html
 	echo T_("In the Name of God");                                                    // Line 8
 	echo T_("days left");                                                             // Line 20
-	echo T_("Enter Time");                                                            // Line 77
-	echo T_("Difference between enter and exit");                                     // Line 78
-	echo T_("Operation Time");                                                        // Line 78
-	echo T_("Exit Time");                                                             // Line 79
-	echo T_("Minus");                                                                 // Line 81
-	echo T_("Plus");                                                                  // Line 82
-	echo T_("Total");                                                                 // Line 83
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 84
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 89
+	echo T_("Enter");                                                                 // Line 42
+	echo T_("Exit");                                                                  // Line 42
+	echo T_("Enter Time");                                                            // Line 78
+	echo T_("Difference between enter and exit");                                     // Line 79
+	echo T_("Operation Time");                                                        // Line 79
+	echo T_("Exit Time");                                                             // Line 80
+	echo T_("Total");                                                                 // Line 84
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 85
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 90
 
 	//------------------------------------------------------content_ganje\home\et.html
-	echo T_("Data not exist!");                                                       // Line 53
+	echo T_("Data not exist!");                                                       // Line 65
 
 	//--------------------------------------------------content_ganje\home\layout.html
 	echo T_("Select all months");                                                     // Line 53

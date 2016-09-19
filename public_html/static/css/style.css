@@ -1,6 +1,6 @@
 /**
  * Ganje Style
- * V3.1
+ * V3.2
  */
 
 /* HOMEPAGE Styles*/
@@ -78,8 +78,28 @@ body#home{height:100%}
 .register .sidebar #poem {position: absolute;bottom: 1em;width: 100%;font-size: 0.8em;font-weight: 500;text-align: center;display:none;}
 .countdown{text-align: center;width: 50%;display: block;overflow: hidden;border-radius: 0.5em;margin: 1em auto;font-size: 0.8em;color:#fff;position:absolute;border-bottom:0;right:0;left:0;bottom:0;}
 .countdown .title{display: block;background-color:#0fa1a6;font-size: 1.3em;padding:0.1em 0.5em;font-weight: 100;}
-.countdown .info{display: block;background-color:#1a8083}
+.countdown .info{display: block;background-color:#1a8083;transition:0.2s;}
 .countdown .info time{display: block;font-size: 5em;font-weight:700;line-height:1;padding-top:0.2em;}
+
+.register .card .info .action{position: absolute;top: 0;bottom: 0;right: 0;left: 0;opacity: 0;text-align: center;padding: 1em 1em 1em;font-size: 1.5em;line-height:1em;cursor: pointer;}
+.register .card.selected img{cursor:crosshair; }
+.register .card.selected .info .name, .register .card.selected .info .position{opacity:0;}
+.register .card.selected .info .action {opacity: 1;background-color: #4684ee;color: #fff}
+.register .card.selected .info .action .exit{display: none;}
+.register .card.selected.present .info .action .exit{display: inline-block;}
+.register .card.selected.present .info .action .enter{display: none;}
+.register .card.selected.present .info .action{background-color: #777}
+
+
+.register .card.selected .info .action:before{content:"{";font-size:1.5em;color:#fff;float:right;font-family:Consolas,Menlo,Monaco,monospace;font-weight:bold;opacity: 0;transition:0.3s;}
+.register .card.selected .info .action:after{content:"}";font-size:1.5em;color:#fff;float:left;font-family:Consolas,Menlo,Monaco,monospace;font-weight:bold;opacity: 0;transition:0.3s;}
+.register.loading-form .card.selected .info, .register.loading-form .card.selected .info .action, .register.loading-form .card.selected img{cursor: wait;}
+.register.loading-form .card.selected .info .action:before{opacity:1;animation:pulse 0.4s alternate infinite ease-in-out;}
+.register.loading-form .card.selected .info .action:after{opacity:1;animation:pulse 0.4s alternate infinite ease-in-out;animation-delay: 0.4s;}
+
+@keyframes pulse {to {transform: scale(0.8);opacity: 0.5;}}
+
+
 
 @media screen and (max-height: 700px) { .register .sidebar #poem {display: none;}}
 @media screen and (max-height: 600px) { .register .sidebar #god, .sidebar #logo h1 {display: none;}}
@@ -115,7 +135,7 @@ body#home{height:100%}
 @keyframes pulseOn {to {box-shadow: 0 0 0 1em rgba(232, 76, 61, 0);}}
 @keyframes pulseOff{0%{box-shadow:0 0 0 0 rgba(204,169,44,0.4)}70%{box-shadow:0 0 0 10px rgba(204,169,44,0)}100%{box-shadow:0 0 0 0 rgba(204,169,44,0)}}
 
-.card .info {background-color: #fff;border: none;border-top: 1px solid rgba(34,36,38,.1);margin: 0;padding: 1em;box-shadow: none;font-size:0.8em;text-align: left;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.card .info {background-color: #fff;border: none;margin: 0;padding: 1em;box-shadow: none;font-size:0.8em;text-align: left;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 .rtl .card .info {text-align: right;font-size: 1em;}
 .card .info .name {font-weight: 700;font-size: 1em;line-height: 1.2em;color: rgba(0,0,0,.85);}
 .card .info .position {font-size: 1.5em;color: #aaa;margin: 0.2em 0 0.5em;}
@@ -287,7 +307,6 @@ nav.pagination .current{color: #fff;background: #18aef5;margin-right: 0.5em;padd
 	.et .val_plus, .et .col_plus, .et .total_plus{display: none;}
 	.et .val_minus, .et .col_minus, .et .total_minus{display: none;}
 }
-
 
 
 

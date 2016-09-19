@@ -207,7 +207,14 @@ function event_corridor(e, _self, _key)
       // if user is selected enter to it
       if(cid == _id)
       {
-        transfer('home', cid);
+        if($(e.target).hasClass('action') || $(e.target).hasClass('enter') || $(e.target).hasClass('exit'))
+        {
+          setTime(_id);
+        }
+        else
+        {
+          transfer('home', cid);
+        }
       }
       // else select this user
       else
