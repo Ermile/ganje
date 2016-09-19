@@ -259,7 +259,7 @@ class hours {
 				$new_type = "all";
 				break;
 			default:
-				$new_type = "hour_type";
+				$new_type = "nothing";
 				break;
 		}
 
