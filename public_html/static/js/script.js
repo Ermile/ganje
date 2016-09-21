@@ -712,7 +712,7 @@ function calcTotalTime(_id)
  */
 function setTime(_id)
 {
-  if(isAnimation)
+  if(isAnimation || $('body').hasClass('loading-form'))
   {
     return false;
   }
