@@ -632,6 +632,8 @@ class hours {
 		{
 			$field =
 			"
+				'$year' 							AS 'year',
+				hours.user_id,
 		 		COUNT(DATE(hours.hour_date)) 		AS 'count',
 				SUM(hours.hour_diff)	 			AS 'diff',
 				SUM(IFNULL(hours.hour_plus,0))		AS 'plus',
@@ -646,7 +648,7 @@ class hours {
 						$i = "0". $i;
 					}
 					$jdate = \lib\utility\jdate::jalali_month($year, $i);
-					$month_name = \lib\utility\jdate::date("F", $jdate[0]);
+					$month_name = \lib\utility\jdate::date("m", $jdate[0],false);
 					$month_query .=	" WHEN hours.hour_date >= '{$jdate[0]}' AND hours.hour_date <= '{$jdate[1]}' THEN '$month_name' \n";
 				}
 				list($start_date, $end_date) = \lib\utility\jdate::jalali_year($year);
