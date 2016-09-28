@@ -380,7 +380,7 @@ class hours {
 				$date
 				$user
 				ORDER BY
-					hours.hour_date DESC, hours.hour_end DESC
+					hours.hour_date DESC, hours.hour_end ASC
 				$limit
 				";
 		$report = db::get($query);
