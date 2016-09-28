@@ -13,7 +13,7 @@
       <h1>{% trans "Ermile" %}</h1>
      </header>
 
-     <div class='countdown' title='{{deadline.date | jdate("d/m/Y")}}'>
+     <div class='deadline {{deadline.class}}' title='{{deadline.date | jdate("d/m/Y")}}'>
       <span class='title'>{{deadline.title}}</span>
       <div class="info">
        <time datetime="P{{deadline.value}}D">{{deadline.value | persian}}</time>

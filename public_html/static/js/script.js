@@ -4,7 +4,6 @@ var isAnimation = false;
 $(document).ready(function()
 {
   startTime();
-  datatable_fill();
   // reload page every 7 min to disallow session closing
   setTimeout(function () { location.reload(1); }, 420000);
 
@@ -21,16 +20,7 @@ route('*', function()
     $(this).attr('data-func', newFunc);
     calcTotalRow();
   });
-
-  $(document).on("dblclick", ".et .val_end", function(e) {addEndTime(this);});
-  $(document).on("dblclick", ".et .val_diff", function(e) {changeTypeOfRecod(this, 'diff');});
-  $(document).on("dblclick", ".et .val_plus", function(e) {changeTypeOfRecod(this, 'plus');});
-  $(document).on("dblclick", ".et .val_minus", function(e) {changeTypeOfRecod(this, 'minus');});
-  $(document).on("dblclick", ".et .val_accepted", function(e) {changeTypeOfRecod(this, 'accept');});
-
-
 });
-
 
 
 function changeTypeOfRecod(_this, _field)
@@ -47,7 +37,7 @@ function changeTypeOfRecod(_this, _field)
         field: _field,
         type: 'change'
       },
-      abort: false,
+      abort: true,
       success: function(e, data, x)
       {
         var myResult   = x.responseJSON.result;
@@ -262,6 +252,13 @@ $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10)
 $(document).on("click", ".cardList .card",  function(e) { generateUserFilter(this) });
 $(document).on("click", ".filters .removeFilter", function(e) { removeFilter(); });
 $(document).on("click", ".back", function(e) { transfer(null, 'home'); });
+
+
+$(document).on("dblclick", ".et .val_end", function(e) {addEndTime(this);});
+$(document).on("dblclick", ".et .val_diff", function(e) {changeTypeOfRecod(this, 'diff');});
+$(document).on("dblclick", ".et .val_plus", function(e) {changeTypeOfRecod(this, 'plus');});
+$(document).on("dblclick", ".et .val_minus", function(e) {changeTypeOfRecod(this, 'minus');});
+$(document).on("dblclick", ".et .val_accepted", function(e) {changeTypeOfRecod(this, 'accept');});
 
 
 
@@ -483,21 +480,6 @@ $('.statistics .plus').bind('mousewheel', function(e){
   }
 });
 
-
-
-/**
- * fill datatable with ajax request
- * @return {[type]} [description]
- */
-function datatable_fill()
-{
-  // $('.datatable').DataTable(
-  // {
-  //   destroy: true,
-  //   ajax: "/"
-  // } );
-  // console.log(111);
-}
 
 /**
  * [startTime description]
@@ -753,7 +735,7 @@ function setTime(_id)
         minus: minus,
         plus: plus,
       },
-      abort: false,
+      abort: true,
       success: function(e, data, x)
       {
         var myResult   = x.responseJSON.result;
