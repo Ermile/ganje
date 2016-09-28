@@ -51,6 +51,10 @@
 
 {%elseif column == 'name'%}
      <td class='val_{{column}}' data-val='{{val}}'>{%trans val%}</td>
+
+{%elseif column == 'date' %}
+     <td class='val_{{column}}' data-val='{{val}}'>{{ val | sdate}}</td>
+
 {%elseif column == 'end' and not val and true%}
      <td class='val_{{column}}' data-modal='hour-edit' data-id='{{value.id}}'></td>
 {%else%}
