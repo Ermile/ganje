@@ -58,10 +58,34 @@ function changeTypeOfRecod(_this, _field)
         else
         {
           row.attr('data-type', myResult);
+          row.attr('data-status', calcNewStatus(myResult));
         }
       }
     }
   });
+}
+
+function calcNewStatus(_type)
+{
+  newStatus = null;
+  switch(_type)
+  {
+    case 'all':
+      newStatus = 'active';
+      break;
+
+    case 'base':
+    case 'wplus':
+    case 'wminus':
+      newStatus = 'filter';
+      break;
+
+    default:
+      newStatus = 'deactive';
+      break;
+  }
+
+  return newStatus;
 }
 
 

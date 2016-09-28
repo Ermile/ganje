@@ -70,7 +70,7 @@ class model extends \mvc\model
 			if($result)
 			{
 				debug::property('result', $result);
-				debug::true(T_("Saved"));
+				// debug::true(T_("Saved"));
 			}
 			else
 			{
