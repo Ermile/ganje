@@ -663,6 +663,10 @@ function transfer(_from, _to)
  */
 function changePerson(_id)
 {
+  if($('body').hasClass('loading-form'))
+  {
+    return false;
+  }
   if($('body').attr('data-location') === 'dashboard')
   {
     $('.dashboard .card:not([data-id="'+_id+'"])').removeClass('selected');

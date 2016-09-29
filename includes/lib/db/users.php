@@ -106,16 +106,38 @@ class users {
 	 *
 	 * @return     <type>  ( description_of_the_return_value )
 	 */
-	public static function live()
+	public static function enter()
 	{
 		$date = date("Y-m-d");
-		$query = "
-			SELECT
+		$query = "SELECT
 				count(id) as total
 			FROM
 				hours
 			WHERE
 				hour_date = '$date'
+			LIMIT 1
+			;";
+		$total = \lib\db::get($query, "total", true);
+		// return result as number of live users
+		return $total;
+	}
+
+
+	/**
+	 * get count on online users
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
+	public static function live()
+	{
+		$date = date("Y-m-d");
+		$query = "SELECT
+				count(id) as total
+			FROM
+				hours
+			WHERE
+				hour_date = '$date'
+				AND hour_end IS NULL
 			LIMIT 1
 			;";
 		$total = \lib\db::get($query, "total", true);

@@ -102,7 +102,7 @@ class model extends \mvc\model
 		{
 			case 'enter':
 				// if this person is first one in this day send current date
-				if(\lib\db\users::live() <= 1)
+				if(\lib\db\users::enter() <= 1)
 				{
 					$tg = self::send_telegram($date_now);
 				}
@@ -134,7 +134,6 @@ class model extends \mvc\model
 				{
 					// exit from switch and show message
 					$msg = "🚷 $msg";
-					break;
 				}
 
 				$pure       = $total + $plus - $minus;
@@ -142,10 +141,27 @@ class model extends \mvc\model
 				$time_start = \lib\utility::date('H:i', $start , 'default');
 
 				$msg        .= $time_start. ' '. T_('to'). ' '. $time_now;
-				$msg        .= "\n🚩 ". \lib\utility\human::number($total, 'fa');
-				$msg        .= "\n➕ ". \lib\utility\human::number($plus, 'fa');
-				$msg        .= "\n➖ ". \lib\utility\human::number($minus, 'fa');
+
+				if($plus || $minus)
+				{
+					$msg        .= "\n🚩 ". \lib\utility\human::number($total, 'fa');
+				}
+				if($plus)
+				{
+					$msg        .= "\n➕ ". \lib\utility\human::number($plus, 'fa');
+				}
+				if($minus)
+				{
+					$msg        .= "\n➖ ". \lib\utility\human::number($minus, 'fa');
+				}
 				$msg        .= "\n🕗 ". $pure_human;
+
+				// if this person is first one in this day send current date
+				if(\lib\db\users::live() <= 0)
+				{
+					$msg .= "\n". ' 🎌';
+				}
+
 				break;
 
 
@@ -154,6 +170,7 @@ class model extends \mvc\model
 		}
 		// send telegram message
 		$tg = self::send_telegram($msg);
+
 	}
 
 

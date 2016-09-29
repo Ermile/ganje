@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2016-09-23 11:38+0330\n"
-"PO-Revision-Date: 2016-09-23 11:38+0330\n"
+"POT-Creation-Date: 2016-09-29 10:52+0330\n"
+"PO-Revision-Date: 2016-09-29 10:52+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -321,7 +321,7 @@ msgstr "ورود"
 msgid "create an account"
 msgstr "اکانت بسازید"
 
-#: saloos/lib/view/twigAddons.php:213
+#: saloos/lib/view/twigAddons.php:236
 #: saloos/saloos-addons/includes/languages/trans_addons.php:301
 #: tejarak/includes/languages/trans_addons.php:301
 msgid "Home"
@@ -3487,7 +3487,6 @@ msgid "Error in insert"
 msgstr "خطا در افزودن رکورد جدید"
 
 #: tejarak/content_ganje/admin/model.php:53
-#: tejarak/content_ganje/admin/model.php:73
 msgid "Saved"
 msgstr "ذخیره شد"
 
@@ -3520,9 +3519,13 @@ msgstr "اوقات خوبی داشته باشید."
 msgid "Bye Bye :name ;)"
 msgstr "خدانگهدار :name جون;)"
 
-#: tejarak/content_ganje/home/model.php:129
+#: tejarak/content_ganje/home/model.php:144
 msgid "to"
 msgstr "تا"
+
+#: tejarak/content_ganje/home/model.php:164
+msgid "Last Person!"
+msgstr "آخرین نفر!"
 
 #: tejarak/content_ganje/home/view.php:19
 #: tejarak/includes/languages/trans_twig.php:7
