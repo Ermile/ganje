@@ -1,6 +1,6 @@
 /**
  * Ganje Style
- * V3.3
+ * V3.4
  */
 
 /* HOMEPAGE Styles*/
@@ -270,15 +270,17 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 /* wminus */
 .et tbody tr[data-type='wminus'] td.val_plus::before{content: "❌";color: #b52828}
 
-.et tbody tr[data-status='active'] td:last-child:after{float:left;content:"💚";color:#71b528;}
-.et tbody tr[data-status='filter'] td:last-child:after{float:left;content:"💛";color: #acc334;}
-.et tbody tr[data-status='deactive'] td:last-child:after{float:left;content:"🚷";color:#b52828;}
-.et tbody tr[data-status='remove'] td:last-child:after{float:left;content:"🚫";}
-.et tbody tr[data-status='awaiting'] td:last-child:after{float:left;content:"🚩";color:#c5c5c5}
+.et tbody tr td:last-child:after{float:right;}
+.rtl .et tbody tr td:last-child:after{float:left;}
+.et tbody tr[data-status='active'] td:last-child:after{content:"💚";color:#71b528;}
+.et tbody tr[data-status='filter'] td:last-child:after{content:"💛";color: #acc334;}
+.et tbody tr[data-status='deactive'] td:last-child:after{content:"🚷";color:#b52828;}
+.et tbody tr[data-status='remove'] td:last-child:after{content:"🚫";}
+.et tbody tr[data-status='awaiting'] td:last-child:after{content:"🚩";color:#c5c5c5}
 
 .loading-page .et table:before{content:"";position:fixed;top:0;bottom:0;right:0;left:0;background-color:rgba(255,255,255,0.2)}
-.loading-page .et table:after{content:"";position:fixed;top:50%;right:0;left:0;margin:0 auto;padding:1em;width:50vh;height:50vh;margin-top:-35vh;background-color:#333;border-radius:100%;animation:sk-scaleout 1.0s infinite ease-in-out;}
-@keyframes sk-scaleout {0% {transform:scale(0);} 100% {transform:scale(1.0);opacity:0;}}
+.loading-page .et table:after{content:"";position:fixed;top:40vh;right:0;left:0;margin:0 auto;padding:1em;width:10vh;height:10vh;background-color:#fff;animation: sk-rotateplane 1.2s infinite ease-in-out;}
+@keyframes sk-rotateplane {0% { transform: perspective(120px) rotateX(0deg) rotateY(0deg);} 50% { transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);} 100% { transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);}}
 
 
 /* style manage for admin*/
