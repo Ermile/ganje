@@ -89,7 +89,7 @@ body#home{height:100%}
 
 
 
-.register .card .info .action{position: absolute;top: 0;bottom: 0;right: 0;left: 0;opacity: 0;text-align:center;padding:1.4em 1em 1em;font-size:1.2em;line-height:1em;cursor:pointer;}
+.register .card .info .action{position: absolute;top: 0;bottom: 0;right: 0;left: 0;opacity: 0;text-align:center;padding:1.3em 1em 1em;font-size:1.2em;line-height:1em;cursor:pointer;}
 .register .card.selected img{cursor:crosshair; }
 .register .card.selected .info .name, .register .card.selected .info .position{opacity:0;}
 .register .card.selected .info .action {opacity: 1;background-color: #4684ee;color: #fff}
@@ -131,7 +131,7 @@ body#home{height:100%}
 @media screen and (min-width: 2000px) { .register .dashboard{font-size: 2em;}}
 
 /* card ui */
-.card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:1em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;transition: all 0.3s ease-in-out;position: relative;}
+.card {display: inline-block;margin: 1em 0.5em;width: 10em;font-size:0.9em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;transition: all 0.3s ease-in-out;position: relative;}
 .card.selected {opacity: 0.5;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .card.present, .detail .card {opacity: 1;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
 .card.present.selected{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
@@ -145,7 +145,7 @@ body#home{height:100%}
 @keyframes pulseOn {to {box-shadow: 0 0 0 1em rgba(232, 76, 61, 0);}}
 @keyframes pulseOff{0%{box-shadow:0 0 0 0 rgba(204,169,44,0.4)}70%{box-shadow:0 0 0 10px rgba(204,169,44,0)}100%{box-shadow:0 0 0 0 rgba(204,169,44,0)}}
 
-.card .info {background-color: #fff;border: none;margin: 0;padding: 1em;box-shadow: none;font-size:0.8em;text-align: left;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.card .info {background-color: #fff;border: none;margin: 0;padding:0.7em 1em;box-shadow: none;font-size:0.8em;text-align: left;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
 .rtl .card .info {text-align: right;font-size: 1em;}
 .card .info .name {font-weight: 700;font-size: 1em;line-height: 1.2em;color: rgba(0,0,0,.85);}
 .card .info .position {font-size: 1.5em;color: #aaa;margin: 0.2em 0 0.5em;}

@@ -246,6 +246,7 @@ $(document).on("dblclick", ".card", function(e) { event_corridor(e, e.currentTar
 $(document).on("dblclick", ".time", function(e) { location.reload(); });
 $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(e, e.currentTarget, 'rightclick'); });
 
+// $(document).on("click", "body", function(e) {console.log(e); changePerson(0); });
 $(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });
 $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10) });
 
