@@ -116,34 +116,42 @@ class model extends \mvc\model
 				$start = \lib\db\users::get_start($_args['user_id']);
 				$start = strtotime( date('Y/m/d'). ' '. $start);
 				$total = floor(abs(strtotime('now') - $start) / 60);
+				$minus = 0;
+				$plus  = 0;
 
-				if($total < 1)
+				// add minus and plus if exist
+				if(isset($_args['plus']) && $_args['plus'] > 0 )
+				{
+					$plus = $_args['plus'];
+				}
+				if(isset($_args['minus']) && $_args['minus'] > 0)
+				{
+					$minus = $_args['minus'];
+				}
+
+
+				if($total < 5)
 				{
 					// exit from switch and show message
 					$msg = "🚷 $msg";
 					break;
 				}
-				$total      = utility\human::time($total, 'persian');
-				$time_start = \lib\utility::date('H:i', $start , 'default');
-				$msg .= $total . "\n🕗 ";
-				$msg        .= $time_start. ' '. T_('to'). ' '. $time_now;
 
-				// add minus and plus if exist
-				if(isset($_args['plus']) && $_args['plus'] > 0 )
-				{
-					$msg .= "\n➕ ". $_args['plus'];
-				}
-				if(isset($_args['minus']) && $_args['minus'] > 0)
-				{
-					$msg .= "\n➖ ". $_args['minus'];
-				}
+				$pure       = $total + $plus - $minus;
+				$pure_human = utility\human::time($pure, 'persian');
+				$time_start = \lib\utility::date('H:i', $start , 'default');
+
+				$msg        .= $time_start. ' '. T_('to'). ' '. $time_now;
+				$msg        .= "\n🚩 ". \lib\utility\human::number($total, 'fa');
+				$msg        .= "\n➕ ". \lib\utility\human::number($plus, 'fa');
+				$msg        .= "\n➖ ". \lib\utility\human::number($minus, 'fa');
+				$msg        .= "\n🕗 ". $pure_human;
 				break;
 
 
 			default:
 				break;
 		}
-
 		// send telegram message
 		$tg = self::send_telegram($msg);
 	}
