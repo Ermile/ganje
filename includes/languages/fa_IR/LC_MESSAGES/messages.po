@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2016-09-29 10:52+0330\n"
-"PO-Revision-Date: 2016-09-29 10:52+0330\n"
+"POT-Creation-Date: 2016-10-01 09:32+0330\n"
+"PO-Revision-Date: 2016-10-01 09:32+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -3441,7 +3441,7 @@ msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:527
 #: tejarak/includes/languages/trans_addons.php:527
-#: tejarak/includes/languages/trans_twig.php:100
+#: tejarak/includes/languages/trans_twig.php:103
 msgid " "
 msgstr " "
 
@@ -3519,13 +3519,9 @@ msgstr "اوقات خوبی داشته باشید."
 msgid "Bye Bye :name ;)"
 msgstr "خدانگهدار :name جون;)"
 
-#: tejarak/content_ganje/home/model.php:144
+#: tejarak/content_ganje/home/model.php:143
 msgid "to"
 msgstr "تا"
-
-#: tejarak/content_ganje/home/model.php:164
-msgid "Last Person!"
-msgstr "آخرین نفر!"
 
 #: tejarak/content_ganje/home/view.php:19
 #: tejarak/includes/languages/trans_twig.php:7
@@ -3814,86 +3810,98 @@ msgid "Saeed Bodaghi"
 msgstr "سعید بوداقی"
 
 #: tejarak/includes/languages/trans_twig.php:79
+msgid "SeyedMohsen Mortazavi"
+msgstr "سیدمحسن مرتضوی"
+
+#: tejarak/includes/languages/trans_twig.php:80
+msgid "SeyedMohsen Mortazavi Hoseini"
+msgstr "سیدمحسن مرتضوی حسینی"
+
+#: tejarak/includes/languages/trans_twig.php:81
 msgid "hours in this week"
 msgstr "ساعت در این هفته"
 
-#: tejarak/includes/languages/trans_twig.php:80
+#: tejarak/includes/languages/trans_twig.php:82
 msgid "hours in this month"
 msgstr "ساعت در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:81
+#: tejarak/includes/languages/trans_twig.php:83
 msgid "hours remote in this month"
 msgstr "ساعت ریموت در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:82
+#: tejarak/includes/languages/trans_twig.php:84
 msgid "hours in idle this month"
 msgstr "ساعت هدر داده در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:83
+#: tejarak/includes/languages/trans_twig.php:85
 msgid "Founder & CEO"
 msgstr "موسس و مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:84
+#: tejarak/includes/languages/trans_twig.php:86
 msgid "Founder and CEO"
 msgstr "موسس و مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:85
+#: tejarak/includes/languages/trans_twig.php:87
 msgid "CEO & Solution Designer"
 msgstr "مدیرعامل و طراح راه‌کار"
 
-#: tejarak/includes/languages/trans_twig.php:86
+#: tejarak/includes/languages/trans_twig.php:88
 msgid "CEO and Solution Designer"
 msgstr "مدیرعامل و طراح راه‌کار"
 
-#: tejarak/includes/languages/trans_twig.php:87
+#: tejarak/includes/languages/trans_twig.php:89
 msgid "CEO"
 msgstr "مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:88
+#: tejarak/includes/languages/trans_twig.php:90
 msgid "Solution Designer"
 msgstr "طراح راهکار"
 
-#: tejarak/includes/languages/trans_twig.php:89
+#: tejarak/includes/languages/trans_twig.php:91
 msgid "Full Stack Developer"
 msgstr "برنامه‌نویس تمام‌عیار"
 
-#: tejarak/includes/languages/trans_twig.php:90
+#: tejarak/includes/languages/trans_twig.php:92
 msgid "Backend Developer"
 msgstr "برنامه‌نویس سمت سرور"
 
-#: tejarak/includes/languages/trans_twig.php:91
+#: tejarak/includes/languages/trans_twig.php:93
 msgid "Frontend Developer"
 msgstr "برنامه‌نویس سمت کاربر"
 
-#: tejarak/includes/languages/trans_twig.php:92
+#: tejarak/includes/languages/trans_twig.php:94
 msgid "UI Designer"
 msgstr "طراح رابط کاربری"
 
-#: tejarak/includes/languages/trans_twig.php:93
+#: tejarak/includes/languages/trans_twig.php:95
 msgid "Graphic Designer"
 msgstr "طراح گرافیک"
 
-#: tejarak/includes/languages/trans_twig.php:94
+#: tejarak/includes/languages/trans_twig.php:96
 msgid "Shareholder"
 msgstr "سهام‌دار"
 
-#: tejarak/includes/languages/trans_twig.php:95
+#: tejarak/includes/languages/trans_twig.php:97
 msgid "Chrikt"
 msgstr "چریکت"
 
-#: tejarak/includes/languages/trans_twig.php:96
+#: tejarak/includes/languages/trans_twig.php:98
 msgid "Content Expert"
 msgstr "کارشناس محتوا"
 
-#: tejarak/includes/languages/trans_twig.php:97
+#: tejarak/includes/languages/trans_twig.php:99
+msgid "Service"
+msgstr "نیروی خدماتی"
+
+#: tejarak/includes/languages/trans_twig.php:100
 msgid "name"
 msgstr "نام"
 
-#: tejarak/includes/languages/trans_twig.php:98
+#: tejarak/includes/languages/trans_twig.php:101
 msgid "summary"
 msgstr "خلاصه"
 
-#: tejarak/includes/languages/trans_twig.php:99
+#: tejarak/includes/languages/trans_twig.php:102
 msgid "ganje"
 msgstr "گنجه"
 
@@ -3917,6 +3925,9 @@ msgstr "تجارک"
 msgid "Tejarak was born to serve small and beautiful service for e-business"
 msgstr ""
 "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+
+#~ msgid "Last Person!"
+#~ msgstr "آخرین نفر!"
 
 #~ msgid "First page"
 #~ msgstr "اولین صفحه"
