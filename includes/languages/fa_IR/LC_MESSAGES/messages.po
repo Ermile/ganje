@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
 "POT-Creation-Date: 2016-10-01 09:32+0330\n"
-"PO-Revision-Date: 2016-10-01 09:36+0330\n"
+"PO-Revision-Date: 2016-10-01 15:53+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -33,8 +33,7 @@ msgstr "افزودن"
 msgid "edit"
 msgstr "ویرایش"
 
-#: saloos/lib/controller.php:554
-#: saloos/saloos-addons/lib/mvc/controllers/url.php:52
+#: saloos/lib/controller.php:554 saloos/saloos-addons/lib/mvc/controllers/url.php:52
 msgid "delete"
 msgstr "حذف"
 
@@ -557,8 +556,8 @@ msgstr "گذرواژه جدید"
 #: tejarak/includes/languages/trans_addons.php:333
 msgid "If you want to change password enter it, else leave it blank"
 msgstr ""
-"در صورت تمایل به تغییر گذرواژه آن را وارد کنید،‌ در غیر این ‌صورت این فیلد را "
-"خالی بگذارید"
+"در صورت تمایل به تغییر گذرواژه آن را وارد کنید،‌ در غیر این ‌صورت این فیلد را خالی "
+"بگذارید"
 
 #: saloos/saloos-addons/content_cp/home/view.php:343
 msgid "position"
@@ -639,8 +638,7 @@ msgstr "برای بارگزاری فایل های شما"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:328
 #: tejarak/includes/languages/trans_addons.php:328
 msgid "Use categories to define sections of your site and group related files"
-msgstr ""
-"از دسته‌بندی برای تعریف بخش‌های مختلف برای گروه‌بندی کردن فایل‌ها استفاده کنید"
+msgstr "از دسته‌بندی برای تعریف بخش‌های مختلف برای گروه‌بندی کردن فایل‌ها استفاده کنید"
 
 #: saloos/saloos-addons/content_cp/manifest.php:62
 msgid "File Categories"
@@ -1327,8 +1325,8 @@ msgstr "عنوان سایت"
 #: tejarak/includes/languages/trans_addons.php:408
 msgid "For multilanguage sites enter title in English and translate it"
 msgstr ""
-"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم آن "
-"را به سایر زبان‌ها ترجمه کنید"
+"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم آن را "
+"به سایر زبان‌ها ترجمه کنید"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:385
@@ -2169,8 +2167,8 @@ msgstr "برگشت به"
 #: tejarak/includes/languages/trans_addons.php:104
 msgid "list of current permissions is listed here, for edit click on it"
 msgstr ""
-"لیست سطوح‌دسترسی فعلی در اینجا وجود دارد که با کلیک بر روی هر کدام می‌توانید آن "
-"را ویرایش کنید"
+"لیست سطوح‌دسترسی فعلی در اینجا وجود دارد که با کلیک بر روی هر کدام می‌توانید آن را "
+"ویرایش کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:105
 #: tejarak/includes/languages/trans_addons.php:105
@@ -2338,8 +2336,8 @@ msgid ""
 "categories are pre-determined sections."
 msgstr ""
 "به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در نوشته "
-"شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها مشخص "
-"نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
+"شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها مشخص نیست، "
+"این در حالی است که دسته ها از قبل مشخص شده هستند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:142
 #: tejarak/includes/languages/trans_addons.php:142
@@ -2353,12 +2351,11 @@ msgstr "نامک"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:144
 #: tejarak/includes/languages/trans_addons.php:144
-msgid ""
-"Set slug of content for better addressing in your site and increase SEO rate"
+msgid "Set slug of content for better addressing in your site and increase SEO rate"
 msgstr ""
-"نامک همان آدرس صفحه در آدرس بار مرورگر است. با تنظیم نامک برای نوشته خود به "
-"بهبود وضعیت آدرس‌دهی و افزایش رنک سئو کمک کنید. در صورتی که شما نامک را وارد "
-"نکنید ما آن را خودمان خواهیم ساخت"
+"نامک همان آدرس صفحه در آدرس بار مرورگر است. با تنظیم نامک برای نوشته خود به بهبود "
+"وضعیت آدرس‌دهی و افزایش رنک سئو کمک کنید. در صورتی که شما نامک را وارد نکنید ما آن "
+"را خودمان خواهیم ساخت"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:145
 #: tejarak/includes/languages/trans_addons.php:145
@@ -2652,14 +2649,13 @@ msgid ""
 "blog stream, kind of like permanent posts."
 msgstr ""
 "برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی آن "
-"ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در "
-"حقیقت شبیه به یک پست دائمی هستند."
+"ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در حقیقت "
+"شبیه به یک پست دائمی هستند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:221
 #: tejarak/includes/languages/trans_addons.php:221
 msgid "Pages are not categorized or tagged, but can have a hierarchy."
-msgstr ""
-"برگه ها نمیتوانند دسته بندی شوند ولی میتوانند خود دارای ساختار درختی باشند."
+msgstr "برگه ها نمیتوانند دسته بندی شوند ولی میتوانند خود دارای ساختار درختی باشند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:222
 #: tejarak/includes/languages/trans_addons.php:222
@@ -3334,10 +3330,8 @@ msgstr "ما برای اعتبارسنجی اکانت، نیاز به شماره
 #: saloos/saloos-addons/includes/languages/trans_addons.php:511
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:116
 #: tejarak/includes/languages/trans_addons.php:511
-msgid ""
-"If you dont want share your number, we cant presenting our services to you!"
-msgstr ""
-"اگر شما مایل به ارائه شماره خود نباشید، ما امکان سرویس‌دهی به شما را نداریم!"
+msgid "If you dont want share your number, we cant presenting our services to you!"
+msgstr "اگر شما مایل به ارائه شماره خود نباشید، ما امکان سرویس‌دهی به شما را نداریم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:512
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:122
@@ -3481,8 +3475,7 @@ msgstr "خطا در افزودن رکورد جدید"
 msgid "Saved"
 msgstr "ذخیره شد"
 
-#: tejarak/content_ganje/admin/model.php:57
-#: tejarak/content_ganje/admin/model.php:77
+#: tejarak/content_ganje/admin/model.php:57 tejarak/content_ganje/admin/model.php:77
 msgid "Can not save change"
 msgstr "نمی‌توان تغییرات را ذخیره کرد"
 
@@ -3598,11 +3591,11 @@ msgstr "گنجه؛ اولین سرویس"
 
 #: tejarak/includes/languages/trans_twig.php:8
 msgid ""
-"Ganje: this is a tejarak online attendance beginning Web-based which work "
-"without any complexities of existing ones."
+"Ganje: this is a tejarak online attendance beginning Web-based which work without "
+"any complexities of existing ones."
 msgstr ""
-"گنجه؛ اولین اقدام تجارک به عنوان سرویس حضور و غیاب آنلاین که به‌دور از "
-"پیچیدگی‌های نمونه‌های موجود و مبتنی بر وب است."
+"گنجه؛ اولین اقدام تجارک به عنوان سرویس حضور و غیاب آنلاین که به‌دور از پیچیدگی‌های "
+"نمونه‌های موجود و مبتنی بر وب است."
 
 #: tejarak/includes/languages/trans_twig.php:9
 msgid ""
