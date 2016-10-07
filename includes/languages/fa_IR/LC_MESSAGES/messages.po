@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2016-10-07 10:10+0330\n"
-"PO-Revision-Date: 2016-10-07 10:10+0330\n"
+"POT-Creation-Date: 2016-10-07 10:19+0330\n"
+"PO-Revision-Date: 2016-10-07 10:19+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -3441,7 +3441,7 @@ msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:527
 #: tejarak/includes/languages/trans_addons.php:527
-#: tejarak/includes/languages/trans_twig.php:107
+#: tejarak/includes/languages/trans_twig.php:108
 msgid " "
 msgstr " "
 
@@ -3910,14 +3910,18 @@ msgid "Research & Develepment"
 msgstr "تحقیق و توسعه"
 
 #: tejarak/includes/languages/trans_twig.php:104
+msgid "Research &amp; Develepment"
+msgstr "تحقیق و توسعه"
+
+#: tejarak/includes/languages/trans_twig.php:105
 msgid "name"
 msgstr "نام"
 
-#: tejarak/includes/languages/trans_twig.php:105
+#: tejarak/includes/languages/trans_twig.php:106
 msgid "summary"
 msgstr "خلاصه"
 
-#: tejarak/includes/languages/trans_twig.php:106
+#: tejarak/includes/languages/trans_twig.php:107
 msgid "ganje"
 msgstr "گنجه"
 
@@ -3941,6 +3945,9 @@ msgstr "تجارک"
 msgid "Tejarak was born to serve small and beautiful service for e-business"
 msgstr ""
 "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+
+#~ msgid "Research \\& Develepment"
+#~ msgstr "تحقیق و توسعه"
 
 #~ msgid "Last Person!"
 #~ msgstr "آخرین نفر!"

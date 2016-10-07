@@ -4,7 +4,7 @@ private function transtext()
 
 	//-------------------------------------------------------content\home\display.html
 	echo T_("Ganje, first one");                                                      // Line 8
-	echo T_("Ganje");                                                                 // Line 55 Seperate
+	echo T_("Ganje");                                                                 // Line 56 Seperate
 	echo T_("Ganje: this is a tejarak online attendance beginning Web-based which work without any complexities of existing ones.");// Line 47
 	echo T_("Integration with services which will soon be public lead no need for small businesses, costly and inconvenience.");// Line 47
 	echo T_("About");                                                                 // Line 56
@@ -101,10 +101,11 @@ private function transtext()
 	echo T_("UI Developer");                                                          // Line 48 Seperate
 	echo T_("Frontend Developer");                                                    // Line 49 Seperate
 	echo T_("Research & Develepment");                                                // Line 50 Seperate
-	echo T_("name");                                                                  // Line 52 Seperate
-	echo T_("summary");                                                               // Line 53 Seperate
-	echo T_("ganje");                                                                 // Line 54 Seperate
-	echo T_(" ");                                                                     // Line 59 Seperate
+	echo T_("Research &amp; Develepment");                                            // Line 51 Seperate
+	echo T_("name");                                                                  // Line 53 Seperate
+	echo T_("summary");                                                               // Line 54 Seperate
+	echo T_("ganje");                                                                 // Line 55 Seperate
+	echo T_(" ");                                                                     // Line 60 Seperate
 
 }
 ?>
