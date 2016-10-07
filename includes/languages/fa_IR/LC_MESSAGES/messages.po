@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2016-10-05 09:29+0330\n"
-"PO-Revision-Date: 2016-10-05 09:30+0330\n"
+"POT-Creation-Date: 2016-10-07 10:10+0330\n"
+"PO-Revision-Date: 2016-10-07 10:10+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -3441,7 +3441,7 @@ msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:527
 #: tejarak/includes/languages/trans_addons.php:527
-#: tejarak/includes/languages/trans_twig.php:106
+#: tejarak/includes/languages/trans_twig.php:107
 msgid " "
 msgstr " "
 
@@ -3906,14 +3906,18 @@ msgid "Frontend Developer"
 msgstr "برنامه‌نویس سمت کاربر"
 
 #: tejarak/includes/languages/trans_twig.php:103
+msgid "Research & Develepment"
+msgstr "تحقیق و توسعه"
+
+#: tejarak/includes/languages/trans_twig.php:104
 msgid "name"
 msgstr "نام"
 
-#: tejarak/includes/languages/trans_twig.php:104
+#: tejarak/includes/languages/trans_twig.php:105
 msgid "summary"
 msgstr "خلاصه"
 
-#: tejarak/includes/languages/trans_twig.php:105
+#: tejarak/includes/languages/trans_twig.php:106
 msgid "ganje"
 msgstr "گنجه"
 
