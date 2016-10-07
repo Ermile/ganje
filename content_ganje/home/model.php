@@ -159,7 +159,7 @@ class model extends \mvc\model
 				// if this person is first one in this day send current date
 				if(\lib\db\users::live() <= 0)
 				{
-					$msg .= "\n". ' 🎌';
+					$msg .= "\n". ' 🎌'. \lib\db\users::enter();
 				}
 
 				break;
