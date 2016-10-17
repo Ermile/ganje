@@ -23,7 +23,7 @@ class view extends \content_ganje\home\view
 		$this->data->et     = $_args->api_callback;
 
 		// get list of users details
-		$this->data->users        = \lib\db\users::get_all();
+		$this->data->users        = \lib\db\staff::get_all();
 		$this->data->default_user = $_args->get_user(0);
 		$this->data->bodyclass    .= ' manage';
 

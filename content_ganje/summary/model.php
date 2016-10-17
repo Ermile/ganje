@@ -13,7 +13,7 @@ class model extends \mvc\model
 
 		$report = \lib\db\hours::summary();
 
-		return ['users' => \lib\db\users::get_all(), 'summary' => $report];
+		return ['users' => \lib\db\staff::get_all(), 'summary' => $report];
 	}
 
 

@@ -28,7 +28,7 @@ class model extends \mvc\model
 		];
 		// set name of user
 		$this->setName($arg['user_id']);
-		$result = \lib\db\users::set_time($arg);
+		$result = \lib\db\staff::set_time($arg);
 
 		switch ($result)
 		{
@@ -67,7 +67,7 @@ class model extends \mvc\model
 
 		return
 		[
-			'list' => \lib\db\users::get_all(),
+			'list' => \lib\db\staff::get_all(),
 			'summary' => \lib\db\hours::summary()
 		];
 	}
@@ -79,7 +79,7 @@ class model extends \mvc\model
 	 */
 	private function setName($_id)
 	{
-		$this->user_name = \lib\db\users::get_one($_id);
+		$this->user_name = \lib\db\staff::get_one($_id);
 		$this->user_name = T_($this->user_name['displayname']);
 
 		return $this->user_name;
@@ -102,7 +102,7 @@ class model extends \mvc\model
 		{
 			case 'enter':
 				// if this person is first one in this day send current date
-				if(\lib\db\users::enter() <= 1)
+				if(\lib\db\staff::enter() <= 1)
 				{
 					$tg = self::send_telegram($date_now);
 				}
@@ -113,7 +113,7 @@ class model extends \mvc\model
 
 			case 'exit':
 				$msg   = "💤 $name\n";
-				$start = \lib\db\users::get_start($_args['user_id']);
+				$start = \lib\db\staff::get_start($_args['user_id']);
 				$start = strtotime( date('Y/m/d'). ' '. $start);
 				$total = floor(abs(strtotime('now') - $start) / 60);
 				$minus = 0;
@@ -157,9 +157,9 @@ class model extends \mvc\model
 				$msg        .= "\n🕗 ". $pure_human;
 
 				// if this person is first one in this day send current date
-				if(\lib\db\users::live() <= 0)
+				if(\lib\db\staff::live() <= 0)
 				{
-					$msg .= "\n". ' 🎌'. \lib\db\users::enter();
+					$msg .= "\n". ' 🎌'. \lib\db\staff::enter();
 				}
 
 				break;

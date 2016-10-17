@@ -2,7 +2,7 @@
 namespace lib\db;
 use \lib\db;
 
-class users {
+class staff {
 
 
 	/**
