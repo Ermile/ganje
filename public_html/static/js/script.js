@@ -4,9 +4,11 @@ var isAnimation = false;
 $(document).ready(function()
 {
   startTime();
-  // reload page every 7 min to disallow session closing
-  setTimeout(function () { location.reload(1); }, 420000);
-
+  if($('body').hasClass('register'))
+  {
+    // reload page every 7 min to disallow session closing
+    setTimeout(function() {location.reload(1);}, (1000*60*30));
+  }
 });
 
 
