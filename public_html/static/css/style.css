@@ -86,7 +86,8 @@ body#home{height:100%}
 .deadline.orange .info{background-color:#b32626;}
 .deadline.red .title{background-color:#b32626;}
 .deadline.red .info{background-color:#ec0707;}
-
+.deadline.black .title{background-color:#333;}
+.deadline.black .info{background-color:#000;color:#fff}
 
 
 .register .card .info .action{position: absolute;top: 0;bottom: 0;right: 0;left: 0;opacity: 0;text-align:center;padding:1.3em 1em 1em;font-size:1.2em;line-height:1em;cursor:pointer;}

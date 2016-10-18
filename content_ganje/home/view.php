@@ -29,7 +29,12 @@ class view extends \mvc\view
 		$this->data->deadline['percent'] = round(($this->data->deadline['value'] * 100) / $this->data->deadline['start'], 0);
 
 		// add warn class to show best color
-		if($this->data->deadline['percent'] <= 10)
+		if($this->data->deadline['percent'] <= 1)
+		{
+			$this->data->deadline['class'] = 'black';
+			$this->data->deadline['value'] = '?';
+		}
+		elseif($this->data->deadline['percent'] <= 10)
 		{
 			$this->data->deadline['class'] = 'red';
 		}
