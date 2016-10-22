@@ -22,10 +22,15 @@ class view extends \mvc\view
 		$this->data->module         = $this->module();
 
 		// add deadline of projects
-		$deadline                        = strtotime("2016/10/22");
+		$deadline                        = strtotime("2016/10/23");
 		$this->data->deadline            = ['title' => T_('Sarshomar Demo'), 'value' => '', 'date' => $deadline, 'class' => '', 'start' => 45];
-		$this->data->deadline['value']   = floor(abs(time() - $deadline) / (60 * 60 * 24));
+		$this->data->deadline['value']   = floor(($deadline - time()) / (60 * 60 * 24));
 		// calc percent of time form start of this perion until end of it
+		if($this->data->deadline['value'] <= 0)
+		{
+			$this->data->deadline['value'] = 0;
+		}
+
 		$this->data->deadline['percent'] = round(($this->data->deadline['value'] * 100) / $this->data->deadline['start'], 0);
 
 		// add warn class to show best color
