@@ -1,6 +1,6 @@
 /**
  * Ganje Style
- * V4.0
+ * V4.1
  */
 
 /* HOMEPAGE Styles*/
@@ -107,6 +107,12 @@ body#homepage{height:100%}
 .register.loading-form .card.selected .info, .register.loading-form .card.selected .info .action, .register.loading-form .card.selected img{cursor: wait;}
 .register.loading-form .card.selected .info .action:before{opacity:1;animation:pulse 0.4s alternate infinite ease-in-out;}
 .register.loading-form .card.selected .info .action:after{opacity:1;animation:pulse 0.4s alternate infinite ease-in-out;animation-delay: 0.4s;}
+
+/*-------------- Loading ---------------*/
+.loading-form{cursor:progress;}
+.loading-form .form{position:relative;cursor:default;point-events:none;text-shadow:none!important;color:transparent!important;-webkit-transition:all 0 linear;transition:all 0 linear}
+.loading-form form:before{position:fixed;display:block;content:'';top:0;bottom:0;left:0;right:0;opacity:.3;width:100%;height:100%;z-index:1000;cursor:wait;background-color:#fff}
+
 
 @keyframes pulse {to {transform: scale(0.8);opacity: 0.5;}}
 
