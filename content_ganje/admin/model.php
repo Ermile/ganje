@@ -102,7 +102,7 @@ class model extends \mvc\model
 		$date_year  = $_args->get_date(1);
 		$date_month = $_args->get_date(2);
 		$date_day   = $_args->get_date(3);
-		$lang       = substr(\lib\router::get_storage('language'), 0, 2);
+		$lang       =  \lib\define::get_language();
 
 		$args =
 		[
@@ -157,7 +157,6 @@ class model extends \mvc\model
 
 		$result['data']  = $data;
 		$result['total'] = count($result['data']);
-
 		if($_args->get_export())
 		{
 

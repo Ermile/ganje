@@ -745,7 +745,7 @@ class hours {
 				hours.hour_date
 		";
 
-		if(substr(\lib\router::get_storage('language'), 0, 2) === 'fa')
+		if(\lib\define::get_language() === 'fa')
 		{
 			$jalali_month = \lib\utility\jdate::date("m",false, false);
 			$jalali_year  = \lib\utility\jdate::date("Y",false, false);

@@ -63,7 +63,7 @@ class view extends \mvc\view
 	{
 		$year_min     = '2016';
 		$year_current = \lib\utility::date('Y', false, 'current', false);
-		if(substr(\lib\router::get_storage('language'), 0, 2) == 'fa')
+		if(\lib\define::get_language() == 'fa')
 		{
 			$year_min = '1395';
 		}
