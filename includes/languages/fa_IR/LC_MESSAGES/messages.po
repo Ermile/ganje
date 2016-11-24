@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2016-11-10 11:44+0330\n"
-"PO-Revision-Date: 2016-11-10 11:45+0330\n"
+"POT-Creation-Date: 2016-11-24 13:37+0330\n"
+"PO-Revision-Date: 2016-11-24 13:37+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -19,21 +19,21 @@ msgstr ""
 "X-Poedit-SearchPath-2: tejarak\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: saloos/lib/controller.php:610
+#: saloos/lib/controller.php:622
 #: saloos/saloos-addons/includes/languages/trans_addons.php:295
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:46
 #: tejarak/includes/languages/trans_addons.php:295
 msgid "add new"
 msgstr "افزودن"
 
-#: saloos/lib/controller.php:613
+#: saloos/lib/controller.php:625
 #: saloos/saloos-addons/includes/languages/trans_addons.php:366
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:49
 #: tejarak/includes/languages/trans_addons.php:366
 msgid "edit"
 msgstr "ویرایش"
 
-#: saloos/lib/controller.php:616
+#: saloos/lib/controller.php:628
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:52
 msgid "delete"
 msgstr "حذف"
@@ -354,7 +354,7 @@ msgid "user is incorrect"
 msgstr "نام کاربری اشتباه است"
 
 #: saloos/saloos-addons/content_account/changepass/model.php:51
-#: saloos/saloos-addons/content_account/login/model.php:88
+#: saloos/saloos-addons/content_account/login/model.php:110
 #: saloos/saloos-addons/includes/languages/trans_addons.php:324
 #: tejarak/includes/languages/trans_addons.php:324
 msgid "Please forward this message to administrator"
@@ -422,20 +422,20 @@ msgstr "پیامک‌های دریافتی"
 msgid "Ermile"
 msgstr "ارمایل"
 
-#: saloos/saloos-addons/content_account/login/model.php:49
+#: saloos/saloos-addons/content_account/login/model.php:71
 #: saloos/saloos-addons/includes/languages/trans_addons.php:321
 #: tejarak/includes/languages/trans_addons.php:321
 msgid "Login Successfully"
 msgstr "با موفقیت وارد سیستم شدید"
 
-#: saloos/saloos-addons/content_account/login/model.php:76
+#: saloos/saloos-addons/content_account/login/model.php:98
 #: saloos/saloos-addons/includes/languages/trans_addons.php:322
 #: tejarak/includes/languages/trans_addons.php:322
 msgid "Login failed!"
 msgstr "ورود به سیستم ناموفق بود!"
 
-#: saloos/saloos-addons/content_account/login/model.php:80
-#: saloos/saloos-addons/content_account/login/model.php:84
+#: saloos/saloos-addons/content_account/login/model.php:102
+#: saloos/saloos-addons/content_account/login/model.php:106
 #: saloos/saloos-addons/includes/languages/trans_addons.php:323
 #: tejarak/includes/languages/trans_addons.php:323
 msgid "Mobile or password is incorrect"
@@ -521,14 +521,6 @@ msgstr "ما پیامک شما را دریافت کرده و اکانت شما �
 #: saloos/saloos-addons/content_account/verificationsms/model.php:48
 msgid "error on verify your code!"
 msgstr "خطا در تایید اعتبار کد!"
-
-#: saloos/saloos-addons/content_cp/comments/model.php:26
-msgid "Comment update to :status"
-msgstr "وضعیت دیدگاه بروزرسانی شد"
-
-#: saloos/saloos-addons/content_cp/comments/model.php:30
-msgid "Error in update comment status"
-msgstr "خطا در بروزرسانی وضعیت دیدگاه"
 
 #: saloos/saloos-addons/content_cp/home/controller.php:17
 msgid "first of all, you must login to system!"
@@ -2071,7 +2063,7 @@ msgid "Powered by"
 msgstr "قدرت گرفته از"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:72
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:35
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:36
 #: tejarak/includes/languages/trans_addons.php:72
 #: tejarak/includes/languages/trans_twig.php:65
 msgid "Saloos"
@@ -2811,13 +2803,13 @@ msgid "Reza Mohiti"
 msgstr "رضا محیطی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:254
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:36
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:37
 #: tejarak/includes/languages/trans_addons.php:254
 msgid "Another Project with Saloos"
 msgstr "یک پروژه دیگر با سالوس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:255
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:37
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:38
 #: tejarak/includes/languages/trans_addons.php:255
 msgid "Saloos is an artichokes for PHP programming!!"
 msgstr "سالوس یک کنگر برای برنامه نویسی با پی اچ پی!"
@@ -3432,19 +3424,19 @@ msgid "We will thank you for this."
 msgstr "ما از این اقدام شما تشکر می‌کنیم."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:524
-#: saloos/saloos-addons/lib/telegram/log.php:394
+#: saloos/saloos-addons/lib/telegram/log.php:386
 #: tejarak/includes/languages/trans_addons.php:524
 msgid "Your phone number registered successfully;)"
 msgstr "شماره موبایل شما با موفقیت ثبت شد;)"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:525
-#: saloos/saloos-addons/lib/telegram/log.php:402
+#: saloos/saloos-addons/lib/telegram/log.php:394
 #: tejarak/includes/languages/trans_addons.php:525
 msgid "We dont need another users contact:?)"
 msgstr "ما به مخاطب سایر کاربران نیاز نداریم:؟)"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:526
-#: saloos/saloos-addons/lib/telegram/log.php:410
+#: saloos/saloos-addons/lib/telegram/log.php:402
 #: tejarak/includes/languages/trans_addons.php:526
 msgid "We need mobile number!"
 msgstr "ما به شماره موبایل نیاز داریم!"
@@ -3547,8 +3539,8 @@ msgid "Enjoy work time"
 msgstr "از زمان کاری خود لذت ببرید"
 
 #: tejarak/content_ganje/home/view.php:26
-msgid "Sarshomar Beta"
-msgstr "نسخه‌ی بتای سرشمار"
+msgid "Sarshomar Trial"
+msgstr "نسخه آزمایشی سرشمار"
 
 #: tejarak/content_ganje/manifest.php:4
 msgid "Register enter and exit"
@@ -3955,6 +3947,15 @@ msgstr "تجارک"
 msgid "Tejarak was born to serve small and beautiful service for e-business"
 msgstr ""
 "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+
+#~ msgid "Comment update to :status"
+#~ msgstr "وضعیت دیدگاه بروزرسانی شد"
+
+#~ msgid "Error in update comment status"
+#~ msgstr "خطا در بروزرسانی وضعیت دیدگاه"
+
+#~ msgid "Sarshomar Beta"
+#~ msgstr "نسخه‌ی بتای سرشمار"
 
 #~ msgid "Sarshomar Alfa"
 #~ msgstr "نسخه‌ی آلفا سرشمار"
