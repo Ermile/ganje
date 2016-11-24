@@ -22,8 +22,8 @@ class view extends \mvc\view
 		$this->data->module         = $this->module();
 
 		// add deadline of projects
-		$deadline                        = strtotime("2016/11/22");
-		$this->data->deadline            = ['title' => T_('Sarshomar Beta'), 'value' => '', 'date' => $deadline, 'class' => '', 'start' => 14];
+		$deadline                        = strtotime("2016/12/26");
+		$this->data->deadline            = ['title' => T_('Sarshomar Beta'), 'value' => '', 'date' => $deadline, 'class' => '', 'start' => 34];
 		$this->data->deadline['value']   = floor(($deadline - time()) / (60 * 60 * 24));
 		// calc percent of time form start of this perion until end of it
 		if($this->data->deadline['value'] <= 0)
