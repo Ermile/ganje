@@ -183,6 +183,10 @@ class staff {
 	 */
 	public static function set_time($_args)
 	{
+		if(!isset($_args['user_id']) || !isset($_args['minus']) || !isset($_args['plus']))
+		{
+			return false;
+		}
 
 		$user_id = $_args['user_id'];
 		$minus   = $_args['minus'];
@@ -220,10 +224,26 @@ class staff {
 			return 'enter';
 
 		}
-		elseif($check_date['hour_end'] == null)
+		elseif(array_key_exists('hour_end', $check_date) && $check_date['hour_end'] == null)
 		{
 			// set start time
 			// $this->start = strtotime("$today ". $check_date['hour_start']);
+			$start_time = date("H:i");
+			if(isset($check_date['hour_start']))
+			{
+				$start_time = $check_date['hour_start'];
+			}
+			$end_time = $time;
+
+			$start_time = strtotime($start_time);
+			$end_time   = strtotime($end_time);
+			$diff       = $end_time - $start_time;
+
+			if($minus * 60 > $diff)
+			{
+				$minus = $diff / 60;
+			}
+
 			//------- add end time
 			$update = "UPDATE hours
 						SET hour_end = '$time',
