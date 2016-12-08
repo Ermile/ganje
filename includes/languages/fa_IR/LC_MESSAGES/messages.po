@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2016-11-24 13:37+0330\n"
-"PO-Revision-Date: 2016-11-24 13:37+0330\n"
+"POT-Creation-Date: 2016-12-08 13:14+0330\n"
+"PO-Revision-Date: 2016-12-08 13:15+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -19,21 +19,21 @@ msgstr ""
 "X-Poedit-SearchPath-2: tejarak\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: saloos/lib/controller.php:622
+#: saloos/lib/controller.php:676
 #: saloos/saloos-addons/includes/languages/trans_addons.php:295
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:46
 #: tejarak/includes/languages/trans_addons.php:295
 msgid "add new"
 msgstr "افزودن"
 
-#: saloos/lib/controller.php:625
+#: saloos/lib/controller.php:679
 #: saloos/saloos-addons/includes/languages/trans_addons.php:366
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:49
 #: tejarak/includes/languages/trans_addons.php:366
 msgid "edit"
 msgstr "ویرایش"
 
-#: saloos/lib/controller.php:628
+#: saloos/lib/controller.php:682
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:52
 msgid "delete"
 msgstr "حذف"
@@ -2063,7 +2063,7 @@ msgid "Powered by"
 msgstr "قدرت گرفته از"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:72
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:36
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:39
 #: tejarak/includes/languages/trans_addons.php:72
 #: tejarak/includes/languages/trans_twig.php:65
 msgid "Saloos"
@@ -2803,13 +2803,13 @@ msgid "Reza Mohiti"
 msgstr "رضا محیطی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:254
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:37
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:40
 #: tejarak/includes/languages/trans_addons.php:254
 msgid "Another Project with Saloos"
 msgstr "یک پروژه دیگر با سالوس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:255
-#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:38
+#: saloos/saloos-addons/lib/mvc/viewes/constructor.php:41
 #: tejarak/includes/languages/trans_addons.php:255
 msgid "Saloos is an artichokes for PHP programming!!"
 msgstr "سالوس یک کنگر برای برنامه نویسی با پی اچ پی!"
@@ -3424,26 +3424,25 @@ msgid "We will thank you for this."
 msgstr "ما از این اقدام شما تشکر می‌کنیم."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:524
-#: saloos/saloos-addons/lib/telegram/log.php:386
 #: tejarak/includes/languages/trans_addons.php:524
 msgid "Your phone number registered successfully;)"
 msgstr "شماره موبایل شما با موفقیت ثبت شد;)"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:525
-#: saloos/saloos-addons/lib/telegram/log.php:394
+#: saloos/saloos-addons/lib/telegram/log.php:400
 #: tejarak/includes/languages/trans_addons.php:525
 msgid "We dont need another users contact:?)"
 msgstr "ما به مخاطب سایر کاربران نیاز نداریم:؟)"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:526
-#: saloos/saloos-addons/lib/telegram/log.php:402
+#: saloos/saloos-addons/lib/telegram/log.php:408
 #: tejarak/includes/languages/trans_addons.php:526
 msgid "We need mobile number!"
 msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:527
 #: tejarak/includes/languages/trans_addons.php:527
-#: tejarak/includes/languages/trans_twig.php:108
+#: tejarak/includes/languages/trans_twig.php:109
 msgid " "
 msgstr " "
 
@@ -3451,6 +3450,26 @@ msgstr " "
 #: tejarak/includes/languages/trans_addons.php:530
 msgid "Select"
 msgstr "انتخاب"
+
+#: saloos/saloos-addons/lib/db/db_errors.php:3
+msgid "user id not found"
+msgstr ""
+
+#: saloos/saloos-addons/lib/db/db_errors.php:4
+msgid "old language = new language"
+msgstr ""
+
+#: saloos/saloos-addons/lib/db/db_errors.php:5
+msgid "language was updated"
+msgstr ""
+
+#: saloos/saloos-addons/lib/db/db_errors.php:6
+msgid "new language was set"
+msgstr ""
+
+#: saloos/saloos-addons/lib/db/db_errors.php:7
+msgid "undefined error was happend"
+msgstr ""
 
 #: saloos/saloos-addons/lib/mvc/models/account.php:146
 msgid "logout successfully"
@@ -3824,106 +3843,110 @@ msgid "Arash Shakery"
 msgstr "آرش شاکری"
 
 #: tejarak/includes/languages/trans_twig.php:82
+msgid "Majid Hamidian"
+msgstr "مجید حمیدیان"
+
+#: tejarak/includes/languages/trans_twig.php:83
 msgid "hours in this week"
 msgstr "ساعت در این هفته"
 
-#: tejarak/includes/languages/trans_twig.php:83
+#: tejarak/includes/languages/trans_twig.php:84
 msgid "hours in this month"
 msgstr "ساعت در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:84
+#: tejarak/includes/languages/trans_twig.php:85
 msgid "hours remote in this month"
 msgstr "ساعت ریموت در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:85
+#: tejarak/includes/languages/trans_twig.php:86
 msgid "hours in idle this month"
 msgstr "ساعت هدر داده در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:86
+#: tejarak/includes/languages/trans_twig.php:87
 msgid "Founder & CEO"
 msgstr "موسس و مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:87
+#: tejarak/includes/languages/trans_twig.php:88
 msgid "Founder and CEO"
 msgstr "موسس و مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:88
+#: tejarak/includes/languages/trans_twig.php:89
 msgid "CEO & Solution Designer"
 msgstr "مدیرعامل و طراح راه‌کار"
 
-#: tejarak/includes/languages/trans_twig.php:89
+#: tejarak/includes/languages/trans_twig.php:90
 msgid "CEO and Solution Designer"
 msgstr "مدیرعامل و طراح راه‌کار"
 
-#: tejarak/includes/languages/trans_twig.php:90
+#: tejarak/includes/languages/trans_twig.php:91
 msgid "CEO"
 msgstr "مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:91
+#: tejarak/includes/languages/trans_twig.php:92
 msgid "Solution Designer"
 msgstr "طراح راهکار"
 
-#: tejarak/includes/languages/trans_twig.php:92
+#: tejarak/includes/languages/trans_twig.php:93
 msgid "Full Stack Developer"
 msgstr "برنامه‌نویس تمام‌عیار"
 
-#: tejarak/includes/languages/trans_twig.php:93
+#: tejarak/includes/languages/trans_twig.php:94
 msgid "Backend Developer"
 msgstr "برنامه‌نویس سمت سرور"
 
-#: tejarak/includes/languages/trans_twig.php:94
-msgid "Frontend Designer"
-msgstr "طراح رابط کاربری"
-
 #: tejarak/includes/languages/trans_twig.php:95
+msgid "Frontend Designer"
+msgstr "طراح رابط‌کاربری"
+
+#: tejarak/includes/languages/trans_twig.php:96
 msgid "UI Designer"
 msgstr "طراح رابط کاربری"
 
-#: tejarak/includes/languages/trans_twig.php:96
+#: tejarak/includes/languages/trans_twig.php:97
 msgid "Graphic Designer"
 msgstr "طراح گرافیک"
 
-#: tejarak/includes/languages/trans_twig.php:97
+#: tejarak/includes/languages/trans_twig.php:98
 msgid "Shareholder"
 msgstr "سهام‌دار"
 
-#: tejarak/includes/languages/trans_twig.php:98
+#: tejarak/includes/languages/trans_twig.php:99
 msgid "Chrikt"
 msgstr "چریکت"
 
-#: tejarak/includes/languages/trans_twig.php:99
+#: tejarak/includes/languages/trans_twig.php:100
 msgid "Content Expert"
 msgstr "کارشناس محتوا"
 
-#: tejarak/includes/languages/trans_twig.php:100
+#: tejarak/includes/languages/trans_twig.php:101
 msgid "Service"
 msgstr "مسئول خدمات"
 
-#: tejarak/includes/languages/trans_twig.php:101
+#: tejarak/includes/languages/trans_twig.php:102
 msgid "UI Developer"
 msgstr "برنامه‌نویس رابط‌کاربری"
 
-#: tejarak/includes/languages/trans_twig.php:102
+#: tejarak/includes/languages/trans_twig.php:103
 msgid "Frontend Developer"
 msgstr "برنامه‌نویس سمت کاربر"
 
-#: tejarak/includes/languages/trans_twig.php:103
+#: tejarak/includes/languages/trans_twig.php:104
 msgid "Research & Develepment"
 msgstr "تحقیق و توسعه"
 
-#: tejarak/includes/languages/trans_twig.php:104
+#: tejarak/includes/languages/trans_twig.php:105
 msgid "Research &amp; Develepment"
 msgstr "تحقیق و توسعه"
 
-#: tejarak/includes/languages/trans_twig.php:105
+#: tejarak/includes/languages/trans_twig.php:106
 msgid "name"
 msgstr "نام"
 
-#: tejarak/includes/languages/trans_twig.php:106
+#: tejarak/includes/languages/trans_twig.php:107
 msgid "summary"
 msgstr "خلاصه"
 
-#: tejarak/includes/languages/trans_twig.php:107
+#: tejarak/includes/languages/trans_twig.php:108
 msgid "ganje"
 msgstr "گنجه"
 
