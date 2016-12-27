@@ -27,20 +27,6 @@ class staff {
 		$date = date("Y-m-d");
 		$no_position = T_("Undefined");
 
-		// $query_new =
-		// 		"SELECT
-		// 			users.id,
-		// 			users.user_displayname as displayname,
-		// 			TRIM(BOTH '".'"'."' FROM IFNULL(JSON_EXTRACT(users.user_meta,'$.position'), '$no_position')) as meta,
-		// 			hours.hour_start
-		// 		FROM users
-		// 		LEFT JOIN hours
-		// 			ON hours.user_id = users.id
-		// 			AND hours.hour_date = DATE(NOW())
-		// 			AND hours.hour_end is null
-		// 		$condition
-		// 		";
-
 		$query =
 				"SELECT
 					users.id,
@@ -60,7 +46,52 @@ class staff {
 		$users = db::get($query);
 		$new   = array_column($users, "id");
 		$users = array_combine($new, $users);
+		foreach ($users as $key => $value)
+		{
+			if(isset($value['permission']))
+			{
+				$users[$key]['permission'] = self::permission_name($value['permission']);
+			}
+		}
+
 		return $users;
+	}
+
+
+	/**
+	 * load permission name from options table
+	 *
+	 * @param      <type>  $_user_permission  The user permission
+	 *
+	 * @return     <type>  ( description_of_the_return_value )
+	 */
+	public static function permission_name($_user_permission)
+	{
+
+		if(is_null($_user_permission))
+		{
+			return null;
+		}
+
+		$query =
+		"
+			SELECT
+				option_value AS `permission`
+			FROM
+				options
+			WHERE
+				user_id IS NULL AND
+				post_id IS NULL AND
+				option_cat = 'permissions' AND
+				option_key = '$_user_permission'
+			LIMIT 1
+		";
+		$resutl = \lib\db::get($query, 'permission', true);
+		if(empty($resutl) || is_array($resutl))
+		{
+			return null;
+		}
+		return $resutl;
 	}
 
 

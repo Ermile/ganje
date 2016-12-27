@@ -23,7 +23,9 @@ class model extends \mvc\model
 		{
 			return false;
 		}
+
 		$user_id = false;
+
 		if($this->access('ganje', 'remote', 'admin') && !$this->access('ganje', 'admin', 'admin'))
 		{
 			$user_id = (int) $this->login("id");
@@ -37,7 +39,6 @@ class model extends \mvc\model
 		{
 			return false;
 		}
-
 
 		$result        = null;
 		//----------- get values from post
@@ -58,14 +59,14 @@ class model extends \mvc\model
 				break;
 
 			case 'enter':
-				$msg_notify = T_("Dear :name;", ['name'=> $this->user_name])."<br />". T_('Your enter was registered.').' '. T_("Have a good time.");
+				$msg_notify = T_("Dear :name;", ['name'=> self::$user_name])."<br />". T_('Your enter was registered.').' '. T_("Have a good time.");
 				debug::true($msg_notify);
 				// send message from telegram
 				self::generate_telegram_text('enter', $arg);
 				break;
 
 			case 'exit':
-				$msg_notify = T_("Bye Bye :name ;)", ['name'=> $this->user_name]);
+				$msg_notify = T_("Bye Bye :name ;)", ['name'=> self::$user_name]);
 				debug::warn($msg_notify);
 				self::generate_telegram_text('exit', $arg);
 				break;
@@ -114,9 +115,8 @@ class model extends \mvc\model
 	private function setName($_id)
 	{
 		self::$user_name = \lib\db\staff::get_one($_id);
-		self::$user_name = T_($this->user_name['displayname']);
-
-		return $this->user_name;
+		self::$user_name = T_(self::$user_name['displayname']);
+		return self::$user_name;
 	}
 
 
