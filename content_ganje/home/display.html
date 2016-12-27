@@ -30,7 +30,8 @@
     <div class="row">
 {% for i, user in datatable.list %}
 
-      <div data-id="{{user.id}}" class="card {% if user.hour_start is not null %}present{%endif%}">
+{%set perm = user.permission %}
+      <div data-id="{{user.id}}" class="card {% if user.hour_start is not null %}present{%endif%} {{perm}}">
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
 {%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
 {%set name = user.displayname %}

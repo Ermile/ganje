@@ -91,7 +91,8 @@ body#homepage{height:100%}
 
 
 .register .card .info .action{position: absolute;top: 0;bottom: 0;right: 0;left: 0;opacity: 0;text-align:center;padding:1.3em 1em 1em;font-size:1.2em;line-height:1em;cursor:pointer;}
-.register .card.selected img{cursor:crosshair; }
+.register .card.remote::before{content:"";position:absolute;bottom:-15px;left:50%;margin-left:-15px;background-image:url(../images/remote.svg);width:30px;height:30px;z-index:1}
+.register .card.selected img{cursor:crosshair;}
 .register .card.selected .info .name, .register .card.selected .info .position{opacity:0;}
 .register .card.selected .info .action {opacity: 1;background-color: #4684ee;color: #fff}
 .register .card.selected .info .action .exit{display: none;}
