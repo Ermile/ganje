@@ -4,7 +4,7 @@ private function transtext()
 
 	//-------------------------------------------------------content\home\display.html
 	echo T_("Ganje, first one");                                                      // Line 8
-	echo T_("Ganje");                                                                 // Line 57 Seperate
+	echo T_("Ganje");                                                                 // Line 63 Seperate
 	echo T_("Ganje: this is a tejarak online attendance beginning Web-based which work without any complexities of existing ones.");// Line 47
 	echo T_("Integration with services which will soon be public lead no need for small businesses, costly and inconvenience.");// Line 47
 	echo T_("About");                                                                 // Line 56
@@ -80,33 +80,39 @@ private function transtext()
 	echo T_("SeyedMohsen Mortazavi Hoseini");                                         // Line 24 Seperate
 	echo T_("Arash Shakery");                                                         // Line 25 Seperate
 	echo T_("Majid Hamidian");                                                        // Line 26 Seperate
-	echo T_("hours in this week");                                                    // Line 28 Seperate
-	echo T_("hours in this month");                                                   // Line 29 Seperate
-	echo T_("hours remote in this month");                                            // Line 30 Seperate
-	echo T_("hours in idle this month");                                              // Line 31 Seperate
-	echo T_("Founder & CEO");                                                         // Line 33 Seperate
-	echo T_("Founder and CEO");                                                       // Line 34 Seperate
-	echo T_("CEO & Solution Designer");                                               // Line 35 Seperate
-	echo T_("CEO and Solution Designer");                                             // Line 36 Seperate
-	echo T_("CEO");                                                                   // Line 37 Seperate
-	echo T_("Solution Designer");                                                     // Line 38 Seperate
-	echo T_("Full Stack Developer");                                                  // Line 39 Seperate
-	echo T_("Backend Developer");                                                     // Line 40 Seperate
-	echo T_("Frontend Designer");                                                     // Line 41 Seperate
-	echo T_("UI Designer");                                                           // Line 42 Seperate
-	echo T_("Graphic Designer");                                                      // Line 43 Seperate
-	echo T_("Shareholder");                                                           // Line 44 Seperate
-	echo T_("Chrikt");                                                                // Line 45 Seperate
-	echo T_("Content Expert");                                                        // Line 47 Seperate
-	echo T_("Service");                                                               // Line 48 Seperate
-	echo T_("UI Developer");                                                          // Line 49 Seperate
-	echo T_("Frontend Developer");                                                    // Line 50 Seperate
-	echo T_("Research & Develepment");                                                // Line 51 Seperate
-	echo T_("Research &amp; Develepment");                                            // Line 52 Seperate
-	echo T_("name");                                                                  // Line 54 Seperate
-	echo T_("summary");                                                               // Line 55 Seperate
-	echo T_("ganje");                                                                 // Line 56 Seperate
-	echo T_(" ");                                                                     // Line 61 Seperate
+	echo T_("Moslem Hamzehnejadi");                                                   // Line 27 Seperate
+	echo T_("MohamadHosein Hamzehnejadi");                                            // Line 28 Seperate
+	echo T_("hours in this week");                                                    // Line 30 Seperate
+	echo T_("hours in this month");                                                   // Line 31 Seperate
+	echo T_("hours remote in this month");                                            // Line 32 Seperate
+	echo T_("hours in idle this month");                                              // Line 33 Seperate
+	echo T_("Founder & CEO");                                                         // Line 35 Seperate
+	echo T_("Founder and CEO");                                                       // Line 36 Seperate
+	echo T_("CEO & Solution Designer");                                               // Line 37 Seperate
+	echo T_("CEO and Solution Designer");                                             // Line 38 Seperate
+	echo T_("CEO");                                                                   // Line 39 Seperate
+	echo T_("Solution Designer");                                                     // Line 40 Seperate
+	echo T_("Full Stack Developer");                                                  // Line 41 Seperate
+	echo T_("Backend Developer");                                                     // Line 42 Seperate
+	echo T_("Frontend Designer");                                                     // Line 43 Seperate
+	echo T_("UI Designer");                                                           // Line 44 Seperate
+	echo T_("Graphic Designer");                                                      // Line 45 Seperate
+	echo T_("Shareholder");                                                           // Line 46 Seperate
+	echo T_("Chrikt");                                                                // Line 47 Seperate
+	echo T_("Content Expert");                                                        // Line 49 Seperate
+	echo T_("Service");                                                               // Line 50 Seperate
+	echo T_("UI Developer");                                                          // Line 51 Seperate
+	echo T_("Frontend Developer");                                                    // Line 52 Seperate
+	echo T_("Research & Develepment");                                                // Line 53 Seperate
+	echo T_("Research &amp; Develepment");                                            // Line 54 Seperate
+	echo T_("UI Expert");                                                             // Line 55 Seperate
+	echo T_("Android Developer");                                                     // Line 56 Seperate
+	echo T_("IOS Developer");                                                         // Line 57 Seperate
+	echo T_("WP Developer");                                                          // Line 58 Seperate
+	echo T_("name");                                                                  // Line 60 Seperate
+	echo T_("summary");                                                               // Line 61 Seperate
+	echo T_("ganje");                                                                 // Line 62 Seperate
+	echo T_(" ");                                                                     // Line 67 Seperate
 
 }
 ?>
