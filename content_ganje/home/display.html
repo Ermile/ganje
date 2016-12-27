@@ -42,6 +42,9 @@
         <div class="action"><span class='enter'>{%trans "Enter"%}</span><span class='exit'>{%trans "Exit"%}</span></div>
        </div>
       </div>
+        {%if remote%}
+        <a  class="btn" href= "{{url.prefix}}/status" target="_blank">status</a>
+        {%endif%}
      {%endfor%}
       <div class="clear:both"></div>
     </div>
@@ -61,6 +64,7 @@
 {%set avatar2 = url.static ~ 'images/avatar/' ~ user.id ~ '-v2.jpg' %}
 {% set name = user.displayname %}
 {%set position = (user.meta | decode('position'))%}
+
        <img src="{{avatar2 | exist(avatar | exist(avatar_default))}}">
       <div class="info">
        <div class="name">{% trans name %}</div>

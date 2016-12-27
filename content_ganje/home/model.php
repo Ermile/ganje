@@ -7,7 +7,10 @@ use \lib\telegram\tg as bot;
 
 class model extends \mvc\model
 {
-	public $user_name;
+	/**
+	 * the user name
+	 */
+	public static $user_name;
 
 
 	/**
@@ -16,13 +19,31 @@ class model extends \mvc\model
 	 */
 	public function post_save()
 	{
-		$this->access('ganje', 'home', 'edit', 'block');
+		if(!$this->login())
+		{
+			return false;
+		}
+		$user_id = false;
+		if($this->access('ganje', 'remote', 'admin') && !$this->access('ganje', 'admin', 'admin'))
+		{
+			$user_id = (int) $this->login("id");
+		}
+		elseif($this->access('ganje', 'intro', 'admin'))
+		{
+			// check the intro permission
+			$user_id = intval(utility::post('userId'));
+		}
+		else
+		{
+			return false;
+		}
+
 
 		$result        = null;
 		//----------- get values from post
 		$arg =
 		[
-			'user_id' => intval(utility::post('userId')),
+			'user_id' => $user_id,
 			'plus'    => intval(utility::post('plus')),
 			'minus'   => intval(utility::post('minus'))
 		];
@@ -63,13 +84,26 @@ class model extends \mvc\model
 	*/
 	public function get_list_of_users()
 	{
-		$this->access('ganje', 'home', 'view', 'block');
+		// the remote users can see her name
+		if($this->access('ganje', 'remote', 'admin') && !$this->access('ganje', 'admin', 'admin'))
+		{
+			$return =
+			[
+				'list'    => \lib\db\staff::get_all(['user_id' => $this->login('id')]),
+				'summary' => \lib\db\hours::summary(['user_id' => $this->login('id')])
+			];
+			return $return;
+		}
 
-		return
+		$this->access('ganje', 'intro', 'admin', 'block');
+
+		$return =
 		[
 			'list' => \lib\db\staff::get_all(),
 			'summary' => \lib\db\hours::summary()
 		];
+
+		return $return;
 	}
 
 
@@ -79,8 +113,8 @@ class model extends \mvc\model
 	 */
 	private function setName($_id)
 	{
-		$this->user_name = \lib\db\staff::get_one($_id);
-		$this->user_name = T_($this->user_name['displayname']);
+		self::$user_name = \lib\db\staff::get_one($_id);
+		self::$user_name = T_($this->user_name['displayname']);
 
 		return $this->user_name;
 	}
@@ -91,12 +125,12 @@ class model extends \mvc\model
 	 * @param  [type] $_type [description]
 	 * @return [type]        [description]
 	 */
-	public function generate_telegram_text($_type, $_args = null)
+	public static function generate_telegram_text($_type, $_args = null)
 	{
 		$msg             = '';
 		$date_now        = \lib\utility::date("l j F Y", false, 'default');
 		$time_now        = \lib\utility::date("H:i", false, 'default');
-		$name            = "*". $this->user_name. "*";
+		$name            = "*". self::$user_name. "*";
 
 		switch ($_type)
 		{
@@ -163,7 +197,6 @@ class model extends \mvc\model
 				}
 
 				break;
-
 
 			default:
 				break;

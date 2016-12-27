@@ -717,8 +717,13 @@ class hours {
 	 * [summary description]
 	 * @return [type] [description]
 	 */
-	public static function summary()
+	public static function summary($_args = [])
 	{
+		$user_id = null;
+		if(isset($_args['user_id']))
+		{
+			$user_id = " AND users.id = $_args[user_id] ";
+		}
 
 		$today  = date("Y-m-d");
 		$report = [];
@@ -740,6 +745,7 @@ class hours {
 			'daily' as type
 			$join
 			AND hours.hour_date = '$today'
+			$user_id
 			GROUP BY
 				hours.user_id,
 				hours.hour_date

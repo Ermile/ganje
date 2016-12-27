@@ -11,7 +11,7 @@ class controller extends \mvc\controller
 
 		// Check permission and if user can do this operation
 		// allow to do it, else show related message in notify center
-		if(!$this->access('ganje', 'home', 'view'))
+		if(!$this->access('ganje', 'admin', 'view'))
 		{
 			$this->redirector()->set_domain()->set_url('ganje/status')->redirect();
 		}

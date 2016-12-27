@@ -16,6 +16,11 @@ class view extends \mvc\view
 			$this->data->bodyclass  = 'unselectable';
 		}
 
+		if($this->access('ganje','remote', 'admin') && !$this->access('ganje', 'admin', 'admin'))
+		{
+			$this->data->remote = true;
+		}
+
 		$this->data->site['title']  = T_("Ganje");
 		$this->data->site['desc']   = T_("Free & open source attendance service!");
 		$this->data->site['slogan'] = T_("Enjoy work time");
