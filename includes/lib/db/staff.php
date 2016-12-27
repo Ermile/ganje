@@ -50,7 +50,13 @@ class staff {
 		{
 			if(isset($value['permission']))
 			{
-				$users[$key]['permission'] = self::permission_name($value['permission']);
+				$permission = self::permission_name($value['permission']);
+				$users[$key]['permission'] = $permission;
+
+				if($permission == 'intro')
+				{
+					unset($users[$key]);
+				}
 			}
 		}
 
