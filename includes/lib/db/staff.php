@@ -44,8 +44,9 @@ class staff {
 		$query =
 				"SELECT
 					users.id,
-					users.user_displayname as displayname,
-					IFNULL(users.user_meta,'$no_position') as meta,
+					users.user_permission AS `permission`,
+					users.user_displayname AS `displayname`,
+					IFNULL(users.user_meta,'$no_position') AS meta,
 					hours.hour_start
 				FROM users
 				LEFT JOIN hours
