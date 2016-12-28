@@ -156,10 +156,10 @@ body#homepage{height:100%}
 @keyframes pulseOn {to {box-shadow: 0 0 0 1em rgba(232, 76, 61, 0);}}
 @keyframes pulseOff{0%{box-shadow:0 0 0 0 rgba(204,169,44,0.4)}70%{box-shadow:0 0 0 10px rgba(204,169,44,0)}100%{box-shadow:0 0 0 0 rgba(204,169,44,0)}}
 
-.card .info {background-color: #fff;border: none;margin: 0;padding:0.7em 1em;box-shadow: none;font-size:0.8em;text-align: left;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
-.rtl .card .info {text-align: right;font-size: 1em;}
-.card .info .name {font-weight: 700;font-size: 0.8em;line-height: 1.2em;color: rgba(0,0,0,.85);}
-.card .info .position {font-size: 1.5em;color: #aaa;margin: 0.2em 0 0.5em;}
+.card .info {background-color: #fff;border: none;margin: 0;padding:0.7em 0em;box-shadow: none;font-size:0.8em;text-align:center;position: relative;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.rtl .card .info {font-size: 1em;}
+.card .info .name {font-weight: 700;font-size: 0.8em;line-height: 1.2em;color: rgba(0,0,0,.85);overflow:hidden;text-overflow:ellipsis;}
+.card .info .position {font-size: 1.5em;color: #aaa;margin: 0.2em 0 0.5em;overflow:hidden;text-overflow:ellipsis;}
 .card .info .id {font-size: 1em;color: rgba(0,0,0,.4);width:15%;text-align:center;background-color:#f7f5f5;background-color: #dedede;color:#333;position: absolute;bottom: 10%;right: 0;}
 .rtl .card .info .id {right: unset;left: 0;}
 .detail .info .month {font-weight: 700;}
