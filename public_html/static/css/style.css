@@ -92,6 +92,7 @@ body#homepage{height:100%}
 
 .register .card .info .action{position: absolute;top: 0;bottom: 0;right: 0;left: 0;opacity: 0;text-align:center;padding:1.3em 1em 1em;font-size:1.2em;line-height:1em;cursor:pointer;}
 .register .card.remote::before{content:"";position:absolute;bottom:-15px;left:50%;margin-left:-15px;background-image:url(../images/remote.svg);width:30px;height:30px;z-index:1}
+.register .card.remote::before{animation:pulseOn 1.25s infinite cubic-bezier(0.66,0,0,1);box-shadow:0 0 0 0 rgba(15,161,166,0.5);}
 .register .card.selected img{cursor:crosshair;}
 .register .card.selected .info .name, .register .card.selected .info .position{opacity:0;}
 .register .card.selected .info .action {opacity: 1;background-color: #4684ee;color: #fff}
@@ -147,9 +148,10 @@ body#homepage{height:100%}
 .card img.random {position: relative;top: 25px;}
 .card.selected .info .id {font-weight: bold;color:#000}
 
-.card::after{content:attr(data-id);position:absolute;top:-0.3em;right:-0.3em;font-family:sans-serif;line-height:1.5em;width:1.5em;height:1.5em;border-radius:50%;background-color:#e0e1e2;color:rgba(0,0,0,0.85);cursor:pointer;z-index:2;animation:pulseOff 2s infinite;box-shadow:0 0 0 rgba(204,169,44,0.4)}
+.card::after{content:attr(data-id);position:absolute;top:-0.3em;right:-0.3em;font-family:sans-serif;line-height:1.4em;width:1.5em;height:1.5em;border-radius:50%;background-color:#e0e1e2;color:rgba(0,0,0,0.85);cursor:pointer;z-index:2;animation:pulseOff 2s infinite;box-shadow:0 0 0 rgba(204,169,44,0.4)}
 .rtl .card::after{left:-0.3em;right: initial;}
-.card.present::after{animation:pulseOn 1.25s infinite cubic-bezier(0.66,0,0,1);box-shadow:0 0 0 0 rgba(15,161,166,0.7);background-color:#0fa1a6;color:#fff}
+.card.present:not(.remote)::after{animation:pulseOn 1.25s infinite cubic-bezier(0.66,0,0,1);box-shadow:0 0 0 0 rgba(15,161,166,0.7);background-color:#0fa1a6;color:#fff}
+.card.present, .detail .card {opacity: 0.8;}
 @keyframes pulseOn {to {box-shadow: 0 0 0 1em rgba(232, 76, 61, 0);}}
 @keyframes pulseOff{0%{box-shadow:0 0 0 0 rgba(204,169,44,0.4)}70%{box-shadow:0 0 0 10px rgba(204,169,44,0)}100%{box-shadow:0 0 0 0 rgba(204,169,44,0)}}
 
