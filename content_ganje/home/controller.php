@@ -11,6 +11,7 @@ class controller extends \mvc\controller
 
 		if(
 			!$this->access('ganje', 'admin',  'admin') &&
+			!$this->access('ganje', 'admin',  'view')  &&
 			!$this->access('ganje', 'remote', 'admin') &&
 			!$this->access('ganje', 'intro',  'admin')
 		  )
