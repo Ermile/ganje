@@ -12,7 +12,8 @@ class model extends \mvc\model
 	 */
 	public function post_admin($_args)
 	{
-		$this->access('ganje', 'admin', 'edit', 'block');
+		$this->access('ganje', 'admin', 'edit', 'notify');
+
 		$type = utility::post('type');
 		if($type == 'add')
 		{
