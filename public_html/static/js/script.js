@@ -250,6 +250,7 @@ $(document).on("dblclick", ".time", function(e) { location.reload(); });
 $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(e, e.currentTarget, 'rightclick'); });
 
 // $(document).on("click", "body", function(e) {console.log(e); changePerson(0); });
+$(document).on("click", ".statistics .calcremote", function(e) { setExtra('plus', $(this).attr('data-time'), true); });
 $(document).on("click", ".statistics .minus", function(e) { setExtra('minus', 5) });
 $(document).on("click", ".statistics .plus",  function(e) { setExtra('plus', 10) });
 
@@ -505,13 +506,11 @@ function startTime()
  * @param {[type]} _type     [description]
  * @param {[type]} _increase [description]
  */
-function setExtra(_type, _increase)
+function setExtra(_type, _increase, _exact)
 {
   if(_type === false)
   {
     var delay = _increase === false? 0: 700;
-    console.log(_increase);
-    console.log(delay);
     setTimeout(function()
     {
       $('body').removeAttr('data-editing');
@@ -560,7 +559,11 @@ function setExtra(_type, _increase)
     {
       return false;
     }
-    var newVal     = parseInt(_this.attr('data-time')) + _increase;
+    var newVal = parseInt(_this.attr('data-time')) + _increase;
+    if(_exact)
+    {
+      newVal   = _increase;
+    }
     var newValReal = newVal;
     if(newVal < 0)
     {
@@ -717,6 +720,13 @@ function fillTimes(_id)
 
   $('.page[data-id="'+ _id+ '"] .diff span').text(diff);
   $('.page[data-id="'+ _id+ '"] .diff').attr('data-time', diff);
+
+  // calc remote time on enters
+  var exit_hour  = $('.page[data-id="'+ _id+ '"] .off .calcremote').attr('data-time-exit');
+  exit_hour      = String(exit_hour).split(':');
+  exit_hour      = new Date(today.getFullYear(), today.getMonth(), today.getDate(), exit_hour[0], exit_hour[1]);
+  var remotediff = Math.round((today - exit_hour) / 1000 / 60) - 5;
+  $('.page[data-id="'+ _id+ '"] .off .calcremote').attr('data-time', remotediff);
 
   calcTotalTime(_id);
 }

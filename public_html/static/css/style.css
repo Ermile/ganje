@@ -195,7 +195,8 @@ body#homepage{height:100%}
 .register .detail .statistics .total span{font-size: 3em}
 .register .detail .statistics .msg{cursor:pointer;}
 .register .detail .statistics .msg:hover{opacity:0.8;}
-.register .detail .statistics .calcremote{cursor:pointer;}
+.register .detail .statistics .calcremote{cursor:pointer;padding:1em;transition:0.3s;}
+.register .detail .statistics .calcremote:hover{background:#efefef}
 .register .detail .statistics .calcremote img{width:30px;vertical-align:middle;margin:0 1em;}
 
 
