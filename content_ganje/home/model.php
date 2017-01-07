@@ -131,17 +131,32 @@ class model extends \mvc\model
 		$date_now        = \lib\utility::date("l j F Y", false, 'default');
 		$time_now        = \lib\utility::date("H:i", false, 'default');
 		$name            = "*". self::$user_name. "*";
+		$plus = null;
+		if(isset($_args['plus']) && $_args['plus'] > 0 )
+		{
+			$plus = $_args['plus'];
+		}
+		$minus = null;
+		if(isset($_args['minus']) && $_args['minus'] > 0)
+		{
+			$minus = $_args['minus'];
+		}
 
 		switch ($_type)
 		{
 			case 'enter':
 				// if this person is first one in this day send current date
+				// add minus and plus if exist
+
 				if(\lib\db\staff::enter() <= 1)
 				{
 					$tg = self::send_telegram($date_now);
 				}
 				$msg = "✅ $name";
-				// $msg .= " $time_now";
+				if($plus)
+				{
+					$msg .= "\n➕ ". \lib\utility\human::number($plus, 'fa');
+				}
 				break;
 
 
@@ -152,16 +167,6 @@ class model extends \mvc\model
 				$total = floor(abs(strtotime('now') - $start) / 60);
 				$minus = 0;
 				$plus  = 0;
-
-				// add minus and plus if exist
-				if(isset($_args['plus']) && $_args['plus'] > 0 )
-				{
-					$plus = $_args['plus'];
-				}
-				if(isset($_args['minus']) && $_args['minus'] > 0)
-				{
-					$minus = $_args['minus'];
-				}
 
 
 				if($total < 5)
@@ -179,10 +184,6 @@ class model extends \mvc\model
 				if($plus || $minus)
 				{
 					$msg        .= "\n🚩 ". \lib\utility\human::number($total, 'fa');
-				}
-				if($plus)
-				{
-					$msg        .= "\n➕ ". \lib\utility\human::number($plus, 'fa');
 				}
 				if($minus)
 				{
