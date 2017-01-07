@@ -29,7 +29,7 @@ private function transtext()
 	echo T_("End time");                                                              // Line 74
 	echo T_("Minus");                                                                 // Line 87
 	echo T_("(min)");                                                                 // Line 61
-	echo T_("Plus");                                                                  // Line 88
+	echo T_("Plus");                                                                  // Line 94
 	echo T_("Cancel");                                                                // Line 76
 	echo T_("or");                                                                    // Line 77
 	echo T_("Insert");                                                                // Line 78
@@ -45,9 +45,10 @@ private function transtext()
 	echo T_("Difference between enter and exit");                                     // Line 84
 	echo T_("Operation Time");                                                        // Line 84
 	echo T_("Exit Time");                                                             // Line 85
-	echo T_("Total");                                                                 // Line 89
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 90
-	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 95
+	echo T_("Total");                                                                 // Line 88
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time.");         // Line 89
+	echo T_("I had gone out for Ermile!");                                            // Line 96
+	echo T_("Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time.");        // Line 102
 
 	//------------------------------------------------------content_ganje\home\et.html
 	echo T_("Data not exist!");                                                       // Line 69

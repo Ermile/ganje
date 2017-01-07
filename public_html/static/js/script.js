@@ -245,6 +245,7 @@ function calcNextFunc(_func)
 $(document).keydown(function(e) { event_corridor.call(this, e, $('.dashboard .card.selected')[0], e.which ); });
 $(document).on("click", ".card", function(e) { event_corridor(e, e.currentTarget, 'click'); });
 $(document).on("dblclick", ".card", function(e) { event_corridor(e, e.currentTarget, 'dblclick'); });
+$(document).on("dblclick", ".msg.info", function(e) { event_corridor(e, e.currentTarget, 'dblclick'); });
 $(document).on("dblclick", ".time", function(e) { location.reload(); });
 $(document).bind("contextmenu",function(e) { e.preventDefault(); event_corridor(e, e.currentTarget, 'rightclick'); });
 
@@ -499,18 +500,28 @@ function startTime()
 }
 
 
-
+/**
+ * [setExtra description]
+ * @param {[type]} _type     [description]
+ * @param {[type]} _increase [description]
+ */
 function setExtra(_type, _increase)
 {
   if(_type === false)
   {
-    $('body').removeAttr('data-editing');
-    // remove real value of times to zero
-    $('.page .minus').attr("data-time", 0);
-    $('.page .plus').attr("data-time", 0);
-    // remove show value of times to zero
-    $('.page .minus span').text(0);
-    $('.page .plus span').text(0);
+    var delay = _increase === false? 0: 700;
+    console.log(_increase);
+    console.log(delay);
+    setTimeout(function()
+    {
+      $('body').removeAttr('data-editing');
+      // remove real value of times to zero
+      $('.page .minus').attr("data-time", 0);
+      $('.page .plus').attr("data-time", 0);
+      // remove show value of times to zero
+      $('.page .minus span').text(0);
+      $('.page .plus span').text(0);
+    }, delay);
   }
   else
   {
@@ -519,12 +530,24 @@ function setExtra(_type, _increase)
     {
       _increase = 5;
     }
+
+    var userStatus = $('.detail.page-current').attr('data-status');
+    if(userStatus === 'off')
+    {
+      _increase = (_type !== 'plus')? -_increase: _increase;
+      _type = 'plus';
+    }
+    else if(userStatus === 'on')
+    {
+      _increase = (_type !== 'minus')? -_increase: _increase;
+      _type = 'minus';
+    }
+
     // goto editing mode
     $('body').attr('data-editing', _type);
 
     // set variabels
     var _this  = $('.statistics .' + _type);
-
     if(_this.hasClass('minus') )
     {
 

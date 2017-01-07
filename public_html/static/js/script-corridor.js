@@ -179,7 +179,7 @@ function event_corridor(e, _self, _key)
 
     case '110':             // .
     case '190':             // .
-      setExtra(false);
+      setExtra(false, false);
       changePerson(0);
       break;
 

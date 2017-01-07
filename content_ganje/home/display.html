@@ -85,14 +85,17 @@
         <div class="side exit time"><span class="hour">17</span>:<span class="minute">23</span><abbr>{%trans "Exit Time"%}</abbr></div>
        </div>
        <p class="minus" data-time=0><span>0</span><abbr>{%trans "Minus"%}</abbr></p>
-       <p class="plus" data-time=0><span>0</span><abbr>{%trans "Plus"%}</abbr></p>
        <p class="total" data-time=0><span>0</span><abbr>{%trans "Total"%}</abbr></p>
-        <p class="msg info">{%trans "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."%}</p>
+       <p class="msg info">{%trans "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."%}</p>
       </div>
 
       <div class="off">
-        <div class="time"><span class="hour">17</span>:<span class="minute">23</span></div>
-        <p class="msg info">{%trans "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."%}</p>
+       <div class="time"><span class="hour">17</span>:<span class="minute">23</span></div>
+       <p class="plus" data-time=0><span>0</span><abbr>{%trans "Plus"%}</abbr></p>
+{%if user.last_exit%}
+       <p class='calcremote' data-time-exit='{{user.last_exit}}' data-time-now='' data-time='0'>{%trans "I had gone out for Ermile!"%}<img src="{{url.static}}images/remote-diff.svg"></p>
+{%endif%}
+       <p class="msg info">{%trans "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."%}</p>
       </div>
 
      </div>
