@@ -28,21 +28,33 @@ class staff {
 		$no_position = T_("Undefined");
 
 		$query =
-				"SELECT
-					users.id,
-					users.user_permission AS `permission`,
-					users.user_displayname AS `displayname`,
-					IFNULL(users.user_meta,'$no_position') AS meta,
-					hours.hour_start
-				FROM users
-				LEFT JOIN hours
-					ON hours.user_id = users.id
-					AND hours.hour_date = '$date'
-					AND hours.hour_end is null
-				WHERE
-					users.user_status = 'active'
-				$condition
-				";
+		"
+			SELECT
+				users.id,
+				users.user_permission AS `permission`,
+				users.user_displayname AS `displayname`,
+				IFNULL(users.user_meta,'$no_position') AS meta,
+				(
+					SELECT 
+						hour_end 
+					FROM 
+						hours 
+					WHERE 
+						hours.user_id = users.id AND 
+						hours.hour_date = '$date' 
+					ORDER BY hours.id DESC 
+					LIMIT 1) AS `last_exit`,
+				hours.hour_start
+			FROM 
+				users
+			LEFT JOIN hours
+				ON hours.user_id = users.id
+				AND hours.hour_date = '$date'
+				AND hours.hour_end is null
+			WHERE
+				users.user_status = 'active'
+			$condition
+		";
 		$users = db::get($query);
 		$new   = array_column($users, "id");
 		$users = array_combine($new, $users);
@@ -226,9 +238,9 @@ class staff {
 			return false;
 		}
 
-		$user_id = $_args['user_id'];
-		$minus   = $_args['minus'];
-		$plus    = $_args['plus'];
+		$user_id = (int) $_args['user_id'];
+		$minus   = (int) $_args['minus'];
+		$plus    = (int) $_args['plus'];
 
 		// check status of users
 		// if users status is not enable return false and make debug error
@@ -252,11 +264,16 @@ class staff {
 		if($check_date == null)
 		{
 			//----- add firs time in day
-			$insert = "INSERT INTO hours
-						SET user_id = $user_id,
-							hour_date = '$today',
-							hour_start = '$time'
-							";
+			$insert = 
+			"
+				INSERT INTO 
+					hours
+				SET 
+					user_id = $user_id,
+					hour_date   = '$today',
+					hour_start  = '$time',
+					hour_plus   = IF($plus = 0, NULL, $plus)
+			";
 
 			db::query($insert);
 			return 'enter';
@@ -283,13 +300,16 @@ class staff {
 			}
 
 			//------- add end time
-			$update = "UPDATE hours
-						SET hour_end = '$time',
-							hour_diff = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
-							hour_plus = IF($plus = 0, NULL, $plus),
-							hour_minus = IF($minus = 0, NULL, $minus)
-						WHERE
-							id = {$check_date['id']} ";
+			$update = 
+			"
+				UPDATE 
+					hours
+				SET 
+					hour_end   = '$time',
+					hour_diff  = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
+					hour_minus = IF($minus = 0, NULL, $minus)
+				WHERE
+					id = {$check_date['id']} ";
 
 			db::query($update);
 			return 'exit';
