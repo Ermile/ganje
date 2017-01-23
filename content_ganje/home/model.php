@@ -165,9 +165,6 @@ class model extends \mvc\model
 				$start = \lib\db\staff::get_start($_args['user_id']);
 				$start = strtotime( date('Y/m/d'). ' '. $start);
 				$total = floor(abs(strtotime('now') - $start) / 60);
-				$minus = 0;
-				$plus  = 0;
-
 
 				if($total < 5)
 				{
