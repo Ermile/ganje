@@ -184,7 +184,14 @@ class model extends \mvc\model
 				}
 				if($minus)
 				{
-					$msg        .= "\n➖ ". \lib\utility\human::number($minus, 'fa');
+					if(\lib\storage::get_minus())
+					{
+						$msg .= "\n➖ ". \lib\utility\human::number(\lib\storage::get_minus(), 'fa');
+					}
+					else
+					{
+						$msg .= "\n➖ ". \lib\utility\human::number($minus, 'fa');
+					}
 				}
 				$msg        .= "\n🕗 ". $pure_human;
 
@@ -199,6 +206,7 @@ class model extends \mvc\model
 			default:
 				break;
 		}
+
 		// send telegram message
 		$tg = self::send_telegram($msg);
 

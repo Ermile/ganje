@@ -35,17 +35,17 @@ class staff {
 				users.user_displayname AS `displayname`,
 				IFNULL(users.user_meta,'$no_position') AS meta,
 				(
-					SELECT 
-						hour_end 
-					FROM 
-						hours 
-					WHERE 
-						hours.user_id = users.id AND 
-						hours.hour_date = '$date' 
-					ORDER BY hours.id DESC 
+					SELECT
+						hour_end
+					FROM
+						hours
+					WHERE
+						hours.user_id = users.id AND
+						hours.hour_date = '$date'
+					ORDER BY hours.id DESC
 					LIMIT 1) AS `last_exit`,
 				hours.hour_start
-			FROM 
+			FROM
 				users
 			LEFT JOIN hours
 				ON hours.user_id = users.id
@@ -264,11 +264,11 @@ class staff {
 		if($check_date == null)
 		{
 			//----- add firs time in day
-			$insert = 
+			$insert =
 			"
-				INSERT INTO 
+				INSERT INTO
 					hours
-				SET 
+				SET
 					user_id = $user_id,
 					hour_date   = '$today',
 					hour_start  = '$time',
@@ -297,14 +297,16 @@ class staff {
 			if($minus * 60 > $diff)
 			{
 				$minus = $diff / 60;
+				// to get this in telegram msg
+				\lib\storage::set_minus($minus);
 			}
 
 			//------- add end time
-			$update = 
+			$update =
 			"
-				UPDATE 
+				UPDATE
 					hours
-				SET 
+				SET
 					hour_end   = '$time',
 					hour_diff  = TIME_TO_SEC(TIMEDIFF(hour_end,hour_start)) / 60,
 					hour_minus = IF($minus = 0, NULL, $minus)
