@@ -396,7 +396,7 @@ function generateFilter()
   // splite url with slash into array
   newLocation = newLocation.split('/');
   // get only 2 slash of url
-  newLocation = '/' + newLocation[0] + '/' + newLocation[1]+ '/' + newLocation[2];
+  newLocation = '/' + newLocation[0] + '/' + newLocation[1] ; //+ '/' + newLocation[2];
   // get date filter and add
   var date = generateTimeFilter();
   if(date)

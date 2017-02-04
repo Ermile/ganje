@@ -31,20 +31,22 @@ class controller extends \mvc\controller
 			]
 		]);
 
-		$this->post('admin')->ALL(
-		[
-			'property' =>
-			[
-				"type"     => ["/^(add|edit)$/", true, 'type'],
-				"id"       => ["/^\d+$/", true, 'id'],
-				"status"   => ["/^(active|awaiting|deactive|removed|filter)$/", true, 'status'],
-				"user_id"  => ["/^\d+$/", true, 'user_id'],
-				'time'     => ["/^(\d{2})\:(\d{2})\:(\d{2})$/", true, 'time'],
-				'time_end' => ["/^(\d{2})\:(\d{2})\:(\d{2})$/", true, 'time_end'],
-				"minus"    => ["/^\d+$/", true, 'minus'],
-				"plus"     => ["/^\d+$/", true, 'plus']
-			]
-		]);
+		$this->post('admin')->ALL("/.*/");
+
+		// $this->post('admin')->ALL(
+		// [
+		// 	'property' =>
+		// 	[
+		// 		"type"     => ["/^(add|edit)$/", true, 'type'],
+		// 		"id"       => ["/^\d+$/", true, 'id'],
+		// 		"status"   => ["/^(active|awaiting|deactive|removed|filter)$/", true, 'status'],
+		// 		"user_id"  => ["/^\d+$/", true, 'user_id'],
+		// 		'time'     => ["/^(\d{2})\:(\d{2})\:(\d{2})$/", true, 'time'],
+		// 		'time_end' => ["/^(\d{2})\:(\d{2})\:(\d{2})$/", true, 'time_end'],
+		// 		"minus"    => ["/^\d+$/", true, 'minus'],
+		// 		"plus"     => ["/^\d+$/", true, 'plus']
+		// 	]
+		// ]);
 	}
 }
 ?>

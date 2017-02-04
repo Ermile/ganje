@@ -489,6 +489,7 @@ class hours {
 		$user_id = $_args['user_id'];
 		$lang    = $_args['lang'];
 		$export  = $_args['export'];
+		$type    = $_args['type'] ? $_args['type'] : 'detail';
 
 		// check user id . if users id is set get add data by this users id and if users id is not set get all users
 		if($user_id == null)
@@ -585,13 +586,15 @@ class hours {
 			$sum_fields
 		";
 
+		// like this : 1395-01-00
 		if($year && $month && !$day)
 		{
 			// get daily count of hours
 			if($lang == 'fa')
 			{
 				$day_query = "(CASE ";
-				for ($i=1; $i <= 31 ; $i++) {
+				for ($i=1; $i <= 31 ; $i++)
+				{
 					if($i < 10){
 						$i = "0". $i;
 					}
@@ -643,7 +646,8 @@ class hours {
 			if($lang == 'fa')
 			{
 				$month_query = "(CASE ";
-				for ($i=1; $i <= 12 ; $i++) {
+				for ($i=1; $i <= 12 ; $i++)
+				{
 					if($i < 10){
 						$i = "0". $i;
 					}
@@ -708,6 +712,8 @@ class hours {
 				$group
 				$limit
 		";
+		// var_dump($query);
+		// exit();
 		$result = \lib\db::get($query);
 		return $result;
 	}

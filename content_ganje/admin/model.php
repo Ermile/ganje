@@ -83,7 +83,7 @@ class model extends \mvc\model
 
 			if($result)
 			{
-				debug::property('result', $result);
+				debug::msg('result', $result);
 				// debug::true(T_("Saved"));
 			}
 			else
@@ -125,7 +125,7 @@ class model extends \mvc\model
 			'month'   => $date_month,
 			'year'    => $date_year,
 			'lang'    => $lang,
-			'type'    => $_args->get_type(),
+			'type'    => $_args->get_type(0),
 			'export'  => $_args->get_export(),
 		];
 
