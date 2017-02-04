@@ -12,11 +12,11 @@ class model extends \mvc\model
 	 */
 	public function post_admin($_args)
 	{
-		$this->access('ganje', 'admin', 'edit', 'notify');
-
 		$type = utility::post('type');
 		if($type == 'add')
 		{
+			$result = null;
+
 			$args =
 			[
 				'user_id' => utility::post('user_id'),
@@ -26,7 +26,11 @@ class model extends \mvc\model
 				'minus'   => utility::post('minus'),
 				'plus'    => utility::post('plus')
 			];
-			$result = \lib\db\hours::insert($args);
+
+			if($this->access('ganje', 'admin', 'add'))
+			{
+				$result = \lib\db\hours::insert($args);
+			}
 
 			if($result)
 			{
@@ -39,6 +43,7 @@ class model extends \mvc\model
 		}
 		elseif($type == 'edit')
 		{
+			$result = null;
 
 			$arg =
 			[
@@ -47,7 +52,10 @@ class model extends \mvc\model
 				'time'   => utility::post('time')
 			];
 
-			$result = \lib\db\hours::update($arg);
+			if($this->access('ganje', 'admin', 'edit'))
+			{
+				$result = \lib\db\hours::update($arg);
+			}
 
 			if($result)
 			{
@@ -60,6 +68,7 @@ class model extends \mvc\model
 		}
 		elseif($type == 'change')
 		{
+			$result = null;
 			// reza you must run query to give data and return new status
 			$arg =
 			[
@@ -67,7 +76,11 @@ class model extends \mvc\model
 				'type' => utility::post('field'),
 			];
 
-			$result = \lib\db\hours::change_hours_status($arg);
+			if($this->access('ganje', 'admin', 'admin'))
+			{
+				$result = \lib\db\hours::change_hours_status($arg);
+			}
+
 			if($result)
 			{
 				debug::property('result', $result);
@@ -112,7 +125,8 @@ class model extends \mvc\model
 			'month'   => $date_month,
 			'year'    => $date_year,
 			'lang'    => $lang,
-			'export'  => $_args->get_export()
+			'type'    => $_args->get_type(),
+			'export'  => $_args->get_export(),
 		];
 
 		$data = \lib\db\hours::get($args);
@@ -158,7 +172,8 @@ class model extends \mvc\model
 
 		$result['data']  = $data;
 		$result['total'] = count($result['data']);
-		if($_args->get_export())
+
+		if($_args->get_export() && $this->access('ganje','admin', 'admin'))
 		{
 
 			$name = 'ganje-u'. $_args->get_user(0).'['. $date_year. $date_month. $date_day.']';

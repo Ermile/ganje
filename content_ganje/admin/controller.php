@@ -14,6 +14,7 @@ class controller extends \mvc\controller
 		if(!$this->access('ganje', 'admin', 'view'))
 		{
 			$this->redirector()->set_domain()->set_url('ganje/status')->redirect();
+			return;
 		}
 
 		// $this->post("last")->ALL();
@@ -25,6 +26,7 @@ class controller extends \mvc\controller
 				"page"   => ["/^\d+$/", true, 'page'],
 				"export" => ["/^(.*)$/", true, 'export'],
 				"q"      => ["/^(.*)$/", true, 'search'],
+				"type"   => ["/^summary|detail$/", true, 'type'],
 				'date'   => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date']
 			]
 		]);

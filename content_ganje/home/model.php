@@ -26,18 +26,28 @@ class model extends \mvc\model
 
 		$user_id = false;
 
-		if($this->access('ganje', 'remote', 'admin') && !$this->access('ganje', 'admin', 'admin'))
+		if($this->access('ganje', 'home', 'admin') || $this->access('ganje', 'admin', 'admin'))
+		{
+			$user_id = intval(utility::post('userId'));
+		}
+		elseif(!$this->access('ganje', 'admin', 'admin') && $this->access('ganje', 'remote', 'add'))
 		{
 			$user_id = (int) $this->login("id");
 		}
-		elseif($this->access('ganje', 'intro', 'admin'))
+		elseif(!$this->access('ganje', 'admin', 'admin') && $this->access('ganje', 'home', 'add'))
 		{
-			// check the intro permission
-			$user_id = intval(utility::post('userId'));
+			if((int) $this->login("id") !=  intval(utility::post('userId')))
+			{
+				return debug::warn(T_("Hi Dear :/"), false , 'permission');
+			}
+			else
+			{
+				$user_id = (int) $this->login('id');
+			}
 		}
 		else
 		{
-			return false;
+			return debug::warn(T_("Can not access to set time"), false, 'permission');
 		}
 
 		$result        = null;
@@ -50,6 +60,7 @@ class model extends \mvc\model
 		];
 		// set name of user
 		$this->setName($arg['user_id']);
+
 		$result = \lib\db\staff::set_time($arg);
 
 		switch ($result)
@@ -76,7 +87,7 @@ class model extends \mvc\model
 				break;
 		}
 		// send class name for absent on present
-		debug::property('result', $result);
+		debug::msg('result', $result);
 	}
 
 
@@ -86,7 +97,7 @@ class model extends \mvc\model
 	public function get_list_of_users()
 	{
 		// the remote users can see her name
-		if($this->access('ganje', 'remote', 'admin') && !$this->access('ganje', 'admin', 'admin'))
+		if($this->access('ganje', 'remote', 'add'))
 		{
 			$return =
 			[
@@ -96,15 +107,17 @@ class model extends \mvc\model
 			return $return;
 		}
 
-		$this->access('ganje', 'intro', 'admin', 'block');
+		if($this->access('ganje', 'home', 'view'))
+		{
+			$return =
+			[
+				'list' => \lib\db\staff::get_all(),
+				'summary' => \lib\db\hours::summary()
+			];
+			return $return;
+		}
+		return [];
 
-		$return =
-		[
-			'list' => \lib\db\staff::get_all(),
-			'summary' => \lib\db\hours::summary()
-		];
-
-		return $return;
 	}
 
 

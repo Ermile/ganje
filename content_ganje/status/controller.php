@@ -9,10 +9,11 @@ class controller extends \mvc\controller
 		// check login and if not loggined, redirect to login page
 		$this->check_login();
 
-		// if($this->access('ganje','intro', 'admin'))
-		// {
-		// 	\lib\error::page("No status found");
-		// }
+		if(!$this->access('ganje','admin', 'admin') && $this->access('ganje','secret', 'view'))
+		{
+			$this->redirector('/ganje')->redirect();
+			return;
+		}
 
 		$this->get('status', 'status')->ALL(
 			[
