@@ -10,7 +10,7 @@
    <div class="card">
  {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
  {%set folderName = url.domain ~ "/" %}
- {%set avatar = url.static ~ 'images/avatar/' ~ folderName ~ user.id ~ '.jpg' %}
+ {%set avatar = url.static ~ 'images/avatar/' ~ folderName ~ login.id ~ '.jpg' %}
  {%set name = login.displayname%}
  {%set position = login.meta.position%}
     <img src="{{avatar | exist(avatar_default)}}">
