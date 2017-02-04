@@ -1,0 +1,1 @@
+ALTER TABLE `hours` CHANGE `hour_status` ENUM('active','awaiting','deactive','removed','filter') NULL DEFAULT 'awaiting' AFTER `hour_status`;

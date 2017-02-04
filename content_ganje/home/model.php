@@ -26,13 +26,9 @@ class model extends \mvc\model
 
 		$user_id = false;
 
-		if($this->access('ganje', 'home', 'admin') || $this->access('ganje', 'admin', 'admin'))
+		if($this->access('ganje', 'home', 'admin'))
 		{
 			$user_id = intval(utility::post('userId'));
-		}
-		elseif(!$this->access('ganje', 'admin', 'admin') && $this->access('ganje', 'remote', 'add'))
-		{
-			$user_id = (int) $this->login("id");
 		}
 		elseif(!$this->access('ganje', 'admin', 'admin') && $this->access('ganje', 'home', 'add'))
 		{

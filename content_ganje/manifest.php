@@ -19,7 +19,7 @@ $modules['secret'] =
 $modules['remote'] =
 [
 	'desc' 			=> T_('Allow enter remote time'),
-	'permissions'	=> ['add'],
+	'permissions'	=> ['view'],
 ];
 
 
