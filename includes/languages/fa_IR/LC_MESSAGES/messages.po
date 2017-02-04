@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2017-01-07 11:58+0330\n"
-"PO-Revision-Date: 2017-01-07 11:58+0330\n"
+"POT-Creation-Date: 2017-02-04 15:24+0330\n"
+"PO-Revision-Date: 2017-02-04 15:25+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.3\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ../../../../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -19,44 +19,38 @@ msgstr ""
 "X-Poedit-SearchPath-2: tejarak\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: saloos/lib/controller.php:690
+#: saloos/lib/controller.php:696
 #: saloos/saloos-addons/includes/languages/trans_addons.php:299
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:46
-#: tejarak/includes/languages/trans_addons.php:299
+#: tejarak/includes/languages/trans_addons.php:302
 msgid "add new"
 msgstr "افزودن"
 
-#: saloos/lib/controller.php:693
+#: saloos/lib/controller.php:699
 #: saloos/saloos-addons/includes/languages/trans_addons.php:370
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:49
-#: tejarak/includes/languages/trans_addons.php:370
+#: tejarak/includes/languages/trans_addons.php:373
 msgid "edit"
 msgstr "ویرایش"
 
-#: saloos/lib/controller.php:696
+#: saloos/lib/controller.php:702
 #: saloos/saloos-addons/lib/mvc/controllers/url.php:52
 msgid "delete"
 msgstr "حذف"
 
-#: saloos/lib/db/connect.php:116
+#: saloos/lib/db/connect.php:117
 msgid "We can't connect to correct database!"
 msgstr "ما نمی‌توانیم به دیتابیس صحیح متصل شویم!"
 
-#: saloos/lib/db/connect.php:117 saloos/lib/dbconnection.php:64
+#: saloos/lib/db/connect.php:118 saloos/lib/dbconnection.php:64
 msgid "Please contact administrator!"
 msgstr "لطفا با مدیر سیستم تماس بگیرید!"
 
-#: saloos/lib/db/install.php:231
-msgid "Empty query!"
-msgstr "کوئری خالی!"
+#: saloos/lib/db/install.php:229
+msgid "executed"
+msgstr ""
 
-#: saloos/lib/db/install.php:235
-#: saloos/saloos-addons/includes/languages/trans_addons.php:322
-#: tejarak/includes/languages/trans_addons.php:322
-msgid "Successfully"
-msgstr "با موفقیت انجام شد"
-
-#: saloos/lib/db/install.php:241
+#: saloos/lib/db/install.php:234
 msgid "Old version"
 msgstr "نسخه قدیمی"
 
@@ -72,86 +66,86 @@ msgstr "لطفا با مدیر سیستم تماس بگیرید!"
 msgid "We can't connect to database service!"
 msgstr "ما نمی‌توانیم به سرویس دیتابیس متصل شویم!"
 
-#: saloos/lib/dbconnection.php:187 saloos/lib/dbconnection.php:199
-#: saloos/saloos-addons/content_cp/posts/model.php:701
+#: saloos/lib/dbconnection.php:194 saloos/lib/dbconnection.php:206
+#: saloos/saloos-addons/content_cp/posts/model.php:721
 #: saloos/saloos-addons/includes/languages/trans_addons.php:380
-#: tejarak/includes/languages/trans_addons.php:380
+#: tejarak/includes/languages/trans_addons.php:383
 msgid "Error"
 msgstr "خطا"
 
 #: saloos/lib/form.php:74 saloos/lib/view/optimize.php:29
 #: saloos/lib/view/optimize.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:297
-#: tejarak/includes/languages/trans_addons.php:297
+#: tejarak/includes/languages/trans_addons.php:300
 msgid "submit"
 msgstr "تایید"
 
-#: saloos/lib/utility.php:222
+#: saloos/lib/utility.php:271
 msgid ":status password, try another"
 msgstr "کلمه عبور :status، عبارت دیگری را امتحان کنید"
 
-#: saloos/lib/utility.php:274
+#: saloos/lib/utility.php:323
 #: saloos/saloos-addons/includes/languages/trans_addons.php:215
 #: tejarak/includes/languages/trans_addons.php:215
 msgid "year"
 msgstr "سال"
 
-#: saloos/lib/utility.php:275
+#: saloos/lib/utility.php:324
 #: saloos/saloos-addons/includes/languages/trans_addons.php:214
 #: tejarak/includes/languages/trans_addons.php:214
 msgid "month"
 msgstr "ماه"
 
-#: saloos/lib/utility.php:276 saloos/saloos-addons/content_cp/home/view.php:80
+#: saloos/lib/utility.php:325 saloos/saloos-addons/content_cp/home/view.php:81
 #: saloos/saloos-addons/includes/languages/trans_addons.php:213
 #: tejarak/includes/languages/trans_addons.php:213
 msgid "week"
 msgstr "هفته"
 
-#: saloos/lib/utility.php:277
+#: saloos/lib/utility.php:326
 #: saloos/saloos-addons/includes/languages/trans_addons.php:212
 #: tejarak/includes/languages/trans_addons.php:212
 msgid "day"
 msgstr "روز"
 
-#: saloos/lib/utility.php:278 saloos/lib/utility/human.php:41
+#: saloos/lib/utility.php:327 saloos/lib/utility/human.php:41
 #: saloos/saloos-addons/includes/languages/trans_addons.php:269
 #: tejarak/includes/cls/database/tejarak/translation.php:27
-#: tejarak/includes/languages/trans_addons.php:269
+#: tejarak/includes/languages/trans_addons.php:272
 msgid "hour"
 msgstr "ساعت"
 
-#: saloos/lib/utility.php:279 saloos/lib/utility/human.php:49
+#: saloos/lib/utility.php:328 saloos/lib/utility/human.php:49
 #: saloos/saloos-addons/includes/languages/trans_addons.php:270
-#: tejarak/includes/languages/trans_addons.php:270
+#: tejarak/includes/languages/trans_addons.php:273
 msgid "minute"
 msgstr "دقیقه"
 
-#: saloos/lib/utility.php:280
+#: saloos/lib/utility.php:329
 #: saloos/saloos-addons/includes/languages/trans_addons.php:271
-#: tejarak/includes/languages/trans_addons.php:271
+#: tejarak/includes/languages/trans_addons.php:274
 msgid "second"
 msgstr "ثانیه"
 
-#: saloos/lib/utility.php:283
+#: saloos/lib/utility.php:332
 #: saloos/saloos-addons/includes/languages/trans_addons.php:277
-#: tejarak/includes/languages/trans_addons.php:277
+#: tejarak/includes/languages/trans_addons.php:280
 msgid "A few seconds ago"
 msgstr "چندثانیه پیش"
 
-#: saloos/lib/utility.php:295
+#: saloos/lib/utility.php:344
 #: saloos/saloos-addons/includes/languages/trans_addons.php:276
-#: tejarak/includes/languages/trans_addons.php:276
+#: tejarak/includes/languages/trans_addons.php:279
 msgid "s "
 msgstr " "
 
-#: saloos/lib/utility.php:295
+#: saloos/lib/utility.php:344
 #: saloos/saloos-addons/includes/languages/trans_addons.php:272
-#: tejarak/includes/languages/trans_addons.php:272
+#: tejarak/includes/languages/trans_addons.php:275
 msgid "ago"
 msgstr "قبل"
 
-#: saloos/lib/utility/file.php:495
+#: saloos/lib/utility/file.php:506
 msgid "File not exist"
 msgstr "فایل وجود ندارد"
 
@@ -163,37 +157,37 @@ msgstr " و :min دقیقه"
 msgid "Error on Sms system"
 msgstr "خطا در سیستم پیامک"
 
-#: saloos/lib/utility/permission.php:135
+#: saloos/lib/utility/permission.php:162
 #: saloos/saloos-addons/includes/languages/trans_addons.php:405
-#: tejarak/includes/languages/trans_addons.php:405
+#: tejarak/includes/languages/trans_addons.php:408
 msgid "You can't add new"
 msgstr "شما نمی‌توانید اضافه کنید"
 
-#: saloos/lib/utility/permission.php:139
+#: saloos/lib/utility/permission.php:166
 msgid "You can't edit"
 msgstr "شما اجازه ویرایش ندارید"
 
-#: saloos/lib/utility/permission.php:143
+#: saloos/lib/utility/permission.php:170
 #: saloos/saloos-addons/includes/languages/trans_addons.php:407
-#: tejarak/includes/languages/trans_addons.php:407
+#: tejarak/includes/languages/trans_addons.php:410
 msgid "You can't delete"
 msgstr "شما نمی‌توانید حذف کنید"
 
-#: saloos/lib/utility/permission.php:150
+#: saloos/lib/utility/permission.php:177
 #: saloos/saloos-addons/includes/languages/trans_addons.php:409
-#: tejarak/includes/languages/trans_addons.php:409
+#: tejarak/includes/languages/trans_addons.php:412
 msgid "Because of your permission"
 msgstr "به‌دلیل سطح‌دسترسی‌ شما"
 
-#: saloos/lib/utility/permission.php:157
+#: saloos/lib/utility/permission.php:184
 #: saloos/saloos-addons/includes/languages/trans_addons.php:410
-#: tejarak/includes/languages/trans_addons.php:410
+#: tejarak/includes/languages/trans_addons.php:413
 msgid "You can't access to this page!"
 msgstr "شما نمی‌توانید به این صفحه دسترسی داشته باشید!"
 
 #: saloos/lib/utility/sms.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:455
-#: tejarak/includes/languages/trans_addons.php:455
+#: tejarak/includes/languages/trans_addons.php:458
 msgid "We can't give service to this number"
 msgstr "متاسفانه توانایی ارائه خدمات به این شماره را نداریم"
 
@@ -205,143 +199,169 @@ msgstr "در حال حاضر ما فقط به شماره های ایران سر�
 msgid "This sms service is unavailable"
 msgstr "سرویس پیامک قابل دسترس نیست"
 
-#: saloos/lib/utility/sms.php:137
+#: saloos/lib/utility/sms.php:117
 #: saloos/saloos-addons/includes/languages/trans_addons.php:507
-#: tejarak/includes/languages/trans_addons.php:507
+#: tejarak/includes/languages/trans_addons.php:510
 msgid "Your verification code is"
 msgstr "کد اعتبارسنجی شما"
 
-#: saloos/lib/utility/sms.php:141
+#: saloos/lib/utility/sms.php:121
 msgid "Your recovery code is"
 msgstr "کد بازیابی کلمه عبور شما"
 
-#: saloos/lib/utility/sms.php:145
+#: saloos/lib/utility/sms.php:125
 #: saloos/saloos-addons/includes/languages/trans_addons.php:506
-#: tejarak/includes/languages/trans_addons.php:506
+#: tejarak/includes/languages/trans_addons.php:509
 msgid "You account is verified successfully"
 msgstr "اعتبارسنجی اکانت شما با موفقیت به انجام رسید"
 
-#: saloos/lib/utility/sms.php:149
+#: saloos/lib/utility/sms.php:129
 #: saloos/saloos-addons/includes/languages/trans_addons.php:508
-#: tejarak/includes/languages/trans_addons.php:508
+#: tejarak/includes/languages/trans_addons.php:511
 msgid "Your password is changed successfully"
 msgstr "گذرواژه شما با موفقیت تغییر یافت"
 
-#: saloos/lib/utility/sms.php:201
+#: saloos/lib/utility/sms.php:202
 #: saloos/saloos-addons/includes/languages/trans_addons.php:459
-#: tejarak/includes/languages/trans_addons.php:459
+#: tejarak/includes/languages/trans_addons.php:462
 msgid " to "
 msgstr " به "
 
-#: saloos/lib/utility/sms.php:207
+#: saloos/lib/utility/sms.php:208
 #: saloos/saloos-addons/includes/languages/trans_addons.php:457
-#: tejarak/includes/languages/trans_addons.php:457
+#: tejarak/includes/languages/trans_addons.php:460
 msgid "Please set apikey and linenumber"
 msgstr "لطفا کلید رابط برنامه و شماره خط را تنظیم کنید"
 
+#: saloos/lib/utility/token.php:175
+msgid "Invalid user or parent"
+msgstr ""
+
+#: saloos/lib/utility/token.php:180
+msgid "Token not verified"
+msgstr ""
+
+#: saloos/lib/utility/token.php:208
+msgid "authorization faild (parent not found)"
+msgstr ""
+
+#: saloos/lib/utility/token.php:216
+msgid "authorization faild (this authorization is not a api key)"
+msgstr ""
+
+#: saloos/lib/utility/token.php:246 saloos/lib/utility/token.php:256
+#: saloos/lib/utility/token.php:265
+msgid "Invalid token"
+msgstr ""
+
+#: saloos/lib/utility/token.php:291
+msgid "Invalid token (tmp login)"
+msgstr ""
+
 #: saloos/lib/utility/upload.php:86
 #: saloos/saloos-addons/includes/languages/trans_addons.php:281
-#: tejarak/includes/languages/trans_addons.php:281
+#: tejarak/includes/languages/trans_addons.php:284
 msgid "Byte"
 msgstr "بایت"
 
 #: saloos/lib/utility/upload.php:86
 #: saloos/saloos-addons/includes/languages/trans_addons.php:282
-#: tejarak/includes/languages/trans_addons.php:282
+#: tejarak/includes/languages/trans_addons.php:285
 msgid "KB"
 msgstr "کیلوبایت"
 
 #: saloos/lib/utility/upload.php:86
 #: saloos/saloos-addons/includes/languages/trans_addons.php:283
-#: tejarak/includes/languages/trans_addons.php:283
+#: tejarak/includes/languages/trans_addons.php:286
 msgid "MB"
 msgstr "مگابایت"
 
 #: saloos/lib/utility/upload.php:86
 #: saloos/saloos-addons/includes/languages/trans_addons.php:284
-#: tejarak/includes/languages/trans_addons.php:284
+#: tejarak/includes/languages/trans_addons.php:287
 msgid "GB"
 msgstr "گیگابایت"
 
 #: saloos/lib/utility/upload.php:86
 #: saloos/saloos-addons/includes/languages/trans_addons.php:285
-#: tejarak/includes/languages/trans_addons.php:285
+#: tejarak/includes/languages/trans_addons.php:288
 msgid "TB"
 msgstr "ترابایت"
 
 #: saloos/lib/utility/upload.php:86
 #: saloos/saloos-addons/includes/languages/trans_addons.php:286
-#: tejarak/includes/languages/trans_addons.php:286
+#: tejarak/includes/languages/trans_addons.php:289
 msgid "PB"
 msgstr "پترابایت"
 
 #: saloos/lib/utility/upload.php:107
 #: saloos/saloos-addons/includes/languages/trans_addons.php:278
-#: tejarak/includes/languages/trans_addons.php:278
+#: tejarak/includes/languages/trans_addons.php:281
 msgid "item"
 msgstr "آیتم"
 
 #: saloos/lib/utility/upload.php:112
 #: saloos/saloos-addons/includes/languages/trans_addons.php:280
-#: tejarak/includes/languages/trans_addons.php:280
+#: tejarak/includes/languages/trans_addons.php:283
 msgid "NaN"
 msgstr "-"
 
-#: saloos/lib/utility/upload.php:240
-msgid "Fail on tranfering file, move in temp"
-msgstr "خطا در انتقال فایل، انتقال به مکان‌موقت"
+#: saloos/lib/utility/upload.php:239
+msgid "file successful uploaded"
+msgstr ""
 
-#: saloos/lib/utility/upload.php:332
+#: saloos/lib/utility/upload.php:243
+msgid "Fail on tranfering file, when moving in temp"
+msgstr ""
+
+#: saloos/lib/utility/upload.php:335
 msgid "upload name not found"
 msgstr "نام آپلود یافت نشد"
 
-#: saloos/lib/utility/upload.php:338
+#: saloos/lib/utility/upload.php:341
 msgid "folder prefix not found"
 msgstr "پیشوند پوشه یافت نشد"
 
-#: saloos/lib/utility/upload.php:344
+#: saloos/lib/utility/upload.php:347
 msgid "user id not set"
 msgstr "کدکاربر ثبت نشد است"
 
-#: saloos/lib/utility/upload.php:424
-#: saloos/saloos-addons/content_cp/posts/model.php:609
-#: saloos/saloos-addons/includes/languages/trans_addons.php:378
-#: tejarak/includes/languages/trans_addons.php:378
-msgid "Duplicate - File exist"
-msgstr "تکراری - فایل وجود دارد"
+#: saloos/lib/utility/upload.php:426
+msgid "File successful uploaded"
+msgstr ""
 
-#: saloos/lib/utility/upload.php:432
+#: saloos/lib/utility/upload.php:434
 msgid "Fail on tranfering file, upload from path"
 msgstr "خطا در انتقال فایل، آپلود از آدرس"
 
-#: saloos/lib/utility/upload.php:445
-#: saloos/saloos-addons/content_cp/posts/model.php:620
+#: saloos/lib/utility/upload.php:447
+#: saloos/saloos-addons/content_cp/posts/model.php:640
 #: saloos/saloos-addons/includes/languages/trans_addons.php:379
-#: tejarak/includes/languages/trans_addons.php:379
+#: tejarak/includes/languages/trans_addons.php:382
 msgid "Fail on tranfering file"
 msgstr "خطا در انتقال فایل"
 
 #: saloos/lib/utility/upload/check.php:21
 #: saloos/saloos-addons/includes/languages/trans_addons.php:381
-#: tejarak/includes/languages/trans_addons.php:381
+#: tejarak/includes/languages/trans_addons.php:384
 msgid "Invalid parameters"
 msgstr "پارامتر اشتباه"
 
 #: saloos/lib/utility/upload/check.php:31
 #: saloos/saloos-addons/includes/languages/trans_addons.php:382
-#: tejarak/includes/languages/trans_addons.php:382
+#: tejarak/includes/languages/trans_addons.php:385
 msgid "No file sent"
 msgstr "فایلی ارسال نشده"
 
 #: saloos/lib/utility/upload/check.php:35 saloos/lib/utility/upload/check.php:59
 #: saloos/saloos-addons/includes/languages/trans_addons.php:383
-#: tejarak/includes/languages/trans_addons.php:383
+#: tejarak/includes/languages/trans_addons.php:386
 msgid "Exceeded filesize limit"
 msgstr "ظرفیت فایل بیش از حد مجاز"
 
 #: saloos/lib/utility/upload/check.php:38
 #: saloos/saloos-addons/includes/languages/trans_addons.php:384
-#: tejarak/includes/languages/trans_addons.php:384
+#: tejarak/includes/languages/trans_addons.php:387
 msgid "Unknown errors"
 msgstr "خطای نامشخص"
 
@@ -355,7 +375,7 @@ msgstr "نوع فایل غیرمجاز"
 
 #: saloos/lib/utility/upload/check.php:81
 #: saloos/saloos-addons/includes/languages/trans_addons.php:385
-#: tejarak/includes/languages/trans_addons.php:385
+#: tejarak/includes/languages/trans_addons.php:388
 msgid "We don't support this type of file"
 msgstr "ما این نوع فایل را پشتیبانی نمیکنیم"
 
@@ -365,7 +385,7 @@ msgstr "خطا در فیلد"
 
 #: saloos/lib/view/optimize.php:37
 #: saloos/saloos-addons/includes/languages/trans_addons.php:298
-#: tejarak/includes/languages/trans_addons.php:298
+#: tejarak/includes/languages/trans_addons.php:301
 msgid "save"
 msgstr "ذخیره"
 
@@ -377,42 +397,42 @@ msgstr "ورود"
 msgid "create an account"
 msgstr "اکانت بسازید"
 
-#: saloos/lib/view/twigAddons.php:320
+#: saloos/lib/view/twigAddons.php:323
 #: saloos/saloos-addons/includes/languages/trans_addons.php:62
 #: tejarak/includes/languages/trans_addons.php:62
 msgid "Homepage"
 msgstr "صفحه نخست"
 
-#: saloos/lib/view/twigAddons.php:335
+#: saloos/lib/view/twigAddons.php:338
 #: saloos/saloos-addons/includes/languages/trans_addons.php:305
-#: tejarak/includes/languages/trans_addons.php:305
+#: tejarak/includes/languages/trans_addons.php:308
 msgid "Home"
 msgstr "صفحه نخست"
 
-#: saloos/saloos-addons/content_account/changepass/model.php:32
+#: saloos/saloos-addons/content_account/changepass/model.php:63
 #: saloos/saloos-addons/includes/languages/trans_addons.php:497
-#: tejarak/includes/languages/trans_addons.php:497
+#: tejarak/includes/languages/trans_addons.php:500
 msgid "change password successfully"
 msgstr "تغییر کلمه عبور با موفقیت به انجام رسید"
 
-#: saloos/saloos-addons/content_account/changepass/model.php:38
+#: saloos/saloos-addons/content_account/changepass/model.php:86
 #: saloos/saloos-addons/includes/languages/trans_addons.php:498
-#: tejarak/includes/languages/trans_addons.php:498
+#: tejarak/includes/languages/trans_addons.php:501
 msgid "change password failed!"
 msgstr "تغییر کلمه عبور ناموفق بود!"
 
-#: saloos/saloos-addons/content_account/changepass/model.php:44
+#: saloos/saloos-addons/content_account/changepass/model.php:92
 msgid "Password is incorrect"
 msgstr "کلمه عبور اشتباه است"
 
-#: saloos/saloos-addons/content_account/changepass/model.php:50
+#: saloos/saloos-addons/content_account/changepass/model.php:98
 msgid "user is incorrect"
 msgstr "نام کاربری اشتباه است"
 
-#: saloos/saloos-addons/content_account/changepass/model.php:56
-#: saloos/saloos-addons/content_account/login/model.php:126
+#: saloos/saloos-addons/content_account/changepass/model.php:104
+#: saloos/saloos-addons/content_account/login/model.php:100
 #: saloos/saloos-addons/includes/languages/trans_addons.php:328
-#: tejarak/includes/languages/trans_addons.php:328
+#: tejarak/includes/languages/trans_addons.php:331
 msgid "Please forward this message to administrator"
 msgstr "لطفا این پیغام را برای مدیر سیستم ارسال کنید"
 
@@ -421,148 +441,143 @@ msgstr "لطفا این پیغام را برای مدیر سیستم ارسال 
 msgid "you can't access to this page!"
 msgstr "شما اجازه دسترسی به این صفحه را ندارید!"
 
-#: saloos/saloos-addons/content_account/home/controller.php:55
+#: saloos/saloos-addons/content_account/home/controller.php:47
+#: saloos/saloos-addons/content_account/home/controller.php:60
+#: saloos/saloos-addons/content_account/signup/controller.php:10
 msgid "you are logined to system!"
 msgstr "شما قبلا یک بار وارد سیستم شده اید!"
 
-#: saloos/saloos-addons/content_account/home/view.php:25
+#: saloos/saloos-addons/content_account/home/view.php:26
 #: saloos/saloos-addons/includes/cls/form/account.php:25
 #: saloos/saloos-addons/includes/languages/trans_addons.php:365
-#: tejarak/includes/languages/trans_addons.php:365
+#: tejarak/includes/languages/trans_addons.php:368
 msgid "Login"
 msgstr "ورود به سیستم"
 
-#: saloos/saloos-addons/content_account/home/view.php:29
+#: saloos/saloos-addons/content_account/home/view.php:30
 #: saloos/saloos-addons/includes/cls/form/account.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:366
-#: tejarak/includes/languages/trans_addons.php:366
+#: tejarak/includes/languages/trans_addons.php:369
 msgid "Create an account"
 msgstr "اکانت بسازید"
 
-#: saloos/saloos-addons/content_account/home/view.php:33
-#: saloos/saloos-addons/content_account/home/view.php:37
+#: saloos/saloos-addons/content_account/home/view.php:34
+#: saloos/saloos-addons/content_account/home/view.php:38
 #: saloos/saloos-addons/includes/languages/trans_addons.php:487
-#: tejarak/includes/languages/trans_addons.php:487
+#: tejarak/includes/languages/trans_addons.php:490
 msgid "Verificate"
 msgstr "اعتبارسنجی"
 
-#: saloos/saloos-addons/content_account/home/view.php:41
-#: saloos/saloos-addons/includes/cls/form/account.php:50
+#: saloos/saloos-addons/content_account/home/view.php:42
+#: saloos/saloos-addons/includes/cls/form/account.php:57
 #: saloos/saloos-addons/includes/languages/trans_addons.php:483
-#: tejarak/includes/languages/trans_addons.php:483
+#: tejarak/includes/languages/trans_addons.php:486
 msgid "Recovery"
 msgstr "بازیابی کلمه عبور"
 
-#: saloos/saloos-addons/content_account/home/view.php:45
+#: saloos/saloos-addons/content_account/home/view.php:46
 #: saloos/saloos-addons/includes/languages/trans_addons.php:367
-#: tejarak/includes/languages/trans_addons.php:367
+#: tejarak/includes/languages/trans_addons.php:370
 msgid "Change password"
 msgstr "کلمه عبور"
 
-#: saloos/saloos-addons/content_account/home/view.php:51
+#: saloos/saloos-addons/content_account/home/view.php:52
 #: saloos/saloos-addons/includes/languages/trans_addons.php:368
-#: tejarak/includes/languages/trans_addons.php:368
+#: tejarak/includes/languages/trans_addons.php:371
 msgid "SMS Delivery"
 msgstr "رسید دریافت پیامک"
 
-#: saloos/saloos-addons/content_account/home/view.php:57
+#: saloos/saloos-addons/content_account/home/view.php:58
 #: saloos/saloos-addons/includes/languages/trans_addons.php:369
-#: tejarak/includes/languages/trans_addons.php:369
+#: tejarak/includes/languages/trans_addons.php:372
 msgid "SMS Callback"
 msgstr "پیامک‌های دریافتی"
 
-#: saloos/saloos-addons/content_account/home/view.php:63
+#: saloos/saloos-addons/content_account/home/view.php:64
 #: saloos/saloos-addons/includes/languages/trans_addons.php:290
-#: tejarak/includes/languages/trans_addons.php:290
+#: tejarak/includes/languages/trans_addons.php:293
 #: tejarak/includes/languages/trans_twig.php:12
 msgid "Ermile"
 msgstr "ارمایل"
 
-#: saloos/saloos-addons/content_account/login/model.php:83
-#: saloos/saloos-addons/includes/languages/trans_addons.php:325
-#: tejarak/includes/languages/trans_addons.php:325
-msgid "Login Successfully"
-msgstr "با موفقیت وارد سیستم شدید"
-
-#: saloos/saloos-addons/content_account/login/model.php:110
+#: saloos/saloos-addons/content_account/login/model.php:84
 #: saloos/saloos-addons/includes/languages/trans_addons.php:326
-#: tejarak/includes/languages/trans_addons.php:326
+#: tejarak/includes/languages/trans_addons.php:329
 msgid "Login failed!"
 msgstr "ورود به سیستم ناموفق بود!"
 
-#: saloos/saloos-addons/content_account/login/model.php:115
-#: saloos/saloos-addons/content_account/login/model.php:121
+#: saloos/saloos-addons/content_account/login/model.php:89
+#: saloos/saloos-addons/content_account/login/model.php:95
 #: saloos/saloos-addons/includes/languages/trans_addons.php:327
-#: tejarak/includes/languages/trans_addons.php:327
+#: tejarak/includes/languages/trans_addons.php:330
 msgid "Mobile or password is incorrect"
 msgstr "موبایل یا کلمه عبور اشتباه است"
 
-#: saloos/saloos-addons/content_account/recovery/model.php:45
+#: saloos/saloos-addons/content_account/recovery/model.php:65
 #: saloos/saloos-addons/includes/languages/trans_addons.php:30
 #: tejarak/includes/languages/trans_addons.php:30
 msgid "we send a verification code for you"
 msgstr "ما کد اعتبارسنجی را برای شما ارسال خواهیم کرد"
 
-#: saloos/saloos-addons/content_account/recovery/model.php:54
+#: saloos/saloos-addons/content_account/recovery/model.php:76
 #: saloos/saloos-addons/includes/languages/trans_addons.php:485
-#: tejarak/includes/languages/trans_addons.php:485
+#: tejarak/includes/languages/trans_addons.php:488
 msgid "recovery failed!"
 msgstr "بازیابی ناموفق بود!"
 
-#: saloos/saloos-addons/content_account/recovery/model.php:59
+#: saloos/saloos-addons/content_account/recovery/model.php:81
 #: saloos/saloos-addons/includes/languages/trans_addons.php:486
-#: tejarak/includes/languages/trans_addons.php:486
+#: tejarak/includes/languages/trans_addons.php:489
 msgid "Mobile number is incorrect"
 msgstr "این شماره موبایل اشتباه است."
 
-#: saloos/saloos-addons/content_account/recovery/model.php:63
-#: saloos/saloos-addons/content_account/verification/model.php:82
+#: saloos/saloos-addons/content_account/recovery/model.php:85
+#: saloos/saloos-addons/content_account/verification/model.php:79
 msgid "please forward this message to administrator"
 msgstr "لطفا این پیغام را برای مدیر سیستم ارسال کنید"
 
-#: saloos/saloos-addons/content_account/signup/controller.php:15
+#: saloos/saloos-addons/content_account/signup/controller.php:20
 msgid "Public registration is disabled!"
 msgstr "اجازه ثبت‌نام عمومی غیرفعال است!"
 
-#: saloos/saloos-addons/content_account/signup/model.php:33
+#: saloos/saloos-addons/content_account/signup/model.php:37
 #: saloos/saloos-addons/includes/languages/trans_addons.php:481
-#: tejarak/includes/languages/trans_addons.php:481
+#: tejarak/includes/languages/trans_addons.php:484
 msgid "Register successfully"
 msgstr "ثبت‌نام با موفقیت به انجام رسید"
 
-#: saloos/saloos-addons/content_account/signup/model.php:40
-#: saloos/saloos-addons/content_account/signup/model.php:49
+#: saloos/saloos-addons/content_account/signup/model.php:44
+#: saloos/saloos-addons/content_account/signup/model.php:53
 msgid "Please contact to administrator!"
 msgstr "لطفا با مدیر سیستم تماس بگیرید!"
 
-#: saloos/saloos-addons/content_account/signup/model.php:45
+#: saloos/saloos-addons/content_account/signup/model.php:49
 #: saloos/saloos-addons/includes/languages/trans_addons.php:480
-#: tejarak/includes/languages/trans_addons.php:480
+#: tejarak/includes/languages/trans_addons.php:483
 msgid "Mobile number exist!"
 msgstr "شماره موبایل وجود دارد!"
 
-#: saloos/saloos-addons/content_account/verification/model.php:58
-#: saloos/saloos-addons/content_account/verification/model.php:68
+#: saloos/saloos-addons/content_account/verification/model.php:66
 #: saloos/saloos-addons/includes/languages/trans_addons.php:489
-#: tejarak/includes/languages/trans_addons.php:489
+#: tejarak/includes/languages/trans_addons.php:492
 msgid "verify successfully."
 msgstr "اعتبارسنجی موفقیت آمیز بود."
 
-#: saloos/saloos-addons/content_account/verification/model.php:68
+#: saloos/saloos-addons/content_account/verification/model.php:66
 #: saloos/saloos-addons/includes/languages/trans_addons.php:490
-#: tejarak/includes/languages/trans_addons.php:490
+#: tejarak/includes/languages/trans_addons.php:493
 msgid "please Input your new password"
 msgstr "لطفا کلمه عبور جدید را وارد کنید"
 
-#: saloos/saloos-addons/content_account/verification/model.php:73
+#: saloos/saloos-addons/content_account/verification/model.php:70
 #: saloos/saloos-addons/includes/languages/trans_addons.php:491
-#: tejarak/includes/languages/trans_addons.php:491
+#: tejarak/includes/languages/trans_addons.php:494
 msgid "verify failed!"
 msgstr "اعتبارسنجی ناموفق بود!"
 
-#: saloos/saloos-addons/content_account/verification/model.php:78
+#: saloos/saloos-addons/content_account/verification/model.php:75
 #: saloos/saloos-addons/includes/languages/trans_addons.php:492
-#: tejarak/includes/languages/trans_addons.php:492
+#: tejarak/includes/languages/trans_addons.php:495
 msgid "this data is incorrect"
 msgstr "این اطلاعات اشتباه است"
 
@@ -595,35 +610,35 @@ msgstr "یافت نشد"
 msgid "type"
 msgstr "نوع"
 
-#: saloos/saloos-addons/content_cp/home/view.php:96
-#: saloos/saloos-addons/content_cp/home/view.php:126
+#: saloos/saloos-addons/content_cp/home/view.php:97
+#: saloos/saloos-addons/content_cp/home/view.php:127
 #: saloos/saloos-addons/includes/languages/trans_addons.php:361
-#: tejarak/includes/languages/trans_addons.php:361
+#: tejarak/includes/languages/trans_addons.php:364
 msgid "Chart must be contain at least 2 column!"
 msgstr "نمودار باید حداقل شامل دو ستون داده ای باشد!"
 
-#: saloos/saloos-addons/content_cp/home/view.php:331
+#: saloos/saloos-addons/content_cp/home/view.php:332
 #: saloos/saloos-addons/includes/languages/trans_addons.php:338
-#: tejarak/includes/languages/trans_addons.php:338
+#: tejarak/includes/languages/trans_addons.php:341
 msgid "Enter password within 5 to 40 character"
 msgstr "گذرواژه‌ای بین ۵ تا ۴۰ کاراکتر وارد کنید"
 
-#: saloos/saloos-addons/content_cp/home/view.php:335
-#: saloos/saloos-addons/includes/cls/form/account.php:56
+#: saloos/saloos-addons/content_cp/home/view.php:336
+#: saloos/saloos-addons/includes/cls/form/account.php:66
 #: saloos/saloos-addons/includes/languages/trans_addons.php:495
-#: tejarak/includes/languages/trans_addons.php:495
+#: tejarak/includes/languages/trans_addons.php:498
 msgid "New Password"
 msgstr "گذرواژه جدید"
 
-#: saloos/saloos-addons/content_cp/home/view.php:335
+#: saloos/saloos-addons/content_cp/home/view.php:336
 #: saloos/saloos-addons/includes/languages/trans_addons.php:337
-#: tejarak/includes/languages/trans_addons.php:337
+#: tejarak/includes/languages/trans_addons.php:340
 msgid "If you want to change password enter it, else leave it blank"
 msgstr ""
 "در صورت تمایل به تغییر گذرواژه آن را وارد کنید،‌ در غیر این ‌صورت این فیلد را "
 "خالی بگذارید"
 
-#: saloos/saloos-addons/content_cp/home/view.php:348
+#: saloos/saloos-addons/content_cp/home/view.php:349
 msgid "position"
 msgstr "موقعیت"
 
@@ -636,20 +651,20 @@ msgstr "داشبورد"
 
 #: saloos/saloos-addons/content_cp/manifest.php:13
 #: saloos/saloos-addons/includes/languages/trans_addons.php:333
-#: tejarak/includes/languages/trans_addons.php:333
+#: tejarak/includes/languages/trans_addons.php:336
 msgid "Use posts to share your news in specefic category"
 msgstr "از نوشته ها برای انتشار اخبار در موضوعات دلخواه استفاده کنید"
 
 #: saloos/saloos-addons/content_cp/manifest.php:21
 #: saloos/saloos-addons/includes/languages/trans_addons.php:330
-#: tejarak/includes/languages/trans_addons.php:330
+#: tejarak/includes/languages/trans_addons.php:333
 msgid "Assign keywords to your posts using tags"
 msgstr ""
 "از عبارات کلیدی برای تعریف کلیدواژه ها و ارتباط آن به نوشته های استفاده کنید"
 
 #: saloos/saloos-addons/content_cp/manifest.php:26
 #: saloos/saloos-addons/includes/languages/trans_addons.php:331
-#: tejarak/includes/languages/trans_addons.php:331
+#: tejarak/includes/languages/trans_addons.php:334
 msgid "Use categories to define sections of your site and group related posts"
 msgstr "از دسته ها برای تعریف بخش های سایت و دسته بندی نوشته ها استفاده کنید"
 
@@ -661,13 +676,13 @@ msgstr "دسته‌بندی‌ها"
 
 #: saloos/saloos-addons/content_cp/manifest.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:334
-#: tejarak/includes/languages/trans_addons.php:334
+#: tejarak/includes/languages/trans_addons.php:337
 msgid "Use pages to share your static content"
 msgstr "از برگه ها برای انتشار مطالب ثابت استفاده کنید"
 
 #: saloos/saloos-addons/content_cp/manifest.php:41
 #: saloos/saloos-addons/includes/languages/trans_addons.php:377
-#: tejarak/includes/languages/trans_addons.php:377
+#: tejarak/includes/languages/trans_addons.php:380
 msgid "Use book to define important parts to use in posts"
 msgstr "کتاب های خود را در این بخش وارد کنید"
 
@@ -685,31 +700,31 @@ msgstr "مرکز راهنمایی برای استفاده آماده است"
 
 #: saloos/saloos-addons/content_cp/manifest.php:61
 #: saloos/saloos-addons/includes/languages/trans_addons.php:376
-#: tejarak/includes/languages/trans_addons.php:376
+#: tejarak/includes/languages/trans_addons.php:379
 msgid "Use categories to define sections of your site and group related books"
 msgstr "با استفاده از دسته‌بندی بخش های مختلف کتاب را گروه بندی کنید"
 
 #: saloos/saloos-addons/content_cp/manifest.php:62
 #: saloos/saloos-addons/includes/languages/trans_addons.php:373
-#: tejarak/includes/languages/trans_addons.php:373
+#: tejarak/includes/languages/trans_addons.php:376
 msgid "Book Categories"
 msgstr "دسته‌بندی کتاب"
 
 #: saloos/saloos-addons/content_cp/manifest.php:69
 #: saloos/saloos-addons/includes/languages/trans_addons.php:386
-#: tejarak/includes/languages/trans_addons.php:386
+#: tejarak/includes/languages/trans_addons.php:389
 msgid "Publish new post in social networks"
 msgstr "انتشار پست جدید در شبکه‌های اجتماعی"
 
 #: saloos/saloos-addons/content_cp/manifest.php:76
 #: saloos/saloos-addons/includes/languages/trans_addons.php:335
-#: tejarak/includes/languages/trans_addons.php:335
+#: tejarak/includes/languages/trans_addons.php:338
 msgid "Upload your media"
 msgstr "برای بارگزاری فایل های شما"
 
 #: saloos/saloos-addons/content_cp/manifest.php:81
 #: saloos/saloos-addons/includes/languages/trans_addons.php:332
-#: tejarak/includes/languages/trans_addons.php:332
+#: tejarak/includes/languages/trans_addons.php:335
 msgid "Use categories to define sections of your site and group related files"
 msgstr ""
 "از دسته‌بندی برای تعریف بخش‌های مختلف برای گروه‌بندی کردن فایل‌ها استفاده کنید"
@@ -724,23 +739,23 @@ msgstr "ما به مشکلی برخورده و آن را حل کردیم!"
 
 #: saloos/saloos-addons/content_cp/options/model.php:111
 #: saloos/saloos-addons/content_cp/permissions/model.php:158
-#: saloos/saloos-addons/content_cp/posts/model.php:501
+#: saloos/saloos-addons/content_cp/posts/model.php:521
 #: saloos/saloos-addons/content_cp/profile/model.php:23
 #: saloos/saloos-addons/content_cp/terms/model.php:142
 #: saloos/saloos-addons/includes/languages/trans_addons.php:263
 #: saloos/saloos-addons/lib/mvc/models/commit.php:49
-#: tejarak/includes/languages/trans_addons.php:263
+#: tejarak/includes/languages/trans_addons.php:266
 msgid "Update Successfully"
 msgstr "بروزرسانی با موفقیت انجام شد"
 
 #: saloos/saloos-addons/content_cp/options/model.php:118
 #: saloos/saloos-addons/content_cp/permissions/model.php:169
-#: saloos/saloos-addons/content_cp/posts/model.php:514
+#: saloos/saloos-addons/content_cp/posts/model.php:534
 #: saloos/saloos-addons/content_cp/profile/model.php:30
 #: saloos/saloos-addons/content_cp/terms/model.php:158
 #: saloos/saloos-addons/includes/languages/trans_addons.php:267
 #: saloos/saloos-addons/lib/mvc/models/commit.php:28
-#: tejarak/includes/languages/trans_addons.php:267
+#: tejarak/includes/languages/trans_addons.php:270
 msgid "Transaction error"
 msgstr "خطای در تراکنش"
 
@@ -756,53 +771,52 @@ msgstr "ویرایش تنظیمات عمومی وب‌سایت"
 
 #: saloos/saloos-addons/content_cp/options/view.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:434
-#: tejarak/includes/languages/trans_addons.php:434
+#: tejarak/includes/languages/trans_addons.php:437
 msgid "Kavenegar"
 msgstr "کاوه‌نگار"
 
 #: saloos/saloos-addons/content_cp/permissions/model.php:76
 #: saloos/saloos-addons/includes/languages/trans_addons.php:499
-#: tejarak/includes/languages/trans_addons.php:499
+#: tejarak/includes/languages/trans_addons.php:502
 msgid "First you must enter name of permission"
 msgstr "در ابتدا نام سطح‌دسترسی جدید را وارد کنید"
 
 #: saloos/saloos-addons/content_cp/permissions/model.php:85
 #: saloos/saloos-addons/includes/languages/trans_addons.php:500
-#: tejarak/includes/languages/trans_addons.php:500
+#: tejarak/includes/languages/trans_addons.php:503
 msgid "This permission name exist!"
 msgstr "این نام برای سطح‌دسترسی از قبل وجود دارد!"
 
 #: saloos/saloos-addons/content_cp/permissions/model.php:86
 #: saloos/saloos-addons/includes/languages/trans_addons.php:501
-#: tejarak/includes/languages/trans_addons.php:501
+#: tejarak/includes/languages/trans_addons.php:504
 msgid "You can edit this permission"
 msgstr "شما می‌توانید این سطح‌دسترسی را ویرایش کنید"
 
 #: saloos/saloos-addons/content_cp/permissions/model.php:149
-#: saloos/saloos-addons/content_cp/posts/model.php:506
+#: saloos/saloos-addons/content_cp/posts/model.php:526
 #: saloos/saloos-addons/content_cp/terms/model.php:147
 #: saloos/saloos-addons/includes/languages/trans_addons.php:261
 #: saloos/saloos-addons/lib/mvc/models/commit.php:22
-#: tejarak/includes/languages/trans_addons.php:261
+#: tejarak/includes/languages/trans_addons.php:264
 msgid "Insert Successfully"
 msgstr "افزودن با موفقیت انجام شد"
 
 #: saloos/saloos-addons/content_cp/permissions/model.php:154
 #: saloos/saloos-addons/includes/languages/trans_addons.php:265
 #: saloos/saloos-addons/lib/mvc/models/commit.php:75
-#: tejarak/includes/languages/trans_addons.php:265
+#: tejarak/includes/languages/trans_addons.php:268
 msgid "Delete Successfully"
 msgstr "حذف با موفقیت انجام شد"
 
 #: saloos/saloos-addons/content_cp/permissions/view.php:9
 #: saloos/saloos-addons/includes/languages/trans_addons.php:502
-#: tejarak/includes/languages/trans_addons.php:502
-msgid ""
-"Define or edit user permissions to allow or block access to special pages"
+#: tejarak/includes/languages/trans_addons.php:505
+msgid "Define or edit user permissions to allow or block access to special pages"
 msgstr "تعریف یا ویرایش سطوح‌دسترسی برای اجازه یا ممنوع کردن دسترسی به صفحات خاص"
 
 #: saloos/saloos-addons/content_cp/permissions/view.php:15
-#: saloos/saloos-addons/content_cp/posts/model.php:692
+#: saloos/saloos-addons/content_cp/posts/model.php:712
 #: saloos/saloos-addons/includes/languages/trans_addons.php:126
 #: tejarak/includes/languages/trans_addons.php:126
 msgid "Edit"
@@ -816,27 +830,33 @@ msgstr "سطح دسترسی"
 
 #: saloos/saloos-addons/content_cp/posts/model.php:131
 #: saloos/saloos-addons/includes/languages/trans_addons.php:329
-#: tejarak/includes/languages/trans_addons.php:329
+#: tejarak/includes/languages/trans_addons.php:332
 msgid "Please enter title"
 msgstr "لطفا عنوان را وارد کنید"
+
+#: saloos/saloos-addons/content_cp/posts/model.php:629
+#: saloos/saloos-addons/includes/languages/trans_addons.php:378
+#: tejarak/includes/languages/trans_addons.php:381
+msgid "Duplicate - File exist"
+msgstr "تکراری - فایل وجود دارد"
 
 #: saloos/saloos-addons/content_cp/terms/model.php:114
 msgid "Please enter title!"
 msgstr "لطفا عنوان را وارد کنید!"
 
-#: saloos/saloos-addons/content_cp/tools/controller.php:65
+#: saloos/saloos-addons/content_cp/tools/controller.php:80
 msgid "First you need to enable COM on windows"
 msgstr "در ابتدا شما باید ویژگی Com را در ویندوز فعال کنید"
 
-#: saloos/saloos-addons/content_cp/tools/controller.php:66
+#: saloos/saloos-addons/content_cp/tools/controller.php:81
 msgid "Read More"
 msgstr "بیشتر بخوانید"
 
-#: saloos/saloos-addons/content_cp/tools/controller.php:124
+#: saloos/saloos-addons/content_cp/tools/controller.php:142
 msgid "Create sitemap Successfully!"
 msgstr "بازسازی نقشه سایت با موفقیت انجام شد!"
 
-#: saloos/saloos-addons/content_cp/tools/controller.php:169
+#: saloos/saloos-addons/content_cp/tools/controller.php:191
 msgid "Not Work!"
 msgstr "کار نمیکند!"
 
@@ -884,7 +904,7 @@ msgstr "کد"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:339
 #: tejarak/includes/cls/database/tejarak/translation.php:13
 #: tejarak/includes/cls/database/tejarak/translation.php:96
-#: tejarak/includes/languages/trans_addons.php:339
+#: tejarak/includes/languages/trans_addons.php:342
 msgid "post"
 msgstr "نوشته"
 
@@ -976,7 +996,7 @@ msgstr "کاربر"
 #: saloos/saloos-addons/includes/cls/database/saloos/translation.php:137
 #: saloos/saloos-addons/includes/languages/trans_addons.php:351
 #: tejarak/includes/cls/database/tejarak/translation.php:22
-#: tejarak/includes/languages/trans_addons.php:351
+#: tejarak/includes/languages/trans_addons.php:354
 msgid "visitor"
 msgstr "بازدیدکننده"
 
@@ -1027,7 +1047,7 @@ msgstr "کم"
 #: tejarak/includes/cls/database/tejarak/translation.php:79
 #: tejarak/includes/cls/database/tejarak/translation.php:103
 #: tejarak/includes/cls/database/tejarak/translation.php:121
-#: tejarak/includes/languages/trans_addons.php:412
+#: tejarak/includes/languages/trans_addons.php:415
 msgid "title"
 msgstr "عنوان"
 
@@ -1119,7 +1139,7 @@ msgstr "تنظیمات"
 #: saloos/saloos-addons/includes/cls/database/saloos/translation.php:64
 #: saloos/saloos-addons/includes/languages/trans_addons.php:347
 #: tejarak/includes/cls/database/tejarak/translation.php:87
-#: tejarak/includes/languages/trans_addons.php:347
+#: tejarak/includes/languages/trans_addons.php:350
 msgid "option"
 msgstr "تنظیمات"
 
@@ -1324,7 +1344,7 @@ msgstr "ربات"
 
 #: saloos/saloos-addons/includes/cls/form/account.php:22
 #: saloos/saloos-addons/includes/languages/trans_addons.php:478
-#: tejarak/includes/languages/trans_addons.php:478
+#: tejarak/includes/languages/trans_addons.php:481
 msgid "Enter your registered mobile"
 msgstr "موبایل ثبت شده را وارد کنید"
 
@@ -1332,49 +1352,49 @@ msgstr "موبایل ثبت شده را وارد کنید"
 #: saloos/saloos-addons/includes/cls/form/account.php:32
 #: saloos/saloos-addons/includes/cls/form/symbol.php:23
 #: saloos/saloos-addons/includes/languages/trans_addons.php:362
-#: tejarak/includes/languages/trans_addons.php:362
+#: tejarak/includes/languages/trans_addons.php:365
 msgid "Password"
 msgstr "کلمه عبور"
 
 #: saloos/saloos-addons/includes/cls/form/account.php:24
 #: saloos/saloos-addons/includes/languages/trans_addons.php:479
-#: tejarak/includes/languages/trans_addons.php:479
+#: tejarak/includes/languages/trans_addons.php:482
 msgid "Enter your password"
 msgstr "کلمه عبور خود را وارد کنید"
 
-#: saloos/saloos-addons/includes/cls/form/account.php:40
+#: saloos/saloos-addons/includes/cls/form/account.php:47
 msgid "Code"
 msgstr "کد"
 
-#: saloos/saloos-addons/includes/cls/form/account.php:41
+#: saloos/saloos-addons/includes/cls/form/account.php:48
 msgid "input 4 number"
 msgstr "کد حاوی 4 عدد را وارد کنید"
 
-#: saloos/saloos-addons/includes/cls/form/account.php:42
+#: saloos/saloos-addons/includes/cls/form/account.php:49
 #: saloos/saloos-addons/includes/languages/trans_addons.php:493
-#: tejarak/includes/languages/trans_addons.php:493
+#: tejarak/includes/languages/trans_addons.php:496
 msgid "Check your mobile and enter the code"
 msgstr "پس از بررسی موبایل خود کد را وارد کنید"
 
-#: saloos/saloos-addons/includes/cls/form/account.php:43
+#: saloos/saloos-addons/includes/cls/form/account.php:50
 #: saloos/saloos-addons/includes/languages/trans_addons.php:488
-#: tejarak/includes/languages/trans_addons.php:488
+#: tejarak/includes/languages/trans_addons.php:491
 msgid "Verification"
 msgstr "اعتبارسنجی"
 
-#: saloos/saloos-addons/includes/cls/form/account.php:55
+#: saloos/saloos-addons/includes/cls/form/account.php:64
 #: saloos/saloos-addons/includes/languages/trans_addons.php:494
-#: tejarak/includes/languages/trans_addons.php:494
+#: tejarak/includes/languages/trans_addons.php:497
 msgid "Current Password"
 msgstr "گذرواژه فعلی"
 
-#: saloos/saloos-addons/includes/cls/form/account.php:57
+#: saloos/saloos-addons/includes/cls/form/account.php:67
 #: saloos/saloos-addons/includes/languages/trans_addons.php:496
-#: tejarak/includes/languages/trans_addons.php:496
+#: tejarak/includes/languages/trans_addons.php:499
 msgid "Change it"
 msgstr "تغییر بده"
 
-#: saloos/saloos-addons/includes/cls/form/account.php:57
+#: saloos/saloos-addons/includes/cls/form/account.php:67
 msgid "Change my password"
 msgstr "کلمه عبور"
 
@@ -1382,7 +1402,7 @@ msgstr "کلمه عبور"
 #: saloos/saloos-addons/includes/cls/form/options.php:33
 #: saloos/saloos-addons/includes/cls/form/options.php:46
 #: saloos/saloos-addons/includes/languages/trans_addons.php:411
-#: tejarak/includes/languages/trans_addons.php:411
+#: tejarak/includes/languages/trans_addons.php:414
 msgid "Site"
 msgstr "سایت"
 
@@ -1392,15 +1412,15 @@ msgstr "عنوان سایت"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:30
 #: saloos/saloos-addons/includes/languages/trans_addons.php:413
-#: tejarak/includes/languages/trans_addons.php:413
+#: tejarak/includes/languages/trans_addons.php:416
 msgid "For multilanguage sites enter title in English and translate it"
 msgstr ""
-"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم "
-"آن را به سایر زبان‌ها ترجمه کنید"
+"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم آن "
+"را به سایر زبان‌ها ترجمه کنید"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:389
-#: tejarak/includes/languages/trans_addons.php:389
+#: tejarak/includes/languages/trans_addons.php:392
 msgid "Description"
 msgstr "توضیح"
 
@@ -1429,44 +1449,44 @@ msgstr "رنگ تب سایت در موبایل"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:69
 #: saloos/saloos-addons/includes/languages/trans_addons.php:415
-#: tejarak/includes/languages/trans_addons.php:415
+#: tejarak/includes/languages/trans_addons.php:418
 msgid "Enable coming soon"
 msgstr "نمایش صفحه بزودی"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:74
 #: saloos/saloos-addons/includes/languages/trans_addons.php:416
-#: tejarak/includes/languages/trans_addons.php:416
+#: tejarak/includes/languages/trans_addons.php:419
 msgid "debug mode status"
 msgstr "وضعیت نمایش خطا"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:79
 #: saloos/saloos-addons/includes/languages/trans_addons.php:417
-#: tejarak/includes/languages/trans_addons.php:417
+#: tejarak/includes/languages/trans_addons.php:420
 msgid "Save as cookie"
 msgstr "ذخیره به عنوان کوکی"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:84
 #: saloos/saloos-addons/includes/languages/trans_addons.php:418
-#: tejarak/includes/languages/trans_addons.php:418
+#: tejarak/includes/languages/trans_addons.php:421
 msgid "Log visitors"
 msgstr "ذخیره عملکرد بازدیدکنندگان"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:89
 #: saloos/saloos-addons/includes/languages/trans_addons.php:419
-#: tejarak/includes/languages/trans_addons.php:419
+#: tejarak/includes/languages/trans_addons.php:422
 msgid "Use main account"
 msgstr "استفاده از اکانت یکپارچه"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:95
 #: saloos/saloos-addons/includes/languages/trans_addons.php:420
-#: tejarak/includes/languages/trans_addons.php:420
+#: tejarak/includes/languages/trans_addons.php:423
 msgid "Main account"
 msgstr "اکانت یکپارچه"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:100
 #: saloos/saloos-addons/includes/cls/form/options.php:101
 #: saloos/saloos-addons/includes/languages/trans_addons.php:421
-#: tejarak/includes/languages/trans_addons.php:421
+#: tejarak/includes/languages/trans_addons.php:424
 msgid "Default Language"
 msgstr "زبان پیش‌فرض"
 
@@ -1476,7 +1496,7 @@ msgstr "تنظیمات آدرس"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:110
 #: saloos/saloos-addons/includes/languages/trans_addons.php:423
-#: tejarak/includes/languages/trans_addons.php:423
+#: tejarak/includes/languages/trans_addons.php:426
 msgid "Use fake subdomain"
 msgstr "شبیه‌سازی ساب‌دامین"
 
@@ -1494,25 +1514,25 @@ msgstr "نمایش آدرس کوتاه برای این نوشته"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:130
 #: saloos/saloos-addons/includes/languages/trans_addons.php:422
-#: tejarak/includes/languages/trans_addons.php:422
+#: tejarak/includes/languages/trans_addons.php:425
 msgid "Feature status"
 msgstr "وضعیت ویژگی‌ها"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:135
 #: saloos/saloos-addons/includes/languages/trans_addons.php:424
-#: tejarak/includes/languages/trans_addons.php:424
+#: tejarak/includes/languages/trans_addons.php:427
 msgid "Use SMS service"
 msgstr "استفاده از سرویس پیامک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:140
 #: saloos/saloos-addons/includes/languages/trans_addons.php:425
-#: tejarak/includes/languages/trans_addons.php:425
+#: tejarak/includes/languages/trans_addons.php:428
 msgid "Use social networks"
 msgstr "استفاده از شبکه‌های اجتماعی"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:145
 #: saloos/saloos-addons/includes/languages/trans_addons.php:426
-#: tejarak/includes/languages/trans_addons.php:426
+#: tejarak/includes/languages/trans_addons.php:429
 msgid "Use account"
 msgstr "استفاده از اکانت یکپارچه"
 
@@ -1567,19 +1587,19 @@ msgstr "فیس‌بوک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:221
 #: saloos/saloos-addons/includes/languages/trans_addons.php:432
-#: tejarak/includes/languages/trans_addons.php:432
+#: tejarak/includes/languages/trans_addons.php:435
 msgid "Google Plus"
 msgstr "گوگل پلاس"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:228
 #: saloos/saloos-addons/includes/languages/trans_addons.php:429
-#: tejarak/includes/languages/trans_addons.php:429
+#: tejarak/includes/languages/trans_addons.php:432
 msgid "Github"
 msgstr "گیت‌هاب"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:235
 #: saloos/saloos-addons/includes/languages/trans_addons.php:430
-#: tejarak/includes/languages/trans_addons.php:430
+#: tejarak/includes/languages/trans_addons.php:433
 msgid "Linkedin"
 msgstr "لینکدین"
 
@@ -1597,13 +1617,13 @@ msgstr "تلگرام"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:249
 #: saloos/saloos-addons/includes/languages/trans_addons.php:431
-#: tejarak/includes/languages/trans_addons.php:431
+#: tejarak/includes/languages/trans_addons.php:434
 msgid "Aparat"
 msgstr "آپارات"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:265
 #: saloos/saloos-addons/includes/languages/trans_addons.php:464
-#: tejarak/includes/languages/trans_addons.php:464
+#: tejarak/includes/languages/trans_addons.php:467
 msgid "Status of twitter sharing"
 msgstr "وضعیت بازنشر در توییتر"
 
@@ -1613,80 +1633,80 @@ msgstr "ConsumerKey"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:277
 #: saloos/saloos-addons/includes/languages/trans_addons.php:437
-#: tejarak/includes/languages/trans_addons.php:437
+#: tejarak/includes/languages/trans_addons.php:440
 msgid "ConsumerSecret"
 msgstr "ConsumerSecret"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:284
 #: saloos/saloos-addons/includes/languages/trans_addons.php:438
-#: tejarak/includes/languages/trans_addons.php:438
+#: tejarak/includes/languages/trans_addons.php:441
 msgid "AccessToken"
 msgstr "AccessToken"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:291
 #: saloos/saloos-addons/includes/languages/trans_addons.php:439
-#: tejarak/includes/languages/trans_addons.php:439
+#: tejarak/includes/languages/trans_addons.php:442
 msgid "AccessTokenSecret"
 msgstr "AccessTokenSecret"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:306
 #: saloos/saloos-addons/includes/languages/trans_addons.php:465
-#: tejarak/includes/languages/trans_addons.php:465
+#: tejarak/includes/languages/trans_addons.php:468
 msgid "Status of facebook sharing"
 msgstr "وضعیت بازنشر در فیس‌بوک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:311
 #: saloos/saloos-addons/includes/languages/trans_addons.php:440
-#: tejarak/includes/languages/trans_addons.php:440
+#: tejarak/includes/languages/trans_addons.php:443
 msgid "app_id"
 msgstr "app_id"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:318
 #: saloos/saloos-addons/includes/languages/trans_addons.php:441
-#: tejarak/includes/languages/trans_addons.php:441
+#: tejarak/includes/languages/trans_addons.php:444
 msgid "app_secret"
 msgstr "app_secret"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:325
 #: saloos/saloos-addons/includes/languages/trans_addons.php:442
-#: tejarak/includes/languages/trans_addons.php:442
+#: tejarak/includes/languages/trans_addons.php:445
 msgid "redirect_url"
 msgstr "redirect_url"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:332
 #: saloos/saloos-addons/includes/languages/trans_addons.php:443
-#: tejarak/includes/languages/trans_addons.php:443
+#: tejarak/includes/languages/trans_addons.php:446
 msgid "required_scope"
 msgstr "required_scope"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:339
 #: saloos/saloos-addons/includes/languages/trans_addons.php:444
-#: tejarak/includes/languages/trans_addons.php:444
+#: tejarak/includes/languages/trans_addons.php:447
 msgid "page_id"
 msgstr "page_id"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:346
 #: saloos/saloos-addons/includes/languages/trans_addons.php:445
-#: tejarak/includes/languages/trans_addons.php:445
+#: tejarak/includes/languages/trans_addons.php:448
 msgid "access_token"
 msgstr "access_token"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:353
 #: saloos/saloos-addons/includes/languages/trans_addons.php:446
-#: tejarak/includes/languages/trans_addons.php:446
+#: tejarak/includes/languages/trans_addons.php:449
 msgid "client_token"
 msgstr "client_token"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:368
 #: saloos/saloos-addons/includes/languages/trans_addons.php:466
-#: tejarak/includes/languages/trans_addons.php:466
+#: tejarak/includes/languages/trans_addons.php:469
 msgid "Status of telegram sharing"
 msgstr "وضعیت بازنشر در تلگرام"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:373
 #: saloos/saloos-addons/includes/cls/form/options.php:414
 #: saloos/saloos-addons/includes/languages/trans_addons.php:323
-#: tejarak/includes/languages/trans_addons.php:323
+#: tejarak/includes/languages/trans_addons.php:326
 msgid "Key"
 msgstr "کلید"
 
@@ -1716,20 +1736,20 @@ msgstr "بوتان"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:429
 #: saloos/saloos-addons/includes/languages/trans_addons.php:456
-#: tejarak/includes/languages/trans_addons.php:456
+#: tejarak/includes/languages/trans_addons.php:459
 msgid "Simulate SMS (Debugging)"
 msgstr "شبیه‌سازی پیامک (خطایابی)"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:432
 #: saloos/saloos-addons/includes/languages/trans_addons.php:463
-#: tejarak/includes/languages/trans_addons.php:463
+#: tejarak/includes/languages/trans_addons.php:466
 msgid "SMS api detail"
 msgstr "جزئیات رابط برنامه‌نویسی پیامک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:436
 #: saloos/saloos-addons/includes/cls/form/options.php:437
 #: saloos/saloos-addons/includes/languages/trans_addons.php:435
-#: tejarak/includes/languages/trans_addons.php:435
+#: tejarak/includes/languages/trans_addons.php:438
 msgid "SMS service"
 msgstr "سرویس پیامک"
 
@@ -1743,50 +1763,50 @@ msgstr "پیامک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:441
 #: saloos/saloos-addons/includes/languages/trans_addons.php:428
-#: tejarak/includes/languages/trans_addons.php:428
+#: tejarak/includes/languages/trans_addons.php:431
 msgid "apikey"
 msgstr "کلید ای‌پی‌آی"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:447
 #: saloos/saloos-addons/includes/cls/form/options.php:452
 #: saloos/saloos-addons/includes/languages/trans_addons.php:427
-#: tejarak/includes/languages/trans_addons.php:427
+#: tejarak/includes/languages/trans_addons.php:430
 msgid "line number"
 msgstr "شماره خط"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:458
 #: saloos/saloos-addons/includes/languages/trans_addons.php:451
-#: tejarak/includes/languages/trans_addons.php:451
+#: tejarak/includes/languages/trans_addons.php:454
 msgid "Regional restriction"
 msgstr "محدودیت منطقه‌ای"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:461
 #: saloos/saloos-addons/includes/languages/trans_addons.php:462
-#: tejarak/includes/languages/trans_addons.php:462
+#: tejarak/includes/languages/trans_addons.php:465
 msgid "Message detail"
 msgstr "جزئیات پیامک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:465
 #: saloos/saloos-addons/includes/languages/trans_addons.php:452
-#: tejarak/includes/languages/trans_addons.php:452
+#: tejarak/includes/languages/trans_addons.php:455
 msgid "Message header"
 msgstr "سرصفحه پیامک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:470
 #: saloos/saloos-addons/includes/languages/trans_addons.php:453
-#: tejarak/includes/languages/trans_addons.php:453
+#: tejarak/includes/languages/trans_addons.php:456
 msgid "Message footer"
 msgstr "پاصفحه پیامک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:476
 #: saloos/saloos-addons/includes/languages/trans_addons.php:454
-#: tejarak/includes/languages/trans_addons.php:454
+#: tejarak/includes/languages/trans_addons.php:457
 msgid "Force one message"
 msgstr "اجبار به یک پیامک"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:479
 #: saloos/saloos-addons/includes/languages/trans_addons.php:461
-#: tejarak/includes/languages/trans_addons.php:461
+#: tejarak/includes/languages/trans_addons.php:464
 msgid "Send message in custom situation"
 msgstr "ارسال پیامک در شرایط سفارشی"
 
@@ -1796,7 +1816,7 @@ msgstr "ارسال پیامک در شرایط سفارشی"
 #: saloos/saloos-addons/includes/cls/form/options.php:499
 #: saloos/saloos-addons/includes/cls/form/options.php:504
 #: saloos/saloos-addons/includes/languages/trans_addons.php:447
-#: tejarak/includes/languages/trans_addons.php:447
+#: tejarak/includes/languages/trans_addons.php:450
 msgid "Send message for"
 msgstr "ارسال پیامک برای"
 
@@ -1809,74 +1829,74 @@ msgstr "ثبت نام"
 #: saloos/saloos-addons/includes/cls/form/options.php:489
 #: saloos/saloos-addons/includes/cls/form/options.php:504
 #: saloos/saloos-addons/includes/languages/trans_addons.php:448
-#: tejarak/includes/languages/trans_addons.php:448
+#: tejarak/includes/languages/trans_addons.php:451
 msgid "verification"
 msgstr "اعتبارسنجی"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:494
 #: saloos/saloos-addons/includes/languages/trans_addons.php:449
-#: tejarak/includes/languages/trans_addons.php:449
+#: tejarak/includes/languages/trans_addons.php:452
 msgid "recovery"
 msgstr "بازیابی"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:499
 #: saloos/saloos-addons/includes/languages/trans_addons.php:450
-#: tejarak/includes/languages/trans_addons.php:450
+#: tejarak/includes/languages/trans_addons.php:453
 msgid "changepass"
 msgstr "تغییر کلمه‌عبور"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:516
 #: saloos/saloos-addons/includes/languages/trans_addons.php:468
-#: tejarak/includes/languages/trans_addons.php:468
+#: tejarak/includes/languages/trans_addons.php:471
 msgid "After login redirect to"
 msgstr "بعد از لاگین انتقال به"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:520
 #: saloos/saloos-addons/includes/languages/trans_addons.php:476
-#: tejarak/includes/languages/trans_addons.php:476
+#: tejarak/includes/languages/trans_addons.php:479
 msgid "Increase account security"
 msgstr "افزایش امنیت بخش اکانت"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:525
 #: saloos/saloos-addons/includes/languages/trans_addons.php:471
-#: tejarak/includes/languages/trans_addons.php:471
+#: tejarak/includes/languages/trans_addons.php:474
 msgid "Access with pass phrase"
 msgstr "دسترسی با عبارت گذرگاه"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:530
 #: saloos/saloos-addons/includes/languages/trans_addons.php:472
-#: tejarak/includes/languages/trans_addons.php:472
+#: tejarak/includes/languages/trans_addons.php:475
 msgid "Pass phrase key"
 msgstr "کلید عبارت گذرگاه"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:537
 #: saloos/saloos-addons/includes/languages/trans_addons.php:473
-#: tejarak/includes/languages/trans_addons.php:473
+#: tejarak/includes/languages/trans_addons.php:476
 msgid "Pass phrase value"
 msgstr "مقدار عبارت گذرگاه"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:542
 #: saloos/saloos-addons/includes/languages/trans_addons.php:475
-#: tejarak/includes/languages/trans_addons.php:475
+#: tejarak/includes/languages/trans_addons.php:478
 msgid "Status of account service"
 msgstr "وضعیت سرویس اکانت"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:547
 #: saloos/saloos-addons/includes/languages/trans_addons.php:467
-#: tejarak/includes/languages/trans_addons.php:467
+#: tejarak/includes/languages/trans_addons.php:470
 msgid "Allow registration"
 msgstr "اجازه ثبت‌نام کاربر جدید"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:552
 #: saloos/saloos-addons/includes/cls/form/options.php:553
 #: saloos/saloos-addons/includes/languages/trans_addons.php:469
-#: tejarak/includes/languages/trans_addons.php:469
+#: tejarak/includes/languages/trans_addons.php:472
 msgid "Default permission"
 msgstr "سطح‌دسترسی پیش فرض"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:559
 #: saloos/saloos-addons/includes/languages/trans_addons.php:474
-#: tejarak/includes/languages/trans_addons.php:474
+#: tejarak/includes/languages/trans_addons.php:477
 msgid "Allow recovery account"
 msgstr "اجازه بازیابی اکانت"
 
@@ -1892,15 +1912,14 @@ msgstr "موبایل"
 
 #: saloos/saloos-addons/includes/cls/form/symbol.php:24
 #: saloos/saloos-addons/includes/languages/trans_addons.php:363
-#: tejarak/includes/languages/trans_addons.php:363
+#: tejarak/includes/languages/trans_addons.php:366
 msgid "between 5-40 character"
 msgstr "بین ۵ تا ۴۰ کاراکتر."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:6
 #: tejarak/includes/languages/trans_addons.php:6
 msgid "Write your tag and press enter to add new keyword to content"
-msgstr ""
-"کلیدواژه‌ی مورد نظر خود را نوشته و با فشردن انتر آن را به مطلب اضافه کنید"
+msgstr "کلیدواژه‌ی مورد نظر خود را نوشته و با فشردن انتر آن را به مطلب اضافه کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:8
 #: tejarak/includes/languages/trans_addons.php:8
@@ -2128,8 +2147,7 @@ msgstr "خروج از سیستم"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:74
 #: tejarak/includes/languages/trans_addons.php:74
 msgid "We glad to working for you and hope you enjoy using our system"
-msgstr ""
-"ما از کار برای شما خوشحال بوده و امیدواریم شما نیز از سیستم ما لذت ببرید"
+msgstr "ما از کار برای شما خوشحال بوده و امیدواریم شما نیز از سیستم ما لذت ببرید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:75
 #: tejarak/includes/languages/trans_addons.php:75
@@ -2294,8 +2312,7 @@ msgstr "ویرایش دسترسی به"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:119
 #: tejarak/includes/languages/trans_addons.php:119
-msgid ""
-"Allow or disallow user to access all part of service with full permission!"
+msgid "Allow or disallow user to access all part of service with full permission!"
 msgstr "اجازه یا عدم اجازه به کاربر برای دسترسی کامل به تمام بخش‌های سرویس!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:120
@@ -2367,8 +2384,7 @@ msgstr "عنوان مطلب خود را در اینجا وارد کنید"
 #: tejarak/includes/languages/trans_addons.php:136
 msgid "Url of your content appear here, click on it to view"
 msgstr ""
-"آدرس مطلب شما در این بخش نمایش داده می‌شود که با کلیک می‌توانید آن را مشاهده "
-"کنید"
+"آدرس مطلب شما در این بخش نمایش داده می‌شود که با کلیک می‌توانید آن را مشاهده کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:137
 #: tejarak/includes/languages/trans_addons.php:137
@@ -2393,14 +2409,12 @@ msgstr "چکیده"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:141
 #: tejarak/includes/languages/trans_addons.php:141
 msgid "If excerpt is empty we get it automatically from content"
-msgstr ""
-"اگر چکیده را خالی بگذارید ما آن را به صورت خودکار از روی نوشته پر میکنیم"
+msgstr "اگر چکیده را خالی بگذارید ما آن را به صورت خودکار از روی نوشته پر میکنیم"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:142
 #: tejarak/includes/languages/trans_addons.php:142
 msgid "Summaries of your content that can be used as page description."
-msgstr ""
-"خلاصه ای از نوشته شما که برای نمایش به عنوان توضیح نوشته استفاده می شود."
+msgstr "خلاصه ای از نوشته شما که برای نمایش به عنوان توضیح نوشته استفاده می شود."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:143
 #: tejarak/includes/languages/trans_addons.php:143
@@ -2415,13 +2429,13 @@ msgstr "تگ را وارد کنید"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:145
 #: tejarak/includes/languages/trans_addons.php:145
 msgid ""
-"Normally, tags are ad-hoc keywords that identify important information in "
-"your post (names, subjects, etc) that may or may not recur in other posts, "
-"while categories are pre-determined sections."
+"Normally, tags are ad-hoc keywords that identify important information in your "
+"post (names, subjects, etc) that may or may not recur in other posts, while "
+"categories are pre-determined sections."
 msgstr ""
-"به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در "
-"نوشته شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها "
-"مشخص نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
+"به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در نوشته "
+"شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها مشخص "
+"نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:146
 #: tejarak/includes/languages/trans_addons.php:146
@@ -2491,8 +2505,8 @@ msgstr "وضعیت"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:158
 #: tejarak/includes/languages/trans_addons.php:158
 msgid ""
-"All of content set as draft in default, for showing it to visitors you must "
-"set it to publish"
+"All of content set as draft in default, for showing it to visitors you must set "
+"it to publish"
 msgstr ""
 "تمام مطالب به صورت پیش فرض در حالت پیش نویس قرار می‌گیرند که شما برای انتشار و "
 "نمایش آن به بازدیدکنندگان باید وضعیت آن را به منتشرشده تغییر دهید"
@@ -2583,11 +2597,10 @@ msgstr "تنظیم تصویر شاخص"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:175
 #: tejarak/includes/languages/trans_addons.php:175
-msgid ""
-"You can see type of your file and click on image to direct access to file"
+msgid "You can see type of your file and click on image to direct access to file"
 msgstr ""
-"شما می‌توانید نوع فایل را دیده و با کلیک روی عکس آن، مستقیما به آن دسترسی "
-"داشته باشید"
+"شما می‌توانید نوع فایل را دیده و با کلیک روی عکس آن، مستقیما به آن دسترسی داشته "
+"باشید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:176
 #: tejarak/includes/languages/trans_addons.php:176
@@ -2644,8 +2657,7 @@ msgid ""
 "You can nest category under other category by making one the “Parent” of the "
 "other."
 msgstr ""
-"شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت "
-"کنید."
+"شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت کنید."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:194
 #: tejarak/includes/languages/trans_addons.php:194
@@ -2731,12 +2743,12 @@ msgstr "تفاوت بین نوشته و برگه در چیست؟"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:224
 #: tejarak/includes/languages/trans_addons.php:224
 msgid ""
-"Pages are similar to Posts in that they have a title, body text, and "
-"associated metadata, but they are different in that they are not part of the "
-"chronological blog stream, kind of like permanent posts."
+"Pages are similar to Posts in that they have a title, body text, and associated "
+"metadata, but they are different in that they are not part of the chronological "
+"blog stream, kind of like permanent posts."
 msgstr ""
-"برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی "
-"آن ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در "
+"برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی آن "
+"ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در "
 "حقیقت شبیه به یک پست دائمی هستند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:225
@@ -2831,593 +2843,603 @@ msgid "Saloos Addons Repository"
 msgstr "مخزن افزونه‌های سالوس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:247
-#: tejarak/includes/languages/trans_addons.php:247
+#: tejarak/includes/languages/trans_addons.php:248
 msgid "Backup"
 msgstr "پشتیبان‌گیری"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:248
-#: tejarak/includes/languages/trans_addons.php:248
+#: tejarak/includes/languages/trans_addons.php:249
 msgid "Project Database"
 msgstr "دیتابیس پروژه"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:249
-#: tejarak/includes/languages/trans_addons.php:249
+#: tejarak/includes/languages/trans_addons.php:250
 msgid "Upgrade"
 msgstr "ارتقا"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:252
-#: tejarak/includes/languages/trans_addons.php:252
+#: tejarak/includes/languages/trans_addons.php:255
 msgid "saloos"
 msgstr "سالوس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:253
-#: tejarak/includes/languages/trans_addons.php:253
+#: tejarak/includes/languages/trans_addons.php:256
 msgid "Powered by Saloos"
 msgstr "قدرت گرفته از سالوس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:254
-#: tejarak/includes/languages/trans_addons.php:254
+#: tejarak/includes/languages/trans_addons.php:257
 msgid "Javad Evazzadeh"
 msgstr "جواد عوض‌زاده"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:255
-#: tejarak/includes/languages/trans_addons.php:255
+#: tejarak/includes/languages/trans_addons.php:258
 msgid "Hasan Salehi"
 msgstr "حسن صالحی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:256
-#: tejarak/includes/languages/trans_addons.php:256
+#: tejarak/includes/languages/trans_addons.php:259
 msgid "Ahmad Karimi"
 msgstr "احمد کریمی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:257
-#: tejarak/includes/languages/trans_addons.php:257
+#: tejarak/includes/languages/trans_addons.php:260
 msgid "Reza Mohiti"
 msgstr "رضا محیطی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:258
 #: saloos/saloos-addons/lib/mvc/viewes/constructor.php:41
-#: tejarak/includes/languages/trans_addons.php:258
+#: tejarak/includes/languages/trans_addons.php:261
 msgid "Another Project with Saloos"
 msgstr "یک پروژه دیگر با سالوس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:259
 #: saloos/saloos-addons/lib/mvc/viewes/constructor.php:42
-#: tejarak/includes/languages/trans_addons.php:259
+#: tejarak/includes/languages/trans_addons.php:262
 msgid "Saloos is an artichokes for PHP programming!!"
 msgstr "سالوس یک کنگر برای برنامه نویسی با پی اچ پی!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:260
-#: tejarak/includes/languages/trans_addons.php:260
+#: tejarak/includes/languages/trans_addons.php:263
 msgid "Saloos is powerfull."
 msgstr "سالوس اقتدار بخش!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:262
-#: tejarak/includes/languages/trans_addons.php:262
+#: tejarak/includes/languages/trans_addons.php:265
 msgid "Insert Failed!"
 msgstr "افزودن ناموفق بود!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:264
-#: tejarak/includes/languages/trans_addons.php:264
+#: tejarak/includes/languages/trans_addons.php:267
 msgid "Update Failed!"
 msgstr "بروزرسانی ناموفق بود!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:266
 #: saloos/saloos-addons/lib/mvc/models/commit.php:81
-#: tejarak/includes/languages/trans_addons.php:266
+#: tejarak/includes/languages/trans_addons.php:269
 msgid "Delete Failed!"
 msgstr "حذف ناموفق بود!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:268
 #: saloos/saloos-addons/lib/mvc/models/commit.php:55
-#: tejarak/includes/languages/trans_addons.php:268
+#: tejarak/includes/languages/trans_addons.php:271
 msgid "Transaction Error"
 msgstr "خطا در تراکنش"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:273
-#: tejarak/includes/languages/trans_addons.php:273
+#: tejarak/includes/languages/trans_addons.php:276
 msgid ","
 msgstr "و"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:274
-#: tejarak/includes/languages/trans_addons.php:274
+#: tejarak/includes/languages/trans_addons.php:277
 msgid " ,"
 msgstr " و "
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:275
-#: tejarak/includes/languages/trans_addons.php:275
+#: tejarak/includes/languages/trans_addons.php:278
 msgid ", "
 msgstr " و "
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:279
-#: tejarak/includes/languages/trans_addons.php:279
+#: tejarak/includes/languages/trans_addons.php:282
 msgid "empty"
 msgstr "خالی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:287
 #: saloos/saloos-addons/lib/mvc/models/cp.php:219
-#: tejarak/includes/languages/trans_addons.php:287
+#: tejarak/includes/languages/trans_addons.php:290
 msgid "id does not exist!"
 msgstr "این کد در سیستم وجود ندارد!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:288
 #: saloos/saloos-addons/lib/mvc/models/cp.php:142
-#: tejarak/includes/languages/trans_addons.php:288
+#: tejarak/includes/languages/trans_addons.php:291
 msgid "all require fields must fill"
 msgstr "تمام رکوردهای الزامی باید پر شوند"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:289
 #: saloos/saloos-addons/lib/mvc/models/cp.php:148
-#: tejarak/includes/languages/trans_addons.php:289
+#: tejarak/includes/languages/trans_addons.php:292
 msgid "some fields must be change for update!"
 msgstr "برای بروزرسانی باید حداقل یک فیلد را تغییر دهید!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:291
-#: tejarak/includes/languages/trans_addons.php:291
+#: tejarak/includes/languages/trans_addons.php:294
 msgid "ermile"
 msgstr "ارمایل"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:292
-#: tejarak/includes/languages/trans_addons.php:292
+#: tejarak/includes/languages/trans_addons.php:295
 msgid "Made in IRAN"
 msgstr "ساخت ایران"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:293
-#: tejarak/includes/languages/trans_addons.php:293
+#: tejarak/includes/languages/trans_addons.php:296
 msgid "Iran"
 msgstr "ایران"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:294
-#: tejarak/includes/languages/trans_addons.php:294
+#: tejarak/includes/languages/trans_addons.php:297
 msgid "iran"
 msgstr "ایران"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:295
-#: tejarak/includes/languages/trans_addons.php:295
+#: tejarak/includes/languages/trans_addons.php:298
 msgid "Qom"
 msgstr "قم"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:296
-#: tejarak/includes/languages/trans_addons.php:296
+#: tejarak/includes/languages/trans_addons.php:299
 msgid "qom"
 msgstr "قم"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:300
-#: tejarak/includes/languages/trans_addons.php:300
+#: tejarak/includes/languages/trans_addons.php:303
 msgid "signin"
 msgstr "ورود"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:301
-#: tejarak/includes/languages/trans_addons.php:301
+#: tejarak/includes/languages/trans_addons.php:304
 msgid "sign in"
 msgstr "ورود"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:302
-#: tejarak/includes/languages/trans_addons.php:302
+#: tejarak/includes/languages/trans_addons.php:305
 msgid "sign up"
 msgstr "ثبت نام"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:303
-#: tejarak/includes/languages/trans_addons.php:303
+#: tejarak/includes/languages/trans_addons.php:306
 msgid "register"
 msgstr "ثبت نام"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:304
-#: tejarak/includes/languages/trans_addons.php:304
+#: tejarak/includes/languages/trans_addons.php:307
 msgid "home"
 msgstr "خانه"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:306
-#: tejarak/includes/languages/trans_addons.php:306
+#: tejarak/includes/languages/trans_addons.php:309
 msgid "homepage"
 msgstr "صفحه نخست"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:307
-#: tejarak/includes/languages/trans_addons.php:307
+#: tejarak/includes/languages/trans_addons.php:310
 msgid "admin"
 msgstr "ادمین"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:308
-#: tejarak/includes/languages/trans_addons.php:308
+#: tejarak/includes/languages/trans_addons.php:311
 msgid "cp"
 msgstr "کنترل‌پنل"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:309
-#: tejarak/includes/languages/trans_addons.php:309
+#: tejarak/includes/languages/trans_addons.php:312
 msgid "Cp"
 msgstr "کنترل‌پنل"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:310
-#: tejarak/includes/languages/trans_addons.php:310
+#: tejarak/includes/languages/trans_addons.php:313
 msgid "account"
 msgstr "اکانت"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:311
-#: tejarak/includes/languages/trans_addons.php:311
+#: tejarak/includes/languages/trans_addons.php:314
 msgid "SiteContent"
 msgstr "محتوای سایت"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:312
-#: tejarak/includes/languages/trans_addons.php:312
+#: tejarak/includes/languages/trans_addons.php:315
 msgid "Terms"
 msgstr "عبارات"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:313
-#: tejarak/includes/languages/trans_addons.php:313
+#: tejarak/includes/languages/trans_addons.php:316
 msgid "Comments"
 msgstr "دیدگاه ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:314
-#: tejarak/includes/languages/trans_addons.php:314
+#: tejarak/includes/languages/trans_addons.php:317
 msgid "Visitors"
 msgstr "بازدیدکنندگان"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:315
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:42
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:86
-#: tejarak/includes/languages/trans_addons.php:315
+#: tejarak/includes/languages/trans_addons.php:318
 msgid "Profile"
 msgstr "پروفایل"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:316
-#: tejarak/includes/languages/trans_addons.php:316
+#: tejarak/includes/languages/trans_addons.php:319
 msgid "Powered by Saloos."
 msgstr "قدرت گرفته از سالوس."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:317
-#: tejarak/includes/languages/trans_addons.php:317
+#: tejarak/includes/languages/trans_addons.php:320
 msgid "All right reserved."
 msgstr "تمام حقوق محفوظ است."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:318
-#: tejarak/includes/languages/trans_addons.php:318
+#: tejarak/includes/languages/trans_addons.php:321
 msgid "Comming Soon"
 msgstr "بزودی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:319
-#: tejarak/includes/languages/trans_addons.php:319
+#: tejarak/includes/languages/trans_addons.php:322
 msgid "Fantastic"
 msgstr "خارق العاده"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:320
-#: tejarak/includes/languages/trans_addons.php:320
+#: tejarak/includes/languages/trans_addons.php:323
 msgid "Copy"
 msgstr "کپی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:321
-#: tejarak/includes/languages/trans_addons.php:321
+#: tejarak/includes/languages/trans_addons.php:324
 msgid "Cut"
 msgstr "انتقال"
 
+#: saloos/saloos-addons/includes/languages/trans_addons.php:322
+#: tejarak/includes/languages/trans_addons.php:325
+msgid "Successfully"
+msgstr "با موفقیت انجام شد"
+
 #: saloos/saloos-addons/includes/languages/trans_addons.php:324
-#: tejarak/includes/languages/trans_addons.php:324
+#: tejarak/includes/languages/trans_addons.php:327
 msgid "Value"
 msgstr "مقدار"
 
+#: saloos/saloos-addons/includes/languages/trans_addons.php:325
+#: tejarak/includes/languages/trans_addons.php:328
+msgid "Login Successfully"
+msgstr "با موفقیت وارد سیستم شدید"
+
 #: saloos/saloos-addons/includes/languages/trans_addons.php:336
-#: tejarak/includes/languages/trans_addons.php:336
+#: tejarak/includes/languages/trans_addons.php:339
 msgid "page"
 msgstr "صفحه"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:340
-#: tejarak/includes/languages/trans_addons.php:340
+#: tejarak/includes/languages/trans_addons.php:343
 msgid "tag"
 msgstr "کلیدواژه"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:341
-#: tejarak/includes/languages/trans_addons.php:341
+#: tejarak/includes/languages/trans_addons.php:344
 msgid "category"
 msgstr "دسته"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:342
-#: tejarak/includes/languages/trans_addons.php:342
+#: tejarak/includes/languages/trans_addons.php:345
 msgid "filecategory"
 msgstr "دسته‌بندی فایل‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:343
-#: tejarak/includes/languages/trans_addons.php:343
+#: tejarak/includes/languages/trans_addons.php:346
 msgid "File category"
 msgstr "دسته‌بندی فایل‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:344
-#: tejarak/includes/languages/trans_addons.php:344
+#: tejarak/includes/languages/trans_addons.php:347
 msgid "File Category"
 msgstr "دسته‌بندی فایل‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:345
-#: tejarak/includes/languages/trans_addons.php:345
+#: tejarak/includes/languages/trans_addons.php:348
 msgid "Filecategories"
 msgstr "دسته‌بندی فایل‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:346
-#: tejarak/includes/languages/trans_addons.php:346
+#: tejarak/includes/languages/trans_addons.php:349
 msgid "attachment"
 msgstr "ضمیمه"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:348
-#: tejarak/includes/languages/trans_addons.php:348
+#: tejarak/includes/languages/trans_addons.php:351
 msgid "search"
 msgstr "جستجو"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:349
-#: tejarak/includes/languages/trans_addons.php:349
+#: tejarak/includes/languages/trans_addons.php:352
 msgid "upload"
 msgstr "بارگذاری"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:350
-#: tejarak/includes/languages/trans_addons.php:350
+#: tejarak/includes/languages/trans_addons.php:353
 msgid "Control Panel"
 msgstr "کنترل پنل"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:352
-#: tejarak/includes/languages/trans_addons.php:352
+#: tejarak/includes/languages/trans_addons.php:355
 msgid "Editor"
 msgstr "ویراستار"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:353
-#: tejarak/includes/languages/trans_addons.php:353
+#: tejarak/includes/languages/trans_addons.php:356
 msgid "editor"
 msgstr "ویراستار"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:354
-#: tejarak/includes/languages/trans_addons.php:354
+#: tejarak/includes/languages/trans_addons.php:357
 msgid "Administrator"
 msgstr "مدیر"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:355
-#: tejarak/includes/languages/trans_addons.php:355
+#: tejarak/includes/languages/trans_addons.php:358
 msgid "Writer"
 msgstr "نویسنده"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:356
-#: tejarak/includes/languages/trans_addons.php:356
+#: tejarak/includes/languages/trans_addons.php:359
 msgid "utility"
 msgstr "ابزار"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:357
-#: tejarak/includes/languages/trans_addons.php:357
+#: tejarak/includes/languages/trans_addons.php:360
 msgid "Utility"
 msgstr "ابزار"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:358
-#: tejarak/includes/languages/trans_addons.php:358
+#: tejarak/includes/languages/trans_addons.php:361
 msgid "Tools"
 msgstr "ابزارها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:359
-#: tejarak/includes/languages/trans_addons.php:359
+#: tejarak/includes/languages/trans_addons.php:362
 msgid "tools"
 msgstr "ابزارها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:360
-#: tejarak/includes/languages/trans_addons.php:360
+#: tejarak/includes/languages/trans_addons.php:363
 msgid "tool"
 msgstr "ابزار"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:364
-#: tejarak/includes/languages/trans_addons.php:364
+#: tejarak/includes/languages/trans_addons.php:367
 msgid "between 5-40 character. be tricky!"
 msgstr "بین ۵ تا ۴۰ کاراکتر. در انتخاب کلمه عبور دقت به خرج دهید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:371
-#: tejarak/includes/languages/trans_addons.php:371
+#: tejarak/includes/languages/trans_addons.php:374
 msgid "book"
 msgstr "کتاب"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:372
-#: tejarak/includes/languages/trans_addons.php:372
+#: tejarak/includes/languages/trans_addons.php:375
 msgid "books"
 msgstr "کتاب‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:374
-#: tejarak/includes/languages/trans_addons.php:374
+#: tejarak/includes/languages/trans_addons.php:377
 msgid "Bookcategories"
 msgstr "دسته‌بندی کتاب"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:375
-#: tejarak/includes/languages/trans_addons.php:375
+#: tejarak/includes/languages/trans_addons.php:378
 msgid "bookcategory"
 msgstr "دسته‌بندی کتاب"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:387
-#: tejarak/includes/languages/trans_addons.php:387
+#: tejarak/includes/languages/trans_addons.php:390
 msgid "Socialnetwork"
 msgstr "شبکه‌های اجتماعی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:388
-#: tejarak/includes/languages/trans_addons.php:388
+#: tejarak/includes/languages/trans_addons.php:391
 msgid "socialnetwork"
 msgstr "شبکه‌اجتماعی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:390
-#: tejarak/includes/languages/trans_addons.php:390
+#: tejarak/includes/languages/trans_addons.php:393
 msgid "Title"
 msgstr "عنوان"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:391
-#: tejarak/includes/languages/trans_addons.php:391
+#: tejarak/includes/languages/trans_addons.php:394
 #: tejarak/includes/languages/trans_twig.php:27
 msgid "Date"
 msgstr "تاریخ"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:392
-#: tejarak/includes/languages/trans_addons.php:392
+#: tejarak/includes/languages/trans_addons.php:395
 msgid "Size"
 msgstr "اندازه"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:393
-#: tejarak/includes/languages/trans_addons.php:393
+#: tejarak/includes/languages/trans_addons.php:396
 msgid "Ext"
 msgstr "پسوند"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:394
-#: tejarak/includes/languages/trans_addons.php:394
+#: tejarak/includes/languages/trans_addons.php:397
 msgid "pages"
 msgstr "برگه‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:395
-#: tejarak/includes/languages/trans_addons.php:395
+#: tejarak/includes/languages/trans_addons.php:398
 msgid "tags"
 msgstr "کلیدواژه‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:396
-#: tejarak/includes/languages/trans_addons.php:396
+#: tejarak/includes/languages/trans_addons.php:399
 msgid "categories"
 msgstr "دسته‌بندی‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:397
-#: tejarak/includes/languages/trans_addons.php:397
+#: tejarak/includes/languages/trans_addons.php:400
 msgid "filecategories"
 msgstr "دسته‌بندی فایل‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:398
-#: tejarak/includes/languages/trans_addons.php:398
+#: tejarak/includes/languages/trans_addons.php:401
 msgid "bookcategories"
 msgstr "دسته‌بندی کتاب‌ها"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:399
-#: tejarak/includes/languages/trans_addons.php:399
+#: tejarak/includes/languages/trans_addons.php:402
 msgid "permissions"
 msgstr "سطوح‌دسترسی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:400
-#: tejarak/includes/languages/trans_addons.php:400
+#: tejarak/includes/languages/trans_addons.php:403
 msgid "Permissions"
 msgstr "سطوح‌دسترسی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:401
-#: tejarak/includes/languages/trans_addons.php:401
+#: tejarak/includes/languages/trans_addons.php:404
 msgid "logout"
 msgstr "خروج از سیستم"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:402
-#: tejarak/includes/languages/trans_addons.php:402
+#: tejarak/includes/languages/trans_addons.php:405
 msgid "lock"
 msgstr "قفل سیستم"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:403
-#: tejarak/includes/languages/trans_addons.php:403
+#: tejarak/includes/languages/trans_addons.php:406
 msgid "profile"
 msgstr "پروفایل"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:404
-#: tejarak/includes/languages/trans_addons.php:404
+#: tejarak/includes/languages/trans_addons.php:407
 msgid "You can't view this part of system"
 msgstr "شما نمی‌توانید این بخش از سیستم را مشاهده کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:406
-#: tejarak/includes/languages/trans_addons.php:406
+#: tejarak/includes/languages/trans_addons.php:409
 msgid "you can't edit"
 msgstr "شما نمی‌توانید ویرایش کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:408
-#: tejarak/includes/languages/trans_addons.php:408
+#: tejarak/includes/languages/trans_addons.php:411
 msgid "You can't access to this part of system"
 msgstr "شما نمی‌توانید به این بخش از سیستم دسترسی داشته باشید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:414
-#: tejarak/includes/languages/trans_addons.php:414
+#: tejarak/includes/languages/trans_addons.php:417
 msgid "main URL"
 msgstr "آدرس اصلی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:433
-#: tejarak/includes/languages/trans_addons.php:433
+#: tejarak/includes/languages/trans_addons.php:436
 msgid "Status of sms service"
 msgstr "وضعیت سرویس پیامک"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:436
-#: tejarak/includes/languages/trans_addons.php:436
+#: tejarak/includes/languages/trans_addons.php:439
 msgid "service"
 msgstr "سرویس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:458
-#: tejarak/includes/languages/trans_addons.php:458
+#: tejarak/includes/languages/trans_addons.php:461
 msgid "send"
 msgstr "ارسال"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:460
-#: tejarak/includes/languages/trans_addons.php:460
+#: tejarak/includes/languages/trans_addons.php:463
 msgid "Recovery account"
 msgstr "بازیابی اکانت"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:470
-#: tejarak/includes/languages/trans_addons.php:470
+#: tejarak/includes/languages/trans_addons.php:473
 msgid "Account Status"
 msgstr "وضعیت اکانت"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:477
-#: tejarak/includes/languages/trans_addons.php:477
+#: tejarak/includes/languages/trans_addons.php:480
 msgid "Signup Settings"
 msgstr "تنظیمات ثبت‌نام"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:482
-#: tejarak/includes/languages/trans_addons.php:482
+#: tejarak/includes/languages/trans_addons.php:485
 msgid "Register failed!"
 msgstr "ثبت‌نام ناموفق بود!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:484
-#: tejarak/includes/languages/trans_addons.php:484
+#: tejarak/includes/languages/trans_addons.php:487
 msgid "your recovery code is"
 msgstr "کد بازیابی کلمه عبور شما"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:503
-#: tejarak/includes/languages/trans_addons.php:503
+#: tejarak/includes/languages/trans_addons.php:506
 msgid "You are editing permission"
 msgstr "شما در حال ویرایش سطح‌دسترسی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:504
-#: tejarak/includes/languages/trans_addons.php:504
+#: tejarak/includes/languages/trans_addons.php:507
 msgid "We send a verification code for you"
 msgstr "ما کد اعتبارسنجی را برای شما ارسال خواهیم کرد"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:505
-#: tejarak/includes/languages/trans_addons.php:505
+#: tejarak/includes/languages/trans_addons.php:508
 msgid "We send a verification code to this number"
 msgstr "کد اعتبارسنجی به این شماره ارسال خواهد شد"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:509
-#: tejarak/includes/languages/trans_addons.php:509
+#: tejarak/includes/languages/trans_addons.php:512
 msgid "Now we only support IRAN!"
 msgstr "در حال حاضر ما فقط به شماره های ایران سرویس می‌دهیم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:510
-#: tejarak/includes/languages/trans_addons.php:510
+#: tejarak/includes/languages/trans_addons.php:513
 msgid "Thanks for using our service"
 msgstr "متشکریم که از سرویس ما استفاده می‌کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:511
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:45
-#: tejarak/includes/languages/trans_addons.php:511
+#: tejarak/includes/languages/trans_addons.php:514
 msgid "Dear user"
 msgstr "کاربر گرامی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:512
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:46
-#: tejarak/includes/languages/trans_addons.php:512
+#: tejarak/includes/languages/trans_addons.php:515
 msgid "For using this service we need to register your phone number."
 msgstr "برای استفاده از این سرویس ما نیاز به ثبت شماره موبایل شما داریم."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:513
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:47
-#: tejarak/includes/languages/trans_addons.php:513
+#: tejarak/includes/languages/trans_addons.php:516
 msgid "Please send your number with below keyboard to complete registeration."
 msgstr "لطفا شماره خود را از طریق منوی زیر برای تکمیل ثبت‌نام ارسال نمایید."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:514
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:114
-#: tejarak/includes/languages/trans_addons.php:514
+#: tejarak/includes/languages/trans_addons.php:517
 msgid "Dear friend"
 msgstr "دوست عزیز"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:515
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:115
-#: tejarak/includes/languages/trans_addons.php:515
+#: tejarak/includes/languages/trans_addons.php:518
 msgid "We need your phone number to verifying your account."
 msgstr "ما برای اعتبارسنجی اکانت، نیاز به شماره موبایل شما داریم."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:516
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:116
-#: tejarak/includes/languages/trans_addons.php:516
+#: tejarak/includes/languages/trans_addons.php:519
 msgid ""
 "If you dont want share your number, we cant presenting our services to you!"
 msgstr ""
@@ -3425,34 +3447,34 @@ msgstr ""
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:517
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:122
-#: tejarak/includes/languages/trans_addons.php:517
+#: tejarak/includes/languages/trans_addons.php:520
 msgid "Registering user is successful."
 msgstr "ثبت‌نام کاربر با موفقیت به انجام رسید."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:518
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:134
-#: tejarak/includes/languages/trans_addons.php:518
+#: tejarak/includes/languages/trans_addons.php:521
 msgid "Cancel registration and return to main menu"
 msgstr "انصراف از ثبت‌نام و بازگشت به منوی اصلی"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:519
-#: tejarak/includes/languages/trans_addons.php:519
+#: tejarak/includes/languages/trans_addons.php:522
 msgid "Please only use below keyboard"
 msgstr "لطفا تنها از منوی زیر استفاده کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:520
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:143
-#: tejarak/includes/languages/trans_addons.php:520
+#: tejarak/includes/languages/trans_addons.php:523
 msgid "We need your contact!"
 msgstr "ما به مخاطب شما نیاز داریم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:521
-#: tejarak/includes/languages/trans_addons.php:521
+#: tejarak/includes/languages/trans_addons.php:524
 msgid "Register User 📱"
 msgstr "ثبت کاربر  📱"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:522
-#: tejarak/includes/languages/trans_addons.php:522
+#: tejarak/includes/languages/trans_addons.php:525
 msgid "Register User"
 msgstr "ثبت کاربر"
 
@@ -3460,69 +3482,77 @@ msgstr "ثبت کاربر"
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:32
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:76
 #: saloos/saloos-addons/lib/telegram/commands/step_register.php:172
-#: tejarak/includes/languages/trans_addons.php:523
+#: tejarak/includes/languages/trans_addons.php:526
 msgid "Return"
 msgstr "بازگشت"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:524
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:72
-#: tejarak/includes/languages/trans_addons.php:524
+#: tejarak/includes/languages/trans_addons.php:527
 msgid "Register Mobile Number 📱"
 msgstr "ثبت شماره موبایل 📱"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:525
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:28
-#: tejarak/includes/languages/trans_addons.php:525
+#: tejarak/includes/languages/trans_addons.php:528
 msgid "Register Mobile Number"
 msgstr "ثبت شماره موبایل"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:526
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:24
-#: tejarak/includes/languages/trans_addons.php:526
+#: tejarak/includes/languages/trans_addons.php:529
 msgid "Register Address"
 msgstr "ثبت آدرس"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:527
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:43
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:87
-#: tejarak/includes/languages/trans_addons.php:527
+#: tejarak/includes/languages/trans_addons.php:530
 msgid "By completing your profile, help us to present better service."
 msgstr "با تکمیل پروفایل خود، به ما در ارائه سرویس بهتر کمک کنید."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:528
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:44
 #: saloos/saloos-addons/lib/telegram/commands/menu_profile.php:88
-#: tejarak/includes/languages/trans_addons.php:528
+#: tejarak/includes/languages/trans_addons.php:531
 msgid "We will thank you for this."
 msgstr "ما از این اقدام شما تشکر می‌کنیم."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:529
-#: tejarak/includes/languages/trans_addons.php:529
+#: tejarak/includes/languages/trans_addons.php:532
 msgid "Your phone number registered successfully;)"
 msgstr "شماره موبایل شما با موفقیت ثبت شد;)"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:530
 #: saloos/saloos-addons/lib/telegram/log.php:406
-#: tejarak/includes/languages/trans_addons.php:530
+#: tejarak/includes/languages/trans_addons.php:533
 msgid "We dont need another users contact:?)"
 msgstr "ما به مخاطب سایر کاربران نیاز نداریم:؟)"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:531
 #: saloos/saloos-addons/lib/telegram/log.php:414
-#: tejarak/includes/languages/trans_addons.php:531
+#: tejarak/includes/languages/trans_addons.php:534
 msgid "We need mobile number!"
 msgstr "ما به شماره موبایل نیاز داریم!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:532
-#: tejarak/includes/languages/trans_addons.php:532
-#: tejarak/includes/languages/trans_twig.php:114
+#: tejarak/includes/languages/trans_addons.php:535
+#: tejarak/includes/languages/trans_twig.php:117
 msgid " "
 msgstr " "
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:535
-#: tejarak/includes/languages/trans_addons.php:535
+#: tejarak/includes/languages/trans_addons.php:538
 msgid "Select"
 msgstr "انتخاب"
+
+#: saloos/saloos-addons/lib/db/cats.php:153
+msgid "Cats not found"
+msgstr ""
+
+#: saloos/saloos-addons/lib/db/cats.php:158
+msgid "Invalid cat"
+msgstr ""
 
 #: saloos/saloos-addons/lib/db/db_errors.php:3
 msgid "user id not found"
@@ -3544,11 +3574,19 @@ msgstr "زبان جدید تنظیم شد"
 msgid "undefined error was happend"
 msgstr "خطای نامشخصی رخ داد!"
 
-#: saloos/saloos-addons/lib/mvc/models/account.php:146
+#: saloos/saloos-addons/lib/db/terms.php:59
+msgid "term_slug not found"
+msgstr ""
+
+#: saloos/saloos-addons/lib/db/terms.php:69
+msgid "term_url not found"
+msgstr ""
+
+#: saloos/saloos-addons/lib/mvc/models/account.php:158
 msgid "logout successfully"
 msgstr "خروج موفقیت آمیز"
 
-#: saloos/saloos-addons/lib/mvc/models/account.php:177
+#: saloos/saloos-addons/lib/mvc/models/account.php:189
 msgid "you want hijack us!!?"
 msgstr "شما قصد نفوذ دارید!!؟"
 
@@ -3613,7 +3651,7 @@ msgstr "اوقات خوبی داشته باشید."
 msgid "Bye Bye :name ;)"
 msgstr "خدانگهدار :name جون;)"
 
-#: tejarak/content_ganje/home/model.php:177
+#: tejarak/content_ganje/home/model.php:179
 msgid "to"
 msgstr "تا"
 
@@ -3699,6 +3737,18 @@ msgstr "دور کاری"
 msgid "accepted"
 msgstr "تاییدشده"
 
+#: tejarak/includes/languages/trans_addons.php:247
+msgid "Current Project Repository"
+msgstr ""
+
+#: tejarak/includes/languages/trans_addons.php:251
+msgid "Show sql log data"
+msgstr ""
+
+#: tejarak/includes/languages/trans_addons.php:252
+msgid "Show sql error data"
+msgstr ""
+
 #: tejarak/includes/languages/trans_twig.php:6
 msgid "Ganje, first one"
 msgstr "گنجه؛ اولین سرویس"
@@ -3716,8 +3766,8 @@ msgid ""
 "Integration with services which will soon be public lead no need for small "
 "businesses, costly and inconvenience."
 msgstr ""
-"یکپارچگی آن با سرویس‌هایی که به امید خدا بزودی عمومی‌ خواهند شد، منجر به عدم "
-"نیاز کسب و کارهای کوچک به سرویس‌های پیچیده، هزینه‌بر و سرسام آور خواهد بود!"
+"یکپارچگی آن با سرویس‌هایی که به امید خدا بزودی عمومی‌ خواهند شد، منجر به عدم نیاز "
+"کسب و کارهای کوچک به سرویس‌های پیچیده، هزینه‌بر و سرسام آور خواهد بود!"
 
 #: tejarak/includes/languages/trans_twig.php:10
 msgid "About"
@@ -3830,8 +3880,7 @@ msgstr "مجموع"
 #: tejarak/includes/languages/trans_twig.php:49
 msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."
 msgstr ""
-" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت "
-"نمایید."
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت نمایید."
 
 #: tejarak/includes/languages/trans_twig.php:50
 msgid "I had gone out for Ermile!"
@@ -3840,8 +3889,7 @@ msgstr "برای کار ارمایل بیرون رفته بودم!"
 #: tejarak/includes/languages/trans_twig.php:51
 msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."
 msgstr ""
-" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت "
-"نمایید."
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت نمایید."
 
 #: tejarak/includes/languages/trans_twig.php:57
 msgid "Select all months"
@@ -3932,122 +3980,134 @@ msgid "MohamadHosein Hamzehnejadi"
 msgstr "محمدحسین حمزه‌نژادی"
 
 #: tejarak/includes/languages/trans_twig.php:84
+msgid "Saman Soltani"
+msgstr "سامان سلطانی"
+
+#: tejarak/includes/languages/trans_twig.php:85
 msgid "hours in this week"
 msgstr "ساعت در این هفته"
 
-#: tejarak/includes/languages/trans_twig.php:85
+#: tejarak/includes/languages/trans_twig.php:86
 msgid "hours in this month"
 msgstr "ساعت در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:86
+#: tejarak/includes/languages/trans_twig.php:87
 msgid "hours remote in this month"
 msgstr "ساعت ریموت در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:87
+#: tejarak/includes/languages/trans_twig.php:88
 msgid "hours in idle this month"
 msgstr "ساعت هدر داده در این ماه"
 
-#: tejarak/includes/languages/trans_twig.php:88
+#: tejarak/includes/languages/trans_twig.php:89
 msgid "Founder & CEO"
 msgstr "موسس و مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:89
+#: tejarak/includes/languages/trans_twig.php:90
 msgid "Founder and CEO"
 msgstr "موسس و مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:90
+#: tejarak/includes/languages/trans_twig.php:91
 msgid "CEO & Solution Designer"
 msgstr "مدیرعامل و طراح راه‌کار"
 
-#: tejarak/includes/languages/trans_twig.php:91
+#: tejarak/includes/languages/trans_twig.php:92
 msgid "CEO and Solution Designer"
 msgstr "مدیرعامل و طراح راه‌کار"
 
-#: tejarak/includes/languages/trans_twig.php:92
+#: tejarak/includes/languages/trans_twig.php:93
 msgid "CEO"
 msgstr "مدیرعامل"
 
-#: tejarak/includes/languages/trans_twig.php:93
+#: tejarak/includes/languages/trans_twig.php:94
 msgid "Solution Designer"
 msgstr "طراح راهکار"
 
-#: tejarak/includes/languages/trans_twig.php:94
+#: tejarak/includes/languages/trans_twig.php:95
 msgid "Full Stack Developer"
 msgstr "برنامه‌نویس تمام‌عیار"
 
-#: tejarak/includes/languages/trans_twig.php:95
+#: tejarak/includes/languages/trans_twig.php:96
 msgid "Backend Developer"
 msgstr "برنامه‌نویس سمت سرور"
 
-#: tejarak/includes/languages/trans_twig.php:96
+#: tejarak/includes/languages/trans_twig.php:97
 msgid "Frontend Designer"
 msgstr "طراح رابط‌کاربری"
 
-#: tejarak/includes/languages/trans_twig.php:97
+#: tejarak/includes/languages/trans_twig.php:98
 msgid "UI Designer"
 msgstr "طراح رابط‌کاربری"
 
-#: tejarak/includes/languages/trans_twig.php:98
+#: tejarak/includes/languages/trans_twig.php:99
 msgid "Graphic Designer"
 msgstr "طراح گرافیک"
 
-#: tejarak/includes/languages/trans_twig.php:99
+#: tejarak/includes/languages/trans_twig.php:100
 msgid "Shareholder"
 msgstr "سهام‌دار"
 
-#: tejarak/includes/languages/trans_twig.php:100
+#: tejarak/includes/languages/trans_twig.php:101
 msgid "Chrikt"
 msgstr "چریکت"
 
-#: tejarak/includes/languages/trans_twig.php:101
+#: tejarak/includes/languages/trans_twig.php:102
 msgid "Content Expert"
 msgstr "کارشناس محتوا"
 
-#: tejarak/includes/languages/trans_twig.php:102
+#: tejarak/includes/languages/trans_twig.php:103
 msgid "Service"
 msgstr "مسئول خدمات"
 
-#: tejarak/includes/languages/trans_twig.php:103
+#: tejarak/includes/languages/trans_twig.php:104
 msgid "UI Developer"
 msgstr "برنامه‌نویس رابط‌کاربری"
 
-#: tejarak/includes/languages/trans_twig.php:104
+#: tejarak/includes/languages/trans_twig.php:105
 msgid "Frontend Developer"
 msgstr "برنامه‌نویس سمت کاربر"
 
-#: tejarak/includes/languages/trans_twig.php:105
+#: tejarak/includes/languages/trans_twig.php:106
 msgid "Research & Develepment"
 msgstr "تحقیق و توسعه"
 
-#: tejarak/includes/languages/trans_twig.php:106
+#: tejarak/includes/languages/trans_twig.php:107
 msgid "Research &amp; Develepment"
 msgstr "تحقیق و توسعه"
 
-#: tejarak/includes/languages/trans_twig.php:107
+#: tejarak/includes/languages/trans_twig.php:108
 msgid "UI Expert"
 msgstr "متخصص رابط‌کاربری"
 
-#: tejarak/includes/languages/trans_twig.php:108
+#: tejarak/includes/languages/trans_twig.php:109
 msgid "Android Developer"
 msgstr "توسعه‌دهنده اندروید"
 
-#: tejarak/includes/languages/trans_twig.php:109
+#: tejarak/includes/languages/trans_twig.php:110
 msgid "IOS Developer"
 msgstr "توسعه‌دهنده آی‌اواس"
 
-#: tejarak/includes/languages/trans_twig.php:110
+#: tejarak/includes/languages/trans_twig.php:111
 msgid "WP Developer"
 msgstr "توسعه‌دهنده ویندوزفون"
 
-#: tejarak/includes/languages/trans_twig.php:111
+#: tejarak/includes/languages/trans_twig.php:112
+msgid "Nothing!"
+msgstr "بیکار!"
+
+#: tejarak/includes/languages/trans_twig.php:113
+msgid "Traveler"
+msgstr "مسافر"
+
+#: tejarak/includes/languages/trans_twig.php:114
 msgid "name"
 msgstr "نام"
 
-#: tejarak/includes/languages/trans_twig.php:112
+#: tejarak/includes/languages/trans_twig.php:115
 msgid "summary"
 msgstr "خلاصه"
 
-#: tejarak/includes/languages/trans_twig.php:113
+#: tejarak/includes/languages/trans_twig.php:116
 msgid "ganje"
 msgstr "گنجه"
 
@@ -4069,8 +4129,13 @@ msgstr "تجارک"
 
 #: tejarak/includes/mvc/view.php:11
 msgid "Tejarak was born to serve small and beautiful service for e-business"
-msgstr ""
-"تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+msgstr "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+
+#~ msgid "Empty query!"
+#~ msgstr "کوئری خالی!"
+
+#~ msgid "Fail on tranfering file, move in temp"
+#~ msgstr "خطا در انتقال فایل، انتقال به مکان‌موقت"
 
 #~ msgid "I went out for Ermile!"
 #~ msgstr "برای کار ارمایل بیرون رفته بودم!"
