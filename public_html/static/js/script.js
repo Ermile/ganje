@@ -447,7 +447,18 @@ function generateTimeFilter()
  */
 function navigate(_path)
 {
-  Navigate({ url: _path });
+  var sendTimeout = $('body').attr('data-sending-timeout');
+  if(sendTimeout)
+  {
+    clearTimeout(sendTimeout);
+  }
+  var sendingTimeout = setTimeout(function()
+  {
+		Navigate({ url: _path });
+    $('body').attr('data-sending-timeout', null);
+
+  }, 500);
+  $('body').attr('data-sending-timeout', sendingTimeout);
 }
 
 

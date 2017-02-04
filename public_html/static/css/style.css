@@ -219,7 +219,7 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 .filters {margin-top: 1em;font-size: 1.5em;text-align: left}
 .rtl .filters{text-align: right}
 .filters .datepicker{display: block;overflow: hidden;}
-.filters .datepicker span{position:relative;padding:0 .15em;width:auto;font-size:2.5em;font-weight:700;border-radius:.3em;background:#000;box-shadow:0 2px 5px rgba(0,0,0,0.7);text-shadow:0 1px 2px #000;display:inline-block;color:#ccc;transition:.3s;overflow:hidden;font-family:cursive;cursor: pointer;}
+.filters .datepicker span{position:relative;padding:0 .15em;width:auto;font-size:2.5em;font-weight:700;border-radius:.3em;background:#000;box-shadow:0 2px 5px rgba(0,0,0,0.7);text-shadow:0 1px 2px #000;display:inline-block;color:#ccc;transition:.3s;overflow:hidden;cursor: pointer;height:45px;line-height:55px}
 .filters .datepicker span:hover{color:#fff}
 .filters .datepicker span select{display:none}
 .filters .datepicker span:after{content:"";position:absolute;top:50%;left:0;z-index:5;width:100%;margin-top:-1px;height:2px;background-color:#000;background-color:rgba(0,0,0,0.4)}
@@ -297,7 +297,7 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 .et tbody tr[data-status='remove'] td:last-child:after{content:"🚫";}
 .et tbody tr[data-status='awaiting'] td:last-child:after{content:"🚩";color:#c5c5c5}
 
-.loading-page .et table:before{content:"";position:fixed;top:0;bottom:0;right:0;left:0;background-color:rgba(255,255,255,0.2)}
+.loading-page .et table:before{content:"";top:0;bottom:0;right:0;left:0;background-color:rgba(255,255,255,0.2);display:none}
 .loading-page .et table:after{content:"";position:fixed;top:40vh;right:0;left:0;margin:0 auto;padding:1em;width:10vh;height:10vh;background-color:#fff;animation: sk-rotateplane 1.2s infinite ease-in-out;}
 @keyframes sk-rotateplane {0% { transform: perspective(120px) rotateX(0deg) rotateY(0deg);} 50% { transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);} 100% { transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);}}
 
