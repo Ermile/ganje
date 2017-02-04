@@ -149,7 +149,7 @@ body#homepage{height:100%}
 .card img.random {position: relative;top: 25px;}
 .card.selected .info .id {font-weight: bold;color:#000}
 
-.card::after{content:attr(data-id);position:absolute;top:-0.3em;right:-0.3em;font-family:sans-serif;line-height:1.4em;width:1.5em;height:1.5em;border-radius:50%;background-color:#e0e1e2;color:rgba(0,0,0,0.85);cursor:pointer;z-index:2;animation:pulseOff 2s infinite;box-shadow:0 0 0 rgba(204,169,44,0.4)}
+.card::after{content:attr(data-id-show);position:absolute;top:-0.3em;right:-0.3em;font-family:sans-serif;line-height:1.4em;width:1.5em;height:1.5em;border-radius:50%;background-color:#e0e1e2;color:rgba(0,0,0,0.85);cursor:pointer;z-index:2;animation:pulseOff 2s infinite;box-shadow:0 0 0 rgba(204,169,44,0.4)}
 .rtl .card::after{left:-0.3em;right: initial;}
 .card.present:not(.remote)::after{animation:pulseOn 1.25s infinite cubic-bezier(0.66,0,0,1);box-shadow:0 0 0 0 rgba(15,161,166,0.7);background-color:#0fa1a6;color:#fff}
 .card.present, .detail .card {opacity: 0.8;}

@@ -31,7 +31,7 @@
 {% for i, user in datatable.list %}
 
 {%set perm = user.permission %}
-      <div data-id="{{user.id}}" class="card {% if user.hour_start is not null %}present{%endif%} {{perm}}">
+      <div data-id="{{user.id}}" data-id-show="{{user.id | persian}}" class="card {% if user.hour_start is not null %}present{%endif%} {{perm}}">
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
 {%set folderName = url.domain ~ "/" %}
 {%set avatar = url.static ~ 'images/avatar/' ~ folderName ~ user.id ~ '.jpg' %}
@@ -55,7 +55,7 @@
  </content>
 
 {%for key, user in datatable.list %}
-  <content data-id="{{key}}" class="page detail" data-status="{%if user.hour_start is not null %}on{%else%}off{%endif%}">
+  <content data-id="{{key}}" data-id-show="{{key | persian}}" class="page detail" data-status="{%if user.hour_start is not null %}on{%else%}off{%endif%}">
    <div class="back"></div>
    <div class="row auto">
     <div class="span2"></div>
