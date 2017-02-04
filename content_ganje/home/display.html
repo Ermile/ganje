@@ -13,6 +13,7 @@
       <h1>{% trans "Ermile" %}</h1>
      </header>
 
+{% if url.domain != "germile"%}
      <div class='deadline {{deadline.class}}' title='{{deadline.date | jdate("d/m/Y")}}'>
       <span class='title'>{{deadline.title}}</span>
       <div class="info">
@@ -20,6 +21,7 @@
        <span>{%trans "days left"%}</span>
       </div>
      </div>
+{% endif%}
 
 {% if site.currentlang == "fa" %}
      <div id="poem"><span>از دست غیبت تو شکایت نمی‌کنم</span><br /><span>تا نیست غیبتی نبود لذت حضور</span></div>
