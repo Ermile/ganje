@@ -123,7 +123,11 @@ class staff {
 	public static function get_one($_user_id)
 	{
 		$resutl = self::get_all(['user_id' => $_user_id]);
-		return $resutl[$_user_id];
+		if(isset($resutl[$_user_id]))
+		{
+			return $resutl[$_user_id];
+		}
+		return 0;
 	}
 
 

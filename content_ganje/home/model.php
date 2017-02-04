@@ -93,7 +93,7 @@ class model extends \mvc\model
 	public function get_list_of_users()
 	{
 		// the remote users can see her name
-		if($this->access('ganje', 'remote', 'add'))
+		if($this->access('ganje', 'remote', 'view'))
 		{
 			$return =
 			[

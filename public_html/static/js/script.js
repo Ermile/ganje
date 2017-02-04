@@ -42,7 +42,7 @@ function changeTypeOfRecod(_this, _field)
       abort: true,
       success: function(e, data, x)
       {
-        var myResult   = x.responseJSON.result;
+        var myResult   = x.responseJSON.msg.result;
         if(myResult == undefined)
         {
           return false;
@@ -789,7 +789,7 @@ function setTime(_id)
       abort: true,
       success: function(e, data, x)
       {
-        var myResult   = x.responseJSON.result;
+        var myResult   = x.responseJSON.msg.result;
         var elSelected = $('.dashboard .card[data-id="'+_id+'"]');
         var elStatus   = $('.page[data-id="'+_id+'"]');
 
