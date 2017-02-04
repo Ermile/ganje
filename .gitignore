@@ -6,3 +6,4 @@
 /public_html/sitemap.xml
 /config.me.php
 /includes/cls/database/backup
+/includes/cls/database/log
