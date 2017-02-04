@@ -33,7 +33,8 @@
 {%set perm = user.permission %}
       <div data-id="{{user.id}}" class="card {% if user.hour_start is not null %}present{%endif%} {{perm}}">
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
-{%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
+{%set folderName = url.domain ~ "/" %}
+{%set avatar = url.static ~ 'images/avatar/' ~ folderName ~ user.id ~ '.jpg' %}
 {%set name = user.displayname %}
 {%set position = (user.meta | decode('position'))%}
        <img src="{{avatar | exist(avatar_default)}}">
@@ -61,8 +62,9 @@
     <div class="span3">
      <div class="card">
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
-{%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
-{%set avatar2 = url.static ~ 'images/avatar/' ~ user.id ~ '-v2.jpg' %}
+{%set folderName = url.domain ~ "/" %}
+{%set avatar = url.static ~ 'images/avatar/'  ~ folderName ~ user.id ~ '.jpg' %}
+{%set avatar2 = url.static ~ 'images/avatar/'  ~ folderName ~ user.id ~ '-v2.jpg' %}
 {% set name = user.displayname %}
 {%set position = (user.meta | decode('position'))%}
 

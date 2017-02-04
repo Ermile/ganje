@@ -5,7 +5,8 @@
    <div class="span9 cardList">
 {%for key, user in users%}
 {%set avatar_default = url.static ~ 'images/avatar/default/' ~ random(14) ~ '.png' %}
-{%set avatar = url.static ~ 'images/avatar/' ~ user.id ~ '.jpg' %}
+{%set folderName = url.domain ~ "/" %}
+{%set avatar = url.static ~ 'images/avatar/'  ~ folderName ~ user.id ~ '.jpg' %}
 {%set name = user.displayname%}
 {%set position = user.meta.position%}
     <div class="card {%if default_user == key%}present{%endif%}" data-user-id="{{user.id}}">
