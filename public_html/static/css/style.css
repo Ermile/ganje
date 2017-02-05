@@ -141,7 +141,7 @@ body#homepage{height:100%}
 @media screen and (min-width: 2000px) { .register .dashboard{font-size: 2em;}}
 
 /* card ui */
-.card {display: inline-block;margin: 1em 0.5em;width:9em;font-size:0.9em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;transition: all 0.3s ease-in-out;position: relative;}
+.card {display: inline-block;margin: 1em 0.5em;width:9em;height:11em;font-size:0.9em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;transition: all 0.3s ease-in-out;position: relative;}
 .card.selected {opacity: 0.5;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .card.present, .detail .card {opacity: 1;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
 .card.present.selected{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
@@ -211,7 +211,7 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 
 .cardList .card:hover .absolute-info{opacity:1}
 .cardList .card.present .absolute-info{opacity:1}
-.cardList .absolute-info{position: absolute;width: 100%; top: 100%; left: 0;background-color: rgba(241, 241, 241, 0.75); z-index: 2; text-align: center;font-weight: bold; opacity: 0; transition: opacity 0.2s ease-in-out;}
+.cardList .absolute-info{position: absolute;width: 100%;bottom:0;left: 0;background-color: rgba(241, 241, 241, 0.75); z-index: 2; text-align: center;font-weight: bold; opacity: 0; transition: opacity 0.2s ease-in-out;}
 .cardList .field{display:inline-block;width:90%}
 
 .row.inner{margin:1% auto 0;width:96%;}
