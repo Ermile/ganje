@@ -228,8 +228,9 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 .filters .removeFilter{transition:0.3s;border-radius: 0.2em;width:3em;display:block;width:100%;}
 .filters .removeFilter:hover{color:#c30d0d;}
 .filters .export {width: 100%;display: block;}
-#langList a{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:block;border-radius: 0.2em;font-size: 1em}
-#langList a:hover{background-color:#eee;}
+.langlist{display: block;}
+.langlist a{padding: 0.2em 1em; background-color:#fff;transition:0.3s;display:inline-block;border-radius: 0.2em;font-size: 1em;margin:1em}
+.langlist a:hover{background-color:#eee;}
 /* for status page */
 .detail .span3 .filters {text-align: center;}
 .detail .span3 .filters .func{position: relative;}
