@@ -36,7 +36,7 @@ CREATE TABLE `hours` (
   `hour_minus` smallint(5) UNSIGNED DEFAULT NULL,
   `hour_plus` smallint(5) UNSIGNED DEFAULT NULL,
   `hour_total` smallint(5) UNSIGNED DEFAULT NULL,
-  `hour_status` enum('raw','minus','plus','all','disable','enable','expire') NOT NULL DEFAULT 'raw',
+  `hour_status` ENUM('active','awaiting','deactive','removed','filter') NULL DEFAULT 'awaiting',
   `hour_accepted` smallint(6) DEFAULT NULL,
   `date_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
