@@ -72,7 +72,16 @@ class view extends \mvc\view
 		{
 			$year_min = '1395';
 		}
-		$year_default = $_args->get_date(1);
+
+		if($_args->get_date(1))
+		{
+			$year_default = $_args->get_date(1);
+		}
+		else
+		{
+			$year_default = '0000';
+		}
+
 
 		if($year_min == $year_current && $year_default != $year_current)
 		{
