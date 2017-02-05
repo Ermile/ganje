@@ -219,7 +219,8 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 .filters {margin-top: 1em;font-size: 1.5em;text-align: left}
 .rtl .filters{text-align: right}
 .filters .datepicker{display: block;overflow: hidden;}
-.filters .datepicker span{position:relative;padding:0 .15em;width:auto;font-size:2.5em;font-weight:700;border-radius:.3em;background:#000;box-shadow:0 2px 5px rgba(0,0,0,0.7);text-shadow:0 1px 2px #000;display:inline-block;color:#ccc;transition:.3s;overflow:hidden;cursor: pointer;height:45px;line-height:55px}
+.filters .datepicker span{position:relative;padding:0 .15em;width:auto;font-size:2.5em;font-weight:700;border-radius:.3em;background:#000;box-shadow:0 2px 5px rgba(0,0,0,0.7);text-shadow:0 1px 2px #000;display:inline-block;color:#ccc;transition:.3s;overflow:hidden;cursor: pointer;height:45px;line-height:55px;min-width:55px;text-align:center;}
+.filters .datepicker span.year{min-width:100px;}
 .filters .datepicker span:hover{color:#fff}
 .filters .datepicker span select{display:none}
 .filters .datepicker span:after{content:"";position:absolute;top:50%;left:0;z-index:5;width:100%;margin-top:-1px;height:2px;background-color:#000;background-color:rgba(0,0,0,0.4)}

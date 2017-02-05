@@ -167,6 +167,7 @@ function calcTotalRow()
     // fill footer column with calculated value
     if($(this).html() != result && result)
     {
+      result = fitNumber(result.toString());
       $(this).html(result);
       $(this).attr('title', funcName + ': ' + result);
     }
@@ -319,12 +320,12 @@ function changeTimeValue(_inc)
   }
 
   // scroll from max to min
-  if(val_new > val_max && isNaN(val))
+  if(val_new > val_max && isNaN(val_changed))
   {
     val_new = val_min;
   }
   // scroll from min to max
-  if(val_new < val_min && isNaN(val))
+  if(val_new < val_min && isNaN(val_changed))
   {
     val_new = val_max;
   }
@@ -332,8 +333,12 @@ function changeTimeValue(_inc)
   // change value if is valid
   if(val_new >= val_min && val_new <= val_max)
   {
-    $(this).html(addZero(val_new));
+    // set real value
     $(this).attr('data-value', addZero(val_new));
+    // create val for show
+    val_new = addZero(val_new);
+    val_new = fitNumber(val_new.toString());
+    $(this).html(val_new);
   }
   // set dash for zero value
   else if(val_new < val_min || val_new > val_max)
