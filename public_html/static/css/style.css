@@ -141,7 +141,7 @@ body#homepage{height:100%}
 @media screen and (min-width: 2000px) { .register .dashboard{font-size: 2em;}}
 
 /* card ui */
-.card {display: inline-block;margin: 1em 0.5em;width:9em;height:11em;font-size:0.9em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;transition: all 0.3s ease-in-out;position: relative;}
+.card {display: inline-block;margin: 1em 0.5em;width:9em;min-height:11em;font-size:0.9em;min-height: 0;padding: 0;border: none;border-radius: .3rem;opacity: 0.3;transition: all 0.3s ease-in-out;position: relative;}
 .card.selected {opacity: 0.5;box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .card.present, .detail .card {opacity: 1;box-shadow: 0 1px 3px 0 #D4D4D5,0 0 0 1px #D4D4D5;}
 .card.present.selected{box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
