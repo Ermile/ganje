@@ -245,7 +245,7 @@ class model extends \mvc\model
 			// samin
 			$msg['chat_id'] = '101315542';
 			// saman
-			$msg['chat_id'] = '48915531';
+			// $msg['chat_id'] = '48915531';
 
 		}
 
