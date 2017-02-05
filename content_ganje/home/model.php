@@ -238,6 +238,13 @@ class model extends \mvc\model
 			'text'         => $_text,
 			'chat_id'      => '46898544',
 		];
+
+		// send message for arvan
+		if(\lib\router::get_root_domain('domain') === 'germile')
+		{
+			$msg['chat_id'] = 101315542;
+		}
+
 		$result = bot::sendResponse($msg);
 
 		return $result;
