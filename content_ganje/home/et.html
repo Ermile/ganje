@@ -38,16 +38,16 @@
 {%for column, type in et.columns if column != 'type'%}
 {%set val = attribute(value, column)%}
 {%if column == 'accepted'%}
-     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| fitNumber }}</td>
 
 {%elseif column == 'diff' %}
-     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| fitNumber }}</td>
 
 {%elseif column == 'plus'%}
-     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| fitNumber }}</td>
 
 {%elseif column == 'minus'%}
-     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| persian }}</td>
+     <td class='val_{{column}}' data-val='{{val}}'>{{ (val | humantime() )| fitNumber }}</td>
 
 {%elseif column == 'name'%}
      <td class='val_{{column}}' data-val='{{val}}'>{%trans val%}</td>
@@ -58,7 +58,7 @@
 {%elseif column == 'end' and not val and true%}
      <td class='val_{{column}}' data-modal='hour-edit' data-id='{{value.id}}'></td>
 {%else%}
-     <td class='val_{{column}}' data-val='{{val}}'>{{val | persian}}</td>
+     <td class='val_{{column}}' data-val='{{val}}'>{{val | fitNumber}}</td>
 {%endif%}
 {%endfor%}
     </tr>
