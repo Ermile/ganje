@@ -178,6 +178,33 @@ class staff {
 
 
 	/**
+	 * presence on date
+	 */
+	public static function peresence($_date = null)
+	{
+		if($_date == null)
+		{
+			$_date = strtotime('-1 day');
+			$_date = date("Y-m-d", $_date);
+		}
+
+		$query =
+		"
+			SELECT
+				users.user_displayname AS `name`
+			FROM
+				hours
+			INNER JOIN users ON hours.user_id = users.id
+			WHERE
+				hour_date = '$_date'
+			GROUP BY name
+		";
+		$peresence = \lib\db::get($query, 'name');
+		return $peresence;
+	}
+
+
+	/**
 	 * get count on online users
 	 *
 	 * @return     <type>  ( description_of_the_return_value )

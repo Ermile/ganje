@@ -160,6 +160,17 @@ class model extends \mvc\model
 
 				if(\lib\db\staff::enter() <= 1)
 				{
+					$presence = \lib\db\staff::peresence();
+					if(!empty($presence) && is_array($presence))
+					{
+						$temp_presence = [];
+						foreach ($presence as $key => $value)
+						{
+							array_push($temp_presence, T_($value));
+						}
+						$temp_presence = "\n ✅". implode("\n ✅", $temp_presence);
+						$presence = self::send_telegram($temp_presence);
+					}
 					$tg = self::send_telegram($date_now);
 				}
 				$msg = "✅ $name";
