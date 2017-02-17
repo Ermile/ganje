@@ -337,7 +337,7 @@ function changeTimeValue(_inc)
     $(this).attr('data-value', addZero(val_new));
     // create val for show
     val_new = addZero(val_new);
-    val_new = fitNumber(val_new.toString());
+    val_new = fitNumber(val_new.toString(), false);
     $(this).html(val_new);
   }
   // set dash for zero value
