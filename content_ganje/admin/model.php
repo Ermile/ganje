@@ -127,6 +127,7 @@ class model extends \mvc\model
 			'lang'    => $lang,
 			'type'    => $_args->get_type(0),
 			'export'  => $_args->get_export(),
+			'order'   => $_args->get_order(0),
 		];
 
 		$data = \lib\db\hours::get($args);

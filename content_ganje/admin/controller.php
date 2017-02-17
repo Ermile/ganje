@@ -24,6 +24,7 @@ class controller extends \mvc\controller
 			[
 				"user"   => ["/^\d+$/", true, 'user'],
 				"page"   => ["/^\d+$/", true, 'page'],
+				"order"  => ["/^(.*)$/", true, 'order'],
 				"export" => ["/^(.*)$/", true, 'export'],
 				"q"      => ["/^(.*)$/", true, 'search'],
 				"type"   => ["/^summary|detail$/", true, 'type'],

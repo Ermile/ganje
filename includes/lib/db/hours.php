@@ -490,6 +490,17 @@ class hours {
 		$lang    = $_args['lang'];
 		$export  = $_args['export'];
 		$type    = $_args['type'] ? $_args['type'] : 'detail';
+		// add order if exist
+		$order   = $_args['order'];
+		$order   = str_replace('_', ' ', $order);
+		if($order)
+		{
+			$order = "ORDER BY ". $order;
+		}
+		else
+		{
+			$order = null;
+		}
 
 		// check user id . if users id is set get add data by this users id and if users id is not set get all users
 		if($user_id == null)
@@ -687,7 +698,7 @@ class hours {
 				$where
 				$user_id_query
 				$group
-
+				$order
 			";
 			// MYSQL GET TOTAL RECORD WHITOUT LIMIT
 			// SELECT SQL_CALC_FOUND_ROWS * FROM TABLE WHERE GROUP ORDER LIMIT
@@ -710,6 +721,7 @@ class hours {
 				$where
 				$user_id_query
 				$group
+				$order
 				$limit
 		";
 		// var_dump($query);

@@ -313,7 +313,7 @@ body{ background: url(../images/pattern/shattered_@2X.png) }
 
 .modal .fel{border:none;background-color: #eee;transition:0.3s;padding: 0.5em 1em;margin: 0.1em;min-width: 180px;width: 180px;text-align: center;}
 .modal .fel:hover{background-color: #ddd;}
-.addNewRecord{position:absolute;bottom:0.5em;left:1em;width:3em;height:auto;cursor:pointer;}
+.addNewRecord{position:fixed;bottom:0.5em;left:1em;width:3em;height:auto;cursor:pointer;}
 .modal[data-type='edit'] input{display: none;}
 
 
