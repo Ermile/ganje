@@ -385,10 +385,10 @@ function generateUserFilter(_this)
   {
     $('.cardList').attr('data-selected-id', null);
   }
-  generateFilter();
+  generateFilter(true);
 }
 
-function generateFilter()
+function generateFilter(_userChanged)
 {
   // get current path
   var CURRENTPATH = (location.pathname).replace(/^\/+/, '');
@@ -426,7 +426,11 @@ function generateFilter()
   {
     newLocation += '/user=' + user;
   }
-  navigate(newLocation);
+  if(_userChanged || date)
+  {
+    navigate(newLocation);
+  }
+
 }
 
 /**
@@ -439,17 +443,28 @@ function generateTimeFilter()
   var month = $(".filters .datepicker .month").attr('data-value');
   var day   = $(".filters .datepicker .day").attr('data-value');
 
-  if(!year)
+  if(!year || year == "0000")
   {
     return null;
   }
+  else
+  {
+    if(day != "00" && (!month || month == "00"))
+    {
+      return null;
+    }
+  }
   // create date
   var date  = (year? year: '0000') + '-' + (month? month: '00') + '-' + (day? day: '00');
+  if(date === "0000-00-00")
+  {
+    date = null;
+  }
 
   $('.filters').attr('data-time', date);
   if(date)
   {
-    date = '/date='+date;
+    date = '/date=' + date;
     return date;
   }
 

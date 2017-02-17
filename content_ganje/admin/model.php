@@ -176,7 +176,37 @@ class model extends \mvc\model
 		if($_args->get_export() && $this->access('ganje','admin', 'admin'))
 		{
 
-			$name = 'ganje-u'. $_args->get_user(0).'['. $date_year. $date_month. $date_day.']';
+			// $name = 'ganje-u'. $_args->get_user(0).'['. $date_year. $date_month. $date_day.']';
+			$name  = 'ganje-export';
+			$cUser = $_args->get_user(0);
+			// create string of user if exist
+			if($cUser)
+			{
+				$name .= '-u'.$cUser;
+			}
+			// add date if exist
+			$cDate = $date_year;
+			if($date_month && $date_month != "00")
+			{
+				$cDate .= '_'. $date_month;
+				// add day if exist
+				if($date_day && $date_day != "00")
+				{
+					$cDate .= '_'. $date_day;
+				}
+			}
+
+			if($cDate)
+			{
+				$name .= "[$cDate]";
+			}
+			else
+			{
+				$name .= '[all]';
+			}
+			$date_now  = date("Ymd_Hi");
+			$name .= "-on($date_now)";
+
 			\lib\utility\export::csv(['name' => $name ,'data' => $data]);
 		}
 		else
