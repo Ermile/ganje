@@ -193,15 +193,18 @@ class staff {
 		$query =
 		"
 			SELECT
-				users.user_displayname AS `name`
+				users.user_displayname AS `name`,
+				sum(hours.hour_accepted) as 'accepted',
+				sum(hours.hour_diff) as 'diff'
 			FROM
 				hours
 			INNER JOIN users ON hours.user_id = users.id
 			WHERE
 				hour_date = '$_date'
 			GROUP BY name
+			ORDER BY accepted DESC
 		";
-		$peresence = \lib\db::get($query, 'name');
+		$peresence = \lib\db::get($query, ['name', 'accepted'] );
 		return $peresence;
 	}
 

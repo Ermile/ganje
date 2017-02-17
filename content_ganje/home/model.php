@@ -214,10 +214,30 @@ class model extends \mvc\model
 					{
 						// $msg_final .= "#". T_('Report'). " ";
 						$msg_final .= "#گزارش ";
-						$msg_final .= "$date_now\n";
-						foreach ($presence as $key => $value)
+						$msg_final .= "$date_now\n\n";
+						$i         = 0;
+						foreach ($presence as $name => $accepted)
 						{
-							$msg_final .= "✅ ". T_($value). "\n";
+							$i += 1;
+							switch ($i)
+							{
+								case 1:
+									$msg_final .= "🏆". " ". T_($name)."🥇";
+									break;
+
+								case 2:
+									$msg_final .= "🏆". " ". T_($name)."🥈";
+									break;
+
+								case 3:
+									$msg_final .= "🏆". " ". T_($name)."🥉";
+									break;
+
+								default:
+									$msg_final .= "🏅". " ". T_($name);
+									break;
+							}
+							$msg_final .= "\n";
 						}
 						$msg_final .= "🎌". \lib\db\staff::enter();
 					}
@@ -235,9 +255,7 @@ class model extends \mvc\model
 		// var_dump($msg_final);
 		if($msg_final)
 		{
-			var_dump('yes');
 			$tg_final = self::send_telegram($msg_final);
-			var_dump($tg_final);
 		}
 
 	}
