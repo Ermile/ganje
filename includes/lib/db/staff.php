@@ -184,10 +184,12 @@ class staff {
 	{
 		if($_date == null)
 		{
-			$_date = strtotime('-1 day');
+			// $_date = strtotime('-1 day');
+			$_date = strtotime('now');
 			$_date = date("Y-m-d", $_date);
 		}
 
+		// sum(hours.hour_accepted) as 'accepted'
 		$query =
 		"
 			SELECT

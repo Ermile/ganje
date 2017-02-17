@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
-"POT-Creation-Date: 2017-02-14 10:31+0330\n"
-"PO-Revision-Date: 2017-02-14 10:32+0330\n"
+"POT-Creation-Date: 2017-02-17 11:31+0330\n"
+"PO-Revision-Date: 2017-02-17 11:31+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -1382,7 +1382,7 @@ msgstr "کلمه عبور خود را وارد کنید"
 
 #: saloos/saloos-addons/includes/cls/form/account.php:25
 msgid "Remember me"
-msgstr ""
+msgstr "من را به خاطر بسپار"
 
 #: saloos/saloos-addons/includes/cls/form/account.php:48
 msgid "Code"
@@ -3688,9 +3688,13 @@ msgstr "اوقات خوبی داشته باشید."
 msgid "Bye Bye :name ;)"
 msgstr "خدانگهدار :name جون;)"
 
-#: tejarak/content_ganje/home/model.php:189
+#: tejarak/content_ganje/home/model.php:190
 msgid "to"
 msgstr "تا"
+
+#: tejarak/content_ganje/home/model.php:215
+msgid "report"
+msgstr "گزارش"
 
 #: tejarak/content_ganje/home/view.php:24
 #: tejarak/includes/languages/trans_twig.php:7
@@ -3776,19 +3780,19 @@ msgstr "تاییدشده"
 
 #: tejarak/includes/languages/trans_addons.php:245
 msgid "Repository"
-msgstr ""
+msgstr "مخزن"
 
 #: tejarak/includes/languages/trans_addons.php:248
 msgid "Ermile Repository"
-msgstr ""
+msgstr "مخزن ارمایل"
 
 #: tejarak/includes/languages/trans_addons.php:249
 msgid "Current Project Repository"
-msgstr ""
+msgstr "مخزن پروژه جاری"
 
 #: tejarak/includes/languages/trans_addons.php:250
 msgid "Database"
-msgstr ""
+msgstr "پایگاه‌داده"
 
 #: tejarak/includes/languages/trans_addons.php:254
 msgid "Show sql log data"
@@ -4190,6 +4194,12 @@ msgstr "تجارک"
 msgid "Tejarak was born to serve small and beautiful service for e-business"
 msgstr ""
 "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+
+#~ msgid "daily"
+#~ msgstr "روزانه"
+
+#~ msgid "daily_report"
+#~ msgstr "گزارش_روزانه"
 
 #~ msgid "Allow to enter and exit staff"
 #~ msgstr "اجازه ورود و خروج کارکنان"

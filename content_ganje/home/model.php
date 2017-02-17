@@ -137,11 +137,12 @@ class model extends \mvc\model
 	 */
 	public static function generate_telegram_text($_type, $_args = null)
 	{
-		$msg             = '';
-		$date_now        = \lib\utility::date("l j F Y", false, 'default');
-		$time_now        = \lib\utility::date("H:i", false, 'default');
-		$name            = "*". self::$user_name. "*";
-		$plus = null;
+		$msg       = '';
+		$msg_final = '';
+		$date_now  = \lib\utility::date("l j F Y", false, 'default');
+		$time_now  = \lib\utility::date("H:i", false, 'default');
+		$name      = "*". self::$user_name. "*";
+		$plus      = null;
 		if(isset($_args['plus']) && $_args['plus'] > 0 )
 		{
 			$plus = $_args['plus'];
@@ -160,17 +161,6 @@ class model extends \mvc\model
 
 				if(\lib\db\staff::enter() <= 1)
 				{
-					$presence = \lib\db\staff::peresence();
-					if(!empty($presence) && is_array($presence))
-					{
-						$temp_presence = [];
-						foreach ($presence as $key => $value)
-						{
-							array_push($temp_presence, T_($value));
-						}
-						$temp_presence = "\n ✅". implode("\n ✅", $temp_presence);
-						$presence = self::send_telegram($temp_presence);
-					}
 					$tg = self::send_telegram($date_now);
 				}
 				$msg = "✅ $name";
@@ -219,7 +209,18 @@ class model extends \mvc\model
 				// if this person is first one in this day send current date
 				if(\lib\db\staff::live() <= 0)
 				{
-					$msg .= "\n". ' 🎌'. \lib\db\staff::enter();
+					$presence = \lib\db\staff::peresence();
+					if(!empty($presence) && is_array($presence))
+					{
+						// $msg_final .= "#". T_('Report'). " ";
+						$msg_final .= "#گزارش ";
+						$msg_final .= "$date_now\n";
+						foreach ($presence as $key => $value)
+						{
+							$msg_final .= "✅ ". T_($value). "\n";
+						}
+						$msg_final .= "🎌". \lib\db\staff::enter();
+					}
 				}
 
 				break;
@@ -229,7 +230,15 @@ class model extends \mvc\model
 		}
 
 		// send telegram message
-		$tg = self::send_telegram($msg);
+		$tg       = self::send_telegram($msg);
+		// send final message of the day if exist
+		// var_dump($msg_final);
+		if($msg_final)
+		{
+			var_dump('yes');
+			$tg_final = self::send_telegram($msg_final);
+			var_dump($tg_final);
+		}
 
 	}
 
