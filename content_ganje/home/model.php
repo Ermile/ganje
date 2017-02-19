@@ -239,7 +239,9 @@ class model extends \mvc\model
 							}
 							$msg_final .= "\n";
 						}
-						$msg_final .= "🎌". \lib\db\staff::enter();
+
+						$msg_final .= "🎭". \lib\utility\human::number(\lib\db\staff::enter(), 'fa'). " ";
+						$msg_final .= "👥". \lib\utility\human::number(count($presence), 'fa');
 					}
 				}
 
@@ -255,9 +257,14 @@ class model extends \mvc\model
 		// var_dump($msg_final);
 		if($msg_final)
 		{
+			// send message to admin
 			$tg_final = self::send_telegram($msg_final);
+			// send message for group
+			if(\lib\router::get_root_domain('domain') !== 'germile')
+			{
+				$tg_final = self::send_telegram($msg_final, 'group');
+			}
 		}
-
 	}
 
 
@@ -266,7 +273,7 @@ class model extends \mvc\model
 	 * @param  [type] $text [description]
 	 * @return [type]       [description]
 	 */
-	public static function send_telegram($_text)
+	public static function send_telegram($_text, $_type = 'admin' )
 	{
 		bot::$api_key   = '215239661:AAHyVstYPXKJyfhDK94A-XfYukDMiy3PLKY';
 		bot::$name      = 'ermile_bot';
@@ -287,6 +294,23 @@ class model extends \mvc\model
 			// $msg['chat_id'] = '48915531';
 
 		}
+
+		// send final message to group
+		if($_type === 'group')
+		{
+			// for arvan
+			if(\lib\router::get_root_domain('domain') == 'germile')
+			{
+				// send to saman
+				$msg['chat_id'] = '48915531';
+			}
+			else
+			{
+				// send to ermile group
+				$msg['chat_id'] = '-1001058561856';
+			}
+		}
+
 
 		$result = bot::sendResponse($msg);
 
