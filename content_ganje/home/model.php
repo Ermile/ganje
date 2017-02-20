@@ -1,6 +1,7 @@
 <?php
 namespace content_ganje\home;
 use \lib\utility;
+use \lib\utility\human;
 use \lib\debug;
 use \lib\db;
 use \lib\telegram\tg as bot;
@@ -139,6 +140,7 @@ class model extends \mvc\model
 	{
 		$msg       = '';
 		$msg_final = '';
+		$msg_admin = '';
 		$date_now  = \lib\utility::date("l j F Y", false, 'default');
 		$time_now  = \lib\utility::date("H:i", false, 'default');
 		$name      = "*". self::$user_name. "*";
@@ -166,7 +168,7 @@ class model extends \mvc\model
 				$msg = "✅ $name";
 				if($plus)
 				{
-					$msg .= "\n➕ ". \lib\utility\human::number($plus, 'fa');
+					$msg .= "\n➕ ". human::number($plus, 'fa');
 				}
 				break;
 
@@ -184,24 +186,24 @@ class model extends \mvc\model
 				}
 
 				$pure       = $total + $plus - $minus;
-				$pure_human = utility\human::time($pure, 'persian');
+				$pure_human = human::time($pure, 'text' ,'fa');
 				$time_start = \lib\utility::date('H:i', $start , 'default');
 
 				$msg        .= $time_start. ' '. T_('to'). ' '. $time_now;
 
 				if($plus || $minus)
 				{
-					$msg        .= "\n🚩 ". \lib\utility\human::number($total, 'fa');
+					$msg        .= "\n🚩 ". human::number($total, 'fa');
 				}
 				if($minus)
 				{
 					if(\lib\storage::get_minus())
 					{
-						$msg .= "\n➖ ". \lib\utility\human::number(\lib\storage::get_minus(), 'fa');
+						$msg .= "\n➖ ". human::number(\lib\storage::get_minus(), 'fa');
 					}
 					else
 					{
-						$msg .= "\n➖ ". \lib\utility\human::number($minus, 'fa');
+						$msg .= "\n➖ ". human::number($minus, 'fa');
 					}
 				}
 				$msg        .= "\n🕗 ". $pure_human;
@@ -215,33 +217,45 @@ class model extends \mvc\model
 						// $msg_final .= "#". T_('Report'). " ";
 						$msg_final .= "#گزارش ";
 						$msg_final .= "$date_now\n\n";
+						$msg_admin .= $msg_final;
 						$i         = 0;
 						foreach ($presence as $name => $accepted)
 						{
 							$i += 1;
+							$accepted = human::time($accepted, 'number', 'fa');
 							switch ($i)
 							{
 								case 1:
 									$msg_final .= "🏆". " ". T_($name)."🥇";
+									$msg_admin .= "🏆". " ". T_($name)."🥇". " `". $accepted. "`";
 									break;
 
 								case 2:
 									$msg_final .= "🏆". " ". T_($name)."🥈";
+									$msg_admin .= "🏆". " ". T_($name)."🥈". " `". $accepted. "`";
 									break;
 
 								case 3:
 									$msg_final .= "🏆". " ". T_($name)."🥉";
+									$msg_admin .= "🏆". " ". T_($name)."🥉". " `". $accepted. "`";
 									break;
 
 								default:
 									$msg_final .= "🏅". " ". T_($name);
+									$msg_admin .= "🏅". " ". T_($name). " `". $accepted. "`";
 									break;
 							}
 							$msg_final .= "\n";
+							$msg_admin .= "\n";
 						}
-
-						$msg_final .= "🎭". \lib\utility\human::number(\lib\db\staff::enter(), 'fa'). " ";
-						$msg_final .= "👥". \lib\utility\human::number(count($presence), 'fa');
+						$enterExit    = human::number(\lib\db\staff::enter(), 'fa');
+						$countPersons = human::number(count($presence), 'fa');
+						// fill message of group
+						$msg_final .= "🎭". $enterExit . " ";
+						$msg_final .= "👥". $countPersons;
+						// fill message of admin
+						$msg_admin .= "🎭". $enterExit . " ";
+						$msg_admin .= "👥". $countPersons;
 					}
 				}
 
@@ -258,7 +272,7 @@ class model extends \mvc\model
 		if($msg_final)
 		{
 			// send message to admin
-			$tg_final = self::send_telegram($msg_final);
+			$tg_final = self::send_telegram($msg_admin);
 			// send message for group
 			if(\lib\router::get_root_domain('domain') !== 'germile')
 			{
