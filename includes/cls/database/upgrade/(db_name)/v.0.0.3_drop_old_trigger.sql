@@ -1,0 +1,1 @@
+DROP TRIGGER IF EXISTS `hours_set_type_status_on_update`;
