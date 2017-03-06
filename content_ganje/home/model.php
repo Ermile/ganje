@@ -138,13 +138,14 @@ class model extends \mvc\model
 	 */
 	public static function generate_telegram_text($_type, $_args = null)
 	{
-		$msg       = '';
-		$msg_final = '';
-		$msg_admin = '';
-		$date_now  = \lib\utility::date("l j F Y", false, 'default');
-		$time_now  = \lib\utility::date("H:i", false, 'default');
-		$name      = "*". self::$user_name. "*";
-		$plus      = null;
+		$msg         = '';
+		$msg_final   = '';
+		$msg_admin   = '';
+		$date_now    = \lib\utility::date("l j F Y", false, 'default');
+		$time_now    = \lib\utility::date("H:i", false, 'default');
+		$name        = "*". self::$user_name. "*";
+		$plus        = null;
+		$send_report = true;
 		if(isset($_args['plus']) && $_args['plus'] > 0 )
 		{
 			$plus = $_args['plus'];
@@ -215,13 +216,15 @@ class model extends \mvc\model
 					if(!empty($presence) && is_array($presence))
 					{
 						// $msg_final .= "#". T_('Report'). " ";
-						$msg_final .= "#گزارش ";
-						$msg_final .= "$date_now\n\n";
-						$msg_admin .= $msg_final;
-						$i         = 0;
+						$msg_final  .= "#گزارش ";
+						$msg_final  .= "$date_now\n\n";
+						$msg_admin  .= $msg_final;
+						$total_time = 0;
+						$i          = 0;
 						foreach ($presence as $name => $accepted)
 						{
 							$i += 1;
+							$total_time += $accepted;
 							$accepted = human::time($accepted, 'number', 'fa');
 							switch ($i)
 							{
@@ -251,11 +254,20 @@ class model extends \mvc\model
 						$enterExit    = human::number(\lib\db\staff::enter(), 'fa');
 						$countPersons = human::number(count($presence), 'fa');
 						// fill message of group
-						$msg_final .= "🎭". $enterExit . " ";
-						$msg_final .= "👥". $countPersons;
+						$msg_final  .= "#سختـکوشـباشیم". "\n";
+						$msg_final .= "🎭". $enterExit . "  ";
+						$msg_final .= "👥". $countPersons. "  ";
+						$msg_final .= "🕰". $total_time;
 						// fill message of admin
-						$msg_admin .= "🎭". $enterExit . " ";
-						$msg_admin .= "👥". $countPersons;
+						$msg_admin  .= "#سختـکوشـباشیم". "\n";
+						$msg_admin .= "🎭". $enterExit . "  ";
+						$msg_admin .= "👥". $countPersons. "  ";
+						$msg_admin .= "🕰". human::time($total_time, 'number', 'fa');
+						// if we have less than 3person in day, dont send message
+						if(count($presence) < 3)
+						{
+							$send_report = false;
+						}
 					}
 				}
 
@@ -269,14 +281,14 @@ class model extends \mvc\model
 		$tg       = self::send_telegram($msg);
 		// send final message of the day if exist
 		// var_dump($msg_final);
-		if($msg_final)
+		if($send_report && $msg_final)
 		{
 			// send message to admin
 			$tg_final = self::send_telegram($msg_admin);
 			// send message for group
 			if(\lib\router::get_root_domain('domain') !== 'germile')
 			{
-				$tg_final = self::send_telegram($msg_final, 'group');
+				// $tg_final = self::send_telegram($msg_admin, 'group');
 			}
 		}
 	}
@@ -289,6 +301,10 @@ class model extends \mvc\model
 	 */
 	public static function send_telegram($_text, $_type = 'admin' )
 	{
+		if(!$_text)
+		{
+			return false;
+		}
 		bot::$api_key   = '215239661:AAHyVstYPXKJyfhDK94A-XfYukDMiy3PLKY';
 		bot::$name      = 'ermile_bot';
 
