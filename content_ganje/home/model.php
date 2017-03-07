@@ -288,7 +288,7 @@ class model extends \mvc\model
 			// send message for group
 			if(\lib\router::get_root_domain('domain') !== 'germile')
 			{
-				// $tg_final = self::send_telegram($msg_admin, 'group');
+				$tg_final = self::send_telegram($msg_admin, 'group');
 			}
 		}
 	}
