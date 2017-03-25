@@ -11,6 +11,7 @@ class model extends \mvc\model
 	/**
 	 * the user name
 	 */
+	public static $user_id;
 	public static $user_name;
 
 
@@ -125,6 +126,7 @@ class model extends \mvc\model
 	 */
 	private function setName($_id)
 	{
+		self::$user_id   = $_id;
 		self::$user_name = \lib\db\staff::get_one($_id);
 		self::$user_name = T_(self::$user_name['displayname']);
 		return self::$user_name;
@@ -165,6 +167,24 @@ class model extends \mvc\model
 				if(\lib\db\staff::enter() <= 1)
 				{
 					$tg = self::send_telegram($date_now);
+					// create custom message for group
+					$msg_start = $date_now;
+					if(self::$user_id === 11)
+					{
+						$msg_start .= "\n". "🙋‍♂ $name";
+					}
+					else
+					{
+						$msg_start .= "\n". "💪 $name";
+					}
+					$msg_start .= "\n"."🇮🇷 🌖 🌱 👨‍💻 🥇";
+					$msg_start .= "\n". "#سختـکوشـباشیم";
+
+					// send message for group
+					if(\lib\router::get_root_domain('domain') !== 'germile')
+					{
+						$tg_final = self::send_telegram($msg_start, 'group');
+					}
 				}
 				$msg = "✅ $name";
 				if($plus)
@@ -186,7 +206,16 @@ class model extends \mvc\model
 					$msg = "🚷 $msg";
 				}
 
+				// if more than one day!
+				// if($plus > 1440)
+				// {
+				// 	$plus = 1440;
+				// }
 				$pure       = $total + $plus - $minus;
+				if($pure < 0 )
+				{
+					$pure = 0;
+				}
 				$pure_human = human::time($pure, 'text' ,'fa');
 				$time_start = \lib\utility::date('H:i', $start , 'default');
 
