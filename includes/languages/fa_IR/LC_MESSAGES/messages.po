@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tejarak - Persian\n"
 "POT-Creation-Date: 2017-04-04 08:17+0430\n"
-"PO-Revision-Date: 2017-04-04 08:17+0430\n"
+"PO-Revision-Date: 2017-04-04 08:26+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -212,8 +212,7 @@ msgid "IP or merchant code of the host is incorrect"
 msgstr "آی پی یا کد مرچنت میزبان اشتباه است"
 
 #: saloos/lib/utility/payment/zarinpal.php:287
-msgid ""
-"Due to Shaparak's limitations, It's impossible to pay the specified amount"
+msgid "Due to Shaparak's limitations, It's impossible to pay the specified amount"
 msgstr "به دلیل محدودیت‌های شاپرک، امکان پرداخت این مقدار وجود ندارد"
 
 #: saloos/lib/utility/payment/zarinpal.php:291
@@ -268,8 +267,7 @@ msgstr "عملیات با موفقیت انجام شد"
 msgid ""
 "Payment operation was successfull and PatmentVerification of the transaction "
 "has already done"
-msgstr ""
-"عملیات پرداخت با موفقیت انجام شد و تایید پرداخت تراکنش با موفقیت انجام شد"
+msgstr "عملیات پرداخت با موفقیت انجام شد و تایید پرداخت تراکنش با موفقیت انجام شد"
 
 #: saloos/lib/utility/permission.php:162
 #: saloos/saloos-addons/includes/languages/trans_addons.php:425
@@ -417,8 +415,7 @@ msgstr "کدکاربر ثبت نشد است"
 
 #: saloos/lib/utility/upload.php:413
 msgid ""
-"The size of file is larger than the upload space you have, your space is :"
-"space"
+"The size of file is larger than the upload space you have, your space is :space"
 msgstr ""
 "اندازه فایل شما بزرگتر از سایر در اختیار گرفته برای شماست. فضای شما :space است"
 
@@ -919,8 +916,7 @@ msgstr "حذف با موفقیت انجام شد"
 #: saloos/saloos-addons/content_cp/permissions/view.php:9
 #: saloos/saloos-addons/includes/languages/trans_addons.php:522
 #: tejarak/includes/languages/trans_addons.php:522
-msgid ""
-"Define or edit user permissions to allow or block access to special pages"
+msgid "Define or edit user permissions to allow or block access to special pages"
 msgstr "تعریف یا ویرایش سطوح‌دسترسی برای اجازه یا ممنوع کردن دسترسی به صفحات خاص"
 
 #: saloos/saloos-addons/content_cp/permissions/view.php:15
@@ -1535,8 +1531,8 @@ msgstr "عنوان سایت"
 #: tejarak/includes/languages/trans_addons.php:433
 msgid "For multilanguage sites enter title in English and translate it"
 msgstr ""
-"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم "
-"آن را به سایر زبان‌ها ترجمه کنید"
+"برای سایت‌های چندزبانه، این بخش را به انگلیسی وارد نموده و توسط برنامه مترجم آن "
+"را به سایر زبان‌ها ترجمه کنید"
 
 #: saloos/saloos-addons/includes/cls/form/options.php:33
 #: saloos/saloos-addons/includes/languages/trans_addons.php:409
@@ -2039,8 +2035,7 @@ msgstr "بین ۵ تا ۴۰ کاراکتر."
 #: saloos/saloos-addons/includes/languages/trans_addons.php:6
 #: tejarak/includes/languages/trans_addons.php:6
 msgid "Write your tag and press enter to add new keyword to content"
-msgstr ""
-"کلیدواژه‌ی مورد نظر خود را نوشته و با فشردن انتر آن را به مطلب اضافه کنید"
+msgstr "کلیدواژه‌ی مورد نظر خود را نوشته و با فشردن انتر آن را به مطلب اضافه کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:8
 #: tejarak/includes/languages/trans_addons.php:8
@@ -2272,8 +2267,7 @@ msgstr "خروج از سیستم"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:75
 #: tejarak/includes/languages/trans_addons.php:75
 msgid "We glad to working for you and hope you enjoy using our system"
-msgstr ""
-"ما از کار برای شما خوشحال بوده و امیدواریم شما نیز از سیستم ما لذت ببرید"
+msgstr "ما از کار برای شما خوشحال بوده و امیدواریم شما نیز از سیستم ما لذت ببرید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:76
 #: tejarak/includes/languages/trans_addons.php:76
@@ -2438,8 +2432,7 @@ msgstr "ویرایش دسترسی به"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:120
 #: tejarak/includes/languages/trans_addons.php:120
-msgid ""
-"Allow or disallow user to access all part of service with full permission!"
+msgid "Allow or disallow user to access all part of service with full permission!"
 msgstr "اجازه یا عدم اجازه به کاربر برای دسترسی کامل به تمام بخش‌های سرویس!"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:121
@@ -2511,8 +2504,7 @@ msgstr "عنوان مطلب خود را در اینجا وارد کنید"
 #: tejarak/includes/languages/trans_addons.php:137
 msgid "Url of your content appear here, click on it to view"
 msgstr ""
-"آدرس مطلب شما در این بخش نمایش داده می‌شود که با کلیک می‌توانید آن را مشاهده "
-"کنید"
+"آدرس مطلب شما در این بخش نمایش داده می‌شود که با کلیک می‌توانید آن را مشاهده کنید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:138
 #: tejarak/includes/languages/trans_addons.php:138
@@ -2537,14 +2529,12 @@ msgstr "چکیده"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:142
 #: tejarak/includes/languages/trans_addons.php:142
 msgid "If excerpt is empty we get it automatically from content"
-msgstr ""
-"اگر چکیده را خالی بگذارید ما آن را به صورت خودکار از روی نوشته پر میکنیم"
+msgstr "اگر چکیده را خالی بگذارید ما آن را به صورت خودکار از روی نوشته پر میکنیم"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:143
 #: tejarak/includes/languages/trans_addons.php:143
 msgid "Summaries of your content that can be used as page description."
-msgstr ""
-"خلاصه ای از نوشته شما که برای نمایش به عنوان توضیح نوشته استفاده می شود."
+msgstr "خلاصه ای از نوشته شما که برای نمایش به عنوان توضیح نوشته استفاده می شود."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:144
 #: tejarak/includes/languages/trans_addons.php:144
@@ -2559,13 +2549,13 @@ msgstr "تگ را وارد کنید"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:146
 #: tejarak/includes/languages/trans_addons.php:146
 msgid ""
-"Normally, tags are ad-hoc keywords that identify important information in "
-"your post (names, subjects, etc) that may or may not recur in other posts, "
-"while categories are pre-determined sections."
+"Normally, tags are ad-hoc keywords that identify important information in your "
+"post (names, subjects, etc) that may or may not recur in other posts, while "
+"categories are pre-determined sections."
 msgstr ""
-"به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در "
-"نوشته شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها "
-"مشخص نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
+"به طول معمول، کلیدواژه ها عبارات تک کاربره ای برای شناسایی اطلاعات مهم در نوشته "
+"شما مانند نام، موضوع یا .. هستند که امکان تکرار آن ها در سایر نوشته ها مشخص "
+"نیست، این در حالی است که دسته ها از قبل مشخص شده هستند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:147
 #: tejarak/includes/languages/trans_addons.php:147
@@ -2635,8 +2625,8 @@ msgstr "وضعیت"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:159
 #: tejarak/includes/languages/trans_addons.php:159
 msgid ""
-"All of content set as draft in default, for showing it to visitors you must "
-"set it to publish"
+"All of content set as draft in default, for showing it to visitors you must set "
+"it to publish"
 msgstr ""
 "تمام مطالب به صورت پیش فرض در حالت پیش نویس قرار می‌گیرند که شما برای انتشار و "
 "نمایش آن به بازدیدکنندگان باید وضعیت آن را به منتشرشده تغییر دهید"
@@ -2727,11 +2717,10 @@ msgstr "تنظیم تصویر شاخص"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:176
 #: tejarak/includes/languages/trans_addons.php:176
-msgid ""
-"You can see type of your file and click on image to direct access to file"
+msgid "You can see type of your file and click on image to direct access to file"
 msgstr ""
-"شما می‌توانید نوع فایل را دیده و با کلیک روی عکس آن، مستقیما به آن دسترسی "
-"داشته باشید"
+"شما می‌توانید نوع فایل را دیده و با کلیک روی عکس آن، مستقیما به آن دسترسی داشته "
+"باشید"
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:177
 #: tejarak/includes/languages/trans_addons.php:177
@@ -2788,8 +2777,7 @@ msgid ""
 "You can nest category under other category by making one the “Parent” of the "
 "other."
 msgstr ""
-"شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت "
-"کنید."
+"شما می‌توانید یک دسته را با کمک ویژگی والد به عنوان زیرشاخه دسته‌ای دیگر ثبت کنید."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:195
 #: tejarak/includes/languages/trans_addons.php:195
@@ -2875,12 +2863,12 @@ msgstr "تفاوت بین نوشته و برگه در چیست؟"
 #: saloos/saloos-addons/includes/languages/trans_addons.php:225
 #: tejarak/includes/languages/trans_addons.php:225
 msgid ""
-"Pages are similar to Posts in that they have a title, body text, and "
-"associated metadata, but they are different in that they are not part of the "
-"chronological blog stream, kind of like permanent posts."
+"Pages are similar to Posts in that they have a title, body text, and associated "
+"metadata, but they are different in that they are not part of the chronological "
+"blog stream, kind of like permanent posts."
 msgstr ""
-"برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی "
-"آن ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در "
+"برگه ها در عنوان، متن و سایر ویژگی ها شبیه به نوشته ها هستند، اما تفاوت اصلی آن "
+"ها در این است که به مانند نوشته ها دارای جریان زمانی دنباله دار نیستند، در "
 "حقیقت شبیه به یک پست دائمی هستند."
 
 #: saloos/saloos-addons/includes/languages/trans_addons.php:226
@@ -3990,8 +3978,8 @@ msgid ""
 "Integration with services which will soon be public lead no need for small "
 "businesses, costly and inconvenience."
 msgstr ""
-"یکپارچگی آن با سرویس‌هایی که به امید خدا بزودی عمومی‌ خواهند شد، منجر به عدم "
-"نیاز کسب و کارهای کوچک به سرویس‌های پیچیده، هزینه‌بر و سرسام آور خواهد بود!"
+"یکپارچگی آن با سرویس‌هایی که به امید خدا بزودی عمومی‌ خواهند شد، منجر به عدم نیاز "
+"کسب و کارهای کوچک به سرویس‌های پیچیده، هزینه‌بر و سرسام آور خواهد بود!"
 
 #: tejarak/includes/languages/trans_twig.php:10
 msgid "About"
@@ -4104,8 +4092,7 @@ msgstr "مجموع"
 #: tejarak/includes/languages/trans_twig.php:49
 msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set exit time."
 msgstr ""
-" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت "
-"نمایید."
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت خروج خود را ثبت نمایید."
 
 #: tejarak/includes/languages/trans_twig.php:50
 msgid "I had gone out for Ermile!"
@@ -4114,8 +4101,7 @@ msgstr "برای کار ارمایل بیرون رفته بودم!"
 #: tejarak/includes/languages/trans_twig.php:51
 msgid "Press <kbd>Ctrl+Enter</kbd> or <kbd>*</kbd> to set enter time."
 msgstr ""
-" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت "
-"نمایید."
+" با فشردن کلید<kbd>Ctrl+Enter</kbd> یا <kbd>*</kbd> ساعت ورود خود را ثبت نمایید."
 
 #: tejarak/includes/languages/trans_twig.php:57
 msgid "Select all months"
@@ -4367,8 +4353,7 @@ msgstr "تجارک"
 
 #: tejarak/includes/mvc/view.php:11
 msgid "Tejarak was born to serve small and beautiful service for e-business"
-msgstr ""
-"تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
+msgstr "تجارک برای ارائه سرویس‌های کوچک و زیبا به کسب و کارهای الکترونیکی متولد شد"
 
 #~ msgid "The size of file is larger than the upload space you have"
 #~ msgstr "اندازه فایل بزرگتر از فضای آپلود شما است"
