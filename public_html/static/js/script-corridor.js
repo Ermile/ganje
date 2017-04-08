@@ -213,7 +213,7 @@ function event_corridor(e, _self, _key)
         }
         else
         {
-          // transfer('home', cid);
+          transfer('home', cid);
         }
       }
       // else select this user
