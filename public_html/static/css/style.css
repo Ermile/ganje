@@ -345,19 +345,42 @@ nav.pagination span.current:first-child:before{content:'';position:absolute;top:
 
 .et{max-height: 70vh;margin: 0 1%;}
 
-@media only screen and (max-width: 767px) {
+/* Design for a width of 768px until 959px */
+@media all and (min-width: 768px) and (max-width: 959px) {
+	.register .sidebar .time{font-size:2em}
+	.register .sidebar #logo img{height:150px}
+	.deadline{width:60%}
+	.card{20%}
+	.card .info .name{font-size:1em}
+}
+
+/* Design for a width of 320px until 767px */
+@media all and (min-width: 320px) and (max-width: 767px) {
+
+	.register .page{overflow-x:hidden;overflow-y:auto}
+
 	.filters, .rtl .filters{text-align: center;position: relative;}
 	.filters .datepicker{display: inline-block;}
 	.filters .func{display: inline-block;}
 	.filters .func a{width: 50%;display: inline-block;}
-}
-@media only screen and (max-width: 768px) {
+
+
 	.et .val_diff, .et .col_diff, .et .total_diff{display: none;}
 	.et .val_plus, .et .col_plus, .et .total_plus{display: none;}
 	.et .val_minus, .et .col_minus, .et .total_minus{display: none;}
+
+
+	.register .sidebar{height:auto;padding:1em 0}
+	.register .sidebar #god{margin-bottom:1em}
+	.register .sidebar #date{margin-bottom:2em}
+	.register .sidebar #logo img{height:150px}
+	.register .sidebar #logo h1{margin-bottom:0}
+	.deadline{position:static;margin:0 auto}
+
+	.register .dashboard{padding:2em 0}
+
+	.card{font-size:1.6em;width:25%;margin:0.5em 0.25em}
 }
 
-
-
-
-
+/* Design for a width of 319px and lower */
+@media all and (max-width: 319px) {}
