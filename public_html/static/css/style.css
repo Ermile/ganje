@@ -373,7 +373,12 @@ nav.pagination span.current:first-child:before{content:'';position:absolute;top:
 
 	.register .sidebar{display:none}
 	.register .dashboard{padding:2em 0}
-	.card{font-size:1.6em;width:40%;max-width:180px;margin:0.5em 0.25em}
+	.dashboard .card{font-size:1.6em;width:40%;max-width:180px;margin:0.5em 0.25em}
+
+	.detail .card{max-width:360px}
+	.detail .card .info{padding:1em 0em 0.7em}
+	.detail .card .info .id {font-size:2em}
+	.detail .statistics{max-width:360px}
 }
 
 /* Design for a width of 319px and lower */
