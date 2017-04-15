@@ -33,6 +33,7 @@ class staff {
 				users.id,
 				users.user_permission AS `permission`,
 				users.user_displayname AS `displayname`,
+				users.user_status AS `status`,
 				IFNULL(users.user_meta,'$no_position') AS meta,
 				(
 					SELECT
@@ -52,7 +53,7 @@ class staff {
 				AND hours.hour_date = '$date'
 				AND hours.hour_end is null
 			WHERE
-				users.user_status = 'active'
+				users.user_status IN ('active', 'deactive')
 			$condition
 		";
 		$users = db::get($query);
@@ -71,7 +72,6 @@ class staff {
 				}
 			}
 		}
-
 		return $users;
 	}
 
