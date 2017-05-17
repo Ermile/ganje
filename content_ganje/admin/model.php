@@ -27,7 +27,7 @@ class model extends \mvc\model
 				'plus'    => utility::post('plus')
 			];
 
-			if($this->access('ganje', 'admin', 'add'))
+			if($this->access('admin:add'))
 			{
 				$result = \lib\db\hours::insert($args);
 			}
@@ -52,7 +52,7 @@ class model extends \mvc\model
 				'time'   => utility::post('time')
 			];
 
-			if($this->access('ganje', 'admin', 'edit'))
+			if($this->access('admin:edit'))
 			{
 				$result = \lib\db\hours::update($arg);
 			}
@@ -76,7 +76,7 @@ class model extends \mvc\model
 				'type' => utility::post('field'),
 			];
 
-			if($this->access('ganje', 'admin', 'admin'))
+			if($this->access('admin:admin'))
 			{
 				$result = \lib\db\hours::change_hours_status($arg);
 			}
@@ -174,7 +174,7 @@ class model extends \mvc\model
 		$result['data']  = $data;
 		$result['total'] = count($result['data']);
 
-		if($_args->get_export() && $this->access('ganje','admin', 'admin'))
+		if($_args->get_export() && $this->access('admin:admin'))
 		{
 
 			// $name = 'ganje-u'. $_args->get_user(0).'['. $date_year. $date_month. $date_day.']';

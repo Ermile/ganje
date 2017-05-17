@@ -28,11 +28,11 @@ class model extends \mvc\model
 
 		$user_id = false;
 
-		if($this->access('ganje', 'home', 'admin'))
+		if($this->access('home:admin'))
 		{
 			$user_id = intval(utility::post('userId'));
 		}
-		elseif($this->access('ganje', 'home', 'add'))
+		elseif($this->access('home:add'))
 		{
 			if((int) $this->login("id") !=  intval(utility::post('userId')))
 			{
@@ -95,7 +95,7 @@ class model extends \mvc\model
 	public function get_list_of_users()
 	{
 		// the remote users can see her name
-		if($this->access('ganje', 'home', 'view'))
+		if($this->access('home:view'))
 		{
 			$return =
 			[
@@ -105,7 +105,7 @@ class model extends \mvc\model
 			return $return;
 		}
 
-		if($this->access('ganje', 'remote', 'view'))
+		if($this->access('remote:view'))
 		{
 			$return =
 			[

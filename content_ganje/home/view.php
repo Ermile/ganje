@@ -16,7 +16,7 @@ class view extends \mvc\view
 			$this->data->bodyclass  = 'unselectable';
 		}
 
-		if(!$this->access('ganje','home', 'view') && $this->access('ganje', 'remote', 'view'))
+		if(!$this->access('home:view') && $this->access('remote:view'))
 		{
 			$this->data->remote = true;
 		}

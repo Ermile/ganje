@@ -11,7 +11,7 @@ class controller extends \mvc\controller
 
 		// Check permission and if user can do this operation
 		// allow to do it, else show related message in notify center
-		if(!$this->access('ganje', 'admin', 'view'))
+		if(!$this->access('admin:view'))
 		{
 			$this->redirector()->set_domain()->set_url('ganje/status')->redirect();
 			return;
@@ -28,7 +28,7 @@ class controller extends \mvc\controller
 				"export" => ["/^(.*)$/", true, 'export'],
 				"q"      => ["/^(.*)$/", true, 'search'],
 				"type"   => ["/^summary|detail$/", true, 'type'],
-				'date'   => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date']
+				'date'   => ["/^(\d{4})\-(0?[0-9]|1[0-2])\-(0?[0-9]|[12][0-9]|3[01])$/", true, 'date'],
 			]
 		]);
 

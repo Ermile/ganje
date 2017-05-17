@@ -9,7 +9,7 @@ class controller extends \mvc\controller
 		// check login and if not loggined, redirect to login page
 		$this->check_login();
 
-		if($this->access('ganje', 'home', 'view') || ($this->access('ganje', 'remote', 'view') && $this->access('ganje', 'home', 'add')))
+		if($this->access('home:view') || ($this->access('remote:view') && $this->access('home:add')))
 		{
 			$this->post("save")->ALL();
 		}
